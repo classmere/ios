@@ -2,4 +2,5 @@
 Pods/
 Podfile.lock
 
+# OSX Dotfiles
 .DS_Store
