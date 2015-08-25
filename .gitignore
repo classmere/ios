@@ -1,0 +1,5 @@
+# Pod Dependecies
+Pods/
+Podfile.lock
+
+.DS_Store
