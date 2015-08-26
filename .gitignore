@@ -1,0 +1,6 @@
+# OSX Dotfiles
+.DS_Store
+
+# CocoaPods
+Pods
+Podfile.lock
