@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>042AC5A3-5387-4D78-80B3-8AE048400FBB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>classmereApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8A849D5A2C2FE988974C05AC1A5D69A8F7D851B4</key>
+		<string>https://github.com/classmere/app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>classmereApp.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8A849D5A2C2FE988974C05AC1A5D69A8F7D851B4</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/classmere/app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8A849D5A2C2FE988974C05AC1A5D69A8F7D851B4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8A849D5A2C2FE988974C05AC1A5D69A8F7D851B4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>classmereApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

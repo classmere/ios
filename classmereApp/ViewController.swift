@@ -16,24 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let baseURL = "http://classmere.herokuapp.com"
-    
-        
-        func getCourse(abbr: String) {
-            Alamofire.request(.GET, "\(baseURL)/courses/\(abbr)")
-            .responseJSON{(request, response, JSON, error) in
-                println(request)
-                println(JSON)
-            }
-        }
-        
+        /*
         Alamofire.request(.GET, "http://httpbin.org/get")
             .responseJSON {(request, response, JSON, error) in
                 println(JSON)
         }
+        */
         
-        getCourse("CS%20161")   
+        APIService.getAllCourses() { (json) -> Void in
+            println(json)
+        }
         
+        APIService.getCourseByAbbr("CS%20161")
+        APIService.derp()
     }
 
     override func didReceiveMemoryWarning() {

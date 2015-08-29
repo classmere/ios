@@ -6,6 +6,7 @@ pod 'ReactiveCocoa'
 pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'HanekeSwift'
+pod 'ModelRocket'
 end
 
 target 'classmereAppTests' do
