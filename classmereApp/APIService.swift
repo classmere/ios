@@ -14,30 +14,29 @@ struct APIService {
     
     static let baseURL = "http://classmere.herokuapp.com"
     
-    static func getAllCourses(callback:(JSON) -> Void) {
+    static func getAllCourses(completion:(JSON) -> Void) {
         Alamofire.request(.GET, "\(baseURL)/courses/")
-            .responseJSON {(request, response, JSON, error) in
+            .responseJSON {(request, response, data, error) in
                 if error == nil {
-                    println(JSON)
+                    var theData = JSON(data!)
+                    println("JUST RAN getAllCourses()")
+                    completion(theData)
                 } else {
                     println(error)
                 }
         }
     }
     
-    static func getCourseByAbbr(abbr: String/*, callback:(JSON) -> Void*/) {
+    static func getCourseByAbbr(abbr: String, completion:(JSON) -> Void) {
         Alamofire.request(.GET, "\(baseURL)/courses/\(abbr)")
-            .responseJSON {(request, response, JSON, error) in
+            .responseJSON {(request, response, data, error) in
                 if error == nil {
-                    print(JSON)
+                    var theData = JSON(data!)
+                    println("JUST RAN getCourseByAbbr()")
+                    completion(theData)
                 } else {
                     println(error)
                 }
         }
     }
-    
-    static func derp() {
-        println("Derp")
-    }
-    
 }

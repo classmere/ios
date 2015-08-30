@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 struct Course {
     let title: String?
@@ -15,4 +16,12 @@ struct Course {
     let credits: String?
     let description: String?
     let sections: [String: AnyObject]?
+    
+    init(courseJSON: JSON) {
+        title = courseJSON["title"].string as String?
+        abbr = courseJSON["abbr"].string as String?
+        credits = courseJSON["credits"].string as String?
+        description = courseJSON["description"].string as String?
+        sections = courseJSON["sections"].dictionaryObject as [String: AnyObject]?
+    }
 }
