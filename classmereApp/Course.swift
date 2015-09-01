@@ -13,15 +13,23 @@ import SwiftyJSON
 struct Course {
     let title: String?
     let abbr: String?
-    let credits: String?
+    let credits: [Int]?
     let description: String?
-    let sections: [String: AnyObject]?
+    
+    var sections = [CourseSection]()
     
     init(courseJSON: JSON) {
         title = courseJSON["title"].string as String?
         abbr = courseJSON["abbr"].string as String?
-        credits = courseJSON["credits"].string as String?
+        credits = courseJSON["credits"].arrayObject as! [Int]?
         description = courseJSON["description"].string as String?
-        sections = courseJSON["sections"].dictionaryObject as [String: AnyObject]?
+        
+        // If sections exist, for each section in JSON array, create a CourseSection object
+        if let sectionArray = courseJSON["sections"].array {
+            for theSection in sectionArray {
+                var courseSection = CourseSection(sectionJSON: theSection)
+                sections.append(courseSection)
+            }
+        }
     }
 }

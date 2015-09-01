@@ -22,14 +22,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel?
     
     func configureView() {
-        /*
-        APIService.getCourseByAbbr("CS%20161") { (data) -> Void in
-            if let theTitle = data["title"].string {
-                println(theTitle)
-            }
-            println(data["title"])
-        }
-        */
         
     }
     
@@ -40,21 +32,13 @@ class ViewController: UIViewController {
         APIService.getCourseByAbbr("CS%20161") { (data) -> Void in
             var theCourse = Course(courseJSON: data)
             self.titleLabel?.text = theCourse.title
+            
+            // This is a test for grabbing general data from course
+            println(theCourse.title!)
+            
+            // This is a test for grabbing data from a courses's section
+            println("Section term: " + theCourse.sections[0].term!)
         }
-        
-        /*
-        APIService.getCourseByAbbr("CS%20161") { (data) -> Void in
-            if let theTitle = data["title"].string {
-                println(theTitle)
-                self.titleLabel?.text = theTitle
-            }
-        }
-
-        Alamofire.request(.GET, "http://httpbin.org/get")
-            .responseJSON {(request, response, JSON, error) in
-                println(JSON)
-        }
-        */
     }
     
     override func didReceiveMemoryWarning() {
