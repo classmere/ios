@@ -15,6 +15,7 @@
 		1604B1841B8D5459003A1E8E /* classmereAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1604B1831B8D5459003A1E8E /* classmereAppTests.swift */; };
 		1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627EE031B93A08C007ED748 /* CourseSection.swift */; };
 		165B86841B924550009A0651 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165B86831B924550009A0651 /* CourseTableViewCell.swift */; };
+		165FD67B1B96CA2800F5DB8A /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */; };
 		16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEAF1B8D99ED00BA3BE7 /* Course.swift */; };
 		16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEB11B8D9A8100BA3BE7 /* APIService.swift */; };
 		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -43,6 +44,7 @@
 		1604B1831B8D5459003A1E8E /* classmereAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classmereAppTests.swift; sourceTree = "<group>"; };
 		1627EE031B93A08C007ED748 /* CourseSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
 		165B86831B924550009A0651 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
 		16AADEAF1B8D99ED00BA3BE7 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		16AADEB11B8D9A8100BA3BE7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_classmereApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1604B16F1B8D5459003A1E8E /* ViewController.swift */,
+				165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				1604B1701B8D5459003A1E8E /* ViewController.swift in Sources */,
 				16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */,
 				1604B16E1B8D5459003A1E8E /* AppDelegate.swift in Sources */,
+				165FD67B1B96CA2800F5DB8A /* CourseTableViewController.swift in Sources */,
 				1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */,
 				165B86841B924550009A0651 /* CourseTableViewCell.swift in Sources */,
 			);
