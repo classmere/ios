@@ -36,6 +36,7 @@ class CourseTableViewController: UITableViewController {
             for courseIndex in data {
                 var course: Course = Course(courseJSON: courseIndex.1)
                 println("The courseIndex: " + courseIndex.0)
+                self.allCourses.append(course)
             }
         }
     }
@@ -51,13 +52,17 @@ class CourseTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return allCourses.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCell", forIndexPath: indexPath) as! CourseTableViewCell
 
         // Configure the cell...
+        let theCourseCell = allCourses[indexPath.row]
+        if let courseTitle = theCourseCell.title {
+            cell.titleLabel?.text = courseTitle
+        }
 
         return cell
     }
