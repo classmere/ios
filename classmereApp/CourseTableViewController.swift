@@ -29,11 +29,14 @@ class CourseTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func retrieveCourses() {
         println("IN retrieveCourses()")
         APIService.getAllCourses() { (data) -> Void in
-            
+            for courseIndex in data {
+                var course: Course = Course(courseJSON: courseIndex.1)
+                println("The courseIndex: " + courseIndex.0)
+            }
         }
     }
     

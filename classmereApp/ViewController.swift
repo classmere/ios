@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        /*
         APIService.getCourseByAbbr("CS%20161") { (data) -> Void in
             var theCourse = Course(courseJSON: data)
             self.titleLabel?.text = theCourse.title
@@ -38,6 +38,17 @@ class ViewController: UIViewController {
             
             // This is a test for grabbing data from a courses's section
             println("Section term: " + theCourse.sections[0].term!)
+        }
+        */
+        
+        APIService.getAllCourses() { (data) -> Void in
+            println(data)
+            println("This is data[0]:")
+            println(data[0])
+            for courseIndex in data {
+                println("This is courseIndex:")
+                println(courseIndex)
+            }
         }
     }
     
