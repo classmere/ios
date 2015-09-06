@@ -12,11 +12,12 @@ import SwiftyJSON
 class CourseTableViewController: UITableViewController {
     
     var allCourses: [Course] = [Course]()
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         println("IN viewDidLoad()")
         retrieveCourses()
+        configureView()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,40 +31,52 @@ class CourseTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func configureView() {
+        println("IN configureView")
+        tableView.rowHeight = 50
+    }
+    
     func retrieveCourses() {
         println("IN retrieveCourses()")
-        APIService.getAllCourses() { (data) -> Void in
-            for courseIndex in data {
-                var course: Course = Course(courseJSON: courseIndex.1)
-                println("The courseIndex: " + courseIndex.0)
-                self.allCourses.append(course)
+        
+        // FIXME: GCD - Not required but including for now...
+        //dispatch_async(dispatch_get_main_queue()) {
+            APIService.getAllCourses() { (data) -> Void in
+                for courseIndex in data {
+                    var course: Course = Course(courseJSON: courseIndex.1)
+                    println("The courseIndex: " + courseIndex.0)
+                    self.allCourses.append(course)
+                    println("allCourses Length")
+                    println(self.allCourses.count)
+                }
+                self.tableView.reloadData()
             }
-        }
+        //}
     }
     
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        println("IN numberOfSections...")
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        println("IN numberofRowsInSection()")
+        println(allCourses.count)
         return allCourses.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCell", forIndexPath: indexPath) as! CourseTableViewCell
-
+        println("IN - cellForRowAtIndexPath()")
         // Configure the cell...
         let theCourseCell = allCourses[indexPath.row]
-        if let courseTitle = theCourseCell.title {
-            cell.titleLabel?.text = courseTitle
-        }
 
+        cell.textLabel?.text = theCourseCell.abbr
+        
         return cell
     }
 
@@ -73,9 +86,7 @@ class CourseTableViewController: UITableViewController {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -85,24 +96,18 @@ class CourseTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
-    /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
 
     }
-    */
 
-    /*
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the item to be re-orderable.
         return true
     }
-    */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -111,5 +116,4 @@ class CourseTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

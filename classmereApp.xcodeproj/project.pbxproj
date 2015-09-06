@@ -18,6 +18,7 @@
 		165FD67B1B96CA2800F5DB8A /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */; };
 		16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEAF1B8D99ED00BA3BE7 /* Course.swift */; };
 		16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEB11B8D9A8100BA3BE7 /* APIService.swift */; };
+		16FB5A091B9C163400720073 /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB5A081B9C163400720073 /* TestTableViewController.swift */; };
 		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
 		16AADEAF1B8D99ED00BA3BE7 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		16AADEB11B8D9A8100BA3BE7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		16FB5A081B9C163400720073 /* TestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_classmereApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A7CD6781983D453B151FBE /* Pods-classmereApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FB127F5DEF41C1F03D00AC4D /* Pods-classmereApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			children = (
 				1604B16F1B8D5459003A1E8E /* ViewController.swift */,
 				165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */,
+				16FB5A081B9C163400720073 /* TestTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				165FD67B1B96CA2800F5DB8A /* CourseTableViewController.swift in Sources */,
 				1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */,
 				165B86841B924550009A0651 /* CourseTableViewCell.swift in Sources */,
+				16FB5A091B9C163400720073 /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
