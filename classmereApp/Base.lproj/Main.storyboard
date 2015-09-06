@@ -32,7 +32,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" textLabel="LAJ-XI-QcI" style="IBUITableViewCellStyleDefault" id="JJJ-sZ-1a1" customClass="CourseTableViewCell" customModule="classmereApp" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseCell" textLabel="LAJ-XI-QcI" detailTextLabel="Q2m-zk-tdX" style="IBUITableViewCellStyleSubtitle" id="JJJ-sZ-1a1" customClass="CourseTableViewCell" customModule="classmereApp" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JJJ-sZ-1a1" id="whG-zx-eA6">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -49,9 +49,15 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LAJ-XI-QcI">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Abbreviation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LAJ-XI-QcI">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="FullTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q2m-zk-tdX">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -72,7 +78,8 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="titleLabel" destination="plX-hr-0IK" id="VR5-ZS-4aY"/>
+                                    <outlet property="abbrLabel" destination="LAJ-XI-QcI" id="pcv-4A-v93"/>
+                                    <outlet property="titleLabel" destination="Q2m-zk-tdX" id="6Ud-Uc-xlh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -38,20 +38,22 @@ class CourseTableViewController: UITableViewController {
     
     func retrieveCourses() {
         println("IN retrieveCourses()")
-        
-        // FIXME: GCD - Not required but including for now...
-        //dispatch_async(dispatch_get_main_queue()) {
-            APIService.getAllCourses() { (data) -> Void in
-                for courseIndex in data {
-                    var course: Course = Course(courseJSON: courseIndex.1)
-                    println("The courseIndex: " + courseIndex.0)
-                    self.allCourses.append(course)
-                    println("allCourses Length")
-                    println(self.allCourses.count)
-                }
-                self.tableView.reloadData()
+        APIService.getAllCourses() { (data) -> Void in
+            for courseIndex in data {
+                var course: Course = Course(courseJSON: courseIndex.1)
+                println("The courseIndex: " + courseIndex.0)
+                self.allCourses.append(course)
+                println("allCourses Length")
+                println(self.allCourses.count)
             }
-        //}
+            
+            self.filterAllCourses()
+        }
+    }
+    
+    func filterAllCourses() {
+        allCourses.sort() {$0.abbr < $1.abbr}
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -75,7 +77,8 @@ class CourseTableViewController: UITableViewController {
         // Configure the cell...
         let theCourseCell = allCourses[indexPath.row]
 
-        cell.textLabel?.text = theCourseCell.abbr
+        cell.abbrLabel?.text = theCourseCell.abbr
+        cell.titleLabel?.text = theCourseCell.title
         
         return cell
     }
