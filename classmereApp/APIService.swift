@@ -28,7 +28,10 @@ struct APIService {
     }
     
     static func getCourseByAbbr(abbr: String, completion:(JSON) -> Void) {
-        Alamofire.request(.GET, "\(baseURL)/courses/\(abbr)")
+        
+        let encodedAbbr: String = "\(abbr)".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        
+        Alamofire.request(.GET, "\(baseURL)/courses/\(encodedAbbr)")
             .responseJSON {(request, response, data, error) in
                 if error == nil {
                     var theData = JSON(data!)

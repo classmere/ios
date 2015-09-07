@@ -21,11 +21,9 @@ class CourseDetailViewController: UIViewController {
     func configureView() {
         if let course: Course = self.detailCourse as Course! {
             println("Detail Item Course: " + course.abbr!)
-            var theAbbr = course.abbr!
-            println(course.sections)
+            var abbr: String = course.abbr!
             
-            //FIXME: Nil unwrapped optional for Abbr
-            APIService.getCourseByAbbr("CS%20161") { (data) -> Void in
+            APIService.getCourseByAbbr(abbr) { (data) -> Void in
                 var courseWithSections = Course(courseJSON: data)
                 
                 // This is a test for grabbing general data from course
