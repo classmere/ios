@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class CourseDetailViewController: UIViewController {
 
-    @IBOutlet weak var abbrLabel: UILabel?
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var creditsLabel: UILabel?
     @IBOutlet weak var descriptionLabel: UILabel?
@@ -25,7 +24,9 @@ class CourseDetailViewController: UIViewController {
     
     func configureView() {
         if let course: Course = self.detailCourse as Course! {
-            println("Detail Item Course: " + course.abbr!)
+            
+            self.title = course.abbr!
+            
             var abbr: String = course.abbr!
             
             APIService.getCourseByAbbr(abbr) { (data) -> Void in
@@ -37,13 +38,14 @@ class CourseDetailViewController: UIViewController {
                 // This is a test for grabbing data from a courses's section
                 println("Section term: " + courseWithSections.sections[0].term!)
                 
-                self.title = courseWithSections.abbr!
-                
-                self.abbrLabel?.text = courseWithSections.abbr!
+                // Set labels
                 self.titleLabel?.text = courseWithSections.title!
-                //self.creditsLabel?.text = courseWithSections.credits!
-                println(courseWithSections.credits)
                 self.descriptionLabel?.text = courseWithSections.description!
+                
+                if let creditsArray = courseWithSections.credits {
+                    let minimumCredit = creditsArray[0] as Int
+                    self.creditsLabel?.text = String(minimumCredit)
+                }
             }
         }
         
