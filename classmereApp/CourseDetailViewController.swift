@@ -12,6 +12,11 @@ import SwiftyJSON
 
 class CourseDetailViewController: UIViewController {
 
+    @IBOutlet weak var abbrLabel: UILabel?
+    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var creditsLabel: UILabel?
+    @IBOutlet weak var descriptionLabel: UILabel?
+    
     var detailCourse: Course? {
         didSet {
             configureView()
@@ -31,6 +36,14 @@ class CourseDetailViewController: UIViewController {
                 
                 // This is a test for grabbing data from a courses's section
                 println("Section term: " + courseWithSections.sections[0].term!)
+                
+                self.title = courseWithSections.abbr!
+                
+                self.abbrLabel?.text = courseWithSections.abbr!
+                self.titleLabel?.text = courseWithSections.title!
+                //self.creditsLabel?.text = courseWithSections.credits!
+                println(courseWithSections.credits)
+                self.descriptionLabel?.text = courseWithSections.description!
             }
         }
         
