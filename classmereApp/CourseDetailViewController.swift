@@ -28,7 +28,8 @@ class CourseDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.configureView()
+        // Do any additional setup after loading the view, typically from a nib.
+        //self.configureView()
         
         if let course: Course = self.detailCourse as Course! {
             
@@ -53,8 +54,6 @@ class CourseDetailViewController: UIViewController {
                 }
             }
         }
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
