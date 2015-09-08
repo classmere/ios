@@ -23,9 +23,14 @@ class CourseDetailViewController: UIViewController {
     }
     
     func configureView() {
+        self.title = detailCourse?.abbr
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.configureView()
+        
         if let course: Course = self.detailCourse as Course! {
-            
-            self.title = course.abbr!
             
             var abbr: String = course.abbr!
             
@@ -49,11 +54,6 @@ class CourseDetailViewController: UIViewController {
             }
         }
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configureView()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
