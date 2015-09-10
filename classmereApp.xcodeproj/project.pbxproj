@@ -18,6 +18,8 @@
 		165FD67B1B96CA2800F5DB8A /* CourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */; };
 		16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEAF1B8D99ED00BA3BE7 /* Course.swift */; };
 		16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEB11B8D9A8100BA3BE7 /* APIService.swift */; };
+		16C0AA591B9EB9A300F5E563 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */; };
+		16C0AA5B1B9EBC8100F5E563 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0AA5A1B9EBC8100F5E563 /* SectionViewController.swift */; };
 		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewController.swift; sourceTree = "<group>"; };
 		16AADEAF1B8D99ED00BA3BE7 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		16AADEB11B8D9A8100BA3BE7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
+		16C0AA5A1B9EBC8100F5E563 /* SectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_classmereApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5A7CD6781983D453B151FBE /* Pods-classmereApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FB127F5DEF41C1F03D00AC4D /* Pods-classmereApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 			children = (
 				1604B1711B8D5459003A1E8E /* Main.storyboard */,
 				165B86831B924550009A0651 /* CourseTableViewCell.swift */,
+				16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -152,8 +157,9 @@
 		16AADEAE1B8D994300BA3BE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1604B16F1B8D5459003A1E8E /* CourseDetailViewController.swift */,
 				165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */,
+				1604B16F1B8D5459003A1E8E /* CourseDetailViewController.swift */,
+				16C0AA5A1B9EBC8100F5E563 /* SectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -326,11 +332,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16C0AA5B1B9EBC8100F5E563 /* SectionViewController.swift in Sources */,
 				16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */,
 				1604B1701B8D5459003A1E8E /* CourseDetailViewController.swift in Sources */,
 				16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */,
 				1604B16E1B8D5459003A1E8E /* AppDelegate.swift in Sources */,
 				165FD67B1B96CA2800F5DB8A /* CourseTableViewController.swift in Sources */,
+				16C0AA591B9EB9A300F5E563 /* SectionTableViewCell.swift in Sources */,
 				1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */,
 				165B86841B924550009A0651 /* CourseTableViewCell.swift in Sources */,
 			);

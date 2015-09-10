@@ -1,17 +1,18 @@
 //
-//  CourseTableViewCell.swift
+//  SectionTableViewCell.swift
 //  classmereApp
 //
-//  Created by Brandon Lee on 8/29/15.
+//  Created by Brandon Lee on 9/7/15.
 //  Copyright (c) 2015 Brandon Lee. All rights reserved.
 //
 
 import UIKit
 
-class CourseTableViewCell: UITableViewCell {
+class SectionTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var abbrLabel: UILabel?
-    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var termLabel: UILabel?
+    @IBOutlet weak var timeLabel: UILabel?
+    @IBOutlet weak var instructorLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
