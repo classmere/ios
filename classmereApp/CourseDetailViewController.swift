@@ -25,7 +25,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     // TODO: Get the tableview working
-    var course: Course!
+    var course: Course?
     
     func configureView() {
         self.title = detailCourse?.abbr
@@ -35,7 +35,6 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //self.configureView()
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SectionCell")
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -47,17 +46,11 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
                 println("APIService()")
                 self.course = Course(courseJSON: data)
                 
-                // This is a test for grabbing general data from course
-                println(self.course.title!)
-                
-                // This is a test for grabbing data from a courses's section
-                println("Section term: " + self.course.sections[0].term!)
-                
                 // Set labels
-                self.titleLabel?.text = self.course.title!
-                self.descriptionLabel?.text = self.course.description!
+                self.titleLabel?.text = self.course!.title!
+                self.descriptionLabel?.text = self.course!.description!
                 
-                if let creditsArray = self.course.credits {
+                if let creditsArray = self.course!.credits {
                     let minimumCredit = creditsArray[0] as Int
                     self.creditsLabel?.text = String(minimumCredit)
                 }
@@ -85,18 +78,17 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         println("IN 2 numberofRowsInSection()")
         // FIXME: Problem with data not concurrently being retrieved in time
         //println(course.sections.count)
-        return 50//course.sections.count
+        return course?.sections.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println("IN - 2 cellForRowAtIndexPath()")
         // Configure the cell...
         let cell = tableView.dequeueReusableCellWithIdentifier("SectionCell", forIndexPath: indexPath) as! SectionTableViewCell
-        let sectionCell = course.sections[indexPath.row]
-        
-        cell.termLabel?.text = sectionCell.term
-        cell.timeLabel?.text = sectionCell.startTime
-        cell.instructorLabel?.text = sectionCell.instructor
+        if let section = course?.sections[indexPath.row] {
+            cell.termLabel?.text = section.term
+            cell.timeLabel?.text = section.startTime
+            cell.instructorLabel?.text = section.instructor
+        }
         
         return cell
     }
