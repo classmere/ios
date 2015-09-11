@@ -31,6 +31,7 @@ struct CourseSection {
     let waitlistCapacity: Int?
     let waitlistCurrent: Int?
     let currentEnrollment: Int?
+    let capacity: Int?
     
     // TODO: Might wanna make this prettier...
     init(sectionJSON: JSON) {
@@ -55,5 +56,6 @@ struct CourseSection {
         waitlistCapacity = sectionJSON["waitlistCapacity"].intValue as Int?
         waitlistCurrent = sectionJSON["waitlistcurrent"].intValue as Int?
         currentEnrollment = sectionJSON["currentEnrollment"].intValue as Int?
+        capacity = sectionJSON["capacity"].intValue as Int?
     }
 }

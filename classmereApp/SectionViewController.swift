@@ -21,7 +21,7 @@ class SectionViewController: UIViewController {
     @IBOutlet weak var sessionLabel: UILabel?
     @IBOutlet weak var crnLabel: UILabel?
     @IBOutlet weak var statusLabel: UILabel?
-    @IBOutlet weak var maxSizeLabel: UILabel?
+    @IBOutlet weak var capacityLabel: UILabel?
     @IBOutlet weak var currentEnrolledLabel: UILabel?
     @IBOutlet weak var avalaibleSpotsLabel: UILabel?
     @IBOutlet weak var restrictionsLabel: UILabel?
@@ -51,9 +51,9 @@ class SectionViewController: UIViewController {
             self.sessionLabel?.text = section.session
             self.crnLabel?.text = String(stringInterpolationSegment: section.crn!)
             self.statusLabel?.text = section.status
-            //self.maxSizeLabel?.text = section.capa
-            self.currentEnrolledLabel?.text = String(stringInterpolationSegment: section.currentEnrollment)
-            //self.avalaibleSpotsLabel?.text section.currentEnrollment)
+            self.capacityLabel?.text = String(stringInterpolationSegment: section.capacity!)
+            self.currentEnrolledLabel?.text = String(stringInterpolationSegment: section.currentEnrollment!)
+            self.avalaibleSpotsLabel?.text = String(section.capacity! - section.currentEnrollment!)
             self.restrictionsLabel?.text = section.restrictions
         }
     }
