@@ -19,7 +19,6 @@ struct APIService {
             .responseJSON {(request, response, data, error) in
                 if error == nil {
                     var theData = JSON(data!)
-                    println("JUST RAN getAllCourses()")
                     completion(theData)
                 } else {
                     println(error)
@@ -35,7 +34,6 @@ struct APIService {
             .responseJSON {(request, response, data, error) in
                 if error == nil {
                     var theData = JSON(data!)
-                    println("JUST RAN getCourseByAbbr()")
                     completion(theData)
                 } else {
                     println(error)

@@ -71,8 +71,6 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        println("IN 2 numberofRowsInSection()")
-        println(course?.sections.count)
         return course?.sections.count ?? 0
     }
     
@@ -90,7 +88,6 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
