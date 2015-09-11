@@ -24,7 +24,6 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
-    // TODO: Get the tableview working
     var course: Course?
     
     func configureView() {
@@ -33,8 +32,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //self.configureView()
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -43,7 +41,6 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
             var abbr: String = theCourse.abbr!
             
             APIService.getCourseByAbbr(abbr) { (data) -> Void in
-                println("APIService()")
                 self.course = Course(courseJSON: data)
                 
                 // Set labels
@@ -69,15 +66,13 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
-        println("IN 2 numberOfSections...")
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
         println("IN 2 numberofRowsInSection()")
-        // FIXME: Problem with data not concurrently being retrieved in time
-        //println(course.sections.count)
+        println(course?.sections.count)
         return course?.sections.count ?? 0
     }
     
@@ -91,5 +86,19 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
         
         return cell
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "showSection" {
+            if let indexPath = tableView.indexPathForSelectedRow() {
+                let section = course?.sections[indexPath.row]
+                (segue.destinationViewController as! SectionViewController).detailSection = section
+            }
+        }
     }
 }
