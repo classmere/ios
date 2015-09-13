@@ -15,7 +15,7 @@ struct Course {
     let credits: [Int]?
     let description: String?
     
-    var sections = [CourseSection]()
+    var courseSections = [CourseSection]()
     
     init(courseJSON: JSON) {
         title = courseJSON["title"].string as String?
@@ -27,7 +27,7 @@ struct Course {
         if let sectionArray = courseJSON["sections"].array {
             for theSection in sectionArray {
                 var courseSection = CourseSection(sectionJSON: theSection)
-                sections.append(courseSection)
+                courseSections.append(courseSection)
             }
         }
     }

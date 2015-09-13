@@ -71,13 +71,13 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return course?.sections.count ?? 0
+        return course?.courseSections.count ?? 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Configure the cell...
         let cell = tableView.dequeueReusableCellWithIdentifier("SectionCell", forIndexPath: indexPath) as! SectionTableViewCell
-        if let section = course?.sections[indexPath.row] {
+        if let section = course?.courseSections[indexPath.row] {
             cell.termLabel?.text = section.term
             cell.timeLabel?.text = section.startTime
             cell.instructorLabel?.text = section.instructor
@@ -93,7 +93,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         // Pass the selected object to the new view controller.
         if segue.identifier == "showSection" {
             if let indexPath = tableView.indexPathForSelectedRow() {
-                let section = course?.sections[indexPath.row]
+                let section = course?.courseSections[indexPath.row]
                 (segue.destinationViewController as! SectionViewController).detailSection = section
             }
         }
