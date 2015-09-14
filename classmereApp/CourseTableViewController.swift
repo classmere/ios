@@ -64,9 +64,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         // Search Controller Initialization
         self.resultSearchController = UISearchController(searchResultsController: nil)
         resultSearchController.searchResultsUpdater = self
-        resultSearchController.hidesNavigationBarDuringPresentation = true
         resultSearchController.dimsBackgroundDuringPresentation = false
-        resultSearchController.searchBar.searchBarStyle = .Minimal
         resultSearchController.searchBar.sizeToFit()
         resultSearchController.searchBar.placeholder = "Search by Abbreviation"
         self.tableView.tableHeaderView = resultSearchController.searchBar
