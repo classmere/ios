@@ -10,7 +10,6 @@ import UIKit
 import SwiftyJSON
 
 class CourseTableViewController: UITableViewController, UISearchResultsUpdating {
-    
     var allCourses: [Course] = [Course]()
     
     var searchArray: [Course] = [Course]() {
@@ -69,6 +68,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         resultSearchController.dimsBackgroundDuringPresentation = false
         resultSearchController.searchBar.searchBarStyle = .Minimal
         resultSearchController.searchBar.sizeToFit()
+        resultSearchController.searchBar.placeholder = "Search by Abbreviation"
         self.tableView.tableHeaderView = resultSearchController.searchBar
     }
     
@@ -97,16 +97,14 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         println("IN - updateSearchResultsForSearchController()")
         self.searchArray.removeAll(keepCapacity: false)
         
-        //let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-        let searchPredicate = searchController.searchBar.text
-        println("SearchPredicate: ")
-        println(searchPredicate )
+        let searchQuery = searchController.searchBar.text
         
-        //var filteredArray = allCourses.filter() { $0.abbr == searchPredicate }
-        var filteredArray = allCourses.filter() {$0.abbr?.rangeOfString(searchPredicate, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil}
+        println("searchQuery: ")
+        println(searchQuery)
         
-        //let filteredArray: Array = (allCourses as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        //println("filteredArray: " + String(stringInterpolationSegment: filteredArray))
+        var filteredArray = allCourses.filter() {
+            $0.abbr?.rangeOfString(searchQuery, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil
+        }
         
         self.searchArray = filteredArray as [Course]
         println("searchArray: " + String(stringInterpolationSegment: searchArray))
@@ -150,7 +148,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
             cell.titleLabel?.text = theCourseCell.title
         }
         
-        //resultSearchController.searchBar.hidden = false
+        resultSearchController.searchBar.hidden = false
         return cell
     }
     
@@ -176,17 +174,17 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         //resultSearchController.searchBar.hidden = true
         
         // Search Controller stuff
+        // TODO: Implement this better
         if segue.identifier == "showCourse" {
-            if resultSearchController.active {
-                if let indexPath = tableView.indexPathForSelectedRow() {
-                    let course = searchArray[indexPath.row]
-                    (segue.destinationViewController as! CourseDetailViewController).detailCourse = course
+            var course: Course
+            if let indexPath = tableView.indexPathForSelectedRow() {
+                if resultSearchController.active {
+                    course = searchArray[indexPath.row]
+                } else {
+                    course = allCourses[indexPath.row]
                 }
-            } else {
-                if let indexPath = tableView.indexPathForSelectedRow() {
-                    let course = allCourses[indexPath.row]
-                    (segue.destinationViewController as! CourseDetailViewController).detailCourse = course
-                }
+                
+                (segue.destinationViewController as! CourseDetailViewController).detailCourse = course
             }
         }
     }
