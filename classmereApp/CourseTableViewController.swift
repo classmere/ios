@@ -64,12 +64,13 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         // Search Controller Initialization
         self.resultSearchController = UISearchController(searchResultsController: nil)
         resultSearchController.searchResultsUpdater = self
-        resultSearchController.hidesNavigationBarDuringPresentation = false
+        resultSearchController.hidesNavigationBarDuringPresentation = true
         resultSearchController.dimsBackgroundDuringPresentation = false
         resultSearchController.searchBar.searchBarStyle = .Minimal
         resultSearchController.searchBar.sizeToFit()
         resultSearchController.searchBar.placeholder = "Search by Abbreviation"
         self.tableView.tableHeaderView = resultSearchController.searchBar
+        definesPresentationContext = true
     }
     
     func retrieveCourses() {
@@ -102,9 +103,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         println("searchQuery: ")
         println(searchQuery)
         
-        var filteredArray = allCourses.filter() {
-            $0.abbr?.rangeOfString(searchQuery, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil
-        }
+        var filteredArray = allCourses.filter() { $0.abbr?.rangeOfString(searchQuery, options: .CaseInsensitiveSearch) != nil }
         
         self.searchArray = filteredArray as [Course]
         println("searchArray: " + String(stringInterpolationSegment: searchArray))
@@ -147,8 +146,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
             cell.abbrLabel?.text = theCourseCell.abbr
             cell.titleLabel?.text = theCourseCell.title
         }
-        
-        resultSearchController.searchBar.hidden = false
+
         return cell
     }
     
@@ -171,7 +169,6 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        //resultSearchController.searchBar.hidden = true
         
         // Search Controller stuff
         // TODO: Implement this better
