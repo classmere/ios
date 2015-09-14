@@ -1,5 +1,6 @@
-# OSX Dotfiles
+# OSX/Xcode
 .DS_Store
+xcuserdata
 
 # CocoaPods
 Pods
