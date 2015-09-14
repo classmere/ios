@@ -174,10 +174,19 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         //resultSearchController.searchBar.hidden = true
+        
+        // Search Controller stuff
         if segue.identifier == "showCourse" {
-            if let indexPath = tableView.indexPathForSelectedRow() {
-                let course = allCourses[indexPath.row]
-                (segue.destinationViewController as! CourseDetailViewController).detailCourse = course
+            if resultSearchController.active {
+                if let indexPath = tableView.indexPathForSelectedRow() {
+                    let course = searchArray[indexPath.row]
+                    (segue.destinationViewController as! CourseDetailViewController).detailCourse = course
+                }
+            } else {
+                if let indexPath = tableView.indexPathForSelectedRow() {
+                    let course = allCourses[indexPath.row]
+                    (segue.destinationViewController as! CourseDetailViewController).detailCourse = course
+                }
             }
         }
     }
