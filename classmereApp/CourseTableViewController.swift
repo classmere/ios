@@ -13,14 +13,13 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     
     var allCourses: [Course] = [Course]()
     
-    var abbrArray: [String] = []
-    var searchArray: [String] = [String]() {
+    var searchArray: [Course] = [Course]() {
         didSet {
             self.tableView.reloadData()
         }
     }
     
-    var courseSearchController = UISearchController()
+    var resultSearchController = UISearchController()
     
     /* // Table Section Indexing Stuff
     let collation = UILocalizedIndexedCollation.currentCollation() as! UILocalizedIndexedCollation
@@ -61,13 +60,14 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     func configureView() {
         tableView.rowHeight = 50
         
-        let controller = UISearchController(searchResultsController: nil)
-        controller.searchResultsUpdater = self
-        controller.hidesNavigationBarDuringPresentation = false
-        controller.dimsBackgroundDuringPresentation = false
-        controller.searchBar.searchBarStyle = .Minimal
-        controller.searchBar.sizeToFit()
-        self.tableView.tableHeaderView = controller.searchBar
+        // Search Controller Initilization
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        resultSearchController.searchResultsUpdater = self
+        resultSearchController.hidesNavigationBarDuringPresentation = false
+        resultSearchController.dimsBackgroundDuringPresentation = false
+        resultSearchController.searchBar.searchBarStyle = .Minimal
+        resultSearchController.searchBar.sizeToFit()
+        self.tableView.tableHeaderView = resultSearchController.searchBar
     }
     
     func retrieveCourses() {
@@ -85,11 +85,6 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     func sortAllCourses() {
         allCourses.sort() {$0.abbr < $1.abbr}
         self.tableView.reloadData()
-        
-        for course in allCourses {
-            abbrArray.append(course.abbr!)
-        }
-        println(abbrArray)
     }
     
     // MARK: - Search
@@ -97,14 +92,27 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         self.searchArray.removeAll(keepCapacity: false)
         
-        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
-        // To test this, possibably add [allCourses] abbrs into an array
+        //let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
+        let searchPredicate = searchController.searchBar.text
+        println("SearchPredicate: ")
+        println(searchPredicate )
         
-        let array = (abbrArray as NSArray).filteredArrayUsingPredicate(searchPredicate)
-        self.searchArray = array as! [String]
+        
+        //var filteredArray = allCourses.filter() { $0.abbr == searchPredicate }
+        var filteredArray = allCourses.filter( { (course: Course) -> Bool in
+            //println(course.abbr!)
+            println(course.abbr! == searchPredicate)
+            return course.abbr! == searchPredicate
+        })
+        
+        
+        println("filteredArray: " + String(stringInterpolationSegment: filteredArray))
+        // let array: Array = (filteredArray as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        self.searchArray = filteredArray as [Course]
+        println("searchArray: " + String(stringInterpolationSegment: searchArray))
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table View Data Source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
@@ -113,16 +121,33 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return allCourses.count
+        
+        // Search controller stuff
+        if self.resultSearchController.active {
+            return self.searchArray.count
+        } else {
+            return allCourses.count
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCell", forIndexPath: indexPath) as! CourseTableViewCell
-        let theCourseCell = allCourses[indexPath.row]
-
-        cell.abbrLabel?.text = theCourseCell.abbr
-        cell.titleLabel?.text = theCourseCell.title
         
+        // Search controller stuff
+        if self.resultSearchController.active {
+            let searchCourseCell = searchArray[indexPath.row]
+            
+            cell.abbrLabel?.text = searchCourseCell.abbr
+            cell.titleLabel?.text = searchCourseCell.title
+            
+        } else {
+            let theCourseCell = allCourses[indexPath.row]
+            
+            cell.abbrLabel?.text = theCourseCell.abbr
+            cell.titleLabel?.text = theCourseCell.title
+        }
+        
+
         return cell
     }
     
