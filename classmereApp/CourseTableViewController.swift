@@ -41,6 +41,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }*/
  
     override func viewDidLoad() {
+        println("IN - viewDidLoad()")
         super.viewDidLoad()
         retrieveCourses()
         configureView()
@@ -58,9 +59,10 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func configureView() {
+        println("IN - configureView()")
         tableView.rowHeight = 50
         
-        // Search Controller Initilization
+        // Search Controller Initialization
         self.resultSearchController = UISearchController(searchResultsController: nil)
         resultSearchController.searchResultsUpdater = self
         resultSearchController.hidesNavigationBarDuringPresentation = false
@@ -71,6 +73,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func retrieveCourses() {
+        println("IN - retrieveCourses()")
         APIService.getAllCourses() { (data) -> Void in
             for courseIndex in data {
                 var course: Course = Course(courseJSON: courseIndex.1)
@@ -83,6 +86,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func sortAllCourses() {
+        println("IN - sortAllCourses()")
         allCourses.sort() {$0.abbr < $1.abbr}
         self.tableView.reloadData()
     }
@@ -90,6 +94,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     // MARK: - Search
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
+        println("IN - updateSearchResultsForSearchController()")
         self.searchArray.removeAll(keepCapacity: false)
         
         //let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text)
@@ -97,17 +102,12 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         println("SearchPredicate: ")
         println(searchPredicate )
         
-        
         //var filteredArray = allCourses.filter() { $0.abbr == searchPredicate }
-        var filteredArray = allCourses.filter( { (course: Course) -> Bool in
-            //println(course.abbr!)
-            println(course.abbr! == searchPredicate)
-            return course.abbr! == searchPredicate
-        })
+        var filteredArray = allCourses.filter() {$0.abbr?.rangeOfString(searchPredicate, options: NSStringCompareOptions.CaseInsensitiveSearch) != nil}
         
+        //let filteredArray: Array = (allCourses as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        //println("filteredArray: " + String(stringInterpolationSegment: filteredArray))
         
-        println("filteredArray: " + String(stringInterpolationSegment: filteredArray))
-        // let array: Array = (filteredArray as NSArray).filteredArrayUsingPredicate(searchPredicate)
         self.searchArray = filteredArray as [Course]
         println("searchArray: " + String(stringInterpolationSegment: searchArray))
     }
@@ -115,11 +115,13 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     // MARK: - Table View Data Source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        println("IN - numberOfSectionsInTableView()")
         // Return the number of sections.
         return 1//self.sections.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println("IN - numberOfRowsInSection()")
         // Return the number of rows in the section.
         
         // Search controller stuff
@@ -131,6 +133,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        println("IN - cellForRowAtIndexPath()")
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCell", forIndexPath: indexPath) as! CourseTableViewCell
         
         // Search controller stuff
@@ -147,7 +150,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
             cell.titleLabel?.text = theCourseCell.title
         }
         
-
+        //resultSearchController.searchBar.hidden = false
         return cell
     }
     
@@ -170,6 +173,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        //resultSearchController.searchBar.hidden = true
         if segue.identifier == "showCourse" {
             if let indexPath = tableView.indexPathForSelectedRow() {
                 let course = allCourses[indexPath.row]
