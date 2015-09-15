@@ -10,17 +10,9 @@ import UIKit
 import SwiftyJSON
 
 class CourseTableViewController: UITableViewController, UISearchResultsUpdating {
-    // Table Section Indexing Stuff
-    let collation = UILocalizedIndexedCollation.currentCollation() as! UILocalizedIndexedCollation
-    var sections: [[Course]] = []
     
-    var allCourses: [Course] = [Course]() {
-        didSet {
-            let selector: Selector = "localizedTitle"
-            sections = Array(count: collation.sectionTitles.count, repeatedValue: [])
-            //let sortedObjects = collation.sortedArrayFromArray(allCourses, collationStringSelector: selector)
-        }
-    }
+    var allCourses: [Course] = [Course]()
+    
     var searchArray: [Course] = [Course]() {
         didSet {
             self.tableView.reloadData()
@@ -102,14 +94,12 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         println("IN - numberOfSectionsInTableView()")
         // Return the number of sections.
-        return 1//self.sections.count
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println("IN - numberOfRowsInSection()")
         // Return the number of rows in the section.
-        
-        // Search controller stuff
         if self.resultSearchController.active {
             return self.searchArray.count
         } else {
@@ -121,7 +111,6 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         println("IN - cellForRowAtIndexPath()")
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCell", forIndexPath: indexPath) as! CourseTableViewCell
         
-        // Search controller stuff
         if self.resultSearchController.active {
             let searchCourseCell = searchArray[indexPath.row]
             
@@ -137,28 +126,12 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
 
         return cell
     }
-    
-    /*// New Stuff for tableView sections
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return collation.sectionTitles[section] as? String
-    }
-    
-    override func sectionIndexTitlesForTableView(tableView: UITableView) -> [AnyObject]! {
-        return collation.sectionIndexTitles
-    }
-    
-    override func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
-        return collation.sectionForSectionIndexTitleAtIndex(index)
-    }
-    */
 
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        
-        // Search Controller stuff
         // TODO: Implement this better
         if segue.identifier == "showCourse" {
             var course: Course
