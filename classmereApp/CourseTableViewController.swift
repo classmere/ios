@@ -14,9 +14,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     var allCourses: [Course] = [Course]()
     
     var searchArray: [Course] = [Course]() {
-        didSet {
-            self.tableView.reloadData()
-        }
+        didSet { self.tableView.reloadData() }
     }
     
     var resultSearchController = UISearchController()

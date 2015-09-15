@@ -19,9 +19,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     var detailCourse: Course? {
-        didSet {
-            configureView()
-        }
+        didSet { configureView() }
     }
     
     var course: Course?

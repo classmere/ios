@@ -7,6 +7,7 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'HanekeSwift'
 pod 'ObjectMapper'
+pod 'SwiftSpinner'
 end
 
 target 'classmereAppTests' do
