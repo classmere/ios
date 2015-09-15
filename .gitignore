@@ -1,6 +1,7 @@
 # OSX/Xcode
 .DS_Store
 xcuserdata
+classmereApp.xcworkspace/xcuserdata/BrandonLee.xcuserdatad/UserInterfaceState.xcuserstate
 
 # CocoaPods
 Pods
