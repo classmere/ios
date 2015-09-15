@@ -14,11 +14,9 @@ class SectionViewController: UIViewController {
     @IBOutlet weak var dayLabel: UILabel?
     @IBOutlet weak var startTimeLabel: UILabel?
     @IBOutlet weak var endTimeLabel: UILabel?
-    @IBOutlet weak var startDateLabel: UILabel?
-    @IBOutlet weak var endDateLabel: UILabel?
     @IBOutlet weak var locationLabel: UILabel?
     @IBOutlet weak var termLabel: UILabel?
-    @IBOutlet weak var sessionLabel: UILabel?
+    @IBOutlet weak var sectionNumberLabel: UILabel?
     @IBOutlet weak var crnLabel: UILabel?
     @IBOutlet weak var statusLabel: UILabel?
     @IBOutlet weak var capacityLabel: UILabel?
@@ -44,11 +42,9 @@ class SectionViewController: UIViewController {
             self.dayLabel?.text = section.days
             self.startTimeLabel?.text = section.startTime
             self.endTimeLabel?.text = section.endTime
-            self.startDateLabel?.text = section.startDate
-            self.endDateLabel?.text = section.endDate
             self.locationLabel?.text = section.location
             self.termLabel?.text = section.term
-            self.sessionLabel?.text = section.session
+            self.sectionNumberLabel?.text = String(section.sectionNumber!)
             self.crnLabel?.text = String(stringInterpolationSegment: section.crn!)
             self.statusLabel?.text = section.status
             self.capacityLabel?.text = String(stringInterpolationSegment: section.capacity!)

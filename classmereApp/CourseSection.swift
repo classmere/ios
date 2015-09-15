@@ -13,7 +13,6 @@ struct CourseSection {
     let term: String?
     let startDate: String?
     let endDate: String?
-    let session: String?
     let crn: Int?
     let sectionNumber: Int?
     let instructor: String?
@@ -38,9 +37,8 @@ struct CourseSection {
         term = sectionJSON["term"].string as String?
         startDate = sectionJSON["startDate"].string as String?
         endDate = sectionJSON["endDate"].string as String?
-        session = sectionJSON["session"].string as String?
         crn = sectionJSON["crn"].intValue as Int?
-        sectionNumber = sectionJSON["sectionNumber"].intValue as Int?
+        sectionNumber = sectionJSON["section"].intValue as Int?
         instructor = sectionJSON["instructor"].string as String?
         days = sectionJSON["days"].string as String?
         startTime = sectionJSON["startTime"].string as String?

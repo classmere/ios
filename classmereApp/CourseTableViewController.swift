@@ -10,8 +10,17 @@ import UIKit
 import SwiftyJSON
 
 class CourseTableViewController: UITableViewController, UISearchResultsUpdating {
-    var allCourses: [Course] = [Course]()
+    // Table Section Indexing Stuff
+    let collation = UILocalizedIndexedCollation.currentCollation() as! UILocalizedIndexedCollation
+    var sections: [[Course]] = []
     
+    var allCourses: [Course] = [Course]() {
+        didSet {
+            let selector: Selector = "localizedTitle"
+            sections = Array(count: collation.sectionTitles.count, repeatedValue: [])
+            //let sortedObjects = collation.sortedArrayFromArray(allCourses, collationStringSelector: selector)
+        }
+    }
     var searchArray: [Course] = [Course]() {
         didSet {
             self.tableView.reloadData()
@@ -20,25 +29,6 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     
     var resultSearchController = UISearchController()
     
-    /* // Table Section Indexing Stuff
-    let collation = UILocalizedIndexedCollation.currentCollation() as! UILocalizedIndexedCollation
-    var sections: [[AnyObject]] = []
-    
-    {
-        didSet {
-            let selector: Selector = "localizedTitle"
-            sections = Array(count: collation.sectionTitles.count, repeatedValue: [])
-            
-            let sortedObjects = collation.sortedArrayFromArray(allCourses, collationStringSelector: selector)
-            for object in sortedObjects {
-                let sectionNumber = collation.sectionForObject(object, collationStringSelector: selector)
-                sections[sectionNumber].append(object)
-            }
-            
-            self.tableView.reloadData()
-        }
-    }*/
- 
     override func viewDidLoad() {
         println("IN - viewDidLoad()")
         super.viewDidLoad()
@@ -148,7 +138,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         return cell
     }
     
-    /* // New Stuff for tableView sections
+    /*// New Stuff for tableView sections
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return collation.sectionTitles[section] as? String
     }
