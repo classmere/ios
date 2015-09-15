@@ -49,7 +49,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
                     let minimumCredit = creditsArray[0] as Int
                     self.creditsLabel?.text = String(minimumCredit)
                 }
-                
+
                 self.tableView.reloadData()
             }
         }
