@@ -46,7 +46,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         resultSearchController.searchResultsUpdater = self
         resultSearchController.dimsBackgroundDuringPresentation = false
         resultSearchController.searchBar.sizeToFit()
-        resultSearchController.searchBar.placeholder = "Search by Abbreviation"
+        resultSearchController.searchBar.placeholder = "Search Courses"
         self.tableView.tableHeaderView = resultSearchController.searchBar
         definesPresentationContext = true
     }
@@ -81,7 +81,10 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         println("searchQuery: ")
         println(searchQuery)
         
-        var filteredArray = allCourses.filter() { $0.abbr?.rangeOfString(searchQuery, options: .CaseInsensitiveSearch) != nil }
+        var filteredArray = allCourses.filter() {
+            $0.abbr?.rangeOfString(searchQuery, options: .CaseInsensitiveSearch) != nil ||
+            $0.title?.rangeOfString(searchQuery, options: .CaseInsensitiveSearch) != nil
+        }
         
         self.searchArray = filteredArray as [Course]
         println("searchArray: " + String(stringInterpolationSegment: searchArray))
