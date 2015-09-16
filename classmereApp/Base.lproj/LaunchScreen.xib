@@ -11,17 +11,17 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iTunes" translatesAutoresizingMaskIntoConstraints="NO" id="LMp-dZ-Ax7">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="al9-v9-vPP">
                     <rect key="frame" x="-16" y="-16" width="512" height="512"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="LMp-dZ-Ax7" secondAttribute="height" multiplier="1:1" id="GpD-df-6GT"/>
+                        <constraint firstAttribute="width" secondItem="al9-v9-vPP" secondAttribute="height" multiplier="1:1" id="gwu-Kz-jTG"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.88627450980392153" green="0.56862745098039214" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="LMp-dZ-Ax7" secondAttribute="centerX" id="CRJ-vy-ZEU"/>
-                <constraint firstAttribute="centerY" secondItem="LMp-dZ-Ax7" secondAttribute="centerY" id="KuL-ln-VkR"/>
+                <constraint firstAttribute="centerX" secondItem="al9-v9-vPP" secondAttribute="centerX" id="uY3-yz-xM2"/>
+                <constraint firstAttribute="centerY" secondItem="al9-v9-vPP" secondAttribute="centerY" id="vkr-Gq-Cp0"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -29,6 +29,6 @@
         </view>
     </objects>
     <resources>
-        <image name="iTunes" width="512" height="512"/>
+        <image name="iTunesArtwork" width="512" height="512"/>
     </resources>
 </document>
