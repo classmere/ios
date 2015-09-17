@@ -2,33 +2,32 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="al9-v9-vPP">
-                    <rect key="frame" x="-16" y="-16" width="512" height="512"/>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" misplaced="YES" image="iconPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="hgN-ti-Wee">
+                    <rect key="frame" x="0.0" y="-239" width="379" height="1146"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="al9-v9-vPP" secondAttribute="height" multiplier="1:1" id="gwu-Kz-jTG"/>
+                        <constraint firstAttribute="width" constant="379" id="E1D-1s-pNJ"/>
+                        <constraint firstAttribute="height" constant="1146" id="wyo-2R-p4X"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.88627450980392153" green="0.56862745098039214" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="al9-v9-vPP" secondAttribute="centerX" id="uY3-yz-xM2"/>
-                <constraint firstAttribute="centerY" secondItem="al9-v9-vPP" secondAttribute="centerY" id="vkr-Gq-Cp0"/>
+                <constraint firstAttribute="centerY" secondItem="hgN-ti-Wee" secondAttribute="centerY" id="eao-Wi-Ve7"/>
+                <constraint firstAttribute="centerX" secondItem="hgN-ti-Wee" secondAttribute="centerX" id="j3t-SY-J90"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="548" y="455"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="547.5" y="454.5"/>
         </view>
     </objects>
     <resources>
-        <image name="iTunesArtwork" width="512" height="512"/>
+        <image name="iconPortrait" width="1152" height="2048"/>
     </resources>
 </document>
