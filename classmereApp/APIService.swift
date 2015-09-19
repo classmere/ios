@@ -18,43 +18,49 @@ struct APIService {
     static func getAllCourses(completion: (JSON) -> Void) {
         SwiftSpinner.show("Fetching Data...")
         Alamofire.request(.GET, "\(baseURL)/courses/")
-            .responseJSON {(request, response, data, error) in
-                if error == nil {
-                    var theData = JSON(data!)
-                    completion(theData)
+            .responseJSON {(request, response, result) in
+                switch result {
+                case .Success(let data):
+                    completion(JSON(data))
                     SwiftSpinner.hide()
-                } else {
-                    println(error)
+                    
+                case .Failure(_, let error):
+                    print("Request failed with error: \(error)")
+                    SwiftSpinner.hide()
                 }
         }
     }
     
     static func getCourseByAbbr(abbr: String, completion: (JSON) -> Void) {
         SwiftSpinner.show("Fetching Data...")
-        let encodedAbbr: String = "\(abbr)".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let encodedAbbr: String = "\(abbr)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         Alamofire.request(.GET, "\(baseURL)/courses/\(encodedAbbr)")
-            .responseJSON {(request, response, data, error) in
-                if error == nil {
-                    var theData = JSON(data!)
-                    completion(theData)
+            .responseJSON {(request, response, result) in
+                switch result {
+                case .Success(let data):
+                    completion(JSON(data))
                     SwiftSpinner.hide()
-                } else {
-                    println(error)
+                    
+                case .Failure( _, let error):
+                    print("Request failed with error: \(error)")
+                    SwiftSpinner.hide()
                 }
         }
     }
     
     static func searchCourse(searchQuery: String, completion: (JSON) -> Void) {
         SwiftSpinner.show("Fetching Data...")
-        let encodedSearchQuery: String = "\(searchQuery)".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        let encodedSearchQuery: String = "\(searchQuery)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         Alamofire.request(.GET, "\(baseURL)/search/courses/\(encodedSearchQuery)")
-            .responseJSON {(request, response, data, error) in
-                if error == nil {
-                    var theData = JSON(data!)
-                    completion(theData)
+            .responseJSON {(request, response, result) in
+                switch result {
+                case .Success(let data):
+                    completion(JSON(data))
                     SwiftSpinner.hide()
-                } else {
-                    println(error)
+                    
+                case .Failure(_, let error):
+                    print("Request failed with error: \(error)")
+                    SwiftSpinner.hide()
                 }
         }
     }
