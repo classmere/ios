@@ -20,7 +20,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     var resultSearchController = UISearchController()
     
     override func viewDidLoad() {
-        println("IN - viewDidLoad()")
+        print("IN - viewDidLoad()")
         super.viewDidLoad()
         retrieveCourses()
         configureView()
@@ -38,7 +38,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func configureView() {
-        println("IN - configureView()")
+        print("IN - configureView()")
         tableView.rowHeight = 50
         
         // Search Controller Initialization
@@ -52,12 +52,12 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func retrieveCourses() {
-        println("IN - retrieveCourses()")
+        print("IN - retrieveCourses()")
         APIService.getAllCourses() { (data) -> Void in
             for courseIndex in data {
-                var course: Course = Course(courseJSON: courseIndex.1)
+                let course: Course = Course(courseJSON: courseIndex.1)
                 self.allCourses.append(course)
-                println("Course Index: " + String(self.allCourses.count))
+                print("Course Index: " + String(self.allCourses.count))
             }
             
             self.sortAllCourses()
@@ -65,41 +65,40 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func sortAllCourses() {
-        println("IN - sortAllCourses()")
-        allCourses.sort() {$0.abbr < $1.abbr}
+        print("IN - sortAllCourses()")
+        allCourses.sortInPlace() {$0.abbr < $1.abbr}
         self.tableView.reloadData()
     }
     
     // MARK: - Search
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        println("IN - updateSearchResultsForSearchController()")
+        print("IN - updateSearchResultsForSearchController()")
         self.searchArray.removeAll(keepCapacity: false)
         
         let searchQuery = searchController.searchBar.text
         
-        println("searchQuery: ")
-        println(searchQuery)
+        print("searchQuery: ")
+        print(searchQuery)
         
-        var filteredArray = allCourses.filter() {
-            $0.abbr?.rangeOfString(searchQuery, options: .CaseInsensitiveSearch) != nil ||
-            $0.title?.rangeOfString(searchQuery, options: .CaseInsensitiveSearch) != nil
+        let filteredArray = allCourses.filter() {
+            $0.abbr?.rangeOfString(searchQuery!, options: .CaseInsensitiveSearch) != nil ||
+            $0.title?.rangeOfString(searchQuery!, options: .CaseInsensitiveSearch) != nil
         }
         
         self.searchArray = filteredArray as [Course]
-        println("searchArray: " + String(stringInterpolationSegment: searchArray))
     }
     
     // MARK: - Table View Data Source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        println("IN - numberOfSectionsInTableView()")
+        print("IN - numberOfSectionsInTableView()")
         // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println("IN - numberOfRowsInSection()")
+        print("IN - numberOfRowsInSection()")
         // Return the number of rows in the section.
         if self.resultSearchController.active {
             return self.searchArray.count
@@ -109,7 +108,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println("IN - cellForRowAtIndexPath()")
+        print("IN - cellForRowAtIndexPath()")
         let cell = tableView.dequeueReusableCellWithIdentifier("CourseCell", forIndexPath: indexPath) as! CourseTableViewCell
         
         if self.resultSearchController.active {
@@ -136,7 +135,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         // TODO: Implement this better
         if segue.identifier == "showCourse" {
             var course: Course
-            if let indexPath = tableView.indexPathForSelectedRow() {
+            if let indexPath = tableView.indexPathForSelectedRow {
                 if resultSearchController.active {
                     course = searchArray[indexPath.row]
                 } else {

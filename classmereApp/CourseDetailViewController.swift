@@ -36,7 +36,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         if let theCourse: Course = self.detailCourse as Course! {
             
-            var abbr: String = theCourse.abbr!
+            let abbr: String = theCourse.abbr!
             
             APIService.getCourseByAbbr(abbr) { (data) -> Void in
                 self.course = Course(courseJSON: data)
@@ -91,7 +91,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if segue.identifier == "showSection" {
-            if let indexPath = tableView.indexPathForSelectedRow() {
+            if let indexPath = tableView.indexPathForSelectedRow {
                 let section = course?.courseSections[indexPath.row]
                 (segue.destinationViewController as! SectionViewController).detailSection = section
             }
