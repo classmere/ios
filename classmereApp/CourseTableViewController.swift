@@ -31,7 +31,7 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,6 +50,8 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         self.tableView.tableHeaderView = resultSearchController.searchBar
         definesPresentationContext = true
     }
+    
+    // MARK: - Networking
     
     func retrieveCourses() {
         print("IN - retrieveCourses()")
@@ -113,13 +115,11 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
         
         if self.resultSearchController.active {
             let searchCourseCell = searchArray[indexPath.row]
-            
             cell.abbrLabel?.text = searchCourseCell.abbr
             cell.titleLabel?.text = searchCourseCell.title
             
         } else {
             let theCourseCell = allCourses[indexPath.row]
-            
             cell.abbrLabel?.text = theCourseCell.abbr
             cell.titleLabel?.text = theCourseCell.title
         }

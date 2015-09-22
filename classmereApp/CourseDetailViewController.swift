@@ -55,6 +55,12 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        print("IN - viewDidAppear")
+        super.viewDidAppear(animated)
+        self.tableView.flashScrollIndicators()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
