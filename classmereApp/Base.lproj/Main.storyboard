@@ -373,7 +373,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Enrolled:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RO-lC-W6i">
-                                <rect key="frame" x="16" y="343" width="129" height="21"/>
+                                <rect key="frame" x="16" y="343" width="130" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ob7-6b-Zit"/>
                                 </constraints>
@@ -459,7 +459,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5RO-lC-W6i" firstAttribute="trailing" secondItem="36q-6u-eXm" secondAttribute="trailing" id="01h-BB-l6c"/>
+                            <constraint firstItem="5RO-lC-W6i" firstAttribute="trailing" secondItem="36q-6u-eXm" secondAttribute="trailing" constant="1" id="01h-BB-l6c"/>
                             <constraint firstItem="Snm-50-wdN" firstAttribute="baseline" secondItem="yRB-Fl-pL1" secondAttribute="baseline" id="0eZ-4a-N0B"/>
                             <constraint firstItem="eCz-Fr-oZG" firstAttribute="centerX" secondItem="Gvt-Y1-laT" secondAttribute="centerX" id="1iC-NH-RkF"/>
                             <constraint firstItem="Gvt-Y1-laT" firstAttribute="trailing" secondItem="yRB-Fl-pL1" secondAttribute="trailing" id="21n-rp-LNw"/>
@@ -504,7 +504,7 @@
                             <constraint firstItem="5R7-2I-j3z" firstAttribute="firstBaseline" secondItem="TKJ-iB-BLs" secondAttribute="firstBaseline" id="OKo-ej-eOY"/>
                             <constraint firstItem="R4X-oI-wsQ" firstAttribute="top" secondItem="b6t-XU-3oy" secondAttribute="bottom" constant="8" symbolic="YES" id="OaR-ge-vfC"/>
                             <constraint firstItem="5R7-2I-j3z" firstAttribute="leading" secondItem="57m-Xx-Qzz" secondAttribute="leading" id="Oy5-7C-Dur"/>
-                            <constraint firstItem="5RO-lC-W6i" firstAttribute="trailing" secondItem="R4X-oI-wsQ" secondAttribute="trailing" id="P6e-xS-6c5"/>
+                            <constraint firstItem="5RO-lC-W6i" firstAttribute="trailing" secondItem="R4X-oI-wsQ" secondAttribute="trailing" constant="1" id="P6e-xS-6c5"/>
                             <constraint firstItem="57m-Xx-Qzz" firstAttribute="leading" secondItem="dc9-uv-enn" secondAttribute="leading" id="P7g-0o-IcJ"/>
                             <constraint firstItem="y0p-9F-M9Q" firstAttribute="trailing" secondItem="dc9-uv-enn" secondAttribute="trailing" id="S1x-Gj-RSp"/>
                             <constraint firstItem="zbW-uj-n74" firstAttribute="firstBaseline" secondItem="R4X-oI-wsQ" secondAttribute="firstBaseline" id="ShZ-h7-Sdg"/>
