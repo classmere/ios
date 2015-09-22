@@ -26,7 +26,7 @@ struct Course {
         // If sections exist, for each section in JSON array, create a CourseSection object
         if let sectionArray = courseJSON["sections"].array {
             for theSection in sectionArray {
-                var courseSection = CourseSection(sectionJSON: theSection)
+                let courseSection = CourseSection(sectionJSON: theSection)
                 courseSections.append(courseSection)
             }
         }
