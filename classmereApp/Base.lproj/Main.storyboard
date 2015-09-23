@@ -412,7 +412,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="avalaibleSpotsLabel" destination="ncj-bt-6Ge" id="MOR-JI-LVS"/>
+                        <outlet property="availableSpotsLabel" destination="ncj-bt-6Ge" id="yWd-qy-WV2"/>
                         <outlet property="capacityLabel" destination="zbW-uj-n74" id="sCx-T9-9Hq"/>
                         <outlet property="crnLabel" destination="Snm-50-wdN" id="7yk-Eg-c7a"/>
                         <outlet property="currentEnrolledLabel" destination="Wa4-5h-H3y" id="Z9e-g0-3xp"/>

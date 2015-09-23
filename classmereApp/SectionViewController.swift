@@ -23,9 +23,7 @@ class SectionViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel?
     @IBOutlet weak var capacityLabel: UILabel?
     @IBOutlet weak var currentEnrolledLabel: UILabel?
-    
-    // FIXME: Change typo to 'Available'
-    @IBOutlet weak var avalaibleSpotsLabel: UILabel?
+    @IBOutlet weak var availableSpotsLabel: UILabel!
     @IBOutlet weak var restrictionsLabel: UILabel?
     
     var detailSection: CourseSection? {
@@ -55,7 +53,7 @@ class SectionViewController: UIViewController {
             self.statusLabel?.text = section.status
             self.capacityLabel?.text = String(stringInterpolationSegment: section.capacity!)
             self.currentEnrolledLabel?.text = String(stringInterpolationSegment: section.currentEnrollment!)
-            self.avalaibleSpotsLabel?.text = String(section.capacity! - section.currentEnrollment!)
+            self.availableSpotsLabel?.text = String(section.capacity! - section.currentEnrollment!)
             self.restrictionsLabel?.text = section.restrictions
         }
     }
