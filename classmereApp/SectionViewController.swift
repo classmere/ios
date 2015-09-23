@@ -10,6 +10,8 @@ import UIKit
 
 class SectionViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var instructorLabel: UILabel?
     @IBOutlet weak var dayLabel: UILabel?
     @IBOutlet weak var startTimeLabel: UILabel?
@@ -21,13 +23,13 @@ class SectionViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel?
     @IBOutlet weak var capacityLabel: UILabel?
     @IBOutlet weak var currentEnrolledLabel: UILabel?
+    
+    // FIXME: Change typo to 'Available'
     @IBOutlet weak var avalaibleSpotsLabel: UILabel?
     @IBOutlet weak var restrictionsLabel: UILabel?
     
     var detailSection: CourseSection? {
-        didSet {
-            configureView()
-        }
+        didSet { configureView() }
     }
     
     func configureView() {
@@ -37,6 +39,10 @@ class SectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        scrollView.contentSize.height = 700
+        scrollView.contentOffset = CGPoint(x: 0, y: 75)
+        
         if let section = detailSection as CourseSection! {
             self.instructorLabel?.text = section.instructor
             self.dayLabel?.text = section.days
