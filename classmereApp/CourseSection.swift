@@ -32,7 +32,6 @@ struct CourseSection {
     let currentEnrollment: Int?
     let capacity: Int?
     
-    // TODO: Might wanna make this prettier...
     init(sectionJSON: JSON) {
         term = sectionJSON["term"].string as String?
         startDate = sectionJSON["startDate"].string as String?

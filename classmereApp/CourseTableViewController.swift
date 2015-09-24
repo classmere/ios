@@ -95,13 +95,11 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         print("IN - numberOfSectionsInTableView()")
-        // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("IN - numberOfRowsInSection()")
-        // Return the number of rows in the section.
         if self.resultSearchController.active {
             return self.searchArray.count
         } else {
@@ -132,7 +130,6 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        // TODO: Implement this better
         if segue.identifier == "showCourse" {
             var course: Course
             if let indexPath = tableView.indexPathForSelectedRow {
