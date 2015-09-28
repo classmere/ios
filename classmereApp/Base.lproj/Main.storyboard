@@ -73,6 +73,7 @@
                     <navigationItem key="navigationItem" title="Courses" id="Mxv-sB-dDn"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="pmi-18-bPS" id="DXz-sK-yyv"/>
+                        <segue destination="8f2-s8-uDt" kind="presentation" identifier="firstLaunch" id="lAg-mL-aJU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAH-v0-A6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,6 +87,81 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-174" y="339"/>
+        </scene>
+        <!--First Launch View Controller-->
+        <scene sceneID="khQ-43-J8U">
+            <objects>
+                <viewController id="8f2-s8-uDt" customClass="FirstLaunchViewController" customModule="classmereApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XMz-Zn-X9X"/>
+                        <viewControllerLayoutGuide type="bottom" id="6B9-CJ-44S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UBB-vg-7bT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Classmere" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kh3-ms-BgN">
+                                <rect key="frame" x="212" y="290" width="176" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="ANz-PD-0wJ"/>
+                                    <constraint firstAttribute="height" constant="20" id="oUV-qe-NBM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classmere is the easiest way to lookup courses, and all on your phone!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4n-7O-oGn">
+                                <rect key="frame" x="125" y="313" width="351" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="351" id="Dg4-ZN-f8b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcV-xo-n2H">
+                                <rect key="frame" x="235" y="155" width="130" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="jBy-sz-LW7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="60"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-BL-Ohl">
+                                <rect key="frame" x="207" y="480" width="186" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="ZRu-Km-8tw"/>
+                                    <constraint firstAttribute="width" constant="186" id="jQz-rk-vv7"/>
+                                </constraints>
+                                <state key="normal" title="Start Searching!">
+                                    <color key="titleColor" red="0.88627450980392153" green="0.56862745098039214" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPress:" destination="8f2-s8-uDt" eventType="touchUpInside" id="RWb-Xc-mPv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.88627450980392153" green="0.56862745098039214" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="32Q-BL-Ohl" firstAttribute="top" secondItem="T4n-7O-oGn" secondAttribute="bottom" constant="8" symbolic="YES" id="9ge-KX-Ro9"/>
+                            <constraint firstItem="T4n-7O-oGn" firstAttribute="top" secondItem="kh3-ms-BgN" secondAttribute="bottom" constant="3" id="AEz-h7-q7K"/>
+                            <constraint firstItem="kh3-ms-BgN" firstAttribute="centerY" secondItem="UBB-vg-7bT" secondAttribute="centerY" id="GDK-A3-8EV"/>
+                            <constraint firstItem="kh3-ms-BgN" firstAttribute="centerX" secondItem="qcV-xo-n2H" secondAttribute="centerX" id="Ldg-cD-NK3"/>
+                            <constraint firstItem="qcV-xo-n2H" firstAttribute="top" secondItem="XMz-Zn-X9X" secondAttribute="bottom" constant="135" id="Q13-kG-vPV"/>
+                            <constraint firstItem="T4n-7O-oGn" firstAttribute="centerX" secondItem="32Q-BL-Ohl" secondAttribute="centerX" id="Srg-5m-F8M"/>
+                            <constraint firstItem="kh3-ms-BgN" firstAttribute="top" secondItem="qcV-xo-n2H" secondAttribute="bottom" constant="8" symbolic="YES" id="TOc-tQ-QCc"/>
+                            <constraint firstItem="6B9-CJ-44S" firstAttribute="top" secondItem="32Q-BL-Ohl" secondAttribute="bottom" constant="72" id="dhI-Sh-mo1"/>
+                            <constraint firstItem="T4n-7O-oGn" firstAttribute="centerX" secondItem="UBB-vg-7bT" secondAttribute="centerX" id="ncF-Ln-1sw"/>
+                            <constraint firstItem="T4n-7O-oGn" firstAttribute="centerX" secondItem="kh3-ms-BgN" secondAttribute="centerX" id="qj9-mY-gqQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMS-Kb-eDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="1059"/>
         </scene>
         <!--Course Detail View Controller-->
         <scene sceneID="ufC-wZ-h7g">

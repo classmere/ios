@@ -22,6 +22,18 @@ class CourseTableViewController: UITableViewController, UISearchResultsUpdating 
     override func viewDidLoad() {
         print("IN - viewDidLoad()")
         super.viewDidLoad()
+        
+        // TODO: Double check that this works
+        // Check if user is brand new
+        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
+        if firstLaunch {
+            print("Client has launched before")
+        } else {
+            print("First launch. Setting NSUserDefaults(FirstLaunch).")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+            self.performSegueWithIdentifier("firstLaunch", sender: self)
+        }
+        
         retrieveCourses()
         configureView()
         
