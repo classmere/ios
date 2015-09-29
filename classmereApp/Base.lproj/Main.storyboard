@@ -119,15 +119,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcV-xo-n2H">
-                                <rect key="frame" x="235" y="155" width="130" height="127"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="jBy-sz-LW7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="60"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32Q-BL-Ohl">
                                 <rect key="frame" x="207" y="480" width="186" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -143,17 +134,23 @@
                                     <action selector="startButtonPress:" destination="8f2-s8-uDt" eventType="touchUpInside" id="RWb-Xc-mPv"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="classmereLogoOrange" translatesAutoresizingMaskIntoConstraints="NO" id="llX-IX-NxW">
+                                <rect key="frame" x="219" y="123" width="163" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="163" id="nIg-pR-afW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.88627450980392153" green="0.56862745098039214" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="llX-IX-NxW" firstAttribute="centerX" secondItem="kh3-ms-BgN" secondAttribute="centerX" id="4j4-R1-hz6"/>
                             <constraint firstItem="32Q-BL-Ohl" firstAttribute="top" secondItem="T4n-7O-oGn" secondAttribute="bottom" constant="8" symbolic="YES" id="9ge-KX-Ro9"/>
                             <constraint firstItem="T4n-7O-oGn" firstAttribute="top" secondItem="kh3-ms-BgN" secondAttribute="bottom" constant="3" id="AEz-h7-q7K"/>
                             <constraint firstItem="kh3-ms-BgN" firstAttribute="centerY" secondItem="UBB-vg-7bT" secondAttribute="centerY" id="GDK-A3-8EV"/>
-                            <constraint firstItem="kh3-ms-BgN" firstAttribute="centerX" secondItem="qcV-xo-n2H" secondAttribute="centerX" id="Ldg-cD-NK3"/>
-                            <constraint firstItem="qcV-xo-n2H" firstAttribute="top" secondItem="XMz-Zn-X9X" secondAttribute="bottom" constant="135" id="Q13-kG-vPV"/>
+                            <constraint firstItem="llX-IX-NxW" firstAttribute="top" secondItem="XMz-Zn-X9X" secondAttribute="bottom" constant="103" id="Mg9-yQ-jZp"/>
                             <constraint firstItem="T4n-7O-oGn" firstAttribute="centerX" secondItem="32Q-BL-Ohl" secondAttribute="centerX" id="Srg-5m-F8M"/>
-                            <constraint firstItem="kh3-ms-BgN" firstAttribute="top" secondItem="qcV-xo-n2H" secondAttribute="bottom" constant="8" symbolic="YES" id="TOc-tQ-QCc"/>
                             <constraint firstItem="6B9-CJ-44S" firstAttribute="top" secondItem="32Q-BL-Ohl" secondAttribute="bottom" constant="72" id="dhI-Sh-mo1"/>
+                            <constraint firstItem="kh3-ms-BgN" firstAttribute="top" secondItem="llX-IX-NxW" secondAttribute="bottom" constant="8" symbolic="YES" id="kwE-gw-N9W"/>
                             <constraint firstItem="T4n-7O-oGn" firstAttribute="centerX" secondItem="UBB-vg-7bT" secondAttribute="centerX" id="ncF-Ln-1sw"/>
                             <constraint firstItem="T4n-7O-oGn" firstAttribute="centerX" secondItem="kh3-ms-BgN" secondAttribute="centerX" id="qj9-mY-gqQ"/>
                         </constraints>
@@ -509,4 +506,7 @@
             <point key="canvasLocation" x="532" y="1059"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="classmereLogoOrange" width="1040" height="1040"/>
+    </resources>
 </document>
