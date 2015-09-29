@@ -20,6 +20,7 @@ class SectionViewController: UIViewController {
     @IBOutlet weak var termLabel: UILabel?
     @IBOutlet weak var sectionNumberLabel: UILabel?
     @IBOutlet weak var crnLabel: UILabel?
+    @IBOutlet weak var typeLabel: UILabel?
     @IBOutlet weak var statusLabel: UILabel?
     @IBOutlet weak var capacityLabel: UILabel?
     @IBOutlet weak var currentEnrolledLabel: UILabel?
@@ -49,6 +50,7 @@ class SectionViewController: UIViewController {
             self.termLabel?.text = section.term
             self.sectionNumberLabel?.text = String(section.sectionNumber!)
             self.crnLabel?.text = String(stringInterpolationSegment: section.crn!)
+            self.typeLabel?.text = section.type
             self.statusLabel?.text = section.status
             self.capacityLabel?.text = String(stringInterpolationSegment: section.capacity!)
             self.currentEnrolledLabel?.text = String(stringInterpolationSegment: section.currentEnrollment!)
