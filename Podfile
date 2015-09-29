@@ -8,7 +8,6 @@ pod 'SwiftyJSON'
 #pod 'ReactiveCocoa'
 #pod 'ObjectMapper'
 pod 'SwiftSpinner'
-pod 'Onboard'
 end
 
 target 'classmereAppTests' do
