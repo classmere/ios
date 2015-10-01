@@ -11,27 +11,36 @@ import SwiftyJSON
 
 struct CourseSection {
     let term: String?
-    let startDate: String?
-    let endDate: String?
+    let session: String?
     let crn: Int?
-    let sectionNumber: Int?
-    let instructor: String?
+    let meetingTimes: [JSON]
+    
+    // Within the array
+    let buildingCode: String?
     let days: String?
     let startTime: String?
     let endTime: String?
-    let location: String?
+    let roomNumber: String?
+    
+    // --
+    let startDate: String?
+    let endDate: String?
     let campus: String?
     let type: String?
     let status: String?
-    let enrolled: Int?
+    let capacity: Int?
+    let currentEnrollment: Int?
+    let waitlistCurrent: Int?
     let fees: String?
     let restrictions: String?
+    
+    // Missing...
+    let sectionNumber: Int?
+    let instructor: String?
+    let enrolled: Int?
     let comments: String?
     let waitlistCapacity: Int?
-    let waitlistCurrent: Int?
-    let currentEnrollment: Int?
-    let capacity: Int?
-    
+
     init(sectionJSON: JSON) {
         term = sectionJSON["term"].string as String?
         startDate = sectionJSON["startDate"].string as String?
