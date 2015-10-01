@@ -88,6 +88,24 @@
             </objects>
             <point key="canvasLocation" x="-174" y="339"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dvG-yC-Xdr">
+            <objects>
+                <viewController id="Ps7-Mj-q9P" customClass="ViewController" customModule="classmereApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BLw-Pz-jaE"/>
+                        <viewControllerLayoutGuide type="bottom" id="hFX-VQ-YFz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jfv-VY-7WJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hK-ES-cbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-894" y="1122"/>
+        </scene>
         <!--First Launch View Controller-->
         <scene sceneID="khQ-43-J8U">
             <objects>
