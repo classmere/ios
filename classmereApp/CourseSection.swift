@@ -15,12 +15,10 @@ struct CourseSection {
     
     // Within the array
     let buildingCode: String?
-    /*
     let days: String?
     let startTime: String?
     let endTime: String?
     let roomNumber: String?
-    */
     
     // --
     let type: String?
@@ -44,10 +42,18 @@ struct CourseSection {
         term = sectionJSON["term"].string as String?
         crn = sectionJSON["crn"].intValue as Int?
         
-        
         if let meetingTimes = sectionJSON["meetingTimes"].array {
-            buildingCode = meetingTimes[0]["buildingCode"] as String?
-            print(meetingTimes[0]["buildingCode"])
+            buildingCode = meetingTimes[0]["buildingCode"].string
+            days = meetingTimes[0]["days"].string
+            startTime = meetingTimes[0]["startTime"].string
+            endTime = meetingTimes[0]["endTime"].string
+            roomNumber = meetingTimes[0]["roomNumber"].string
+        } else {
+            buildingCode = nil
+            days = nil
+            startTime = nil
+            endTime = nil
+            roomNumber = nil
         }
         
         type = sectionJSON["type"].string as String?
