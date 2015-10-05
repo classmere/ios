@@ -43,10 +43,10 @@ class SectionViewController: UIViewController {
         
         if let section = detailSection as CourseSection! {
             //self.instructorLabel?.text = section.instructor
-            //self.dayLabel?.text = section.days
-            //self.startTimeLabel?.text = section.startTime
-            //self.endTimeLabel?.text = section.endTime
-            //self.locationLabel?.text = section.location
+            self.dayLabel?.text = section.days
+            self.startTimeLabel?.text = section.startTime
+            self.endTimeLabel?.text = section.endTime
+            self.locationLabel?.text = section.buildingCode! + " " + section.roomNumber!
             self.termLabel?.text = section.term
             //self.sectionNumberLabel?.text = String(section.sectionNumber!)
             self.crnLabel?.text = String(stringInterpolationSegment: section.crn!)
