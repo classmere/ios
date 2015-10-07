@@ -20,20 +20,6 @@
                ReferencedContainer = "container:classmereApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1604B17C1B8D5459003A1E8E"
-               BuildableName = "classmereAppTests.xctest"
-               BlueprintName = "classmereAppTests"
-               ReferencedContainer = "container:classmereApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

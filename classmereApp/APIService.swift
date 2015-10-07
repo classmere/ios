@@ -38,7 +38,7 @@ struct APIService {
     static func getCourseByAbbr(abbr: String, completion: (JSON) -> Void) {
         SwiftSpinner.show("Fetching Data...")
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let encodedAbbr: String = "\(abbr)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let encodedAbbr: String = abbr.stringByReplacingOccurrencesOfString(" ", withString: "/")
         
         Alamofire.request(.GET, "\(baseURL)/courses/\(encodedAbbr)")
             .responseJSON {(request, response, result) in
