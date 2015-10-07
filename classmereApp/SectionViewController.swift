@@ -46,7 +46,13 @@ class SectionViewController: UIViewController {
             self.dayLabel?.text = section.days
             self.startTimeLabel?.text = section.startTime
             self.endTimeLabel?.text = section.endTime
-            self.locationLabel?.text = section.buildingCode! + " " + section.roomNumber!
+            
+            // TODO: Sometimes finds nil, do safe checking
+            if section.buildingCode != nil && section.roomNumber != nil {
+                self.locationLabel?.text = section.buildingCode! + " " + section.roomNumber!
+            }
+            
+            
             self.termLabel?.text = section.term
             //self.sectionNumberLabel?.text = String(section.sectionNumber!)
             self.crnLabel?.text = String(stringInterpolationSegment: section.crn!)
