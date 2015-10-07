@@ -42,12 +42,20 @@ struct CourseSection {
         term = sectionJSON["term"].string as String?
         crn = sectionJSON["crn"].intValue as Int?
         
+        //let dateFormatter = NSDateFormatter()
+        //dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        //dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+        let timeFormatter = NSDateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        
         if let meetingTimes = sectionJSON["meetingTimes"].array {
             buildingCode = meetingTimes[0]["buildingCode"].string
             days = meetingTimes[0]["days"].string
             startTime = meetingTimes[0]["startTime"].string
             endTime = meetingTimes[0]["endTime"].string
             roomNumber = meetingTimes[0]["roomNumber"].string
+            
+            print(timeFormatter.dateFromString(startTime!))
         } else {
             buildingCode = nil
             days = nil
