@@ -13,7 +13,7 @@ import SwiftSpinner
 
 struct APIService {
     
-    static let baseURL = "http://classmere.herokuapp.com"
+    static let baseURL = "http://api.classmere.com"
     
     static func getAllCourses(completion: (JSON) -> Void) {
         SwiftSpinner.show("Fetching Data...")
