@@ -12,15 +12,15 @@ import SwiftyJSON
 struct CourseSection {
     let term: String?
     let crn: Int?
+    let instructor: String?
     
-    // Within the array
+    // Within the meetingTimes array
     let buildingCode: String?
     let days: String?
-    let startTime: String?
+    let startTime: NSDate?//String?
     let endTime: String?
     let roomNumber: String?
     
-    // --
     let type: String?
     let status: String?
     let capacity: Int?
@@ -32,7 +32,6 @@ struct CourseSection {
     // Missing from API...
     /*
     let sectionNumber: Int?
-    let instructor: String?
     let enrolled: Int?
     let comments: String?
     let waitlistCapacity: Int?
@@ -41,21 +40,22 @@ struct CourseSection {
     init(sectionJSON: JSON) {
         term = sectionJSON["term"].string as String?
         crn = sectionJSON["crn"].intValue as Int?
+        instructor = sectionJSON["instructor"].string as String?
         
-        //let dateFormatter = NSDateFormatter()
-        //dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        //dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
         let timeFormatter = NSDateFormatter()
+        timeFormatter.timeStyle = .ShortStyle
+        timeFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         timeFormatter.dateFormat = "HH:mm:ss"
         
         if let meetingTimes = sectionJSON["meetingTimes"].array {
             buildingCode = meetingTimes[0]["buildingCode"].string
             days = meetingTimes[0]["days"].string
-            startTime = meetingTimes[0]["startTime"].string
+            startTime = meetingTimes[0]["startTime"].object as? NSDate//.string
             endTime = meetingTimes[0]["endTime"].string
             roomNumber = meetingTimes[0]["roomNumber"].string
-            
-            print(timeFormatter.dateFromString(startTime!))
+            //print("time: " + startTime!)
+            //print(timeFormatter.dateFromString(startTime!))
+            //print(timeFormatter.stringFromDate(startTime!))
         } else {
             buildingCode = nil
             days = nil
@@ -74,7 +74,6 @@ struct CourseSection {
         
         // Missing from API...
         //sectionNumber = sectionJSON["section"].intValue as Int?
-        //instructor = sectionJSON["instructor"].string as String?
         //enrolled = sectionJSON["enrolled"].intValue as Int?
         //comments = sectionJSON["comments"].string as String?
         //waitlistCapacity = sectionJSON["waitlistCapacity"].intValue as Int?
