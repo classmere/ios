@@ -21,8 +21,9 @@
 		16C0AA591B9EB9A300F5E563 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */; };
 		16C0AA5B1B9EBC8100F5E563 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0AA5A1B9EBC8100F5E563 /* SectionViewController.swift */; };
 		16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */; };
-		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; };
 		ACBE3DB01BDB3F94009877DE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ACBE3DAF1BDB3F94009877DE /* Podfile */; };
+		ACBE3DB21BDB4346009877DE /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB11BDB4346009877DE /* Building.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_classmereApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACBE3DAF1BDB3F94009877DE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		ACBE3DB11BDB4346009877DE /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		F5A7CD6781983D453B151FBE /* Pods-classmereApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FB127F5DEF41C1F03D00AC4D /* Pods-classmereApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 		16AADEAC1B8D993900BA3BE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ACBE3DB11BDB4346009877DE /* Building.swift */,
 				16AADEAF1B8D99ED00BA3BE7 /* Course.swift */,
 				1627EE031B93A08C007ED748 /* CourseSection.swift */,
 				16AADEB11B8D9A8100BA3BE7 /* APIService.swift */,
@@ -345,6 +348,7 @@
 				16C0AA5B1B9EBC8100F5E563 /* SectionViewController.swift in Sources */,
 				16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */,
 				1604B1701B8D5459003A1E8E /* CourseDetailViewController.swift in Sources */,
+				ACBE3DB21BDB4346009877DE /* Building.swift in Sources */,
 				16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */,
 				1604B16E1B8D5459003A1E8E /* AppDelegate.swift in Sources */,
 				165FD67B1B96CA2800F5DB8A /* CourseTableViewController.swift in Sources */,

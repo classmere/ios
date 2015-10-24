@@ -11,87 +11,78 @@ import Alamofire
 import SwiftyJSON
 import SwiftSpinner
 
+import Foundation
+import Alamofire
+import SwiftyJSON
+
 struct APIService {
     
     static let baseURL = "http://api.classmere.com"
     
     static func getAllCourses(completion: (JSON) -> Void) {
-        SwiftSpinner.show("Fetching Data...")
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         Alamofire.request(.GET, "\(baseURL)/courses/")
-            .responseJSON {(request, response, result) in
-                switch result {
+            .responseJSON { response in
+                switch response.result {
                 case .Success(let data):
                     completion(JSON(data))
-                    SwiftSpinner.hide()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-
-                case .Failure(_, let error):
+                    
+                case .Failure(let error):
                     print("Request failed with error: \(error)")
-                    SwiftSpinner.hide()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }
         }
     }
     
-    static func getCourseByAbbr(abbr: String, completion: (JSON) -> Void) {
-        SwiftSpinner.show("Fetching Data...")
+    static func getCourseBySubjectCode(subjectCode: String, courseNumber: Int, completion: (JSON) -> Void) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let encodedAbbr: String = abbr.stringByReplacingOccurrencesOfString(" ", withString: "/")
         
-        Alamofire.request(.GET, "\(baseURL)/courses/\(encodedAbbr)")
-            .responseJSON {(request, response, result) in
-                switch result {
+        Alamofire.request(.GET, "\(baseURL)/courses/\(subjectCode)/\(courseNumber)")
+            .responseJSON { response in
+                switch response.result {
                 case .Success(let data):
                     completion(JSON(data))
-                    SwiftSpinner.hide()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     
-                case .Failure( _, let error):
+                case .Failure(let error):
                     print("Request failed with error: \(error)")
-                    SwiftSpinner.hide()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }
         }
     }
     
     static func getLocationByAbbr(abbr: String, completion: (JSON) -> Void) {
-        SwiftSpinner.show("Fetching Data...")
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         Alamofire.request(.GET, "\(baseURL)/buildings/\(abbr)")
-            .responseJSON {(request, response, result) in
-                switch result {
+            .responseJSON { response in
+                switch response.result {
                 case .Success(let data):
                     completion(JSON(data))
-                    SwiftSpinner.hide()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     
-                case .Failure(_, let error):
+                case .Failure(let error):
                     print("Request failed with error: \(error)")
-                    SwiftSpinner.hide()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }
         }
     }
     
     static func searchCourse(searchQuery: String, completion: (JSON) -> Void) {
-        SwiftSpinner.show("Fetching Data...")
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let encodedSearchQuery: String = "\(searchQuery)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let encodedSearchQuery = "\(searchQuery)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
         Alamofire.request(.GET, "\(baseURL)/search/courses/\(encodedSearchQuery)")
-            .responseJSON {(request, response, result) in
-                switch result {
+            .responseJSON { response in
+                switch response.result {
                 case .Success(let data):
                     completion(JSON(data))
-                    SwiftSpinner.hide()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                     
-                case .Failure(_, let error):
+                case .Failure(let error):
                     print("Request failed with error: \(error)")
-                    SwiftSpinner.hide()
                     UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 }
         }
