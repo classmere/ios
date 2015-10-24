@@ -76,18 +76,12 @@ class TodayViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TodayTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
+            forIndexPath: indexPath) as! TodayTableViewCell
         let course = todayViewModel.courses[indexPath.section]
         cell.populateWithCourse(course)
         
-        // Reshape cell
-        let contentFrame = CGRect(
-            x: cell.frame.origin.x + 16.0,
-            y: cell.frame.origin.y,
-            width: cell.frame.width - 32.0,
-            height: cell.frame.height)
-        
-        cell.contentView.frame = contentFrame
+        // Format cell
         cell.contentView.layer.cornerRadius = 10.0
         cell.contentView.layer.masksToBounds = true
         cell.backgroundColor = UIColor.clearColor()

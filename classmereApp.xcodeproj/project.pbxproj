@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1604B16E1B8D5459003A1E8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1604B16D1B8D5459003A1E8E /* AppDelegate.swift */; };
-		1604B1731B8D5459003A1E8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1604B1711B8D5459003A1E8E /* Main.storyboard */; };
 		1604B1781B8D5459003A1E8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1604B1761B8D5459003A1E8E /* LaunchScreen.xib */; };
 		1604B1841B8D5459003A1E8E /* classmereAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1604B1831B8D5459003A1E8E /* classmereAppTests.swift */; };
 		1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627EE031B93A08C007ED748 /* CourseSection.swift */; };
@@ -27,6 +26,7 @@
 		ACBE3DBA1BDB45AA009877DE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */; };
 		ACBE3DBB1BDB45AA009877DE /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */; };
 		ACBE3DBC1BDB45AA009877DE /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */; };
+		ACBE3DC11BDB4B31009877DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACBE3DBF1BDB4B31009877DE /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,6 @@
 		1604B1681B8D5459003A1E8E /* classmereApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = classmereApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1604B16C1B8D5459003A1E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1604B16D1B8D5459003A1E8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1604B1721B8D5459003A1E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1604B1771B8D5459003A1E8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1604B17D1B8D5459003A1E8E /* classmereAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = classmereAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1604B1821B8D5459003A1E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +63,7 @@
 		ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		ACBE3DC01BDB4B31009877DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5A7CD6781983D453B151FBE /* Pods-classmereApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FB127F5DEF41C1F03D00AC4D /* Pods-classmereApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,7 +161,7 @@
 		16AADEAD1B8D993E00BA3BE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1604B1711B8D5459003A1E8E /* Main.storyboard */,
+				ACBE3DBF1BDB4B31009877DE /* Main.storyboard */,
 				165B86831B924550009A0651 /* CourseTableViewCell.swift */,
 				16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */,
 			);
@@ -286,7 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16AC31111BA8E2C90077E836 /* Images.xcassets in Resources */,
-				1604B1731B8D5459003A1E8E /* Main.storyboard in Resources */,
+				ACBE3DC11BDB4B31009877DE /* Main.storyboard in Resources */,
 				ACBE3DB01BDB3F94009877DE /* Podfile in Resources */,
 				1604B1781B8D5459003A1E8E /* LaunchScreen.xib in Resources */,
 			);
@@ -390,20 +390,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1604B1711B8D5459003A1E8E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1604B1721B8D5459003A1E8E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1604B1761B8D5459003A1E8E /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1604B1771B8D5459003A1E8E /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		ACBE3DBF1BDB4B31009877DE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACBE3DC01BDB4B31009877DE /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
