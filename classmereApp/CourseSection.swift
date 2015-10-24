@@ -17,8 +17,8 @@ struct CourseSection {
     // Within the meetingTimes array
     let buildingCode: String?
     let days: String?
-    let startTime: String?//NSDate?
-    let endTime: String?
+    let startTime: NSDate?
+    let endTime: NSDate?
     let roomNumber: String?
     
     let type: String?
@@ -29,14 +29,6 @@ struct CourseSection {
     let fees: String?
     let restrictions: String?
     
-    // Missing from API...
-    /*
-    let sectionNumber: Int?
-    let enrolled: Int?
-    let comments: String?
-    let waitlistCapacity: Int?
-    */
-    
     init(sectionJSON: JSON) {
         term = sectionJSON["term"].string as String?
         crn = sectionJSON["crn"].intValue as Int?
@@ -45,27 +37,9 @@ struct CourseSection {
         if let meetingTimes = sectionJSON["meetingTimes"].array {
             buildingCode = meetingTimes[0]["buildingCode"].string
             days = meetingTimes[0]["days"].string
-            startTime = meetingTimes[0]["startTime"].string //object as? NSDate
-            endTime = meetingTimes[0]["endTime"].string
+            startTime = CourseSection.dateFromISO8601String(meetingTimes[0]["startTime"].string)
+            endTime = CourseSection.dateFromISO8601String(meetingTimes[0]["endTime"].string)
             roomNumber = meetingTimes[0]["roomNumber"].string
-            
-            print(startTime!)
-            print("time: ")
-            if let startTime = startTime {
-                
-                let timeFormatter = NSDateFormatter()
-//                timeFormatter.timeStyle = .ShortStyle
-//                timeFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-                timeFormatter.dateFormat = "YYYY-MM-DDTHH:mm:ss+HH:mm"
-                
-                if let mydate = timeFormatter.dateFromString(startTime) {
-                    print(mydate)
-                }
-                //print(timeFormatter.dateFromString(startTime))
-                //print("time: ")
-                //print(timeFormatter.stringFromDate(startTime))
-            }
-
         } else {
             buildingCode = nil
             days = nil
@@ -81,11 +55,22 @@ struct CourseSection {
         waitlistCurrent = sectionJSON["waitlistcurrent"].intValue as Int?
         currentEnrollment = sectionJSON["currentEnrollment"].intValue as Int?
         capacity = sectionJSON["capacity"].intValue as Int?
-        
-        // Missing from API...
-        //sectionNumber = sectionJSON["section"].intValue as Int?
-        //enrolled = sectionJSON["enrolled"].intValue as Int?
-        //comments = sectionJSON["comments"].string as String?
-        //waitlistCapacity = sectionJSON["waitlistCapacity"].intValue as Int?
+    }
+    
+    /**
+        Converts string returned in JSON to a NSDate. 
+        Offsets time by -7 hours since API returns GMT timezone
+     */
+    
+    static func dateFromISO8601String(iso8601String: String?) -> NSDate? {
+        if let iso8601String = iso8601String {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
+            let date = dateFormatter.dateFromString(iso8601String)
+            let subtractSevenHours = NSTimeInterval(60*60*7)
+            let offsetDate = date?.dateByAddingTimeInterval(subtractSevenHours)
+            return offsetDate
+        }
+        return nil
     }
 }
