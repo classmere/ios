@@ -12,10 +12,23 @@ import MapKit
 class MapTableViewCell: AbstractClassmereCell {
     @IBOutlet weak var mapView: MKMapView!
     
+    let schoolZoomSpan = MKCoordinateSpan(
+        latitudeDelta: 0.02,
+        longitudeDelta: 0.02)
+    let buildingZoomSpan = MKCoordinateSpan(
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005)
+    
     override func awakeFromNib() {
-        mapView.scrollEnabled = false
-        mapView.pitchEnabled = false
-        mapView.rotateEnabled = false
+        let schoolCoordinates = CLLocationCoordinate2D(
+            latitude: 44.563849,
+            longitude: -123.279498)
+        let schoolCoordinateRegion = MKCoordinateRegion(
+            center: schoolCoordinates,
+            span: schoolZoomSpan)
+        mapView.setRegion(schoolCoordinateRegion, animated: false)
+        
+        super.awakeFromNib()
     }
     
     func navigateToAddress(address: String) {
@@ -26,8 +39,7 @@ class MapTableViewCell: AbstractClassmereCell {
                 var coordinateRegion = self.mapView.region
                 let regionCenter = (mapKitPlacemark.region as! CLCircularRegion).center
                 coordinateRegion.center = regionCenter
-                coordinateRegion.span.latitudeDelta /= 4096.0
-                coordinateRegion.span.longitudeDelta /= 4096.0
+                coordinateRegion.span = self.buildingZoomSpan
                 
                 self.mapView.setRegion(coordinateRegion, animated: true)
                 self.mapView.addAnnotation(mapKitPlacemark)

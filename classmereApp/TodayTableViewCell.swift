@@ -18,6 +18,7 @@ class TodayTableViewCell: AbstractClassmereCell {
         titleLabel.text = course.title?.capitalizedString
         buildingLabel.text = "Kearney Hall 230"
         timeLabel.text = formatCourseTime(course)
+        super.awakeFromNib()
     }
     
     func formatCourseTime(course: Course) -> String {
