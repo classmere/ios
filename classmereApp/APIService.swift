@@ -9,11 +9,6 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import SwiftSpinner
-
-import Foundation
-import Alamofire
-import SwiftyJSON
 
 struct APIService {
     
