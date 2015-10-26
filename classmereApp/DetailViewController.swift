@@ -55,25 +55,16 @@ class DetailViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell", forIndexPath: indexPath) as! TodayTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell",
+                forIndexPath: indexPath) as! TodayTableViewCell
             let course = detailViewModel.course
             cell.populateWithCourse(course)
-            
-            // Reshape cell
-            cell.contentView.layer.cornerRadius = 10.0
-            cell.contentView.layer.masksToBounds = true
-            cell.backgroundColor = UIColor.clearColor()
             cell.contentView.backgroundColor = UIColor(hue:0.02, saturation:0.64, brightness:0.95, alpha:1)
             return cell
             
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("MapCell", forIndexPath: indexPath) as! MapTableViewCell
-            
-            // Reshape cell
-            cell.mapView.layer.cornerRadius = 10.0
-            cell.mapView.layer.masksToBounds = true
-            cell.backgroundColor = UIColor.clearColor()
-            
+            let cell = tableView.dequeueReusableCellWithIdentifier("MapCell",
+                forIndexPath: indexPath) as! MapTableViewCell
             if let building = detailViewModel.building, buildingAddress = building.address {
                 cell.navigateToAddress(buildingAddress)
             }

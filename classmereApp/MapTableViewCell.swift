@@ -9,10 +9,10 @@
 import UIKit
 import MapKit
 
-class MapTableViewCell: UITableViewCell {
+class MapTableViewCell: AbstractClassmereCell {
     @IBOutlet weak var mapView: MKMapView!
     
-    override func layoutSubviews() {
+    override func awakeFromNib() {
         mapView.scrollEnabled = false
         mapView.pitchEnabled = false
         mapView.rotateEnabled = false

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayTableViewCell: UITableViewCell {
+class TodayTableViewCell: AbstractClassmereCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var buildingLabel: UILabel!

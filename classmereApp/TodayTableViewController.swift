@@ -81,11 +81,6 @@ class TodayViewController: UITableViewController {
             forIndexPath: indexPath) as! TodayTableViewCell
         let course = todayViewModel.courses[indexPath.section]
         cell.populateWithCourse(course)
-        
-        // Format cell
-        cell.contentView.layer.cornerRadius = 10.0
-        cell.contentView.layer.masksToBounds = true
-        cell.backgroundColor = UIColor.clearColor()
         cell.contentView.backgroundColor = cellColors[indexPath.section]
         
         return cell
