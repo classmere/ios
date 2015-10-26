@@ -26,7 +26,15 @@ class DetailViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 122
+        switch indexPath.section {
+        case 0:
+            return 122
+        case 1:
+            return 192
+        default:
+            // This shouldn't happen
+            return 0
+        }
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
