@@ -23,6 +23,13 @@ class TodayViewController: UITableViewController {
         // Fetch courses
         todayViewModel.fetchCourseData([("PAC", 296), ("ECE", 271), ("Z", 477)]) {
             self.tableView.reloadData()
+            
+            let sections  = self.todayViewModel.courses.map({ course in
+                return course.courseSections[0]
+            })
+            self.todayViewModel.fetchBuildingDataForSections(sections) {
+                self.tableView.reloadData()
+            }
         }
         
         // Split view controller
@@ -82,7 +89,6 @@ class TodayViewController: UITableViewController {
         let course = todayViewModel.courses[indexPath.section]
         cell.populateWithCourse(course)
         cell.contentView.backgroundColor = cellColors[indexPath.section]
-        
         return cell
     }
     

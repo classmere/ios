@@ -15,19 +15,28 @@ class TodayTableViewCell: AbstractClassmereCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     func populateWithCourse(course: Course) {
+        let section = course.courseSections[0]
         titleLabel.text = course.title?.capitalizedString
-        buildingLabel.text = "Kearney Hall 230"
-        timeLabel.text = formatCourseTime(course)
+        timeLabel.text = TodayTableViewCell.formatCourseTime(course)
+        buildingLabel.text = TodayTableViewCell.formatBuildingStringWithSection(section)
         super.awakeFromNib()
     }
     
-    func formatCourseTime(course: Course) -> String {
+    static func formatCourseTime(course: Course) -> String {
         if let startTime = course.courseSections[0].startTime, endTime = course.courseSections[0].endTime {
             let dateFormatter = NSDateFormatter()
             dateFormatter.timeStyle = .ShortStyle
             let startTimeString = dateFormatter.stringFromDate(startTime)
             let endTimeString = dateFormatter.stringFromDate(endTime)
             return "\(startTimeString) – \(endTimeString)"
+        } else {
+            return "TBA"
+        }
+    }
+    
+    static func formatBuildingStringWithSection(section: CourseSection) -> String{
+        if let buildingName = section.building?.name?.capitalizedString, roomNumber = section.roomNumber {
+            return "\(buildingName) \(roomNumber)"
         } else {
             return "TBA"
         }

@@ -29,6 +29,8 @@ struct CourseSection {
     let fees: String?
     let restrictions: String?
     
+    var building: Building?
+    
     init(sectionJSON: JSON) {
         term = sectionJSON["term"].string as String?
         crn = sectionJSON["crn"].intValue as Int?

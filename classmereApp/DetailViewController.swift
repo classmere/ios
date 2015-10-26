@@ -14,11 +14,6 @@ class DetailViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let section = detailViewModel.course.courseSections[0]
-        self.detailViewModel.getBuildingLocationForSection(section) {
-            self.tableView.reloadData()
-        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -65,8 +60,8 @@ class DetailViewController: UITableViewController {
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("MapCell",
                 forIndexPath: indexPath) as! MapTableViewCell
-            if let building = detailViewModel.building, buildingAddress = building.address {
-                cell.navigateToAddress(buildingAddress)
+            if let building = detailViewModel.course.courseSections[0].building, address = building.address {
+                cell.navigateToAddress(address)
             }
             return cell
             

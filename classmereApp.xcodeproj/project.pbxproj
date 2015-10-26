@@ -11,12 +11,10 @@
 		1604B1781B8D5459003A1E8E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1604B1761B8D5459003A1E8E /* LaunchScreen.xib */; };
 		1604B1841B8D5459003A1E8E /* classmereAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1604B1831B8D5459003A1E8E /* classmereAppTests.swift */; };
 		1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627EE031B93A08C007ED748 /* CourseSection.swift */; };
-		165B86841B924550009A0651 /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165B86831B924550009A0651 /* CourseTableViewCell.swift */; };
 		165FD67B1B96CA2800F5DB8A /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */; };
 		16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEAF1B8D99ED00BA3BE7 /* Course.swift */; };
 		16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEB11B8D9A8100BA3BE7 /* APIService.swift */; };
 		16AC31111BA8E2C90077E836 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AC31101BA8E2C90077E836 /* Images.xcassets */; };
-		16C0AA591B9EB9A300F5E563 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */; };
 		16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */; };
 		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; };
 		ACBE3DB01BDB3F94009877DE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ACBE3DAF1BDB3F94009877DE /* Podfile */; };
@@ -27,6 +25,7 @@
 		ACBE3DBB1BDB45AA009877DE /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */; };
 		ACBE3DBC1BDB45AA009877DE /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */; };
 		ACBE3DC11BDB4B31009877DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACBE3DBF1BDB4B31009877DE /* Main.storyboard */; };
+		ACD9485A1BDEBD3D0055A4F5 /* AbstractClassmereCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,12 +47,10 @@
 		1604B1821B8D5459003A1E8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1604B1831B8D5459003A1E8E /* classmereAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classmereAppTests.swift; sourceTree = "<group>"; };
 		1627EE031B93A08C007ED748 /* CourseSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
-		165B86831B924550009A0651 /* CourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		16AADEAF1B8D99ED00BA3BE7 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		16AADEB11B8D9A8100BA3BE7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		16AC31101BA8E2C90077E836 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_classmereApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACBE3DAF1BDB3F94009877DE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
@@ -64,6 +61,7 @@
 		ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		ACBE3DC01BDB4B31009877DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractClassmereCell.swift; sourceTree = "<group>"; };
 		F5A7CD6781983D453B151FBE /* Pods-classmereApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FB127F5DEF41C1F03D00AC4D /* Pods-classmereApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,8 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				ACBE3DBF1BDB4B31009877DE /* Main.storyboard */,
-				165B86831B924550009A0651 /* CourseTableViewCell.swift */,
-				16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */,
+				ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */,
+				ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */,
+				ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -176,8 +175,6 @@
 				165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */,
 				ACBE3DB51BDB45AA009877DE /* DetailViewModel.swift */,
 				ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */,
-				ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */,
-				ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,7 +250,7 @@
 				TargetAttributes = {
 					1604B1671B8D5459003A1E8E = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 27G39RU5P8;
+						DevelopmentTeam = 6QBR52NJ4V;
 					};
 					1604B17C1B8D5459003A1E8E = {
 						CreatedOnToolsVersion = 6.4;
@@ -354,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD9485A1BDEBD3D0055A4F5 /* AbstractClassmereCell.swift in Sources */,
 				16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */,
 				ACBE3DBC1BDB45AA009877DE /* MapTableViewCell.swift in Sources */,
 				ACBE3DB21BDB4346009877DE /* Building.swift in Sources */,
@@ -364,9 +362,7 @@
 				16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */,
 				ACBE3DB41BDB44D7009877DE /* TodayTableViewModel.swift in Sources */,
 				ACBE3DB91BDB45AA009877DE /* DetailViewModel.swift in Sources */,
-				16C0AA591B9EB9A300F5E563 /* SectionTableViewCell.swift in Sources */,
 				1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */,
-				165B86841B924550009A0651 /* CourseTableViewCell.swift in Sources */,
 				ACBE3DBA1BDB45AA009877DE /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

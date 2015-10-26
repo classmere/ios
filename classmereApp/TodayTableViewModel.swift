@@ -31,4 +31,18 @@ class TodayViewModel {
             }
         }
     }
+    
+    func fetchBuildingDataForSections(sections: [CourseSection], completed: () -> Void) {
+        var buildingsFetched = 0
+        for (index, section) in sections.enumerate() {
+            if let buildingCode = section.buildingCode {
+                APIService.getLocationByAbbr(buildingCode) { buildingJSON in
+                    let building = Building(buildingJSON: buildingJSON)
+                    self.courses[index].courseSections[0].building = building
+                    buildingsFetched++
+                    completed()
+                }
+            }
+        }
+    }
 }

@@ -11,18 +11,8 @@ import Foundation
 class DetailViewModel {
     
     var course: Course
-    var building: Building?
     
     init(course: Course) {
         self.course = course
-    }
-    
-    func getBuildingLocationForSection(section: CourseSection, completed: () -> Void) {
-        if let buildingCode = section.buildingCode {
-            APIService.getLocationByAbbr(buildingCode) { json in
-                self.building = Building(buildingJSON: json)
-                completed()
-            }
-        }
     }
 }
