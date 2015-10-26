@@ -20,11 +20,12 @@ class TodayViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Fetch courses
         todayViewModel.fetchCourseData([("PAC", 296), ("ECE", 271), ("Z", 477)]) {
             self.tableView.reloadData()
         }
         
+        // Split view controller
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
