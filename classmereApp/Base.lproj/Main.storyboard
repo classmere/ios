@@ -82,7 +82,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-9X-f5A">
-                                                    <rect key="frame" x="24" y="84.5" width="16" height="16"/>
+                                                    <rect key="frame" x="24" y="84" width="16" height="16"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="FJS-Jg-SG4"/>
@@ -90,7 +90,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00am – 10:50am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iew-yD-plg">
-                                                    <rect key="frame" x="56" y="82.5" width="159" height="21.5"/>
+                                                    <rect key="frame" x="56" y="82" width="159" height="21.5"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="highlightedColor"/>
@@ -127,24 +127,48 @@
                                     <outlet property="delegate" destination="bJA-u6-cAc" id="a3l-rr-aiD"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wx9-cd-fex">
+                                <rect key="frame" x="540" y="544" width="24" height="24"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="mTX-MC-swX"/>
+                                    <constraint firstAttribute="height" constant="24" id="uU6-8q-gJW"/>
+                                </constraints>
+                                <state key="normal" image="plus_thick"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FN0-P3-ETc">
+                                <rect key="frame" x="36" y="544" width="24" height="24"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="WkC-5s-6FJ"/>
+                                    <constraint firstAttribute="height" constant="24" id="bJO-pO-abo"/>
+                                </constraints>
+                                <state key="normal" image="expand"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FN0-P3-ETc" firstAttribute="leading" secondItem="Lzh-uT-zJh" secondAttribute="leading" constant="36" id="8kj-AY-a35"/>
+                            <constraint firstItem="Pbd-Sx-MmZ" firstAttribute="top" secondItem="wx9-cd-fex" secondAttribute="bottom" constant="32" id="Khn-zW-A65"/>
                             <constraint firstItem="CGS-H1-gco" firstAttribute="top" secondItem="Lzh-uT-zJh" secondAttribute="topMargin" id="LgP-ii-PUD"/>
                             <constraint firstItem="CGS-H1-gco" firstAttribute="leading" secondItem="Lzh-uT-zJh" secondAttribute="leading" id="Ppc-Zk-8m1"/>
+                            <constraint firstItem="Pbd-Sx-MmZ" firstAttribute="top" secondItem="FN0-P3-ETc" secondAttribute="bottom" constant="32" id="SRA-Lx-SDQ"/>
+                            <constraint firstAttribute="trailing" secondItem="wx9-cd-fex" secondAttribute="trailing" constant="36" id="py0-k1-DNN"/>
                             <constraint firstItem="Pbd-Sx-MmZ" firstAttribute="top" secondItem="CGS-H1-gco" secondAttribute="bottom" id="r7E-1I-cdm"/>
                             <constraint firstAttribute="trailing" secondItem="CGS-H1-gco" secondAttribute="trailing" id="rG9-0H-Lxk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="i1T-TH-FQy"/>
+                    <navigationItem key="navigationItem" title="Today" id="i1T-TH-FQy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="mkH-A4-OrD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="CGS-H1-gco" id="QJd-Ft-9eg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGm-ud-YGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="-630"/>
+            <point key="canvasLocation" x="709" y="-630"/>
         </scene>
         <!--Detail-->
         <scene sceneID="goS-OW-G24">
@@ -253,7 +277,7 @@
                             <outlet property="delegate" destination="EHL-4f-K4R" id="hzj-bc-ZmU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="yqy-dJ-RIF"/>
+                    <navigationItem key="navigationItem" title="Detail" id="yqy-dJ-RIF"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CdL-Xp-nAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -361,5 +385,7 @@
         <image name="Building" width="192" height="192"/>
         <image name="Clock" width="192" height="192"/>
         <image name="classmereLogoOrange" width="1040" height="1040"/>
+        <image name="expand" width="48" height="48"/>
+        <image name="plus_thick" width="48" height="48"/>
     </resources>
 </document>
