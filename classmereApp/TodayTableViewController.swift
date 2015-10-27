@@ -8,7 +8,9 @@
 
 import UIKit
 
-class TodayViewController: UITableViewController {
+class TodayTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet var tableView: UITableView!
     
     let todayViewModel = TodayViewModel()
     var detailViewController: DetailViewController? = nil
@@ -39,11 +41,6 @@ class TodayViewController: UITableViewController {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
-        super.viewWillAppear(animated)
-    }
-    
     // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -61,29 +58,29 @@ class TodayViewController: UITableViewController {
     
     // MARK: - Table View
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return todayViewModel.courses.count
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 122
     }
     
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 32
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clearColor()
         return headerView
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
             forIndexPath: indexPath) as! TodayTableViewCell
         let course = todayViewModel.courses[indexPath.section]

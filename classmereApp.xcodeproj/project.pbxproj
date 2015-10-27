@@ -17,6 +17,7 @@
 		16AC31111BA8E2C90077E836 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AC31101BA8E2C90077E836 /* Images.xcassets */; };
 		16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */; };
 		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; };
+		AC5E4B4C1BDEFB4800CF8CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC5E4B4A1BDEFB4800CF8CB6 /* Main.storyboard */; };
 		ACBE3DB01BDB3F94009877DE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ACBE3DAF1BDB3F94009877DE /* Podfile */; };
 		ACBE3DB21BDB4346009877DE /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB11BDB4346009877DE /* Building.swift */; };
 		ACBE3DB41BDB44D7009877DE /* TodayTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB31BDB44D7009877DE /* TodayTableViewModel.swift */; };
@@ -24,7 +25,6 @@
 		ACBE3DBA1BDB45AA009877DE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */; };
 		ACBE3DBB1BDB45AA009877DE /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */; };
 		ACBE3DBC1BDB45AA009877DE /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */; };
-		ACBE3DC11BDB4B31009877DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACBE3DBF1BDB4B31009877DE /* Main.storyboard */; };
 		ACD9485A1BDEBD3D0055A4F5 /* AbstractClassmereCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +53,7 @@
 		16AC31101BA8E2C90077E836 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_classmereApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC5E4B4B1BDEFB4800CF8CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACBE3DAF1BDB3F94009877DE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		ACBE3DB11BDB4346009877DE /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
 		ACBE3DB31BDB44D7009877DE /* TodayTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewModel.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
-		ACBE3DC01BDB4B31009877DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractClassmereCell.swift; sourceTree = "<group>"; };
 		F5A7CD6781983D453B151FBE /* Pods-classmereApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FB127F5DEF41C1F03D00AC4D /* Pods-classmereApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,10 +159,10 @@
 		16AADEAD1B8D993E00BA3BE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ACBE3DBF1BDB4B31009877DE /* Main.storyboard */,
 				ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */,
 				ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */,
 				ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */,
+				AC5E4B4A1BDEFB4800CF8CB6 /* Main.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -283,9 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				16AC31111BA8E2C90077E836 /* Images.xcassets in Resources */,
-				ACBE3DC11BDB4B31009877DE /* Main.storyboard in Resources */,
 				ACBE3DB01BDB3F94009877DE /* Podfile in Resources */,
 				1604B1781B8D5459003A1E8E /* LaunchScreen.xib in Resources */,
+				AC5E4B4C1BDEFB4800CF8CB6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,10 +394,10 @@
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
-		ACBE3DBF1BDB4B31009877DE /* Main.storyboard */ = {
+		AC5E4B4A1BDEFB4800CF8CB6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ACBE3DC01BDB4B31009877DE /* Base */,
+				AC5E4B4B1BDEFB4800CF8CB6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
