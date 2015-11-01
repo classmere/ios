@@ -42,7 +42,7 @@ class SectionViewController: UIViewController {
         scrollView.contentOffset = CGPoint(x: 0, y: 75)
         
         if let section = detailSection as CourseSection! {
-            //self.instructorLabel?.text = section.instructor
+            self.instructorLabel?.text = section.instructor
             self.dayLabel?.text = section.days
             self.startTimeLabel?.text = section.startTime
             self.endTimeLabel?.text = section.endTime

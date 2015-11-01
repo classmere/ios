@@ -18,10 +18,9 @@
 		16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEAF1B8D99ED00BA3BE7 /* Course.swift */; };
 		16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEB11B8D9A8100BA3BE7 /* APIService.swift */; };
 		16AC31111BA8E2C90077E836 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AC31101BA8E2C90077E836 /* Images.xcassets */; };
-		16B7B08F1BBBE6BC004953D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B7B08E1BBBE6BC004953D4 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		16C0AA591B9EB9A300F5E563 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */; };
 		16C0AA5B1B9EBC8100F5E563 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C0AA5A1B9EBC8100F5E563 /* SectionViewController.swift */; };
-		16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */; };
 		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -51,7 +50,6 @@
 		16AADEAF1B8D99ED00BA3BE7 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		16AADEB11B8D9A8100BA3BE7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		16AC31101BA8E2C90077E836 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		16B7B08E1BBBE6BC004953D4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		16C0AA581B9EB9A300F5E563 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		16C0AA5A1B9EBC8100F5E563 /* SectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				165FD67A1B96CA2800F5DB8A /* CourseTableViewController.swift */,
 				1604B16F1B8D5459003A1E8E /* CourseDetailViewController.swift */,
 				16C0AA5A1B9EBC8100F5E563 /* SectionViewController.swift */,
-				16B7B08E1BBBE6BC004953D4 /* ViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -241,6 +238,7 @@
 				TargetAttributes = {
 					1604B1671B8D5459003A1E8E = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 27G39RU5P8;
 					};
 					1604B17C1B8D5459003A1E8E = {
 						CreatedOnToolsVersion = 6.4;
@@ -344,7 +342,6 @@
 				16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */,
 				1604B1701B8D5459003A1E8E /* CourseDetailViewController.swift in Sources */,
 				16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */,
-				16B7B08F1BBBE6BC004953D4 /* ViewController.swift in Sources */,
 				1604B16E1B8D5459003A1E8E /* AppDelegate.swift in Sources */,
 				165FD67B1B96CA2800F5DB8A /* CourseTableViewController.swift in Sources */,
 				16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */,
@@ -479,10 +476,13 @@
 			baseConfigurationReference = F5A7CD6781983D453B151FBE /* Pods-classmereApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = classmereApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.classmere.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -491,10 +491,13 @@
 			baseConfigurationReference = FB127F5DEF41C1F03D00AC4D /* Pods-classmereApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = classmereApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.classmere.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

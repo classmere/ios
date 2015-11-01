@@ -85,7 +85,7 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
             cell.termLabel?.text = section.term
             cell.startTimeLabel?.text = section.startTime
             cell.endTimeLabel?.text = section.endTime
-            //cell.instructorLabel?.text = section.instructor
+            cell.instructorLabel?.text = section.instructor
         }
         
         return cell
