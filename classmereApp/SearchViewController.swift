@@ -18,6 +18,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.titleView = searchBar
+        if let searchField = searchBar.valueForKey("searchField") as? UITextField {
+            searchField.textColor = UIColor.whiteColor()
+        }
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -29,7 +32,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
-            forIndexPath: indexPath) as! UITableViewCell
+            forIndexPath: indexPath)
         let course = searchViewModel.courses[indexPath.row]
         cell.textLabel!.text = course.title
         return cell
