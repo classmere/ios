@@ -33,37 +33,28 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        if let theCourse: Course = self.detailCourse as Course! {
             
-            let abbr: String = theCourse.abbr!
-            
-            APIService.getCourseByAbbr(abbr) { (data) -> Void in
-                self.course = Course(courseJSON: data)
-                
-                // Set labels
-                self.titleLabel?.text = self.course!.title!
-                self.descriptionLabel?.text = self.course!.description!
-                
-                if let creditsArray = self.course!.credits {
-                    let minimumCredit = creditsArray[0] as Int
-                    self.creditsLabel?.text = String(minimumCredit)
-                }
-
-                self.tableView.reloadData()
+        if let subjectCode = course?.subjectCode, courseNumber = course?.courseNumber {
+            APIService.getCourseBySubjectCode(subjectCode,
+                courseNumber: courseNumber) { courseJSON in
+                    
+                    self.course = Course(courseJSON: courseJSON)
+                    // Set labels
+                    self.titleLabel?.text = self.course!.title!
+                    self.descriptionLabel?.text = self.course!.description!
+                    
+                    if let creditsArray = self.course!.credits {
+                        let minimumCredit = creditsArray[0] as Int
+                        self.creditsLabel?.text = String(minimumCredit)
+                    }
+                    self.tableView.reloadData()
             }
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-        print("IN - viewDidAppear")
         super.viewDidAppear(animated)
         self.tableView.flashScrollIndicators()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -83,24 +74,28 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("SectionCell", forIndexPath: indexPath) as! SectionTableViewCell
         if let section = course?.courseSections[indexPath.row] {
             cell.termLabel?.text = section.term
-            cell.startTimeLabel?.text = section.startTime
-            cell.endTimeLabel?.text = section.endTime
+            cell.startTimeLabel?.text = String(section.startTime)
+            cell.endTimeLabel?.text = String(section.endTime)
             cell.instructorLabel?.text = section.instructor
         }
         
         return cell
     }
     
+    
+    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
         if segue.identifier == "showSection" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let section = course?.courseSections[indexPath.row]
-                (segue.destinationViewController as! SectionViewController).detailSection = section
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! SectionViewController
+                controller.detailSection = section
             }
         }
+    }
+    @IBAction func exitButtonPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

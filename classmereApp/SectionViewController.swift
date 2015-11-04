@@ -44,8 +44,8 @@ class SectionViewController: UIViewController {
         if let section = detailSection as CourseSection! {
             self.instructorLabel?.text = section.instructor
             self.dayLabel?.text = section.days
-            self.startTimeLabel?.text = section.startTime
-            self.endTimeLabel?.text = section.endTime
+            self.startTimeLabel?.text = String(section.startTime)
+            self.endTimeLabel?.text = String(section.endTime)
             
             // TODO: Sometimes finds nil, do safe checking
             if section.buildingCode != nil && section.roomNumber != nil {
@@ -64,9 +64,8 @@ class SectionViewController: UIViewController {
             self.restrictionsLabel?.text = section.restrictions
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func exitButtonPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
