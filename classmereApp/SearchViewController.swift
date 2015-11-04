@@ -17,6 +17,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set dark keyboard
+        searchBar.keyboardAppearance = .Dark
         // Embed searchBar in navBar and change text color
         navigationItem.titleView = searchBar
         if let searchField = searchBar.valueForKey("searchField") as? UITextField {
@@ -69,6 +71,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func exitButtonWasPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
