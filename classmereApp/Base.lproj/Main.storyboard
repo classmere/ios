@@ -187,7 +187,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" searchBarStyle="minimal" id="C6P-0g-AlZ">
+                                <searchBar key="tableFooterView" contentMode="redraw" searchBarStyle="minimal" placeholder="Search" id="C6P-0g-AlZ">
                                     <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <animations/>
