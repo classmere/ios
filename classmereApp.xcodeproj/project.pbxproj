@@ -26,6 +26,8 @@
 		ACBE3DBB1BDB45AA009877DE /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */; };
 		ACBE3DBC1BDB45AA009877DE /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */; };
 		ACD9485A1BDEBD3D0055A4F5 /* AbstractClassmereCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */; };
+		E6C170611BE1C088000E475E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C170601BE1C088000E475E /* SearchViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		E6C170631BE1C0F0000E475E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C170621BE1C0F0000E475E /* SearchViewModel.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractClassmereCell.swift; sourceTree = "<group>"; };
+		E6C170601BE1C088000E475E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		E6C170621BE1C0F0000E475E /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F5A7CD6781983D453B151FBE /* Pods-classmereApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.debug.xcconfig"; sourceTree = "<group>"; };
 		FB127F5DEF41C1F03D00AC4D /* Pods-classmereApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-classmereApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-classmereApp/Pods-classmereApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +179,8 @@
 				165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */,
 				ACBE3DB51BDB45AA009877DE /* DetailViewModel.swift */,
 				ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */,
+				E6C170601BE1C088000E475E /* SearchViewController.swift */,
+				E6C170621BE1C0F0000E475E /* SearchViewModel.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -357,8 +363,10 @@
 				ACBE3DB21BDB4346009877DE /* Building.swift in Sources */,
 				ACBE3DBB1BDB45AA009877DE /* TodayTableViewCell.swift in Sources */,
 				16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */,
+				E6C170631BE1C0F0000E475E /* SearchViewModel.swift in Sources */,
 				1604B16E1B8D5459003A1E8E /* AppDelegate.swift in Sources */,
 				165FD67B1B96CA2800F5DB8A /* TodayTableViewController.swift in Sources */,
+				E6C170611BE1C088000E475E /* SearchViewController.swift in Sources */,
 				16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */,
 				ACBE3DB41BDB44D7009877DE /* TodayTableViewModel.swift in Sources */,
 				ACBE3DB91BDB45AA009877DE /* DetailViewModel.swift in Sources */,
