@@ -13,6 +13,7 @@ class SearchViewModel {
 
     func fetchSearchCourses(query: String, completed: () -> Void) {
         APIService.searchCourse(query) { coursesJSON in
+            self.courses.removeAll(keepCapacity: true)
             for (_, courseJSON) in coursesJSON {
                 let course = Course(courseJSON: courseJSON)
                 self.courses.append(course)

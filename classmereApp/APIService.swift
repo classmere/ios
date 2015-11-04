@@ -73,13 +73,17 @@ struct APIService {
             .responseJSON { response in
                 switch response.result {
                 case .Success(let data):
-                    completion(JSON(data))
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                    
+                    if response.response?.statusCode !== 200 {
+                        print("Course not found: \(searchQuery)")
+                        completion(nil)
+                    } else {
+                        completion(JSON(data))
+                    }
                 case .Failure(let error):
                     print("Request failed with error: \(error)")
-                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    completion(nil)
                 }
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         }
     }
 }
