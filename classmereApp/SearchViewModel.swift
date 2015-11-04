@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class SearchViewModel {
+    var courses = [Course]()
+
+    func fetchSearchCourses(query: String, completed: () -> Void) {
+        APIService.searchCourse(query) { coursesJSON in
+            for (_, courseJSON) in coursesJSON {
+                let course = Course(courseJSON: courseJSON)
+                self.courses.append(course)
+                completed()
+            }
+        }
+    }
+}
+

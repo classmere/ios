@@ -179,8 +179,8 @@
 				165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */,
 				ACBE3DB51BDB45AA009877DE /* DetailViewModel.swift */,
 				ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */,
-				E6C170601BE1C088000E475E /* SearchViewController.swift */,
 				E6C170621BE1C0F0000E475E /* SearchViewModel.swift */,
+				E6C170601BE1C088000E475E /* SearchViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
