@@ -17,29 +17,35 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Embed searchBar in navBar and change text color
         navigationItem.titleView = searchBar
         if let searchField = searchBar.valueForKey("searchField") as? UITextField {
             searchField.textColor = UIColor.whiteColor()
         }
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        let query = searchBar.text ?? ""
-        searchViewModel.fetchSearchCourses(query) { () -> Void in
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            searchViewModel.courses.removeAll()
+            tableView.reloadData()
+        }
+        searchViewModel.fetchSearchCourses(searchText) {
             self.tableView.reloadData()
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
-            forIndexPath: indexPath)
-        let course = searchViewModel.courses[indexPath.row]
-        cell.textLabel!.text = course.title
-        return cell
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
+                forIndexPath: indexPath)
+            let course = searchViewModel.courses[indexPath.row]
+            cell.textLabel!.text = course.title?.capitalizedString
+            return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchViewModel.courses.count
+    func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return searchViewModel.courses.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

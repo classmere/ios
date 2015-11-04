@@ -7,12 +7,18 @@
 //
 
 import Foundation
+import Alamofire
 
 class SearchViewModel {
     var courses = [Course]()
+    var currentRequest: Request?
+    
 
     func fetchSearchCourses(query: String, completed: () -> Void) {
-        APIService.searchCourse(query) { coursesJSON in
+        if let currentRequest = currentRequest {
+            currentRequest.cancel()
+        }
+        currentRequest = APIService.searchCourse(query) { coursesJSON in
             self.courses.removeAll(keepCapacity: true)
             for (_, courseJSON) in coursesJSON {
                 let course = Course(courseJSON: courseJSON)
