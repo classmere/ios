@@ -24,6 +24,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    // MARK: SearchBar Delegate
+    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
             searchViewModel.courses.removeAll()
@@ -33,6 +35,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView.reloadData()
         }
     }
+    
+    // MARK: TableView Data Source
     
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,6 +54,18 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+    
+    // MARK: - Segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! CourseDetailViewController
+                let course = searchViewModel.courses[indexPath.row]
+                controller.course = course
+            }
+        }
     }
     
     @IBAction func exitButtonWasPressed(sender: AnyObject) {
