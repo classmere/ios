@@ -65,11 +65,11 @@ struct APIService {
         }
     }
     
-    static func searchCourse(searchQuery: String, completion: (JSON) -> Void) {
+    static func searchCourse(searchQuery: String, completion: (JSON) -> Void) -> Request {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         let encodedSearchQuery = "\(searchQuery)".stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         
-        Alamofire.request(.GET, "\(baseURL)/search/courses/\(encodedSearchQuery)")
+        return Alamofire.request(.GET, "\(baseURL)/search/courses/\(encodedSearchQuery)")
             .responseJSON { response in
                 switch response.result {
                 case .Success(let data):
