@@ -17,8 +17,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+        navigationItem.titleView = searchBar
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
