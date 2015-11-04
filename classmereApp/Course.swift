@@ -25,7 +25,7 @@ struct Course {
         courseNumber = courseJSON["courseNumber"].intValue as Int?
         credits = courseJSON["credits"].arrayObject as! [Int]?
         description = courseJSON["description"].string as String?
-        abbr = subjectCode! + " " + String(courseNumber!)
+        abbr = (subjectCode ?? "") + " " + String(courseNumber ?? 0)
         
         // If sections exist, for each section in JSON array, create a CourseSection object
         if let sectionArray = courseJSON["sections"].array {
