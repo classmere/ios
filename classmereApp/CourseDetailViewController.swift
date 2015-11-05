@@ -25,12 +25,12 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     var course: Course?
     
     func configureView() {
-        self.title = detailCourse?.abbr
+        self.navigationItem.title = course?.abbr
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureView()
         tableView.delegate = self
         tableView.dataSource = self
             
