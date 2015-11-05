@@ -46,6 +46,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 forIndexPath: indexPath)
             let course = searchViewModel.courses[indexPath.row]
             cell.textLabel!.text = course.title?.capitalizedString
+            cell.detailTextLabel!.text = course.abbr ?? ""
             return cell
     }
     
