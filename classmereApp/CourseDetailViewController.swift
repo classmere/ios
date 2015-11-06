@@ -19,18 +19,15 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     var detailCourse: Course? {
-        didSet { configureView() }
+        didSet {
+            self.navigationItem.title = course?.abbr
+        }
     }
     
     var course: Course?
     
-    func configureView() {
-        self.navigationItem.title = course?.abbr
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
         tableView.delegate = self
         tableView.dataSource = self
             
@@ -39,14 +36,22 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
                 courseNumber: courseNumber) { courseJSON in
                     
                     self.course = Course(courseJSON: courseJSON)
-                    // Set labels
+                    
                     self.titleLabel?.text = self.course!.title!
                     self.descriptionLabel?.text = self.course!.description!
                     
-                    if let creditsArray = self.course!.credits {
-                        let minimumCredit = creditsArray[0] as Int
-                        self.creditsLabel?.text = String(minimumCredit)
+                    // Switch between displaying a single credit or a range
+                    if let credits = self.course?.credits {
+                        switch credits.count {
+                        case 1:
+                            self.creditsLabel?.text = String(credits[0])
+                        case 2:
+                            self.creditsLabel?.text = "\(credits[0]) – \(credits[1])"
+                        default:
+                            self.creditsLabel?.text = ""
+                        }
                     }
+                    
                     self.tableView.reloadData()
             }
         }
@@ -82,7 +87,11 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
+    // MARK: - Table view delegate
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
     
     // MARK: - Navigation
     

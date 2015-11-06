@@ -59,6 +59,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 1
     }
     
+    // MARK: - Table view delegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
