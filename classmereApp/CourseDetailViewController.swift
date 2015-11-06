@@ -74,8 +74,8 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("SectionCell", forIndexPath: indexPath) as! SectionTableViewCell
         if let section = course?.courseSections[indexPath.row] {
             cell.termLabel?.text = section.term
-            cell.startTimeLabel?.text = String(section.startTime)
-            cell.endTimeLabel?.text = String(section.endTime)
+            cell.startTimeLabel?.text = DataFormatter.timeStringFromDate(section.startTime)
+            cell.endTimeLabel?.text = DataFormatter.timeStringFromDate(section.endTime)
             cell.instructorLabel?.text = section.instructor
         }
         

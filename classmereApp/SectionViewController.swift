@@ -44,8 +44,8 @@ class SectionViewController: UIViewController {
         if let section = detailSection as CourseSection! {
             self.instructorLabel?.text = section.instructor
             self.dayLabel?.text = section.days
-            self.startTimeLabel?.text = String(section.startTime)
-            self.endTimeLabel?.text = String(section.endTime)
+            self.startTimeLabel?.text = DataFormatter.timeStringFromDate(section.startTime)
+            self.endTimeLabel?.text = DataFormatter.timeStringFromDate(section.endTime)
             
             // TODO: Sometimes finds nil, do safe checking
             if section.buildingCode != nil && section.roomNumber != nil {

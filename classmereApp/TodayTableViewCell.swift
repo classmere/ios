@@ -24,10 +24,8 @@ class TodayTableViewCell: AbstractClassmereCell {
     
     static func formatCourseTime(course: Course) -> String {
         if let startTime = course.courseSections[0].startTime, endTime = course.courseSections[0].endTime {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.timeStyle = .ShortStyle
-            let startTimeString = dateFormatter.stringFromDate(startTime)
-            let endTimeString = dateFormatter.stringFromDate(endTime)
+            let startTimeString = DataFormatter.timeStringFromDate(startTime)
+            let endTimeString = DataFormatter.timeStringFromDate(endTime)
             return "\(startTimeString) – \(endTimeString)"
         } else {
             return "TBA"
