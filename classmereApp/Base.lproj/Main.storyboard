@@ -165,6 +165,7 @@
                     <navigationItem key="navigationItem" title="Today" id="i1T-TH-FQy"/>
                     <connections>
                         <outlet property="tableView" destination="CGS-H1-gco" id="QJd-Ft-9eg"/>
+                        <segue destination="xsq-E4-g4E" kind="presentation" identifier="firstLaunch" id="SsT-Hs-eQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGm-ud-YGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,7 +247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mc9-n5-8ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-786" y="81"/>
+            <point key="canvasLocation" x="1178" y="155"/>
         </scene>
         <!--Search-->
         <scene sceneID="DNP-gn-OlH">

@@ -12,6 +12,15 @@ class FirstLaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
+        if firstLaunch {
+            print("Client has launched before")
+        } else {
+            print("First launch. Setting NSUserDefaults(FirstLaunch).")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+            self.performSegueWithIdentifier("firstLaunch", sender: self)
+        }
 
         // Do any additional setup after loading the view.
     }
