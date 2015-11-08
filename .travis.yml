@@ -1,5 +1,2 @@
 language: swift
 sudo: required
-script:
-  - xctool -workspace classmereApp.xcworkspace -scheme classmereApp -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xctool test -workspace classmereApp.xcworkspace -scheme classmereAppTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
