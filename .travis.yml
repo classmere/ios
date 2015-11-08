@@ -1,2 +1,5 @@
-language: swift
-sudo: required
+language: objective-c
+osx-image: xcode7.1
+xcode_project: classmereApp.xcworkspace
+xcode_scheme: classmereApp
+xcode_sdk: iphonesimulator8.4
