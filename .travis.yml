@@ -1,4 +1,8 @@
 language: objective-c
+
+before_install:
+  - gem install cocoapods -v '0.32.1'
+
 osx-image: xcode7.1
 xcode_project: classmereApp.xcworkspace
 xcode_scheme: classmereApp
