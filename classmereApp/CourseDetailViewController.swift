@@ -18,16 +18,11 @@ class CourseDetailViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
 
-    var detailCourse: Course? {
-        didSet {
-            self.navigationItem.title = course?.abbr
-        }
-    }
-
     var course: Course?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = course?.abbr
         tableView.delegate = self
         tableView.dataSource = self
 
