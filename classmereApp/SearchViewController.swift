@@ -12,9 +12,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    
+
     let searchViewModel = SearchViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Set dark keyboard
@@ -25,21 +25,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             searchField.textColor = UIColor.whiteColor()
         }
     }
-    
+
     // MARK: SearchBar Delegate
-    
+
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
         if searchText == "" {
             searchViewModel.courses.removeAll()
             tableView.reloadData()
-        }
-        searchViewModel.fetchSearchCourses(searchText) {
-            self.tableView.reloadData()
+        } else {
+            searchViewModel.fetchSearchCourses(searchText) {
+                self.tableView.reloadData()
+            }
         }
     }
-    
+
     // MARK: TableView Data Source
-    
+
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell",
@@ -49,34 +51,35 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.detailTextLabel!.text = course.abbr ?? ""
             return cell
     }
-    
+
     func tableView(tableView: UITableView,
         numberOfRowsInSection section: Int) -> Int {
             return searchViewModel.courses.count
     }
-    
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
+
     // MARK: - Table view delegate
-    
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    
+
     // MARK: - Segues
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! CourseDetailViewController
+                let navigationController = segue.destinationViewController as! UINavigationController
+                let controller = navigationController.topViewController as! CourseDetailViewController
                 let course = searchViewModel.courses[indexPath.row]
                 controller.course = course
             }
         }
     }
-    
+
     @IBAction func exitButtonWasPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

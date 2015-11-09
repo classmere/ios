@@ -15,7 +15,7 @@ struct Building {
     let sqft: Int?
     let buildingNumber: Int?
     let name: String?
-    
+
     init(buildingJSON: JSON) {
         abbr = buildingJSON["abbr"].string as String?
         address = buildingJSON["address"].string as String?

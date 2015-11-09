@@ -12,7 +12,7 @@ class FirstLaunchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
         if firstLaunch {
             print("Client has launched before")
@@ -27,10 +27,10 @@ class FirstLaunchViewController: UIViewController {
 
     @IBAction func startButtonPress(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) { () -> Void in
-            
+
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

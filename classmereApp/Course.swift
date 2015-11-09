@@ -16,9 +16,9 @@ struct Course {
     let credits: [Int]?
     let description: String?
     let abbr: String?
-    
+
     var courseSections = [CourseSection]()
-    
+
     init(courseJSON: JSON) {
         title = courseJSON["title"].string as String?
         subjectCode = courseJSON["subjectCode"].string as String?
@@ -26,7 +26,7 @@ struct Course {
         credits = courseJSON["credits"].arrayObject as! [Int]?
         description = courseJSON["description"].string as String?
         abbr = (subjectCode ?? "") + " " + String(courseNumber ?? 0)
-        
+
         // If sections exist, for each section in JSON array, create a CourseSection object
         if let sectionArray = courseJSON["sections"].array {
             for theSection in sectionArray {
@@ -36,4 +36,3 @@ struct Course {
         }
     }
 }
-

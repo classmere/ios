@@ -11,14 +11,14 @@ import MapKit
 
 class MapTableViewCell: AbstractClassmereCell {
     @IBOutlet weak var mapView: MKMapView!
-    
+
     let schoolZoomSpan = MKCoordinateSpan(
         latitudeDelta: 0.02,
         longitudeDelta: 0.02)
     let buildingZoomSpan = MKCoordinateSpan(
         latitudeDelta: 0.005,
         longitudeDelta: 0.005)
-    
+
     override func awakeFromNib() {
         let schoolCoordinates = CLLocationCoordinate2D(
             latitude: 44.563849,
@@ -27,21 +27,21 @@ class MapTableViewCell: AbstractClassmereCell {
             center: schoolCoordinates,
             span: schoolZoomSpan)
         mapView.setRegion(schoolCoordinateRegion, animated: false)
-        
+
         super.awakeFromNib()
     }
-    
+
     func navigateToAddress(address: String) {
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(address) { (placemarks, error) -> Void in
-            if let placemark: CLPlacemark = placemarks![0] {
+        geoCoder.geocodeAddressString(address) { placemarks, error in
+            if let placemark: CLPlacemark = placemarks![0],
+                placemarkRegion = placemark.region as? CLCircularRegion {
                 let mapKitPlacemark = MKPlacemark(placemark: placemark)
-                var coordinateRegion = self.mapView.region
-                let regionCenter = (mapKitPlacemark.region as! CLCircularRegion).center
-                coordinateRegion.center = regionCenter
-                coordinateRegion.span = self.buildingZoomSpan
-                
-                self.mapView.setRegion(coordinateRegion, animated: true)
+                var currentCoordinateRegion = self.mapView.region
+                currentCoordinateRegion.center = placemarkRegion.center
+                currentCoordinateRegion.span = self.buildingZoomSpan
+
+                self.mapView.setRegion(currentCoordinateRegion, animated: true)
                 self.mapView.addAnnotation(mapKitPlacemark)
             }
         }

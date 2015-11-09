@@ -9,9 +9,9 @@
 import Foundation
 
 class DetailViewModel {
-    
+
     var course: Course
-    
+
     init(course: Course) {
         self.course = course
     }

@@ -9,10 +9,10 @@
 import Foundation
 
 struct DataFormatter {
-    
+
     /**
         Returns a properly formatted date string from an NSDate
-     
+
         - Parameter date: An NSDate optional with a valid date
         - Returns: A properly formatted date String
     */
@@ -25,10 +25,10 @@ struct DataFormatter {
             return ""
         }
     }
-    
+
     /**
         Returns a properly formatted time string from an NSDate
-         
+
         - Parameter date: An NSDate optional with a valid time
         - Returns: A properly formatted time String
      */
