@@ -7,3 +7,6 @@ before_install:
 
 xcode_workspace: classmereApp.xcworkspace
 xcode_scheme: classmereApp
+
+script:
+  - xcodebuild [DEFAULT_OPTIONS] CODE_SIGNING_REQUIRED=NO
