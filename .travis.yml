@@ -9,4 +9,7 @@ xcode_workspace: classmereApp.xcworkspace
 xcode_scheme: classmereApp
 
 script:
-  - xcodebuild [DEFAULT_OPTIONS] CODE_SIGNING_REQUIRED=NO
+  - xctool -workspace classmereApp.xcworkspace \
+  -scheme classmereApp \
+  -sdk iphonesimulator \
+  build test
