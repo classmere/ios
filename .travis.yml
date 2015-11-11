@@ -9,7 +9,4 @@ xcode_workspace: classmereApp.xcworkspace
 xcode_scheme: classmereApp
 
 script:
-  - xctool -workspace classmereApp.xcworkspace \
-  -scheme classmereApp \
-  -sdk iphonesimulator \
-  build test
+  - xctool -workspace classmereApp.xcworkspace -scheme classmereApp -sdk iphonesimulator build test
