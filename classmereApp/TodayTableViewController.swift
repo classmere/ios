@@ -21,6 +21,7 @@ class TodayTableViewController: UIViewController, UITableViewDelegate, UITableVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Fetch courses
         todayViewModel.fetchCourseData([("PAC", 296), ("ECE", 271), ("Z", 477)]) {
             self.tableView.reloadData()
@@ -38,6 +39,15 @@ class TodayTableViewController: UIViewController, UITableViewDelegate, UITableVi
             let controllers = split.viewControllers
             let navigationController = controllers[controllers.count-1] as! UINavigationController
             self.detailViewController = navigationController.topViewController as? DetailViewController
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        // Check if user is new to app
+        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
+        if !firstLaunch {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "FirstLaunch")
+            self.performSegueWithIdentifier("firstLaunch", sender: self)
         }
     }
 
