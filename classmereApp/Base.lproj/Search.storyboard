@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="1416" y="-630"/>
         </scene>
-        <!--Title-->
+        <!--Course View Controller-->
         <scene sceneID="hjs-lS-sDF">
             <objects>
-                <viewController id="hEf-gV-jam" customClass="CourseDetailViewController" customModule="classmereApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Course View Controller" id="hEf-gV-jam" customClass="CourseViewController" customModule="classmereApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nGg-Ja-ZGa"/>
                         <viewControllerLayoutGuide type="bottom" id="Qil-wf-Kg7"/>
@@ -550,10 +550,10 @@
             </objects>
             <point key="canvasLocation" x="2846" y="92"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Course Navigation Controller-->
         <scene sceneID="Fab-KZ-Lib">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Yr-yv-09f" sceneMemberID="viewController">
+                <navigationController title="Course Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="5Yr-yv-09f" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="uQd-it-xik">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -569,10 +569,10 @@
             </objects>
             <point key="canvasLocation" x="2130" y="-630"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Section Navigation Controller-->
         <scene sceneID="uWr-yx-ipA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cHh-59-026" sceneMemberID="viewController">
+                <navigationController title="Section Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="cHh-59-026" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="JYV-ae-AyB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
