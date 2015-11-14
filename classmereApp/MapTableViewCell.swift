@@ -12,12 +12,16 @@ import MapKit
 class MapTableViewCell: AbstractClassmereCell {
     @IBOutlet weak var mapView: MKMapView!
 
+    let mapItem = MKMapItem()
+    
     let schoolZoomSpan = MKCoordinateSpan(
         latitudeDelta: 0.02,
         longitudeDelta: 0.02)
     let buildingZoomSpan = MKCoordinateSpan(
         latitudeDelta: 0.005,
         longitudeDelta: 0.005)
+    
+    var pinLocation: MKPlacemark?
 
     override func awakeFromNib() {
         let schoolCoordinates = CLLocationCoordinate2D(
@@ -43,7 +47,17 @@ class MapTableViewCell: AbstractClassmereCell {
 
                 self.mapView.setRegion(currentCoordinateRegion, animated: true)
                 self.mapView.addAnnotation(mapKitPlacemark)
+                
+                self.pinLocation = mapKitPlacemark
             }
+        }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let pinLocation = pinLocation {
+            let mapItem = MKMapItem(placemark: pinLocation)
+            mapItem.name = "Course Location"
+            mapItem.openInMapsWithLaunchOptions(nil)
         }
     }
 }
