@@ -1,5 +1,5 @@
 //
-//  CourseDetailViewController.swift
+//  CourseViewController.swift
 //  classmereApp
 //
 //  Created by Brandon Lee on 8/25/15.
@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class CourseDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var creditsLabel: UILabel?

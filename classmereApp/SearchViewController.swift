@@ -73,7 +73,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let navigationController = segue.destinationViewController as! UINavigationController
-                let controller = navigationController.topViewController as! CourseDetailViewController
+                let controller = navigationController.topViewController as! CourseViewController
                 let course = searchViewModel.courses[indexPath.row]
                 controller.course = course
             }
