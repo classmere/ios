@@ -12,9 +12,10 @@
 		1604B1841B8D5459003A1E8E /* classmereAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1604B1831B8D5459003A1E8E /* classmereAppTests.swift */; };
 		1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627EE031B93A08C007ED748 /* CourseSection.swift */; };
 		165FD67B1B96CA2800F5DB8A /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */; };
+		168B60541BF6F3F0002CE3F9 /* SectionViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B60531BF6F3F0002CE3F9 /* SectionViewController1.swift */; };
+		168B60561BF6FB76002CE3F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168B60551BF6FB76002CE3F9 /* Images.xcassets */; };
 		16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEAF1B8D99ED00BA3BE7 /* Course.swift */; };
 		16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEB11B8D9A8100BA3BE7 /* APIService.swift */; };
-		16AC31111BA8E2C90077E836 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AC31101BA8E2C90077E836 /* Images.xcassets */; };
 		16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */; };
 		4AF359E4C1C39C194FBC84CF /* Pods_classmereApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */; };
 		AC11EA7D1BEC947E00F367F6 /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC11EA7C1BEC947E00F367F6 /* DataFormatter.swift */; };
@@ -56,9 +57,10 @@
 		1604B1831B8D5459003A1E8E /* classmereAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = classmereAppTests.swift; sourceTree = "<group>"; };
 		1627EE031B93A08C007ED748 /* CourseSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
 		165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
+		168B60531BF6F3F0002CE3F9 /* SectionViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController1.swift; sourceTree = "<group>"; };
+		168B60551BF6FB76002CE3F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		16AADEAF1B8D99ED00BA3BE7 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		16AADEB11B8D9A8100BA3BE7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		16AC31101BA8E2C90077E836 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		16CFDC141BB9275F00BD1FC2 /* FirstLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLaunchViewController.swift; sourceTree = "<group>"; };
 		6A517FA831FD99FDD133144B /* Pods_classmereApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_classmereApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC11EA7C1BEC947E00F367F6 /* DataFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormatter.swift; sourceTree = "<group>"; };
@@ -129,7 +131,6 @@
 				16AADEAD1B8D993E00BA3BE7 /* Views */,
 				16AADEAE1B8D994300BA3BE7 /* Controllers */,
 				1604B16D1B8D5459003A1E8E /* AppDelegate.swift */,
-				16AC31101BA8E2C90077E836 /* Images.xcassets */,
 				1604B1761B8D5459003A1E8E /* LaunchScreen.xib */,
 				1604B16B1B8D5459003A1E8E /* Supporting Files */,
 			);
@@ -139,6 +140,7 @@
 		1604B16B1B8D5459003A1E8E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				168B60551BF6FB76002CE3F9 /* Images.xcassets */,
 				1604B16C1B8D5459003A1E8E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -199,6 +201,7 @@
 				E6C170601BE1C088000E475E /* SearchViewController.swift */,
 				AC74FC5B1BEA9E8E0069F894 /* CourseViewController.swift */,
 				AC74FC5C1BEA9E8E0069F894 /* SectionViewController.swift */,
+				168B60531BF6F3F0002CE3F9 /* SectionViewController1.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -306,10 +309,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16AC31111BA8E2C90077E836 /* Images.xcassets in Resources */,
 				ACBE3DB01BDB3F94009877DE /* Podfile in Resources */,
 				1604B1781B8D5459003A1E8E /* LaunchScreen.xib in Resources */,
 				AC5E4B4C1BDEFB4800CF8CB6 /* Main.storyboard in Resources */,
+				168B60561BF6FB76002CE3F9 /* Images.xcassets in Resources */,
 				AC74FC581BEA9D6C0069F894 /* Search.storyboard in Resources */,
 				AC74FC5A1BEA9D8E0069F894 /* Detail.storyboard in Resources */,
 			);
@@ -389,10 +392,11 @@
 				165FD67B1B96CA2800F5DB8A /* TodayTableViewController.swift in Sources */,
 				E6C170611BE1C088000E475E /* SearchViewController.swift in Sources */,
 				16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */,
+				168B60541BF6F3F0002CE3F9 /* SectionViewController1.swift in Sources */,
 				ACBE3DB41BDB44D7009877DE /* TodayTableViewModel.swift in Sources */,
 				AC74FC5D1BEA9E8E0069F894 /* CourseViewController.swift in Sources */,
 				ACBE3DB91BDB45AA009877DE /* DetailViewModel.swift in Sources */,
-				AC74FC601BEAA3BA0069F894 /* SectionTableViewCell.swift in Sources */,
+				AC74FC601BEAA3BA0069F894 /* EmbeddedTableViewCell.swift in Sources */,
 				AC11EA7D1BEC947E00F367F6 /* DataFormatter.swift in Sources */,
 				1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */,
 				ACBE3DBA1BDB45AA009877DE /* DetailViewController.swift in Sources */,
