@@ -23,9 +23,9 @@ class SectionViewController1: UITableViewController {
     override func tableView(tableView: UITableView,
         heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
             switch indexPath.section {
-            case 0:
+            case 0,1,2:
                 return 122
-            case 1:
+            case 3:
                 return 192
             default:
                 // This shouldn't happen
@@ -54,14 +54,33 @@ class SectionViewController1: UITableViewController {
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             switch indexPath.section {
             case 0:
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell",
+                guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell0",
                     forIndexPath: indexPath) as? TodayTableViewCell else {
-                        return TodayTableViewCell()
+                        return TodayTableViewCell() //here lies the problem for old irrelevant thing
                 }
                 let course = detailViewModel.course
                 cell.populateWithCourse(course)
                 let backgroundColor = UIColor(hue:0.02, saturation:0.64, brightness:0.95, alpha:1)
                 cell.contentView.backgroundColor = backgroundColor
+                return cell
+                
+            case 1:
+                guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell1",
+                    forIndexPath: indexPath) as? InfoTableViewCell1 else {
+                        return InfoTableViewCell1()
+                }
+                let course = detailViewModel.course // problem may be in courseViewController
+                cell.populateWithCourse(course)
+                return cell
+                
+                // add another case for 2
+            case 2:
+                guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell2",
+                    forIndexPath: indexPath) as? InfoTableViewCell1 else {
+                        return InfoTableViewCell1()
+                }
+                let course = detailViewModel.course // problem may be in courseViewController
+                cell.populateWithCourse(course)
                 return cell
                 
             case 3:
@@ -76,7 +95,12 @@ class SectionViewController1: UITableViewController {
                 return cell
                 
             default:
+                print("indexPath.section is: \(indexPath.section)")
                 fatalError("Tableview shouldn't contain more than 4 cells")
             }
+    }
+    
+    @IBAction func exitButtonPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
