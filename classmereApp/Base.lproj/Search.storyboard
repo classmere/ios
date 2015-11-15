@@ -837,11 +837,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" alpha="0.40000000596046398" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calander" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-Vz-dzr">
-                                            <rect key="frame" x="222" y="85" width="20" height="20"/>
+                                            <rect key="frame" x="215" y="85" width="20" height="20"/>
                                             <animations/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046398" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MTWTHF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAe-oZ-1ac">
-                                            <rect key="frame" x="250" y="84" width="78" height="22"/>
+                                            <rect key="frame" x="245" y="84" width="78" height="22"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="highlightedColor"/>
