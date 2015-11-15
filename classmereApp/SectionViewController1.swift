@@ -14,6 +14,7 @@ class SectionViewController1: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Course Details"
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -55,13 +56,11 @@ class SectionViewController1: UITableViewController {
             switch indexPath.section {
             case 0:
                 guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell0",
-                    forIndexPath: indexPath) as? TodayTableViewCell else {
-                        return TodayTableViewCell() //here lies the problem for old irrelevant thing
+                    forIndexPath: indexPath) as? InfoTableViewCell0 else {
+                        return InfoTableViewCell0()
                 }
                 let course = detailViewModel.course
                 cell.populateWithCourse(course)
-                let backgroundColor = UIColor(hue:0.02, saturation:0.64, brightness:0.95, alpha:1)
-                cell.contentView.backgroundColor = backgroundColor
                 return cell
                 
             case 1:
@@ -69,24 +68,23 @@ class SectionViewController1: UITableViewController {
                     forIndexPath: indexPath) as? InfoTableViewCell1 else {
                         return InfoTableViewCell1()
                 }
-                let course = detailViewModel.course // problem may be in courseViewController
+                let course = detailViewModel.course
                 cell.populateWithCourse(course)
                 return cell
                 
-                // add another case for 2
             case 2:
                 guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell2",
-                    forIndexPath: indexPath) as? InfoTableViewCell1 else {
-                        return InfoTableViewCell1()
+                    forIndexPath: indexPath) as? InfoTableViewCell2 else {
+                        return InfoTableViewCell2()
                 }
-                let course = detailViewModel.course // problem may be in courseViewController
+                let course = detailViewModel.course
                 cell.populateWithCourse(course)
                 return cell
                 
             case 3:
                 guard let cell = tableView.dequeueReusableCellWithIdentifier("MapCell",
-                    forIndexPath: indexPath) as? MapTableViewCell else {
-                        return MapTableViewCell()
+                    forIndexPath: indexPath) as? MapTableViewCell1 else {
+                        return MapTableViewCell1()
                 }
                 if let building = detailViewModel.course.courseSections[0].building,
                     address = building.address {
@@ -95,8 +93,7 @@ class SectionViewController1: UITableViewController {
                 return cell
                 
             default:
-                print("indexPath.section is: \(indexPath.section)")
-                fatalError("Tableview shouldn't contain more than 4 cells")
+                fatalError("TableView shouldn't contain more than 4 cells")
             }
     }
     
