@@ -12,7 +12,6 @@ import Alamofire
 class SearchViewModel {
     var courses = [Course]()
     var currentRequest: Request?
-    
 
     func fetchSearchCourses(query: String, completed: () -> Void) {
         if let currentRequest = currentRequest {
@@ -28,4 +27,3 @@ class SearchViewModel {
         }
     }
 }
-

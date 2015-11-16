@@ -1,15 +1,15 @@
 //
-//  MapTableViewCell.swift
-//  classmere
+//  MapTableViewCell1.swift
+//  classmereApp
 //
-//  Created by Rutger Farry on 10/22/15.
-//  Copyright © 2015 Rutger Farry. All rights reserved.
+//  Created by Brandon Lee on 11/14/15.
+//  Copyright © 2015 Brandon Lee. All rights reserved.
 //
 
 import UIKit
 import MapKit
 
-class MapTableViewCell: AbstractClassmereCell {
+class MapTableViewCell1: AbstractClassmereCell {
     
     @IBOutlet weak var mapView: MKMapView!
 
@@ -23,7 +23,7 @@ class MapTableViewCell: AbstractClassmereCell {
         longitudeDelta: 0.005)
     
     var pinLocation: MKPlacemark?
-
+    
     override func awakeFromNib() {
         let schoolCoordinates = CLLocationCoordinate2D(
             latitude: 44.563849,
@@ -32,10 +32,10 @@ class MapTableViewCell: AbstractClassmereCell {
             center: schoolCoordinates,
             span: schoolZoomSpan)
         mapView.setRegion(schoolCoordinateRegion, animated: false)
-
+        
         super.awakeFromNib()
     }
-
+    
     func navigateToAddress(address: String) {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address) { placemarks, error in
@@ -45,7 +45,7 @@ class MapTableViewCell: AbstractClassmereCell {
                 var currentCoordinateRegion = self.mapView.region
                 currentCoordinateRegion.center = placemarkRegion.center
                 currentCoordinateRegion.span = self.buildingZoomSpan
-
+                
                 self.mapView.setRegion(currentCoordinateRegion, animated: true)
                 self.mapView.addAnnotation(mapKitPlacemark)
                 

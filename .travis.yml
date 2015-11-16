@@ -1,0 +1,12 @@
+language: objective-c
+
+osx_image: xcode7.1
+
+before_install:
+  - gem install cocoapods -v '0.39.0'
+
+xcode_workspace: classmereApp.xcworkspace
+xcode_scheme: classmereApp
+
+script:
+  - xctool -workspace classmereApp.xcworkspace -scheme classmereApp -sdk iphonesimulator build test
