@@ -19,10 +19,7 @@ class InfoTableViewCell0: AbstractClassmereCell {
         let section = course.courseSections[0]
         titleLabel.text = course.title?.capitalizedString
         timeLabel.text = InfoTableViewCell0.formatCourseTime(course)
-        
-        print("building1: \(section.building?.name?.capitalizedString)")
         buildingLabel.text = InfoTableViewCell0.formatBuildingStringWithSection(section)
-        
         dayLabel.text = section.days
         super.awakeFromNib()
     }
@@ -39,7 +36,7 @@ class InfoTableViewCell0: AbstractClassmereCell {
     }
     
     static func formatBuildingStringWithSection(section: CourseSection) -> String {
-        if let buildingName = section.building?.name?.capitalizedString,
+        if let buildingName = section.buildingCode?.uppercaseString,
             roomNumber = section.roomNumber {
                 return "\(buildingName) \(roomNumber)"
         } else {

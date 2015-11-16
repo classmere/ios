@@ -24,7 +24,7 @@ class SectionViewController1: UITableViewController {
     override func tableView(tableView: UITableView,
         heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
             switch indexPath.section {
-            case 0,1,2:
+            case 0, 1, 2:
                 return 122
             case 3:
                 return 192
