@@ -41,15 +41,15 @@ class MapTableViewCell1: AbstractClassmereCell {
         geoCoder.geocodeAddressString(address) { placemarks, error in
             if let placemark: CLPlacemark = placemarks![0],
                 placemarkRegion = placemark.region as? CLCircularRegion {
-                    let mapKitPlacemark = MKPlacemark(placemark: placemark)
-                    var currentCoordinateRegion = self.mapView.region
-                    currentCoordinateRegion.center = placemarkRegion.center
-                    currentCoordinateRegion.span = self.buildingZoomSpan
-                    
-                    self.mapView.setRegion(currentCoordinateRegion, animated: true)
-                    self.mapView.addAnnotation(mapKitPlacemark)
-                    
-                    self.pinLocation = mapKitPlacemark
+                let mapKitPlacemark = MKPlacemark(placemark: placemark)
+                var currentCoordinateRegion = self.mapView.region
+                currentCoordinateRegion.center = placemarkRegion.center
+                currentCoordinateRegion.span = self.buildingZoomSpan
+                
+                self.mapView.setRegion(currentCoordinateRegion, animated: true)
+                self.mapView.addAnnotation(mapKitPlacemark)
+                
+                self.pinLocation = mapKitPlacemark
             }
         }
     }

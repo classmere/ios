@@ -15,6 +15,14 @@ class SectionViewController1: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Course Details"
+
+        if let buildingCode = detailViewModel.course.courseSections[0].buildingCode {
+            APIService.getLocationByAbbr(buildingCode) { buildingJSON in
+                let building = Building(buildingJSON: buildingJSON)
+                self.detailViewModel.course.courseSections[0].building = building
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
