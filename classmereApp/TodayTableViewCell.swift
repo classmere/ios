@@ -19,7 +19,6 @@ class TodayTableViewCell: AbstractClassmereCell {
         titleLabel.text = course.title?.capitalizedString
         timeLabel.text = TodayTableViewCell.formatCourseTime(course)
         
-        print("building: \(section.building?.name?.capitalizedString)")
         buildingLabel.text = TodayTableViewCell.formatBuildingStringWithSection(section)
         super.awakeFromNib()
     }

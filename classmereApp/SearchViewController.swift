@@ -29,7 +29,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: SearchBar Delegate
 
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
         if searchText == "" {
             searchViewModel.courses.removeAll()
             tableView.reloadData()
