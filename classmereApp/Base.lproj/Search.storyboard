@@ -836,7 +836,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046398" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calander" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-Vz-dzr">
+                                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046398" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Calendar" translatesAutoresizingMaskIntoConstraints="NO" id="QUr-Vz-dzr">
                                             <rect key="frame" x="215" y="85" width="20" height="20"/>
                                             <animations/>
                                         </imageView>
@@ -877,10 +877,6 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046398" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Instructor" translatesAutoresizingMaskIntoConstraints="NO" id="Axn-P6-22R">
-                                            <rect key="frame" x="14" y="10" width="20" height="20"/>
-                                            <animations/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000596046398" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Term:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4S-eo-GT0">
                                             <rect key="frame" x="14" y="50" width="47" height="22"/>
                                             <animations/>
@@ -901,6 +897,10 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" alpha="0.40000000596046398" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blank_face" translatesAutoresizingMaskIntoConstraints="NO" id="Axn-P6-22R">
+                                            <rect key="frame" x="14" y="10" width="20" height="20"/>
+                                            <animations/>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <color key="backgroundColor" red="0.18823529411764706" green="0.84705882352941175" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
@@ -1074,8 +1074,8 @@
     </scenes>
     <resources>
         <image name="Building" width="192" height="192"/>
-        <image name="Calander" width="66" height="72"/>
+        <image name="Calendar" width="176" height="192"/>
         <image name="Clock" width="192" height="192"/>
-        <image name="Instructor" width="72" height="72"/>
+        <image name="blank_face" width="144" height="192"/>
     </resources>
 </document>
