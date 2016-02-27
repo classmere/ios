@@ -98,7 +98,7 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if let indexPath = tableView.indexPathForSelectedRow {
                 let section = course?.courseSections[indexPath.row]
                 let controller = (segue.destinationViewController as! UINavigationController)
-                    .topViewController as! SectionViewController1 // FIXME: Working is SectionViewController
+                    .topViewController as! SectionViewController
                 controller.detailViewModel = DetailViewModel(course: course!)
                 //controller.detailSection = section
             }

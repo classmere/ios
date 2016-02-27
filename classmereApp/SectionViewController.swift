@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SectionViewController1: UITableViewController {
+class SectionViewController: UITableViewController {
     
     var detailViewModel: DetailViewModel!
     
