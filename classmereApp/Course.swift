@@ -9,6 +9,10 @@
 import Foundation
 import SwiftyJSON
 
+/**
+ A model representation of a course at OSU.
+ Reference Docs - https://github.com/classmere/api
+ */
 struct Course {
     let title: String?
     let subjectCode: String?

@@ -9,12 +9,16 @@
 import Foundation
 import SwiftyJSON
 
+/**
+ A model representation of a course's section at OSU.
+ Reference Docs - https://github.com/classmere/api
+ */
 struct CourseSection {
     let term: String?
     let crn: Int?
     let instructor: String?
 
-    // Within the meetingTimes array
+    // Values within the meetingTimes array
     let buildingCode: String?
     let days: String?
     let startTime: NSDate?
@@ -62,8 +66,11 @@ struct CourseSection {
     /**
         Converts string returned in JSON to a NSDate.
         Offsets time by -7 hours since API returns GMT timezone
+     
+        - Parameter iso8601String: A string optional with valid date.
+        - Returns: A converted NSDate Optional
+        
      */
-
     static func dateFromISO8601String(iso8601String: String?) -> NSDate? {
         if let iso8601String = iso8601String {
             let dateFormatter = NSDateFormatter()
