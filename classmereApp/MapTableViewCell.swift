@@ -9,6 +9,9 @@
 import UIKit
 import MapKit
 
+/**
+ Cell view representation for the map view.
+ */
 class MapTableViewCell: AbstractClassmereCell {
     
     @IBOutlet weak var mapView: MKMapView!
@@ -24,6 +27,7 @@ class MapTableViewCell: AbstractClassmereCell {
     
     var pinLocation: MKPlacemark?
     
+    /// Sets general coordinates for the map view
     override func awakeFromNib() {
         let schoolCoordinates = CLLocationCoordinate2D(
             latitude: 44.563849,
@@ -36,6 +40,12 @@ class MapTableViewCell: AbstractClassmereCell {
         super.awakeFromNib()
     }
     
+    /**
+     Set up map region and pin.
+     
+     - Parameter address: The address of the building.
+     - Returns: Nothing.
+     */
     func navigateToAddress(address: String) {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address) { placemarks, error in
@@ -54,6 +64,7 @@ class MapTableViewCell: AbstractClassmereCell {
         }
     }
     
+    /// Set pin
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let pinLocation = pinLocation {
             let mapItem = MKMapItem(placemark: pinLocation)
