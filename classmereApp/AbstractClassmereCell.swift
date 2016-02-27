@@ -18,4 +18,36 @@ class AbstractClassmereCell: UITableViewCell {
         backgroundColor = UIColor.clearColor()
         selectionStyle = .None
     }
+    
+    /**
+     Formats the course time to combine start time and end time into one string.
+     
+     - Parameter course: The course object.
+     - Returns: Formatted time string
+     */
+    static func formatCourseTime(course: Course) -> String {
+        if let startTime = course.courseSections[0].startTime,
+            endTime = course.courseSections[0].endTime {
+                let startTimeString = DataFormatter.timeStringFromDate(startTime)
+                let endTimeString = DataFormatter.timeStringFromDate(endTime)
+                return "\(startTimeString) – \(endTimeString)"
+        } else {
+            return "TBA"
+        }
+    }
+    
+    /**
+     Format building string to contain both building name and room number.
+     
+     - Paramter section: CourseSection object.
+     - Returns: Formatted building string.
+     */
+    static func formatBuildingStringWithSection(section: CourseSection) -> String {
+        if let buildingName = section.building?.name?.capitalizedString,
+            roomNumber = section.roomNumber {
+                return "\(buildingName) \(roomNumber)"
+        } else {
+            return "TBA"
+        }
+    }
 }
