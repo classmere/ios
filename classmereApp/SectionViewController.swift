@@ -20,10 +20,11 @@ class SectionViewController: UITableViewController {
         super.viewDidLoad()
         self.title = "Course Details"
 
-        if let buildingCode = detailViewModel.course.courseSections[0].buildingCode {
+        // TODO: Maybe refactor this to be placed somewhere else...
+        if let buildingCode = detailViewModel.courseSection?.buildingCode {
             APIService.getLocationByAbbr(buildingCode) { buildingJSON in
                 let building = Building(buildingJSON: buildingJSON)
-                self.detailViewModel.course.courseSections[0].building = building
+                self.detailViewModel.courseSection?.building = building
                 self.tableView.reloadData()
             }
         }
@@ -100,7 +101,7 @@ class SectionViewController: UITableViewController {
                     forIndexPath: indexPath) as? MapTableViewCell else {
                         return MapTableViewCell()
                 }
-                if let building = detailViewModel.course.courseSections[0].building,
+                if let building = detailViewModel.courseSection?.building,
                     address = building.address {
                         cell3.navigateToAddress(address)
                 }
