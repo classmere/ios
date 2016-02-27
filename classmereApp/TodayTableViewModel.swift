@@ -16,7 +16,7 @@ class TodayViewModel {
     var courses = [Course]()
 
     /**
-     Calls APIService to get course by subject code.
+     Calls APIService to get todayview courses by subject code.
      
      - Parameter requestedCourses: Specific courses to be fetched.
      - Parameter completed: A callback that returns nothing.
@@ -43,7 +43,7 @@ class TodayViewModel {
                 }
         }
     }
-
+    
     /**
      Calls APIService to get building data for specified sections.
      

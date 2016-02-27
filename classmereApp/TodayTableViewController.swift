@@ -10,11 +10,13 @@ import UIKit
 
 /**
  The view controller for the main view on app load.
+ The static todayView is our initial design goal for what a possible personalized list of courses would look like.
  */
 class TodayTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
 
+    // Define our demo/static today view
     let todayViewModel = TodayViewModel()
     var detailViewController: DetailViewController? = nil
     let cellColors = [
@@ -46,6 +48,7 @@ class TodayTableViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func viewDidAppear(animated: Bool) {
+        
         // Check if user is new to app
         let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("FirstLaunch")
         if !firstLaunch {
