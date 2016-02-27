@@ -20,7 +20,7 @@ class SectionViewController: UITableViewController {
         super.viewDidLoad()
         self.title = "Course Details"
 
-        // TODO: Maybe refactor this to be placed somewhere else...
+        // TODO: Refactor this to be placed somewhere else...
         if let buildingCode = detailViewModel.courseSection?.buildingCode {
             APIService.getLocationByAbbr(buildingCode) { buildingJSON in
                 let building = Building(buildingJSON: buildingJSON)
