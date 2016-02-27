@@ -25,12 +25,10 @@ class InfoTableViewCell2: AbstractClassmereCell {
     /**
      Fill cell with specific course data.
      
-     - Parameter course: The course object.
+     - Parameter course: The section object.
      - Returns: Nothing.
      */
-    func populateWithCourse(course: Course) {
-        let section = course.courseSections[0]
-        
+    func populateWithCourse(section: CourseSection) {
         if let capacity = section.capacity {
             capacityLabel.text = String(capacity)
         }

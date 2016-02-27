@@ -10,6 +10,7 @@ import UIKit
 
 class SectionViewController: UITableViewController {
     
+    // TODO: Might be better to take in a different view model
     var detailViewModel: DetailViewModel!
     
     override func viewDidLoad() {
@@ -59,46 +60,48 @@ class SectionViewController: UITableViewController {
             return headerView
     }
     
+    // TODO: Maybe cut down and make less massive..
     override func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             switch indexPath.section {
             case 0:
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell0",
+                guard let cell0 = tableView.dequeueReusableCellWithIdentifier("InfoCell0",
                     forIndexPath: indexPath) as? InfoTableViewCell0 else {
                         return InfoTableViewCell0()
                 }
                 let course = detailViewModel.course
-                cell.populateWithCourse(course)
-                return cell
+                let section = detailViewModel.courseSection
+                cell0.populateWithCourse(course, section: section!)
+                return cell0
                 
             case 1:
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell1",
+                guard let cell1 = tableView.dequeueReusableCellWithIdentifier("InfoCell1",
                     forIndexPath: indexPath) as? InfoTableViewCell1 else {
                         return InfoTableViewCell1()
                 }
-                let course = detailViewModel.course
-                cell.populateWithCourse(course)
-                return cell
+                let section = detailViewModel.courseSection
+                cell1.populateWithCourse(section!)
+                return cell1
                 
             case 2:
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("InfoCell2",
+                guard let cell2 = tableView.dequeueReusableCellWithIdentifier("InfoCell2",
                     forIndexPath: indexPath) as? InfoTableViewCell2 else {
                         return InfoTableViewCell2()
                 }
-                let course = detailViewModel.course
-                cell.populateWithCourse(course)
-                return cell
+                let section = detailViewModel.courseSection
+                cell2.populateWithCourse(section!)
+                return cell2
                 
             case 3:
-                guard let cell = tableView.dequeueReusableCellWithIdentifier("MapCell",
+                guard let cell3 = tableView.dequeueReusableCellWithIdentifier("MapCell",
                     forIndexPath: indexPath) as? MapTableViewCell else {
                         return MapTableViewCell()
                 }
                 if let building = detailViewModel.course.courseSections[0].building,
                     address = building.address {
-                        cell.navigateToAddress(address)
+                        cell3.navigateToAddress(address)
                 }
-                return cell
+                return cell3
                 
             default:
                 fatalError("TableView shouldn't contain more than 4 cells")

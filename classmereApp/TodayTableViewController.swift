@@ -65,8 +65,9 @@ class TodayTableViewController: UIViewController, UITableViewDelegate, UITableVi
                 let navigationController = segue.destinationViewController as! UINavigationController
                 let controller = navigationController.topViewController as! DetailViewController
                 let course = todayViewModel.courses[indexPath.section]
-
-                controller.detailViewModel = DetailViewModel(course: course)
+                
+                // FIXME: A little bit sloppy here - since don't really need second parameter.
+                controller.detailViewModel = DetailViewModel(course: course, courseSection: course.courseSections[0])
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }

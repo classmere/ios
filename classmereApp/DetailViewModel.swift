@@ -14,9 +14,11 @@ import Foundation
 class DetailViewModel {
     
     var course: Course
+    var courseSection: CourseSection?
 
-    init(course: Course) {
+    init(course: Course, courseSection: CourseSection) {
         self.course = course
+        self.courseSection = courseSection
     }
     
     // FIXME: The following method is defined twice (TodayTableViewModel & DetailView Model) need to restructure!

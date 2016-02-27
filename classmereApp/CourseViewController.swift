@@ -71,6 +71,7 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            
             // Configure the cell...
             guard let cell = tableView.dequeueReusableCellWithIdentifier("SectionCell",
                 forIndexPath: indexPath) as? EmbeddedTableViewCell else {
@@ -92,19 +93,19 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     // MARK: - Navigation
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSection" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let section = course?.courseSections[indexPath.row]
-                let controller = (segue.destinationViewController as! UINavigationController)
-                    .topViewController as! SectionViewController
-                controller.detailViewModel = DetailViewModel(course: course!)
-                //controller.detailSection = section
+                let navigationController = segue.destinationViewController as! UINavigationController
+                let controller = navigationController.topViewController as! SectionViewController
+                let theSection = course?.courseSections[indexPath.row]
+                
+                controller.detailViewModel = DetailViewModel(course: course!, courseSection: theSection!)
             }
         }
     }
-
+    
     @IBAction func exitButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

@@ -43,7 +43,7 @@ class AbstractClassmereCell: UITableViewCell {
      - Returns: Formatted building string.
      */
     static func formatBuildingStringWithSection(section: CourseSection) -> String {
-        if let buildingName = section.building?.name?.capitalizedString,
+        if let buildingName = section.buildingCode,
             roomNumber = section.roomNumber {
                 return "\(buildingName) \(roomNumber)"
         } else {

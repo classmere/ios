@@ -27,10 +27,10 @@ class InfoTableViewCell0: AbstractClassmereCell {
      Fill cell with specific course data.
      
      - Parameter course: The course object.
+     - Paramter section: The section object.
      - Returns: Nothing.
      */
-    func populateWithCourse(course: Course) {
-        let section = course.courseSections[0]
+    func populateWithCourse(course: Course, section: CourseSection) {
         titleLabel.text = course.title?.capitalizedString
         timeLabel.text = InfoTableViewCell0.formatCourseTime(course)
         buildingLabel.text = InfoTableViewCell0.formatBuildingStringWithSection(section)
