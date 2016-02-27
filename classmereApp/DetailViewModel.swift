@@ -22,6 +22,7 @@ class DetailViewModel {
     }
     
     // FIXME: The following method is defined twice (TodayTableViewModel & DetailView Model) need to restructure!
+    
     /**
      Calls APIService to get building data for specified sections.
      

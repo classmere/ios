@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ The view controller which combines all the infotableviewcell views to display all the section details.
+ */
 class SectionViewController: UITableViewController {
     
     // TODO: Might be better to take in a different view model

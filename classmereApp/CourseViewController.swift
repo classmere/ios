@@ -22,7 +22,7 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
 
     var course: Course?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = course?.abbr
