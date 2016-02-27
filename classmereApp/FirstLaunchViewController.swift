@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Onboarding view.
+ */
 class FirstLaunchViewController: UIViewController {
 
     override func viewDidLoad() {
