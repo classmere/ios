@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ The view controller for the main view on app load.
+ */
 class TodayTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
