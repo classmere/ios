@@ -10,10 +10,20 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+/**
+ A representation of Classmere's API service.
+ Reference Docs - https://github.com/classmere/api
+ */
 struct APIService {
 
     static let baseURL = "http://api.classmere.com"
-
+    
+    /**
+    Fetches all courses at OSU in a single request.
+     
+    - Parameter completion: A callback that accepts JSON and returns nothing.
+    - Returns: Request.
+    */
     static func getAllCourses(completion: (JSON) -> Void) -> Request {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         return Alamofire.request(.GET, "\(baseURL)/courses/")
@@ -28,6 +38,14 @@ struct APIService {
         }
     }
 
+    /**
+     Fetches a specific course at OSU by its subject code.
+     
+     - Parameter subjectCode: The first part of the course abbreviation.
+     - Parameter courseNumber: The number ID of the particular course.
+     - Parameter completion: A callback that accepts JSON and returns nothing.
+     - Returns: Request.
+     */
     static func getCourseBySubjectCode(subjectCode: String,
         courseNumber: Int, completion: (JSON) -> Void) -> Request {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -43,6 +61,13 @@ struct APIService {
             }
     }
 
+    /**
+     Fetches a specific location at OSU by course's abbreviation.
+     
+     - Parameter abbr: The course's abbreviation.
+     - Parameter completion: A callback that accepts JSON and returns nothing.
+     - Returns: Request.
+     */
     static func getLocationByAbbr(abbr: String,
         completion: (JSON) -> Void) -> Request {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -58,6 +83,13 @@ struct APIService {
             }
     }
 
+    /**
+     Fetches a specific course at OSU by a user inputted query.
+     
+     - Parameter searchQuery: The user inputted query.
+     - Parameter completion: A callback that accepts JSON and returns nothing.
+     - Returns: Request.
+     */
     static func searchCourse(searchQuery: String,
         completion: (JSON) -> Void) -> Request {
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
