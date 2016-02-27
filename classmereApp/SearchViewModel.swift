@@ -9,10 +9,20 @@
 import Foundation
 import Alamofire
 
+/**
+  Some presentation logic for the searching.
+ */
 class SearchViewModel {
     var courses = [Course]()
     var currentRequest: Request?
 
+    /**
+     Search for courses given user query using APIService.
+     
+     - Parameter query: User's search query.
+     - Parameter completed: A callback that returns nothing.
+     - Returns: Nothing
+     */
     func fetchSearchCourses(query: String, completed: () -> Void) {
         if let currentRequest = currentRequest {
             currentRequest.cancel()
