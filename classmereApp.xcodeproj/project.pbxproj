@@ -27,7 +27,6 @@
 		AC74FC581BEA9D6C0069F894 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC74FC561BEA9D6C0069F894 /* Search.storyboard */; };
 		AC74FC5A1BEA9D8E0069F894 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC74FC591BEA9D8E0069F894 /* Detail.storyboard */; };
 		AC74FC5D1BEA9E8E0069F894 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74FC5B1BEA9E8E0069F894 /* CourseViewController.swift */; };
-		AC74FC5E1BEA9E8E0069F894 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74FC5C1BEA9E8E0069F894 /* SectionViewController.swift */; };
 		AC74FC601BEAA3BA0069F894 /* EmbeddedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74FC5F1BEAA3BA0069F894 /* EmbeddedTableViewCell.swift */; };
 		ACBE3DB01BDB3F94009877DE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ACBE3DAF1BDB3F94009877DE /* Podfile */; };
 		ACBE3DB21BDB4346009877DE /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB11BDB4346009877DE /* Building.swift */; };
@@ -76,7 +75,6 @@
 		AC74FC571BEA9D6C0069F894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		AC74FC591BEA9D8E0069F894 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		AC74FC5B1BEA9E8E0069F894 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
-		AC74FC5C1BEA9E8E0069F894 /* SectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		AC74FC5F1BEAA3BA0069F894 /* EmbeddedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedTableViewCell.swift; sourceTree = "<group>"; };
 		ACBE3DAF1BDB3F94009877DE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		ACBE3DB11BDB4346009877DE /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 				E6C170621BE1C0F0000E475E /* SearchViewModel.swift */,
 				E6C170601BE1C088000E475E /* SearchViewController.swift */,
 				AC74FC5B1BEA9E8E0069F894 /* CourseViewController.swift */,
-				AC74FC5C1BEA9E8E0069F894 /* SectionViewController.swift */,
 				168B60531BF6F3F0002CE3F9 /* SectionViewController1.swift */,
 			);
 			name = Controllers;
@@ -398,7 +395,6 @@
 				ACBE3DBC1BDB45AA009877DE /* MapTableViewCell.swift in Sources */,
 				1681F4651BF83D45009532EF /* MapTableViewCell1.swift in Sources */,
 				ACBE3DB21BDB4346009877DE /* Building.swift in Sources */,
-				AC74FC5E1BEA9E8E0069F894 /* SectionViewController.swift in Sources */,
 				ACBE3DBB1BDB45AA009877DE /* TodayTableViewCell.swift in Sources */,
 				16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */,
 				E6C170631BE1C0F0000E475E /* SearchViewModel.swift in Sources */,
