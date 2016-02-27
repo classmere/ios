@@ -8,6 +8,13 @@
 
 import UIKit
 
+/**
+ Third detailed cell with course information in section view.
+ Displays the following course information:
+ - Course Capacity
+ - Course Currently Enrolled
+ - Course CRN
+ */
 class InfoTableViewCell2: AbstractClassmereCell {
 
     @IBOutlet weak var capacityLabel: UILabel!
@@ -15,9 +22,13 @@ class InfoTableViewCell2: AbstractClassmereCell {
     @IBOutlet weak var availableSpotsLabel: UILabel!
     @IBOutlet weak var crnLabel: UILabel!
     
-    func populateWithCourse(course: Course) {
-        let section = course.courseSections[0]
-        
+    /**
+     Fill cell with specific course data.
+     
+     - Parameter course: The section object.
+     - Returns: Nothing.
+     */
+    func populateWithCourse(section: CourseSection) {
         if let capacity = section.capacity {
             capacityLabel.text = String(capacity)
         }

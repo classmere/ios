@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+/**
+ The view controller for viewing a specific course and its sections embedded in table view.
+ */
 class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var titleLabel: UILabel?
@@ -19,13 +22,14 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
 
     var course: Course?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = course?.abbr
         tableView.delegate = self
         tableView.dataSource = self
 
+        // TODO: A bit much to add into the view controller - the logic could be placed elsewhere...
         if let subjectCode = course?.subjectCode, courseNumber = course?.courseNumber {
             APIService.getCourseBySubjectCode(subjectCode,
                 courseNumber: courseNumber) { courseJSON in
@@ -71,10 +75,11 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            
             // Configure the cell...
             guard let cell = tableView.dequeueReusableCellWithIdentifier("SectionCell",
-                forIndexPath: indexPath) as? SectionTableViewCell else {
-                    return SectionTableViewCell()
+                forIndexPath: indexPath) as? EmbeddedTableViewCell else {
+                    return EmbeddedTableViewCell()
             }
             if let section = course?.courseSections[indexPath.row] {
                 cell.termLabel?.text = section.term
@@ -92,19 +97,19 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     // MARK: - Navigation
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSection" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let section = course?.courseSections[indexPath.row]
-                let controller = (segue.destinationViewController as! UINavigationController)
-                    .topViewController as! SectionViewController1 // FIXME: Working is SectionViewController
-                controller.detailViewModel = DetailViewModel(course: course!)
-                //controller.detailSection = section
+                let navigationController = segue.destinationViewController as! UINavigationController
+                let controller = navigationController.topViewController as! SectionViewController
+                let theSection = course?.courseSections[indexPath.row]
+                
+                controller.detailViewModel = DetailViewModel(course: course!, courseSection: theSection!)
             }
         }
     }
-
+    
     @IBAction func exitButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

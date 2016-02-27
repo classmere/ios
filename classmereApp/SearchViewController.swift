@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ The viewcontroller for searching courses.
+ */
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -17,8 +20,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Set dark keyboard
         searchBar.keyboardAppearance = .Dark
+        
         // Embed searchBar in navBar and change text color
         navigationItem.titleView = searchBar
         if let searchField = searchBar.valueForKey("searchField") as? UITextField {
@@ -28,6 +33,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     // MARK: SearchBar Delegate
 
+    // Whenever the user updates the search query, fetch courses!
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
             searchViewModel.courses.removeAll()

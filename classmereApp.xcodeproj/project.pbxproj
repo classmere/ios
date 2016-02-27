@@ -13,8 +13,8 @@
 		1627EE041B93A08C007ED748 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627EE031B93A08C007ED748 /* CourseSection.swift */; };
 		165FD67B1B96CA2800F5DB8A /* TodayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */; };
 		1681F4631BF83BBD009532EF /* InfoTableViewCell0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1681F4621BF83BBD009532EF /* InfoTableViewCell0.swift */; };
-		1681F4651BF83D45009532EF /* MapTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1681F4641BF83D45009532EF /* MapTableViewCell1.swift */; };
-		168B60541BF6F3F0002CE3F9 /* SectionViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B60531BF6F3F0002CE3F9 /* SectionViewController1.swift */; };
+		1681F4651BF83D45009532EF /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1681F4641BF83D45009532EF /* MapTableViewCell.swift */; };
+		168B60541BF6F3F0002CE3F9 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168B60531BF6F3F0002CE3F9 /* SectionViewController.swift */; };
 		16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEAF1B8D99ED00BA3BE7 /* Course.swift */; };
 		16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AADEB11B8D9A8100BA3BE7 /* APIService.swift */; };
 		16ABAAA31BF7EDE1003CEB31 /* InfoTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABAAA21BF7EDE1003CEB31 /* InfoTableViewCell1.swift */; };
@@ -27,7 +27,6 @@
 		AC74FC581BEA9D6C0069F894 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC74FC561BEA9D6C0069F894 /* Search.storyboard */; };
 		AC74FC5A1BEA9D8E0069F894 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC74FC591BEA9D8E0069F894 /* Detail.storyboard */; };
 		AC74FC5D1BEA9E8E0069F894 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74FC5B1BEA9E8E0069F894 /* CourseViewController.swift */; };
-		AC74FC5E1BEA9E8E0069F894 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74FC5C1BEA9E8E0069F894 /* SectionViewController.swift */; };
 		AC74FC601BEAA3BA0069F894 /* EmbeddedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC74FC5F1BEAA3BA0069F894 /* EmbeddedTableViewCell.swift */; };
 		ACBE3DB01BDB3F94009877DE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = ACBE3DAF1BDB3F94009877DE /* Podfile */; };
 		ACBE3DB21BDB4346009877DE /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB11BDB4346009877DE /* Building.swift */; };
@@ -35,7 +34,6 @@
 		ACBE3DB91BDB45AA009877DE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB51BDB45AA009877DE /* DetailViewModel.swift */; };
 		ACBE3DBA1BDB45AA009877DE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */; };
 		ACBE3DBB1BDB45AA009877DE /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */; };
-		ACBE3DBC1BDB45AA009877DE /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */; };
 		ACD9485A1BDEBD3D0055A4F5 /* AbstractClassmereCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */; };
 		E6C170611BE1C088000E475E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C170601BE1C088000E475E /* SearchViewController.swift */; };
 		E6C170631BE1C0F0000E475E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C170621BE1C0F0000E475E /* SearchViewModel.swift */; };
@@ -62,8 +60,8 @@
 		1627EE031B93A08C007ED748 /* CourseSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
 		165FD67A1B96CA2800F5DB8A /* TodayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewController.swift; sourceTree = "<group>"; };
 		1681F4621BF83BBD009532EF /* InfoTableViewCell0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell0.swift; sourceTree = "<group>"; };
-		1681F4641BF83D45009532EF /* MapTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell1.swift; sourceTree = "<group>"; };
-		168B60531BF6F3F0002CE3F9 /* SectionViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController1.swift; sourceTree = "<group>"; };
+		1681F4641BF83D45009532EF /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
+		168B60531BF6F3F0002CE3F9 /* SectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		16AADEAF1B8D99ED00BA3BE7 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		16AADEB11B8D9A8100BA3BE7 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		16ABAAA21BF7EDE1003CEB31 /* InfoTableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell1.swift; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 		AC74FC571BEA9D6C0069F894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		AC74FC591BEA9D8E0069F894 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		AC74FC5B1BEA9E8E0069F894 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
-		AC74FC5C1BEA9E8E0069F894 /* SectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		AC74FC5F1BEAA3BA0069F894 /* EmbeddedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbeddedTableViewCell.swift; sourceTree = "<group>"; };
 		ACBE3DAF1BDB3F94009877DE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		ACBE3DB11BDB4346009877DE /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
@@ -84,7 +81,6 @@
 		ACBE3DB51BDB45AA009877DE /* DetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		ACBE3DB61BDB45AA009877DE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
-		ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractClassmereCell.swift; sourceTree = "<group>"; };
 		E6C170601BE1C088000E475E /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E6C170621BE1C0F0000E475E /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -111,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16003F301C815D40005D764A /* InfoTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1681F4621BF83BBD009532EF /* InfoTableViewCell0.swift */,
+				16ABAAA21BF7EDE1003CEB31 /* InfoTableViewCell1.swift */,
+				16ABAAA41BF80182003CEB31 /* InfoTableViewCell2.swift */,
+			);
+			name = InfoTableViewCells;
+			sourceTree = "<group>";
+		};
 		1604B15F1B8D5459003A1E8E = {
 			isa = PBXGroup;
 			children = (
@@ -188,12 +194,9 @@
 			children = (
 				ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */,
 				AC74FC5F1BEAA3BA0069F894 /* EmbeddedTableViewCell.swift */,
+				16003F301C815D40005D764A /* InfoTableViewCells */,
+				1681F4641BF83D45009532EF /* MapTableViewCell.swift */,
 				ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */,
-				1681F4621BF83BBD009532EF /* InfoTableViewCell0.swift */,
-				16ABAAA21BF7EDE1003CEB31 /* InfoTableViewCell1.swift */,
-				16ABAAA41BF80182003CEB31 /* InfoTableViewCell2.swift */,
-				ACBE3DB81BDB45AA009877DE /* MapTableViewCell.swift */,
-				1681F4641BF83D45009532EF /* MapTableViewCell1.swift */,
 				AC5E4B4A1BDEFB4800CF8CB6 /* Main.storyboard */,
 				AC74FC591BEA9D8E0069F894 /* Detail.storyboard */,
 				AC74FC561BEA9D6C0069F894 /* Search.storyboard */,
@@ -212,8 +215,7 @@
 				E6C170621BE1C0F0000E475E /* SearchViewModel.swift */,
 				E6C170601BE1C088000E475E /* SearchViewController.swift */,
 				AC74FC5B1BEA9E8E0069F894 /* CourseViewController.swift */,
-				AC74FC5C1BEA9E8E0069F894 /* SectionViewController.swift */,
-				168B60531BF6F3F0002CE3F9 /* SectionViewController1.swift */,
+				168B60531BF6F3F0002CE3F9 /* SectionViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -395,10 +397,8 @@
 				16ABAAA51BF80182003CEB31 /* InfoTableViewCell2.swift in Sources */,
 				ACD9485A1BDEBD3D0055A4F5 /* AbstractClassmereCell.swift in Sources */,
 				16AADEB01B8D99ED00BA3BE7 /* Course.swift in Sources */,
-				ACBE3DBC1BDB45AA009877DE /* MapTableViewCell.swift in Sources */,
-				1681F4651BF83D45009532EF /* MapTableViewCell1.swift in Sources */,
+				1681F4651BF83D45009532EF /* MapTableViewCell.swift in Sources */,
 				ACBE3DB21BDB4346009877DE /* Building.swift in Sources */,
-				AC74FC5E1BEA9E8E0069F894 /* SectionViewController.swift in Sources */,
 				ACBE3DBB1BDB45AA009877DE /* TodayTableViewCell.swift in Sources */,
 				16AADEB21B8D9A8100BA3BE7 /* APIService.swift in Sources */,
 				E6C170631BE1C0F0000E475E /* SearchViewModel.swift in Sources */,
@@ -408,7 +408,7 @@
 				165FD67B1B96CA2800F5DB8A /* TodayTableViewController.swift in Sources */,
 				E6C170611BE1C088000E475E /* SearchViewController.swift in Sources */,
 				16CFDC151BB9275F00BD1FC2 /* FirstLaunchViewController.swift in Sources */,
-				168B60541BF6F3F0002CE3F9 /* SectionViewController1.swift in Sources */,
+				168B60541BF6F3F0002CE3F9 /* SectionViewController.swift in Sources */,
 				ACBE3DB41BDB44D7009877DE /* TodayTableViewModel.swift in Sources */,
 				AC74FC5D1BEA9E8E0069F894 /* CourseViewController.swift in Sources */,
 				ACBE3DB91BDB45AA009877DE /* DetailViewModel.swift in Sources */,

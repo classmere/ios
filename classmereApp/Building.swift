@@ -9,6 +9,10 @@
 import Foundation
 import SwiftyJSON
 
+/**
+ A model representation of a building at OSU.
+ Reference Docs - https://github.com/classmere/api
+*/
 struct Building {
     let abbr: String?
     let address: String?

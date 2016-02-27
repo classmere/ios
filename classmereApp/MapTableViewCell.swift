@@ -1,14 +1,17 @@
 //
 //  MapTableViewCell.swift
-//  classmere
+//  classmereApp
 //
-//  Created by Rutger Farry on 10/22/15.
-//  Copyright © 2015 Rutger Farry. All rights reserved.
+//  Created by Brandon Lee on 11/14/15.
+//  Copyright © 2015 Brandon Lee. All rights reserved.
 //
 
 import UIKit
 import MapKit
 
+/**
+ Cell view representation for the map view.
+ */
 class MapTableViewCell: AbstractClassmereCell {
     
     @IBOutlet weak var mapView: MKMapView!
@@ -23,7 +26,8 @@ class MapTableViewCell: AbstractClassmereCell {
         longitudeDelta: 0.005)
     
     var pinLocation: MKPlacemark?
-
+    
+    /// Sets general coordinates for the map view
     override func awakeFromNib() {
         let schoolCoordinates = CLLocationCoordinate2D(
             latitude: 44.563849,
@@ -32,10 +36,16 @@ class MapTableViewCell: AbstractClassmereCell {
             center: schoolCoordinates,
             span: schoolZoomSpan)
         mapView.setRegion(schoolCoordinateRegion, animated: false)
-
+        
         super.awakeFromNib()
     }
-
+    
+    /**
+     Set up map region and pin.
+     
+     - Parameter address: The address of the building.
+     - Returns: Nothing.
+     */
     func navigateToAddress(address: String) {
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address) { placemarks, error in
@@ -45,7 +55,7 @@ class MapTableViewCell: AbstractClassmereCell {
                 var currentCoordinateRegion = self.mapView.region
                 currentCoordinateRegion.center = placemarkRegion.center
                 currentCoordinateRegion.span = self.buildingZoomSpan
-
+                
                 self.mapView.setRegion(currentCoordinateRegion, animated: true)
                 self.mapView.addAnnotation(mapKitPlacemark)
                 
@@ -54,6 +64,7 @@ class MapTableViewCell: AbstractClassmereCell {
         }
     }
     
+    /// Set pin
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let pinLocation = pinLocation {
             let mapItem = MKMapItem(placemark: pinLocation)

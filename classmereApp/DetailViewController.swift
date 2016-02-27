@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Today view's detail view.
+ */
 class DetailViewController: UITableViewController {
 
     var detailViewModel: DetailViewModel!
