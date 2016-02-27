@@ -8,6 +8,14 @@
 
 import UIKit
 
+/**
+ First detailed cell with course information in section view.
+ Displays the following course information:
+ - Course Title
+ - Course Building Data
+ - Course Time
+ - Course Day
+ */
 class InfoTableViewCell0: AbstractClassmereCell {
 
     @IBOutlet weak var titleLabel: UILabel!
@@ -15,6 +23,12 @@ class InfoTableViewCell0: AbstractClassmereCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     
+    /**
+     Fill cell with specific course data.
+     
+     - Parameter course: The course object.
+     - Returns: Nothing.
+     */
     func populateWithCourse(course: Course) {
         let section = course.courseSections[0]
         titleLabel.text = course.title?.capitalizedString
@@ -24,6 +38,12 @@ class InfoTableViewCell0: AbstractClassmereCell {
         super.awakeFromNib()
     }
     
+    /**
+     Formats the course time to combine start time and end time into one string.
+     
+     - Paramter course: The course object.
+     - Returns: Formatted time string
+     */
     static func formatCourseTime(course: Course) -> String {
         if let startTime = course.courseSections[0].startTime,
             endTime = course.courseSections[0].endTime {
@@ -35,6 +55,12 @@ class InfoTableViewCell0: AbstractClassmereCell {
         }
     }
     
+    /**
+     Format building string to contain both building name and room number.
+     
+     - Paramter section: CourseSection object.
+     - Returns: Formatted building string.
+     */
     static func formatBuildingStringWithSection(section: CourseSection) -> String {
         if let buildingName = section.buildingCode?.uppercaseString,
             roomNumber = section.roomNumber {

@@ -8,12 +8,25 @@
 
 import UIKit
 
+/**
+ First detailed cell with course information in section view.
+ Displays the following course information:
+ - Course Instructor
+ - Course Term
+ - Course Type
+ */
 class InfoTableViewCell1: AbstractClassmereCell {
     
     @IBOutlet weak var instructorLabel: UILabel!
     @IBOutlet weak var termLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     
+    /**
+     Fill cell with specific course data.
+     
+     - Parameter course: The course object.
+     - Returns: Nothing.
+     */
     func populateWithCourse(course: Course) {
         let section = course.courseSections[0]
         instructorLabel.text = section.instructor
