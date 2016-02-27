@@ -9,7 +9,7 @@
 import UIKit
 
 /**
-The main page table view cells upon screen load.
+The main page table view cells upon app load.
  */
 class TodayTableViewCell: AbstractClassmereCell {
 
