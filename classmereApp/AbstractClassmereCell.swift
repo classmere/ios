@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ Basic abstract view representation for tableViewCells.
+ */
 class AbstractClassmereCell: UITableViewCell {
     override func awakeFromNib() {
         layer.cornerRadius = 10.0
