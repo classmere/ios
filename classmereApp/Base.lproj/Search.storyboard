@@ -525,7 +525,7 @@
                                     <outlet property="currentlyEnrolledLabel" destination="7nt-gB-kfF" id="Df4-Vj-ksx"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapCell" rowHeight="196" id="8AU-Ee-xGL" customClass="MapTableViewCell1" customModule="classmereApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapCell" rowHeight="196" id="8AU-Ee-xGL" customClass="MapTableViewCell" customModule="classmereApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="458" width="600" height="196"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8AU-Ee-xGL" id="AoX-lS-Utp">

@@ -91,8 +91,8 @@ class SectionViewController: UITableViewController {
                 
             case 3:
                 guard let cell = tableView.dequeueReusableCellWithIdentifier("MapCell",
-                    forIndexPath: indexPath) as? MapTableViewCell1 else {
-                        return MapTableViewCell1()
+                    forIndexPath: indexPath) as? MapTableViewCell else {
+                        return MapTableViewCell()
                 }
                 if let building = detailViewModel.course.courseSections[0].building,
                     address = building.address {
