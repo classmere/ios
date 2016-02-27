@@ -8,13 +8,16 @@
 
 import Foundation
 
+/**
+ A model representation of a date formatter.
+ */
 struct DataFormatter {
 
     /**
-        Returns a properly formatted date string from an NSDate
+        Returns a properly formatted date string from an NSDate.
 
-        - Parameter date: An NSDate optional with a valid date
-        - Returns: A properly formatted date String
+        - Parameter date: An NSDate optional with a valid date.
+        - Returns: A properly formatted date String.
     */
     static func dateStringFromDate(date: NSDate?) -> String {
         if let date = date {
@@ -27,10 +30,10 @@ struct DataFormatter {
     }
 
     /**
-        Returns a properly formatted time string from an NSDate
+        Returns a properly formatted time string from an NSDate.
 
-        - Parameter date: An NSDate optional with a valid time
-        - Returns: A properly formatted time String
+        - Parameter date: An NSDate optional with a valid time.
+        - Returns: A properly formatted time String.
      */
     static func timeStringFromDate(date: NSDate?) -> String {
         if let date = date {
