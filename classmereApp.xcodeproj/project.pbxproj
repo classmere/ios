@@ -107,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16003F301C815D40005D764A /* InfoTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				1681F4621BF83BBD009532EF /* InfoTableViewCell0.swift */,
+				16ABAAA21BF7EDE1003CEB31 /* InfoTableViewCell1.swift */,
+				16ABAAA41BF80182003CEB31 /* InfoTableViewCell2.swift */,
+			);
+			name = InfoTableViewCells;
+			sourceTree = "<group>";
+		};
 		1604B15F1B8D5459003A1E8E = {
 			isa = PBXGroup;
 			children = (
@@ -184,11 +194,9 @@
 			children = (
 				ACD948591BDEBD3D0055A4F5 /* AbstractClassmereCell.swift */,
 				AC74FC5F1BEAA3BA0069F894 /* EmbeddedTableViewCell.swift */,
-				ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */,
-				1681F4621BF83BBD009532EF /* InfoTableViewCell0.swift */,
-				16ABAAA21BF7EDE1003CEB31 /* InfoTableViewCell1.swift */,
-				16ABAAA41BF80182003CEB31 /* InfoTableViewCell2.swift */,
+				16003F301C815D40005D764A /* InfoTableViewCells */,
 				1681F4641BF83D45009532EF /* MapTableViewCell.swift */,
+				ACBE3DB71BDB45AA009877DE /* TodayTableViewCell.swift */,
 				AC5E4B4A1BDEFB4800CF8CB6 /* Main.storyboard */,
 				AC74FC591BEA9D8E0069F894 /* Detail.storyboard */,
 				AC74FC561BEA9D6C0069F894 /* Search.storyboard */,
