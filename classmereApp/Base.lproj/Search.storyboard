@@ -126,7 +126,7 @@
                                 <rect key="frame" x="0.0" y="394.5" width="600" height="205.5"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionCell" id="oBM-mE-8l9" customClass="SectionTableViewCell" customModule="classmereApp" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionCell" id="oBM-mE-8l9" customClass="EmbeddedTableViewCell" customModule="classmereApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oBM-mE-8l9" id="j1h-V2-2eH">

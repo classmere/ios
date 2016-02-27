@@ -73,8 +73,8 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
             // Configure the cell...
             guard let cell = tableView.dequeueReusableCellWithIdentifier("SectionCell",
-                forIndexPath: indexPath) as? SectionTableViewCell else {
-                    return SectionTableViewCell()
+                forIndexPath: indexPath) as? EmbeddedTableViewCell else {
+                    return EmbeddedTableViewCell()
             }
             if let section = course?.courseSections[indexPath.row] {
                 cell.termLabel?.text = section.term
