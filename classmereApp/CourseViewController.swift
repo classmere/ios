@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+/**
+ The view controller for viewing a specific course and its sections embedded in table view.
+ */
 class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var titleLabel: UILabel?
@@ -26,6 +29,7 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
 
+        // TODO: A bit much to add into the view controller - the logic could be placed elsewhere...
         if let subjectCode = course?.subjectCode, courseNumber = course?.courseNumber {
             APIService.getCourseBySubjectCode(subjectCode,
                 courseNumber: courseNumber) { courseJSON in
