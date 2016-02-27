@@ -9,7 +9,7 @@
 import UIKit
 
 /**
- First detailed cell with course information in section view.
+ Third detailed cell with course information in section view.
  Displays the following course information:
  - Course Capacity
  - Course Currently Enrolled
