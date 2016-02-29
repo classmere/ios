@@ -21,7 +21,7 @@ struct APIService {
     /**
     Fetches all courses at OSU in a single request.
      
-    - Parameter completion: A callback that accepts JSON and returns nothing.
+    - Parameter completion: A callback that accepts JSON.
     - Returns: Request.
     */
     static func getAllCourses(completion: (JSON) -> Void) -> Request {
@@ -43,7 +43,7 @@ struct APIService {
      
      - Parameter subjectCode: The first part of the course abbreviation.
      - Parameter courseNumber: The number ID of the particular course.
-     - Parameter completion: A callback that accepts JSON and returns nothing.
+     - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
     static func getCourseBySubjectCode(subjectCode: String,
@@ -65,7 +65,7 @@ struct APIService {
      Fetches a specific location at OSU by course's abbreviation.
      
      - Parameter abbr: The course's abbreviation.
-     - Parameter completion: A callback that accepts JSON and returns nothing.
+     - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
     static func getLocationByAbbr(abbr: String,
@@ -87,7 +87,7 @@ struct APIService {
      Fetches a specific course at OSU by a user inputted query.
      
      - Parameter searchQuery: The user inputted query.
-     - Parameter completion: A callback that accepts JSON and returns nothing.
+     - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
     static func searchCourse(searchQuery: String,
