@@ -14,7 +14,7 @@ Simply clone this repo and run ```pod install``` to get all the dependencies.
 - https://github.com/rutgerfarry
 
 #### Brandon Lee
-- http://brandonlee503.github.io/Personal-Website/
+- http://brandonlee503.github.io/
 - https://github.com/brandonlee503
 
 #### Nawaf Almutairi
