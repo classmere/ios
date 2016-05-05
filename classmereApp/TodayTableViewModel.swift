@@ -16,7 +16,7 @@ class TodayViewModel {
     var courses = [Course]()
 
     /**
-     Calls APIService to get todayview courses by subject code.
+     Calls APIService to get todayView courses by subject code.
      
      - Parameter requestedCourses: Specific courses to be fetched.
      - Parameter completed: A callback that returns nothing.
@@ -29,7 +29,7 @@ class TodayViewModel {
                 courseNumber: requestedCourse.1) { courseJSON in
                     let course: Course = Course(courseJSON: courseJSON)
                     self.courses.append(course)
-                    coursesFetched++
+                    coursesFetched += 1
                     if coursesFetched == requestedCourses.count {
                         self.courses.sortInPlace({
                             if let time1 = $0.courseSections[0].startTime,
@@ -58,7 +58,7 @@ class TodayViewModel {
                 APIService.getLocationByAbbr(buildingCode) { buildingJSON in
                     let building = Building(buildingJSON: buildingJSON)
                     self.courses[index].courseSections[0].building = building
-                    buildingsFetched++
+                    buildingsFetched += 1
                     completed()
                 }
             }

@@ -37,7 +37,7 @@ class DetailViewModel {
                 APIService.getLocationByAbbr(buildingCode) { buildingJSON in
                     let building = Building(buildingJSON: buildingJSON)
                     self.course.courseSections[0].building = building
-                    buildingsFetched++
+                    buildingsFetched += 1
                     completed()
                 }
             }
