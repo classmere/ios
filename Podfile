@@ -1,7 +1,8 @@
 platform :ios, "8.0"
 use_frameworks!
 
-target 'classmereApp' do
+target 'Classmere' do
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'PureLayout'
 end
