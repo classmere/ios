@@ -2,7 +2,7 @@
 //  ClassmereTests.swift
 //  ClassmereTests
 //
-//  Created by Brandon Lee on 8/3/16.
+//  Created by Brandon Lee on 8/8/16.
 //  Copyright © 2016 Brandon Lee. All rights reserved.
 //
 
@@ -28,7 +28,7 @@ class ClassmereTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }
