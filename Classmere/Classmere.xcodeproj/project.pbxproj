@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160D28501D5C0032009C0178 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D284F1D5C0032009C0178 /* Course.swift */; };
+		160D28521D5C0298009C0178 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D28511D5C0298009C0178 /* Section.swift */; };
+		160D28541D5C12DF009C0178 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D28531D5C12DF009C0178 /* Building.swift */; };
+		160D28561D5C1469009C0178 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D28551D5C1469009C0178 /* APIServiceTests.swift */; };
 		162935ED1D596731003DF059 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162935EC1D596731003DF059 /* APIService.swift */; };
 		169AD5EA1D59615800615CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AD5E91D59615800615CB7 /* AppDelegate.swift */; };
 		169AD5EC1D59615800615CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AD5EB1D59615800615CB7 /* ViewController.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		160D284F1D5C0032009C0178 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		160D28511D5C0298009C0178 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		160D28531D5C12DF009C0178 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
+		160D28551D5C1469009C0178 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		162935EC1D596731003DF059 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		169AD5E61D59615700615CB7 /* Classmere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Classmere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		169AD5E91D59615800615CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				162935EC1D596731003DF059 /* APIService.swift */,
+				160D284F1D5C0032009C0178 /* Course.swift */,
+				160D28511D5C0298009C0178 /* Section.swift */,
+				160D28531D5C12DF009C0178 /* Building.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -145,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				169AD5FE1D59615800615CB7 /* ClassmereTests.swift */,
+				160D28551D5C1469009C0178 /* APIServiceTests.swift */,
 				169AD6001D59615800615CB7 /* Info.plist */,
 			);
 			path = ClassmereTests;
@@ -358,6 +370,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160D28521D5C0298009C0178 /* Section.swift in Sources */,
+				160D28541D5C12DF009C0178 /* Building.swift in Sources */,
+				160D28501D5C0032009C0178 /* Course.swift in Sources */,
 				169AD5EC1D59615800615CB7 /* ViewController.swift in Sources */,
 				162935ED1D596731003DF059 /* APIService.swift in Sources */,
 				169AD5EA1D59615800615CB7 /* AppDelegate.swift in Sources */,
@@ -368,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160D28561D5C1469009C0178 /* APIServiceTests.swift in Sources */,
 				169AD5FF1D59615800615CB7 /* ClassmereTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
