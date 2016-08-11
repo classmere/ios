@@ -7,29 +7,46 @@
 //
 
 import XCTest
+import SwiftyJSON
+@testable import Classmere
 
 class APIServiceTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testGetAllCourses() {
+        APIService.getAllCourses({ response in
+            XCTAssertNotNil(response)
+        })
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testGetCourseBySubjectCode() {
+        APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
+            XCTAssertNotNil(response)
+        })
     }
-
+    
+    func testSearchCourse() {
+        APIService.searchCourse("Computer Science", completion: { response in
+            XCTAssertNotNil(response)
+        })
+    }
+    
+    func testGetBuildingByAbbr() {
+        APIService.getBuildingByAbbr("KEC", completion: { response in
+            XCTAssertNotNil(response)
+        })
+    }
+    
+    func testSearchBuilding() {
+        APIService.searchBuilding("Kelley", completion: { response in
+            XCTAssertNotNil(response)
+        })
+    }
 }
