@@ -29,16 +29,16 @@ class InfoTableViewCell2: AbstractClassmereCell {
      - Returns: Nothing.
      */
     func populateWithCourse(section: CourseSection) {
-        if let capacity = section.capacity {
+        if let capacity = section.enrollmentCapacity {
             capacityLabel.text = String(capacity)
         }
         
-        if let currentEnrolled = section.currentEnrollment {
+        if let currentEnrolled = section.enrollmentCurrent {
             currentlyEnrolledLabel.text = String(currentEnrolled)
         }
         
-        if section.capacity != nil && section.currentEnrollment != nil {
-            availableSpotsLabel.text = String(section.capacity! - section.currentEnrollment!)
+        if section.enrollmentCapacity != nil && section.enrollmentCurrent != nil {
+            availableSpotsLabel.text = String(Int(section.enrollmentCapacity!)! - Int(section.enrollmentCurrent!)!)
         } else {
             availableSpotsLabel.text = ""
         }

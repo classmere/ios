@@ -17,7 +17,7 @@ struct Course {
     let title: String?
     let subjectCode: String?
     let courseNumber: Int?
-    let credits: [Int]?
+    let credits: String?
     let description: String?
     let abbr: String?
 
@@ -27,7 +27,7 @@ struct Course {
         title = courseJSON["title"].string as String?
         subjectCode = courseJSON["subjectCode"].string as String?
         courseNumber = courseJSON["courseNumber"].intValue as Int?
-        credits = courseJSON["credits"].arrayObject as! [Int]?
+        credits = courseJSON["credits"].string as String?
         description = courseJSON["description"].string as String?
         abbr = (subjectCode ?? "") + " " + String(courseNumber ?? 0)
 

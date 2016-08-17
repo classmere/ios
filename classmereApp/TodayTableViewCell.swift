@@ -27,7 +27,6 @@ class TodayTableViewCell: AbstractClassmereCell {
         let section = course.courseSections[0]
         titleLabel.text = course.title?.capitalizedString
         timeLabel.text = TodayTableViewCell.formatCourseTime(course)
-        
         buildingLabel.text = TodayTableViewCell.formatBuildingStringWithSection(section)
         super.awakeFromNib()
     }

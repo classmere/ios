@@ -28,7 +28,7 @@ class TodayTableViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         // Fetch courses
-        todayViewModel.fetchCourseData([("PAC", 296), ("ECE", 271), ("Z", 477)]) {
+        todayViewModel.fetchCourseData([("PAC", 296), ("ECE", 271), ("BI", 101)]) {
             self.tableView.reloadData()
 
             let sections  = self.todayViewModel.courses.map({ course in

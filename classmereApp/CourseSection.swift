@@ -15,54 +15,70 @@ import SwiftyJSON
  */
 struct CourseSection {
     let term: String?
-    let crn: Int?
+    let session: String?
+    let crn: String?
+    let credits: String?
     let instructor: String?
-
+    
     // Values within the meetingTimes array
     let buildingCode: String?
     let days: String?
     let startTime: NSDate?
     let endTime: NSDate?
     let roomNumber: String?
-
+    
+    let startDate: String?
+    let endDate: String?
+    let campus: String?
     let type: String?
     let status: String?
-    let capacity: Int?
-    let currentEnrollment: Int?
-    let waitlistCurrent: Int?
+    let enrollmentCapacity: String?
+    let enrollmentCurrent: String?
+    let waitlistCapacity: String?
+    let waitlistCurrent: String?
     let fees: String?
     let restrictions: String?
+    let comments: String?
+    let textbookUrl: String?
 
     var building: Building?
-
+    
     init(sectionJSON: JSON) {
         term = sectionJSON["term"].string as String?
-        crn = sectionJSON["crn"].intValue as Int?
+        session = sectionJSON["session"].string as String?
+        crn = sectionJSON["crn"].string as String?
+        credits = sectionJSON["credits"].string as String?
         instructor = sectionJSON["instructor"].string as String?
-
+        
         if let meetingTimes = sectionJSON["meetingTimes"].array {
-            buildingCode = meetingTimes[0]["buildingCode"].string
-            days = meetingTimes[0]["days"].string
             startTime = CourseSection.dateFromISO8601String(meetingTimes[0]["startTime"].string)
             endTime = CourseSection.dateFromISO8601String(meetingTimes[0]["endTime"].string)
+            days = meetingTimes[0]["days"].string
+            buildingCode = meetingTimes[0]["buildingCode"].string
             roomNumber = meetingTimes[0]["roomNumber"].string
         } else {
-            buildingCode = nil
-            days = nil
             startTime = nil
             endTime = nil
+            days = nil
+            buildingCode = nil
             roomNumber = nil
         }
-
+        
+        startDate = sectionJSON["startDate"].string as String?
+        endDate = sectionJSON["endDate"].string as String?
+        campus = sectionJSON["campus"].string as String?
         type = sectionJSON["type"].string as String?
         status = sectionJSON["status"].string as String?
+        enrollmentCapacity = sectionJSON["enrollmentCapacity"].string as String?
+        enrollmentCurrent = sectionJSON["enrollmentCurrent"].string as String?
+        waitlistCapacity = sectionJSON["waitlistCapacity"].string as String?
+        waitlistCurrent = sectionJSON["waitlistCurrent"].string as String?
         fees = sectionJSON["fees"].string as String?
         restrictions = sectionJSON["restrictions"].string as String?
-        waitlistCurrent = sectionJSON["waitlistcurrent"].intValue as Int?
-        currentEnrollment = sectionJSON["currentEnrollment"].intValue as Int?
-        capacity = sectionJSON["capacity"].intValue as Int?
+        comments = sectionJSON["comments"].string as String?
+        textbookUrl = sectionJSON["textbookUrl"].string as String?
     }
-
+    
     /**
         Converts string returned in JSON to a NSDate.
         Offsets time by -7 hours since API returns GMT timezone

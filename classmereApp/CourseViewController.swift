@@ -33,24 +33,10 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let subjectCode = course?.subjectCode, courseNumber = course?.courseNumber {
             APIService.getCourseBySubjectCode(subjectCode,
                 courseNumber: courseNumber) { courseJSON in
-
                     self.course = Course(courseJSON: courseJSON)
-
                     self.titleLabel?.text = self.course!.title!
                     self.descriptionLabel?.text = self.course!.description!
-
-                    // Switch between displaying a single credit or a range
-                    if let credits = self.course?.credits {
-                        switch credits.count {
-                        case 1:
-                            self.creditsLabel?.text = String(credits[0])
-                        case 2:
-                            self.creditsLabel?.text = "\(credits[0]) – \(credits[1])"
-                        default:
-                            self.creditsLabel?.text = ""
-                        }
-                    }
-
+                    self.creditsLabel?.text = self.course!.credits!
                     self.tableView.reloadData()
             }
         }
