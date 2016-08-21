@@ -22,6 +22,6 @@ class HomeViewController: UIViewController {
     }
     
     func buttonTapped(sender:UIButton!) {
-        print("BUTTON TAP")
+        presentViewController(SearchViewController(), animated: true, completion: nil)
     }
 }
