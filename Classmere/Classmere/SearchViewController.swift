@@ -23,7 +23,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "SearchCell")
+        tableView.registerClass(SearchCell.self, forCellReuseIdentifier: "SearchCell")
         tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
         self.view.addSubview(tableView)
         configureCustomSearchController()
@@ -52,7 +52,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func configureCustomSearchController() {
         customSearchController = CustomSearchController(searchResultsController: self, searchBarFrame: CGRectMake(0.0, 0.0, tableView.frame.size.width, 50.0))
-        
         customSearchController.customSearchBar.placeholder = "Search"
         tableView.tableHeaderView = customSearchController.customSearchBar
         customSearchController.customDelegate = self
@@ -69,16 +68,25 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return courses.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SearchCell", forIndexPath: indexPath)
-        let course = courses[indexPath.row]
-        print(courses)
-        cell.textLabel!.text = course.title?.capitalizedString
-        return cell
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50.0
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60.0
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if let cell: SearchCell = tableView.dequeueReusableCellWithIdentifier("SearchCell") as? SearchCell {
+            let course = courses[indexPath.row]
+            cell.titleLabel.text = course.title?.capitalizedString
+            cell.iconLabel.text = "🏫"
+            cell.setNeedsUpdateConstraints()
+            cell.updateConstraintsIfNeeded()
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print(tableView.cellForRowAtIndexPath(indexPath)?.description)
     }
 
     // MARK: CustomSearchControllerDelegate functions
