@@ -56,12 +56,12 @@ class SearchCell: UITableViewCell {
                 self.iconLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
             }
             
-            iconLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: 10.0)
-            iconLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: 10.0)
-            iconLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10.0)
+            iconLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: 10)
+            iconLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: 10)
+            iconLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10)
             
             titleLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: iconLabel)
-            titleLabel.autoPinEdge(.Leading, toEdge: .Trailing, ofView: iconLabel, withOffset: 10.0)
+            titleLabel.autoPinEdge(.Leading, toEdge: .Trailing, ofView: iconLabel, withOffset: 10)
             
             didSetupConstraints = true
         }

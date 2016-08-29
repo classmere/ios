@@ -20,6 +20,7 @@ class CourseViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
+        tableView.tableFooterView = UIView()
         self.view.setNeedsUpdateConstraints()
     }
     
@@ -97,7 +98,6 @@ class CourseViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        print(tableView.cellForRowAtIndexPath(indexPath)?.description)
-//        self.navigationController?.pushViewController(CourseViewController(), animated: true)
+        
     }
 }
