@@ -8,19 +8,22 @@
 
 import UIKit
 
-class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CourseViewController: UITableViewController {
     
-    var tableView: UITableView = UITableView()
     var course: Course
+    
+    // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = course.abbr
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
+        self.view.setNeedsUpdateConstraints()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    // MARK: - Initialization
     
     init(course: Course) {
         self.course = course
@@ -31,35 +34,69 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: UITableView Delegate and Datasource functions
+    // MARK: UITableView Delegate and Datasource
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return course.sections.count + 2
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 50.0
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row < 2 {
+            return 150
+        } else {
+            return 110
+        }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        if let cell: SearchCell = tableView.dequeueReusableCellWithIdentifier("SearchCell") as? SearchCell {
-//            let course = courses[indexPath.row]
-//            cell.titleLabel.text = course.title?.capitalizedString
-//            cell.iconLabel.text = "🏫"
-//            cell.setNeedsUpdateConstraints()
-//            cell.updateConstraintsIfNeeded()
-//            return cell
-//        } else {
-//            return UITableViewCell()
-//        }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if (indexPath.row == 0) {
+            return UITableViewCell() //map cell
+        } else if (indexPath.row == 1) {
+            return UITableViewCell() //info cell
+        } else {
+            if let cell: CourseCell = tableView.dequeueReusableCellWithIdentifier("CourseCell") as? CourseCell {
+                let cellSection = course.sections[indexPath.row-2]
+                cell.termLabel.text = DataFormatter.parseTerm(cellSection.term)
+                cell.iconLabel.text = DataFormatter.emojiFromSectionType(cellSection.type)
+                
+                if let days = cellSection.days {
+                    cell.timeLabel.text = "\(days) \(DataFormatter.timeStringFromDate(cellSection.startTime)) - \(DataFormatter.timeStringFromDate(cellSection.endTime))"
+                } else {
+                    cell.timeLabel.text = "TBA"
+                }
+                
+                if let instructor = cellSection.instructor {
+                    cell.instructorLabel.text = instructor
+                } else {
+                    cell.instructorLabel.text = "TBA"
+                }
+                
+                if let building = cellSection.buildingCode, let room = cellSection.roomNumber {
+                    cell.locationLabel.text = "\(building) \(room)"
+                } else {
+                    cell.locationLabel.text = "TBA"
+                }
+                
+                if let type = cellSection.type {
+                    cell.typeLabel.text = type
+                } else {
+                    cell.typeLabel.text = "TBA"
+                }
+                
+                cell.setNeedsUpdateConstraints()
+                cell.updateConstraintsIfNeeded()
+                return cell
+            }
+        }
+        
         return UITableViewCell()
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //        print(tableView.cellForRowAtIndexPath(indexPath)?.description)
 //        self.navigationController?.pushViewController(CourseViewController(), animated: true)
     }

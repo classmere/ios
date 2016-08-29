@@ -15,6 +15,8 @@ class SearchCell: UITableViewCell {
     
     var iconLabel: UILabel = UILabel.newAutoLayoutView()
     var titleLabel: UILabel = UILabel.newAutoLayoutView()
+
+    // MARK: - Initialization
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,22 +28,26 @@ class SearchCell: UITableViewCell {
         setupViews()
     }
     
+    // MARK: - Setup
+    
     func setupViews() {
         self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         iconLabel.lineBreakMode = .ByTruncatingTail
         iconLabel.numberOfLines = 0
         iconLabel.textAlignment = .Left
-        iconLabel.textColor = UIColor.darkGrayColor()
+        iconLabel.textColor = .darkGrayColor()
         
         titleLabel.lineBreakMode = .ByTruncatingTail
         titleLabel.numberOfLines = 1
         titleLabel.textAlignment = .Left
-        titleLabel.textColor = UIColor.blackColor()
+        titleLabel.textColor = .blackColor()
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(iconLabel)
     }
+    
+    // MARK: - Layout
     
     override func updateConstraints() {
         if !didSetupConstraints {

@@ -51,8 +51,8 @@ struct Section {
         instructor = sectionJSON["instructor"].string as String?
         
         if let meetingTimes = sectionJSON["meetingTimes"].array {
-            startTime = Section.dateFromISO8601String(meetingTimes[0]["startTime"].string)
-            endTime = Section.dateFromISO8601String(meetingTimes[0]["endTime"].string)
+            startTime = DataFormatter.dateFromISO8601String(meetingTimes[0]["startTime"].string)
+            endTime = DataFormatter.dateFromISO8601String(meetingTimes[0]["endTime"].string)
             days = meetingTimes[0]["days"].string
             buildingCode = meetingTimes[0]["buildingCode"].string
             roomNumber = meetingTimes[0]["roomNumber"].string
@@ -77,25 +77,5 @@ struct Section {
         restrictions = sectionJSON["restrictions"].string as String?
         comments = sectionJSON["comments"].string as String?
         textbookUrl = sectionJSON["textbookUrl"].string as String?
-    }
-    
-    /**
-     Converts string returned in JSON to a NSDate.
-     Offsets time by -7 hours since API returns GMT timezone
-     
-     - Parameter iso8601String: A string optional with valid date.
-     - Returns: A converted NSDate Optional
-     
-     */
-    static func dateFromISO8601String(iso8601String: String?) -> NSDate? {
-        if let iso8601String = iso8601String {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
-            let date = dateFormatter.dateFromString(iso8601String)
-            let subtractSevenHours = NSTimeInterval(60*60*7)
-            let offsetDate = date?.dateByAddingTimeInterval(subtractSevenHours)
-            return offsetDate
-        }
-        return nil
     }
 }

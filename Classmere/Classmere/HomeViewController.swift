@@ -93,7 +93,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("lmao")
+        self.navigationController?.pushViewController(CourseViewController(course: courses[indexPath.row]), animated: true)
     }
     
     // MARK: UISearchBarDelegate

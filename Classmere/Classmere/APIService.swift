@@ -16,7 +16,7 @@ import SwiftyJSON
  */
 struct APIService {
     
-    static let baseURL = "http://138.68.48.26:5000"
+    static let baseURL = "http://api.classmere.com"
     
     // MARK: Course Requests
     
