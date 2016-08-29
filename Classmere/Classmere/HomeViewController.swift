@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Classmere"
+        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .Plain, target: nil, action: nil)
         homeView = HomeView.newAutoLayoutView()
         tableView = homeView.tableView
         tableView.delegate = self
