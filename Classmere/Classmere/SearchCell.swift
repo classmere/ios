@@ -42,6 +42,7 @@ class SearchCell: UITableViewCell {
         titleLabel.numberOfLines = 1
         titleLabel.textAlignment = .Left
         titleLabel.textColor = .blackColor()
+        titleLabel.font = UIFont(name: "HelveticaNeue", size: 13)
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(iconLabel)

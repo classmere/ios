@@ -46,26 +46,26 @@ class CourseCell: UITableViewCell {
         termLabel.textAlignment = .Left
         termLabel.textColor = .darkGrayColor()
         termLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 17)
-        termLabel.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(0.5)
+//        termLabel.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(0.5)
         
         iconLabel.lineBreakMode = .ByTruncatingTail
         iconLabel.numberOfLines = 0
         iconLabel.textAlignment = .Center
-        iconLabel.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.5)
+//        iconLabel.backgroundColor = UIColor.redColor().colorWithAlphaComponent(0.5)
         
         timeLabel.lineBreakMode = .ByTruncatingTail
         timeLabel.numberOfLines = 1
         timeLabel.textAlignment = .Left
         timeLabel.textColor = darkColor
         timeLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-        timeLabel.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.5)
+//        timeLabel.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(0.5)
         
         instructorLabel.lineBreakMode = .ByTruncatingTail
         instructorLabel.numberOfLines = 1
         instructorLabel.textAlignment = .Left
         instructorLabel.textColor = darkColor
         instructorLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-        instructorLabel.backgroundColor = UIColor.yellowColor().colorWithAlphaComponent(0.5)
+//        instructorLabel.backgroundColor = UIColor.yellowColor().colorWithAlphaComponent(0.5)
         
         verticalSeparator.backgroundColor = separatorColor
         
@@ -74,14 +74,14 @@ class CourseCell: UITableViewCell {
         locationLabel.textAlignment = .Left
         locationLabel.textColor = darkColor
         locationLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-        locationLabel.backgroundColor = UIColor.orangeColor().colorWithAlphaComponent(0.5)
+//        locationLabel.backgroundColor = UIColor.orangeColor().colorWithAlphaComponent(0.5)
         
         typeLabel.lineBreakMode = .ByClipping
         typeLabel.numberOfLines = 1
         typeLabel.textAlignment = .Left
         typeLabel.textColor = darkColor
         typeLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-        typeLabel.backgroundColor = UIColor.purpleColor().colorWithAlphaComponent(0.5)
+//        typeLabel.backgroundColor = UIColor.purpleColor().colorWithAlphaComponent(0.5)
 
         contentView.addSubview(termLabel)
         contentView.addSubview(iconLabel)

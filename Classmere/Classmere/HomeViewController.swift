@@ -10,7 +10,7 @@ import UIKit
 import PureLayout
 import Alamofire
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UIScrollViewDelegate {
     
     var homeView: HomeView!
     var didSetupConstraints = false
@@ -83,8 +83,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell: SearchCell = tableView.dequeueReusableCellWithIdentifier("SearchCell") as? SearchCell {
             let course = courses[indexPath.row]
-            cell.titleLabel.text = course.title?.capitalizedString
-            cell.iconLabel.text = "🏫"
+            cell.titleLabel.text = course.title//?.capitalizedString
+            cell.iconLabel.text = EmojiFactory.emojiFromCourseType(course.subjectCode)
             cell.setNeedsUpdateConstraints()
             cell.updateConstraintsIfNeeded()
             return cell
@@ -104,7 +104,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-
+        searchBar.resignFirstResponder()
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
@@ -123,5 +123,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    // MARK: UIScrollViewDelegate
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        tableView.keyboardDismissMode = .OnDrag
     }
 }

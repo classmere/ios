@@ -96,27 +96,4 @@ struct DataFormatter {
         
         return nil
     }
-    
-    /**
-     Returns emoji for a section type
-     
-     - Parameter type: Type of a section
-     - Returns: An emoji string
-     */
-    static func emojiFromSectionType(type: String?) -> String {
-        if let sectionType = type {
-            switch sectionType {
-            case "Lecture":
-                return "💁"
-            case "Laboratory":
-                return "🔬"
-            case "Recitation":
-                return "✏️"
-            default:
-                return "📓"
-            }
-        }
-        
-        return "📓"
-    }
 }

@@ -62,7 +62,7 @@ class CourseViewController: UITableViewController {
             if let cell: CourseCell = tableView.dequeueReusableCellWithIdentifier("CourseCell") as? CourseCell {
                 let cellSection = course.sections[indexPath.row-2]
                 cell.termLabel.text = DataFormatter.parseTerm(cellSection.term)
-                cell.iconLabel.text = DataFormatter.emojiFromSectionType(cellSection.type)
+                cell.iconLabel.text = EmojiFactory.emojiFromSectionType(cellSection.type)
                 
                 if let days = cellSection.days {
                     cell.timeLabel.text = "\(days) \(DataFormatter.timeStringFromDate(cellSection.startTime)) - \(DataFormatter.timeStringFromDate(cellSection.endTime))"
@@ -71,7 +71,11 @@ class CourseViewController: UITableViewController {
                 }
                 
                 if let instructor = cellSection.instructor {
-                    cell.instructorLabel.text = instructor
+                    if instructor != "" {
+                        cell.instructorLabel.text = instructor
+                    } else {
+                        cell.instructorLabel.text = "TBA"
+                    }
                 } else {
                     cell.instructorLabel.text = "TBA"
                 }
