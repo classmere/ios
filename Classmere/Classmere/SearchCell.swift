@@ -34,18 +34,20 @@ class SearchCell: UITableViewCell {
         self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         iconLabel.lineBreakMode = .ByTruncatingTail
-        iconLabel.numberOfLines = 0
+        iconLabel.numberOfLines = 1
         iconLabel.textAlignment = .Left
         iconLabel.textColor = .darkGrayColor()
         
         titleLabel.lineBreakMode = .ByTruncatingTail
         titleLabel.numberOfLines = 1
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.1
         titleLabel.textAlignment = .Left
         titleLabel.textColor = .blackColor()
         titleLabel.font = UIFont(name: "HelveticaNeue", size: 13)
         
-        contentView.addSubview(titleLabel)
         contentView.addSubview(iconLabel)
+        contentView.addSubview(titleLabel)
     }
     
     // MARK: - Layout
@@ -62,7 +64,8 @@ class SearchCell: UITableViewCell {
             iconLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10)
             
             titleLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: iconLabel)
-            titleLabel.autoPinEdge(.Leading, toEdge: .Trailing, ofView: iconLabel, withOffset: 10)
+            titleLabel.autoPinEdgeToSuperviewEdge(.Leading, withInset: 40)
+            titleLabel.autoPinEdgeToSuperviewEdge(.Trailing, withInset: 10)
             
             didSetupConstraints = true
         }

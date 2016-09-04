@@ -83,8 +83,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell: SearchCell = tableView.dequeueReusableCellWithIdentifier("SearchCell") as? SearchCell {
             let course = courses[indexPath.row]
-            cell.titleLabel.text = course.title//?.capitalizedString
             cell.iconLabel.text = EmojiFactory.emojiFromCourseType(course.subjectCode)
+            cell.titleLabel.text = course.title
             cell.setNeedsUpdateConstraints()
             cell.updateConstraintsIfNeeded()
             return cell

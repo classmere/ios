@@ -77,6 +77,7 @@ class CourseViewController: UITableViewController {
                     cell.descriptionLabel.text = ""
                 }
                 
+                cell.selectionStyle = .None
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
                 
