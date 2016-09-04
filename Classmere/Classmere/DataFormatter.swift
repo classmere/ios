@@ -71,7 +71,7 @@ struct DataFormatter {
      - Parameter term: An unformatted term string (eg. F16)
      - Returns: A formatted term string (eg. Fall 2016)
      */
-    static func parseTerm(term: String?) -> String? {
+    static func parseTerm(term: String?) -> String {
         if let unparsedTerm = term {
             let season = unparsedTerm.substringToIndex(unparsedTerm.startIndex.advancedBy(2))
             let year = unparsedTerm.substringFromIndex(unparsedTerm.endIndex.advancedBy(-2))
@@ -92,8 +92,34 @@ struct DataFormatter {
             }
             
             return parsedTerm
+        } else {
+            return ""
+        }
+    }
+    
+    /**
+     Parses a title to remove the subject code and course number
+     
+     - Parameter title: An unformatted title string
+     - Returns: Formatted title string
+     */
+    static func parseTitle(title: String?) -> String {
+        if let unparsedTitle = title {
+            let titleArray = Array(unparsedTitle.characters)
+            var spaceIndexes = [Int]()
+            
+            for (index, value) in titleArray.enumerate() {
+                if value == " " {
+                    spaceIndexes.append(index + 1)
+                }
+            }
+
+            let parsedString: String? = (unparsedTitle as NSString).substringFromIndex(spaceIndexes[1])
+            if parsedString != nil {
+                return parsedString!
+            }
         }
         
-        return nil
+        return ""
     }
 }
