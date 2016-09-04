@@ -45,7 +45,7 @@ class CourseCell: UITableViewCell {
         termLabel.numberOfLines = 1
         termLabel.textAlignment = .Left
         termLabel.textColor = .darkGrayColor()
-        termLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 17)
+        termLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
 //        termLabel.backgroundColor = UIColor.blueColor().colorWithAlphaComponent(0.5)
         
         iconLabel.lineBreakMode = .ByTruncatingTail
