@@ -21,6 +21,7 @@
 		169AD5FF1D59615800615CB7 /* ClassmereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AD5FE1D59615800615CB7 /* ClassmereTests.swift */; };
 		169AD60A1D59615800615CB7 /* ClassmereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AD6091D59615800615CB7 /* ClassmereUITests.swift */; };
 		16BA26B41D7663E100CF8594 /* EmojiFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA26B31D7663E100CF8594 /* EmojiFactory.swift */; };
+		16BA26B61D76723200CF8594 /* CourseDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA26B51D76723200CF8594 /* CourseDetailsCell.swift */; };
 		16BB2FA31D722EFA00484015 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BB2FA21D722EFA00484015 /* CourseCell.swift */; };
 		16D117611D6C07B000CCB807 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D117601D6C07B000CCB807 /* CourseViewController.swift */; };
 		16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D94F1E1D73D22F00346D2B /* DataFormatter.swift */; };
@@ -66,6 +67,7 @@
 		169AD6091D59615800615CB7 /* ClassmereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassmereUITests.swift; sourceTree = "<group>"; };
 		169AD60B1D59615800615CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16BA26B31D7663E100CF8594 /* EmojiFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiFactory.swift; sourceTree = "<group>"; };
+		16BA26B51D76723200CF8594 /* CourseDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailsCell.swift; sourceTree = "<group>"; };
 		16BB2FA21D722EFA00484015 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		16D117601D6C07B000CCB807 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		16D94F1E1D73D22F00346D2B /* DataFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFormatter.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				16BB2FA21D722EFA00484015 /* CourseCell.swift */,
+				16BA26B51D76723200CF8594 /* CourseDetailsCell.swift */,
 				160D28591D5C1BDC009C0178 /* HomeView.swift */,
 				16D95F021D643BF800C2E1F7 /* SearchCell.swift */,
 			);
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BA26B61D76723200CF8594 /* CourseDetailsCell.swift in Sources */,
 				160D28521D5C0298009C0178 /* Section.swift in Sources */,
 				16BA26B41D7663E100CF8594 /* EmojiFactory.swift in Sources */,
 				16D95F031D643BF800C2E1F7 /* SearchCell.swift in Sources */,

@@ -20,6 +20,7 @@ class CourseViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
+        tableView.registerClass(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
         tableView.tableFooterView = UIView()
         self.view.setNeedsUpdateConstraints()
     }
@@ -57,10 +58,34 @@ class CourseViewController: UITableViewController {
         if (indexPath.row == 0) {
             return UITableViewCell() //map cell
         } else if (indexPath.row == 1) {
-            return UITableViewCell() //info cell
+            if let cell: CourseDetailsCell = tableView.dequeueReusableCellWithIdentifier("CourseDetailsCell") as? CourseDetailsCell {
+                if let title = course.title {
+                    cell.titleLabel.text = DataFormatter.parseTitle(title)
+                } else {
+                    cell.titleLabel.text = ""
+                }
+                
+                if let credits = course.credits {
+                    cell.creditsLabel.text = "\(credits) Credit(s)"
+                } else {
+                    cell.creditsLabel.text = ""
+                }
+                
+                if let description = course.description {
+                    cell.descriptionLabel.text = description
+                } else {
+                    cell.descriptionLabel.text = ""
+                }
+                
+                cell.setNeedsUpdateConstraints()
+                cell.updateConstraintsIfNeeded()
+                
+                return cell
+            }
         } else {
             if let cell: CourseCell = tableView.dequeueReusableCellWithIdentifier("CourseCell") as? CourseCell {
                 let cellSection = course.sections[indexPath.row-2]
+                
                 cell.termLabel.text = DataFormatter.parseTerm(cellSection.term)
                 cell.iconLabel.text = EmojiFactory.emojiFromSectionType(cellSection.type)
                 
@@ -94,6 +119,7 @@ class CourseViewController: UITableViewController {
                 
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
+                
                 return cell
             }
         }
