@@ -14,13 +14,15 @@ class HomeView: UIView {
     let darkColor: UIColor = UIColor(red:0.13, green:0.13, blue:0.13, alpha:1.0)
     let lightBlueColor: UIColor = UIColor(red:0.24, green:0.73, blue:0.94, alpha:1.0)
     
+    var didSetupConstraints = false
+    
+    var searchBarTop = false
     var searchBar: UISearchBar!
     var searchButton: UIButton!
     var tableView: UITableView!
     var searchButtonWidthConstraint: NSLayoutConstraint?
     var searchButtonEdgeConstraint: NSLayoutConstraint?
-    var searchBarTop = false
-    var didSetupConstraints = false
+    
     
     // MARK: - Initialization
     

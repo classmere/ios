@@ -20,6 +20,7 @@
 		169AD5F41D59615800615CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 169AD5F21D59615800615CB7 /* LaunchScreen.storyboard */; };
 		169AD5FF1D59615800615CB7 /* ClassmereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AD5FE1D59615800615CB7 /* ClassmereTests.swift */; };
 		169AD60A1D59615800615CB7 /* ClassmereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AD6091D59615800615CB7 /* ClassmereUITests.swift */; };
+		16A8EA4F1D7CE98C0047C10B /* MapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A8EA4E1D7CE98C0047C10B /* MapCell.swift */; };
 		16BA26B41D7663E100CF8594 /* EmojiFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA26B31D7663E100CF8594 /* EmojiFactory.swift */; };
 		16BA26B61D76723200CF8594 /* CourseDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BA26B51D76723200CF8594 /* CourseDetailsCell.swift */; };
 		16BB2FA31D722EFA00484015 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BB2FA21D722EFA00484015 /* CourseCell.swift */; };
@@ -66,6 +67,7 @@
 		169AD6051D59615800615CB7 /* ClassmereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassmereUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		169AD6091D59615800615CB7 /* ClassmereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassmereUITests.swift; sourceTree = "<group>"; };
 		169AD60B1D59615800615CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16A8EA4E1D7CE98C0047C10B /* MapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCell.swift; sourceTree = "<group>"; };
 		16BA26B31D7663E100CF8594 /* EmojiFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiFactory.swift; sourceTree = "<group>"; };
 		16BA26B51D76723200CF8594 /* CourseDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailsCell.swift; sourceTree = "<group>"; };
 		16BB2FA21D722EFA00484015 /* CourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				16BB2FA21D722EFA00484015 /* CourseCell.swift */,
 				16BA26B51D76723200CF8594 /* CourseDetailsCell.swift */,
 				160D28591D5C1BDC009C0178 /* HomeView.swift */,
+				16A8EA4E1D7CE98C0047C10B /* MapCell.swift */,
 				16D95F021D643BF800C2E1F7 /* SearchCell.swift */,
 			);
 			name = Views;
@@ -403,6 +406,7 @@
 				160D285A1D5C1BDC009C0178 /* HomeView.swift in Sources */,
 				16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */,
 				160D28581D5C1B67009C0178 /* HomeViewController.swift in Sources */,
+				16A8EA4F1D7CE98C0047C10B /* MapCell.swift in Sources */,
 				169AD5EA1D59615800615CB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,7 @@ class CourseViewController: UITableViewController {
         tableView.dataSource = self
         tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
         tableView.registerClass(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
+        tableView.registerClass(MapCell.self, forCellReuseIdentifier: "MapCell")
         tableView.tableFooterView = UIView()
         self.view.setNeedsUpdateConstraints()
     }
@@ -56,7 +57,22 @@ class CourseViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if (indexPath.row == 0) {
-            return UITableViewCell() //map cell
+            if let cell: MapCell = tableView.dequeueReusableCellWithIdentifier("MapCell") as? MapCell {
+                for section in course.sections {
+                    if let buildingAbbr = section.buildingCode {
+                        APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
+                            let building = Building(buildingJSON: buildingJSON)
+                            cell.navigateToAddress(building.address)
+                        }
+                    }
+                }
+                
+                cell.userInteractionEnabled = false
+                cell.selectionStyle = .None
+                cell.setNeedsUpdateConstraints()
+                cell.updateConstraintsIfNeeded()
+                return cell
+            }
         } else if (indexPath.row == 1) {
             if let cell: CourseDetailsCell = tableView.dequeueReusableCellWithIdentifier("CourseDetailsCell") as? CourseDetailsCell {
                 if let title = course.title {
@@ -129,6 +145,6 @@ class CourseViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
