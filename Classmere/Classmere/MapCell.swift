@@ -51,15 +51,16 @@ class MapCell: UITableViewCell {
         if let address = address {
             let geoCoder = CLGeocoder()
             geoCoder.geocodeAddressString(address) { placemarks, error in
-                if let placemark: CLPlacemark = placemarks![0], placemarkRegion = placemark.region as? CLCircularRegion {
-                    let mapKitPlacemark = MKPlacemark(placemark: placemark)
-                    var currentCoordinateRegion = self.mapView.region
-                    currentCoordinateRegion.center = placemarkRegion.center
-                    currentCoordinateRegion.span = self.buildingZoomSpan
-                    self.mapView.setRegion(currentCoordinateRegion, animated: true)
-                    self.mapView.addAnnotation(mapKitPlacemark)
-                    
-                    self.pinLocation = mapKitPlacemark
+                if placemarks != nil {
+                    if let placemark = placemarks![0] as? CLPlacemark, placemarkRegion = placemark.region as? CLCircularRegion {
+                        let mapKitPlacemark = MKPlacemark(placemark: placemark)
+                        var currentCoordinateRegion = self.mapView.region
+                        currentCoordinateRegion.center = placemarkRegion.center
+                        currentCoordinateRegion.span = self.buildingZoomSpan
+                        self.mapView.setRegion(currentCoordinateRegion, animated: true)
+                        self.mapView.addAnnotation(mapKitPlacemark)
+                        self.pinLocation = mapKitPlacemark
+                    }
                 }
             }
         }

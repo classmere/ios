@@ -94,6 +94,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(CourseViewController(course: courses[indexPath.row]), animated: true)
     }
     
