@@ -1,23 +1,23 @@
 //
-//  CourseViewController.swift
+//  SectionViewController.swift
 //  Classmere
 //
-//  Created by Brandon Lee on 8/22/16.
+//  Created by Brandon Lee on 9/5/16.
 //  Copyright © 2016 Brandon Lee. All rights reserved.
 //
 
 import UIKit
 
-class CourseViewController: UITableViewController {
-    
+class SectionViewController: UITableViewController {
+
     var course: Course
+    var section: Section
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = course.abbr
-        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .Plain, target: nil, action: nil)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
@@ -29,8 +29,9 @@ class CourseViewController: UITableViewController {
     
     // MARK: - Initialization
     
-    init(course: Course) {
+    init(course: Course, section: Section) {
         self.course = course
+        self.section = section
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,7 +46,7 @@ class CourseViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return course.sections.count + 2
+        return 3
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -59,16 +60,14 @@ class CourseViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if (indexPath.row == 0) {
             if let cell: MapCell = tableView.dequeueReusableCellWithIdentifier("MapCell") as? MapCell {
-                for section in course.sections {
-                    if let buildingAbbr = section.buildingCode {
-                        APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
-                            let building = Building(buildingJSON: buildingJSON)
-                            cell.navigateToAddress(building.address)
-                        }
+                
+                if let buildingAbbr = section.buildingCode {
+                    APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
+                        let building = Building(buildingJSON: buildingJSON)
+                        cell.navigateToAddress(building.address)
                     }
                 }
                 
-                cell.userInteractionEnabled = false
                 cell.selectionStyle = .None
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
@@ -143,10 +142,5 @@ class CourseViewController: UITableViewController {
         }
         
         return UITableViewCell()
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.navigationController?.pushViewController(SectionViewController(course: course, section: course.sections[indexPath.row]), animated: true)
     }
 }
