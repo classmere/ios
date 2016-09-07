@@ -147,6 +147,6 @@ class CourseViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.navigationController?.pushViewController(SectionViewController(course: course, section: course.sections[indexPath.row]), animated: true)
+        self.navigationController?.pushViewController(SectionViewController(course: course, section: course.sections[indexPath.row-2]), animated: true)
     }
 }
