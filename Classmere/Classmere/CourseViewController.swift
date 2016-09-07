@@ -94,6 +94,7 @@ class CourseViewController: UITableViewController {
                     cell.descriptionLabel.text = ""
                 }
                 
+                cell.userInteractionEnabled = false
                 cell.selectionStyle = .None
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
