@@ -271,7 +271,7 @@ struct EmojiFactory {
         if let sectionType = type {
             switch sectionType {
             case "Lecture":
-                return "💁"
+                return "🗣"
             case "Laboratory":
                 return "🔬"
             case "Recitation":
@@ -289,7 +289,7 @@ struct EmojiFactory {
         case "Days":
             return "☀️"
         case "Instructor":
-            return "💁"
+            return "👤"
         case "Location":
             return "🗺"
         case "Type":
