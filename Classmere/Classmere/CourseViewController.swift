@@ -20,9 +20,9 @@ class CourseViewController: UITableViewController {
         self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .Plain, target: nil, action: nil)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
-        tableView.registerClass(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
         tableView.registerClass(MapCell.self, forCellReuseIdentifier: "MapCell")
+        tableView.registerClass(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
+        tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
         tableView.tableFooterView = UIView()
         self.view.setNeedsUpdateConstraints()
     }

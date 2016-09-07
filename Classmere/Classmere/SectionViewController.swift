@@ -20,9 +20,9 @@ class SectionViewController: UITableViewController {
         self.title = course.abbr
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
-        tableView.registerClass(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
         tableView.registerClass(MapCell.self, forCellReuseIdentifier: "MapCell")
+        tableView.registerClass(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
+        tableView.registerClass(SectionCell.self, forCellReuseIdentifier: "SectionCell")
         tableView.tableFooterView = UIView()
         self.view.setNeedsUpdateConstraints()
     }
@@ -53,7 +53,7 @@ class SectionViewController: UITableViewController {
         if indexPath.row < 2 {
             return 150
         } else {
-            return 110
+            return 350
         }
     }
     
@@ -68,7 +68,6 @@ class SectionViewController: UITableViewController {
                     }
                 }
                 
-                cell.selectionStyle = .None
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
                 return cell
