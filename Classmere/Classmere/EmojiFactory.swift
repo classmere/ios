@@ -283,4 +283,23 @@ struct EmojiFactory {
         
         return "📓"
     }
+    
+    static func emojiFromSectionProperty(property: String) -> String {
+        switch property {
+        case "Days":
+            return "☀️"
+        case "Instructor":
+            return "💁"
+        case "Location":
+            return "🗺"
+        case "Type":
+            return "📝"
+        case "Enrolled":
+            return "👨‍👩‍👧‍👦"
+        case "Dates":
+            return "🗓"
+        default:
+            return "🏫"
+        }
+    }
 }
