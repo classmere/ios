@@ -99,40 +99,57 @@ class SectionViewController: UITableViewController {
                 return cell
             }
         } else {
-            if let cell: CourseCell = tableView.dequeueReusableCellWithIdentifier("CourseCell") as? CourseCell {
-                let cellSection = course.sections[indexPath.row-2]
+            if let cell: SectionCell = tableView.dequeueReusableCellWithIdentifier("SectionCell") as? SectionCell {
                 
-                cell.termLabel.text = DataFormatter.parseTerm(cellSection.term)
-                cell.iconLabel.text = EmojiFactory.emojiFromSectionType(cellSection.type)
-                
-                if let days = cellSection.days {
-                    cell.timeLabel.text = "\(days) \(DataFormatter.timeStringFromDate(cellSection.startTime)) - \(DataFormatter.timeStringFromDate(cellSection.endTime))"
+                if let term = section.term {
+                    cell.termLabel.text = DataFormatter.parseTerm(term)
                 } else {
-                    cell.timeLabel.text = "TBA"
+                    cell.termLabel.text = "TBA"
                 }
                 
-                if let instructor = cellSection.instructor {
-                    if instructor != "" {
-                        cell.instructorLabel.text = instructor
-                    } else {
-                        cell.instructorLabel.text = "TBA"
-                    }
+                if let days = section.days {
+                    cell.dayLabel.text = days
+                } else {
+                    cell.dayLabel.text = "TBA"
+                }
+                
+                if let instructor = section.instructor {
+                    cell.instructorLabel.text = instructor
                 } else {
                     cell.instructorLabel.text = "TBA"
                 }
                 
-                if let building = cellSection.buildingCode, let room = cellSection.roomNumber {
-                    cell.locationLabel.text = "\(building) \(room)"
+                if let buildingAbbr = section.buildingCode, roomNumber = section.roomNumber {
+                    cell.locationLabel.text = "\(buildingAbbr) \(roomNumber)"
                 } else {
                     cell.locationLabel.text = "TBA"
                 }
                 
-                if let type = cellSection.type {
+                if let type = section.type {
                     cell.typeLabel.text = type
                 } else {
                     cell.typeLabel.text = "TBA"
                 }
                 
+                if let currentlyEnrolled = section.enrollmentCurrent, enrollmentCapacity = section.enrollmentCapacity {
+                    cell.enrolledLabel.text = "\(currentlyEnrolled) student(s) enrolled, \(enrollmentCapacity) spots available"
+                } else {
+                    cell.enrolledLabel.text = "TBA"
+                }
+                
+                if let startDate = section.startDate, endDate = section.endDate {
+                    cell.dateLabel.text = "\(startDate) - \(endDate)"
+                } else {
+                    cell.dateLabel.text = "TBA"
+                }
+                
+                if let crn = section.crn {
+                    cell.crnLabel.text = crn
+                } else {
+                    cell.crnLabel.text = "TBA"
+                }
+                
+                cell.selectionStyle = .None
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
                 
