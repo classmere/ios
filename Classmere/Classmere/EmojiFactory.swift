@@ -298,6 +298,8 @@ struct EmojiFactory {
             return "👨‍👩‍👧‍👦"
         case "Dates":
             return "🗓"
+        case "CRN":
+            return "#️⃣"
         default:
             return "🏫"
         }
