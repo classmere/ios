@@ -289,6 +289,7 @@
 				TargetAttributes = {
 					169AD5E51D59615700615CB7 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 27G39RU5P8;
 					};
 					169AD5F91D59615800615CB7 = {
 						CreatedOnToolsVersion = 7.3;
@@ -559,10 +560,13 @@
 			baseConfigurationReference = 974759523F0F5369AFB9F6D7 /* Pods-Classmere.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Classmere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BLeeConcepts.Classmere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -571,10 +575,13 @@
 			baseConfigurationReference = AED457C659A3B5F1D0757C66 /* Pods-Classmere.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Classmere/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BLeeConcepts.Classmere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

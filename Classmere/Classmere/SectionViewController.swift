@@ -107,8 +107,8 @@ class SectionViewController: UITableViewController {
                     cell.termLabel.text = "TBA"
                 }
                 
-                if let days = section.days {
-                    cell.dayLabel.text = days
+                if let days = section.days, startTime = section.startTime, endTime = section.endTime {
+                    cell.dayLabel.text = "\(days) \(DataFormatter.timeStringFromDate(startTime)) - \(DataFormatter.timeStringFromDate(endTime))"
                 } else {
                     cell.dayLabel.text = "TBA"
                 }
@@ -144,7 +144,7 @@ class SectionViewController: UITableViewController {
                 }
                 
                 if let crn = section.crn {
-                    cell.crnLabel.text = crn
+                    cell.crnLabel.text = "CRN: \(crn)"
                 } else {
                     cell.crnLabel.text = "TBA"
                 }
