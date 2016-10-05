@@ -16,13 +16,13 @@ class CourseCell: UITableViewCell {
     
     var didSetupConstraints = false
     
-    var termLabel: UILabel = UILabel.newAutoLayoutView()
-    var iconLabel: UILabel = UILabel.newAutoLayoutView()
-    var timeLabel: UILabel = UILabel.newAutoLayoutView()
-    var instructorLabel: UILabel = UILabel.newAutoLayoutView()
-    var locationLabel: UILabel = UILabel.newAutoLayoutView()
-    var typeLabel: UILabel = UILabel.newAutoLayoutView()
-    var verticalSeparator: UIView = UIView.newAutoLayoutView()
+    var termLabel: UILabel = UILabel.newAutoLayout()
+    var iconLabel: UILabel = UILabel.newAutoLayout()
+    var timeLabel: UILabel = UILabel.newAutoLayout()
+    var instructorLabel: UILabel = UILabel.newAutoLayout()
+    var locationLabel: UILabel = UILabel.newAutoLayout()
+    var typeLabel: UILabel = UILabel.newAutoLayout()
+    var verticalSeparator: UIView = UIView.newAutoLayout()
     
     // MARK: - Initialization
     
@@ -39,41 +39,41 @@ class CourseCell: UITableViewCell {
     // MARK: - Setup
     
     func setupViews() {
-        self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        self.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
-        termLabel.lineBreakMode = .ByTruncatingTail
+        termLabel.lineBreakMode = .byTruncatingTail
         termLabel.numberOfLines = 1
-        termLabel.textAlignment = .Left
-        termLabel.textColor = .darkGrayColor()
+        termLabel.textAlignment = .left
+        termLabel.textColor = .darkGray
         termLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
         
-        iconLabel.lineBreakMode = .ByTruncatingTail
+        iconLabel.lineBreakMode = .byTruncatingTail
         iconLabel.numberOfLines = 0
-        iconLabel.textAlignment = .Center
+        iconLabel.textAlignment = .center
         
-        timeLabel.lineBreakMode = .ByTruncatingTail
+        timeLabel.lineBreakMode = .byTruncatingTail
         timeLabel.numberOfLines = 1
-        timeLabel.textAlignment = .Left
+        timeLabel.textAlignment = .left
         timeLabel.textColor = darkColor
         timeLabel.font = UIFont(name: "HelveticaNeue", size: 13)
         
-        instructorLabel.lineBreakMode = .ByTruncatingTail
+        instructorLabel.lineBreakMode = .byTruncatingTail
         instructorLabel.numberOfLines = 1
-        instructorLabel.textAlignment = .Left
+        instructorLabel.textAlignment = .left
         instructorLabel.textColor = darkColor
         instructorLabel.font = UIFont(name: "HelveticaNeue", size: 13)
         
         verticalSeparator.backgroundColor = separatorColor
         
-        locationLabel.lineBreakMode = .ByTruncatingTail
+        locationLabel.lineBreakMode = .byTruncatingTail
         locationLabel.numberOfLines = 1
-        locationLabel.textAlignment = .Left
+        locationLabel.textAlignment = .left
         locationLabel.textColor = darkColor
         locationLabel.font = UIFont(name: "HelveticaNeue", size: 13)
         
-        typeLabel.lineBreakMode = .ByClipping
+        typeLabel.lineBreakMode = .byClipping
         typeLabel.numberOfLines = 1
-        typeLabel.textAlignment = .Left
+        typeLabel.textAlignment = .left
         typeLabel.textColor = darkColor
         typeLabel.font = UIFont(name: "HelveticaNeue", size: 13)
 
@@ -91,36 +91,36 @@ class CourseCell: UITableViewCell {
     override func updateConstraints() {
         if !didSetupConstraints {
             NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
-                self.termLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.iconLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.timeLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.instructorLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.locationLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.typeLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.verticalSeparator.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
+                self.termLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.iconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.timeLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.instructorLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.locationLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.typeLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.verticalSeparator.autoSetContentCompressionResistancePriority(for: .vertical)
             }
             
-            termLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: 10)
-            termLabel.autoPinEdgeToSuperviewEdge(.Leading, withInset: 10)
+            termLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 10)
+            termLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 10)
             
-            iconLabel.autoPinEdge(.Leading, toEdge: .Leading, ofView: termLabel)
-            iconLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: termLabel, withOffset: 45)
+            iconLabel.autoPinEdge(.leading, to: .leading, of: termLabel)
+            iconLabel.autoAlignAxis(.horizontal, toSameAxisOf: termLabel, withOffset: 45)
             
-            timeLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: termLabel, withOffset: 10)
-            timeLabel.autoPinEdge(.Leading, toEdge: .Trailing, ofView: iconLabel, withOffset: 10)
+            timeLabel.autoPinEdge(.top, to: .bottom, of: termLabel, withOffset: 10)
+            timeLabel.autoPinEdge(.leading, to: .trailing, of: iconLabel, withOffset: 10)
             
-            instructorLabel.autoPinEdge(.Leading, toEdge: .Leading, ofView: timeLabel)
-            instructorLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: timeLabel, withOffset: 25)
+            instructorLabel.autoPinEdge(.leading, to: .leading, of: timeLabel)
+            instructorLabel.autoAlignAxis(.horizontal, toSameAxisOf: timeLabel, withOffset: 25)
             
-            verticalSeparator.autoSetDimensionsToSize(CGSize(width: 1, height: 44))
-            verticalSeparator.autoPinEdgeToSuperviewEdge(.Leading, withInset: 220)
-            verticalSeparator.autoPinEdgeToSuperviewEdge(.Top, withInset: 40)
+            verticalSeparator.autoSetDimensions(to: CGSize(width: 1, height: 44))
+            verticalSeparator.autoPinEdge(toSuperviewEdge: .leading, withInset: 220)
+            verticalSeparator.autoPinEdge(toSuperviewEdge: .top, withInset: 40)
             
-            locationLabel.autoPinEdge(.Leading, toEdge: .Trailing, ofView: verticalSeparator, withOffset: 10)
-            locationLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: timeLabel)
+            locationLabel.autoPinEdge(.leading, to: .trailing, of: verticalSeparator, withOffset: 10)
+            locationLabel.autoAlignAxis(.horizontal, toSameAxisOf: timeLabel)
 
-            typeLabel.autoPinEdge(.Leading, toEdge: .Trailing, ofView: verticalSeparator, withOffset: 10)
-            typeLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: instructorLabel)
+            typeLabel.autoPinEdge(.leading, to: .trailing, of: verticalSeparator, withOffset: 10)
+            typeLabel.autoAlignAxis(.horizontal, toSameAxisOf: instructorLabel)
             
             didSetupConstraints = true
         }

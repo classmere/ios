@@ -21,13 +21,13 @@ struct DataFormatter {
      - Returns: A converted NSDate Optional
      
      */
-    static func dateFromISO8601String(iso8601String: String?) -> NSDate? {
+    static func dateFromISO8601String(_ iso8601String: String?) -> Date? {
         if let iso8601String = iso8601String {
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ssZ"
-            let date = dateFormatter.dateFromString(iso8601String)
-            let subtractSevenHours = NSTimeInterval(60*60*7)
-            let offsetDate = date?.dateByAddingTimeInterval(subtractSevenHours)
+            let date = dateFormatter.date(from: iso8601String)
+            let subtractSevenHours = TimeInterval(60*60*7)
+            let offsetDate = date?.addingTimeInterval(subtractSevenHours)
             return offsetDate
         }
         return nil
@@ -39,11 +39,11 @@ struct DataFormatter {
      - Parameter date: An NSDate optional with a valid date.
      - Returns: A properly formatted date String.
      */
-    static func dateStringFromDate(date: NSDate?) -> String {
+    static func dateStringFromDate(_ date: Date?) -> String {
         if let date = date {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateStyle = .ShortStyle
-            return dateFormatter.stringFromDate(date)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            return dateFormatter.string(from: date)
         } else {
             return ""
         }
@@ -55,11 +55,11 @@ struct DataFormatter {
      - Parameter date: An NSDate optional with a valid time.
      - Returns: A properly formatted time String.
      */
-    static func timeStringFromDate(date: NSDate?) -> String {
+    static func timeStringFromDate(_ date: Date?) -> String {
         if let date = date {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.timeStyle = .ShortStyle
-            return dateFormatter.stringFromDate(date)
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeStyle = .short
+            return dateFormatter.string(from: date)
         } else {
             return ""
         }
@@ -71,19 +71,19 @@ struct DataFormatter {
      - Parameter term: An unformatted term string (eg. F16)
      - Returns: A formatted term string (eg. Fall 2016)
      */
-    static func parseTerm(term: String?) -> String {
+    static func parseTerm(_ term: String?) -> String {
         if let unparsedTerm = term {
-            let season = unparsedTerm.substringToIndex(unparsedTerm.startIndex.advancedBy(2))
-            let year = unparsedTerm.substringFromIndex(unparsedTerm.endIndex.advancedBy(-2))
+            let season = unparsedTerm.substring(to: unparsedTerm.characters.index(unparsedTerm.startIndex, offsetBy: 2))
+            let year = unparsedTerm.substring(from: unparsedTerm.characters.index(unparsedTerm.endIndex, offsetBy: -2))
             var parsedTerm: String = ""
             
-            if season.containsString("F") {
+            if season.contains("F") {
                 parsedTerm += "Fall"
-            } else if season.containsString("W") {
+            } else if season.contains("W") {
                 parsedTerm += "Winter"
-            } else if season.containsString("Sp") {
+            } else if season.contains("Sp") {
                 parsedTerm += "Spring"
-            } else if season.containsString("Su") {
+            } else if season.contains("Su") {
                 parsedTerm += "Summer"
             }
             
@@ -103,18 +103,18 @@ struct DataFormatter {
      - Parameter title: An unformatted title string
      - Returns: Formatted title string
      */
-    static func parseTitle(title: String?) -> String {
+    static func parseTitle(_ title: String?) -> String {
         if let unparsedTitle = title {
             let titleArray = Array(unparsedTitle.characters)
             var spaceIndexes = [Int]()
             
-            for (index, value) in titleArray.enumerate() {
+            for (index, value) in titleArray.enumerated() {
                 if value == " " {
                     spaceIndexes.append(index + 1)
                 }
             }
 
-            let parsedString: String? = (unparsedTitle as NSString).substringFromIndex(spaceIndexes[1])
+            let parsedString: String? = (unparsedTitle as NSString).substring(from: spaceIndexes[1])
             if parsedString != nil {
                 return parsedString!
             }

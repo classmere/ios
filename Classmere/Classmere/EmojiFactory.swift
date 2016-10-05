@@ -18,7 +18,7 @@ struct EmojiFactory {
      - Parameter type: Type of a course
      - Returns: An emoji string
      */
-    static func emojiFromCourseType(type: String?) -> String {
+    static func emojiFromCourseType(_ type: String?) -> String {
         if let courseType = type {
             switch courseType {
             case "YDE":
@@ -267,7 +267,7 @@ struct EmojiFactory {
      - Parameter type: Type of a section
      - Returns: An emoji string
      */
-    static func emojiFromSectionType(type: String?) -> String {
+    static func emojiFromSectionType(_ type: String?) -> String {
         if let sectionType = type {
             switch sectionType {
             case "Lecture":
@@ -284,7 +284,7 @@ struct EmojiFactory {
         return "📓"
     }
     
-    static func emojiFromSectionProperty(property: String) -> String {
+    static func emojiFromSectionProperty(_ property: String) -> String {
         switch property {
         case "Days":
             return "☀️"

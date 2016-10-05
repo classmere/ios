@@ -26,18 +26,18 @@ struct APIService {
      - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
-    static func getAllCourses(completion: (JSON) -> Void) -> Request {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        return Alamofire.request(.GET, "\(baseURL)/courses/")
+    static func getAllCourses(_ completion: @escaping (JSON) -> Void) -> Request {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        return Alamofire.request("\(baseURL)/courses/")
             .responseJSON { response in
                 switch response.result {
-                case .Success(let data):
+                case .success(let data):
                     completion(JSON(data))
-                case .Failure(let error):
+                case .failure(let error):
                     print("Request failed with error: \(error)")
                 }
                 
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
     
@@ -49,18 +49,18 @@ struct APIService {
      - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
-    static func getCourseBySubjectCode(subjectCode: String, courseNumber: Int, completion: (JSON) -> Void) -> Request {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        return Alamofire.request(.GET, "\(baseURL)/courses/\(subjectCode)/\(courseNumber)/")
+    static func getCourseBySubjectCode(_ subjectCode: String, courseNumber: Int, completion: @escaping (JSON) -> Void) -> Request {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        return Alamofire.request("\(baseURL)/courses/\(subjectCode)/\(courseNumber)/")
             .responseJSON { response in
                 switch response.result {
-                case .Success(let data):
+                case .success(let data):
                     completion(JSON(data))
-                case .Failure(let error):
+                case .failure(let error):
                     print("Request failed with error: \(error)")
                 }
                 
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
     
@@ -71,26 +71,26 @@ struct APIService {
      - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
-    static func searchCourse(query: String, completion: (JSON) -> Void) -> Request {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet()
-        let encodedQuery = query.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)!
-        return Alamofire.request(.GET, "\(baseURL)/search/courses/\(encodedQuery)/")
+    static func searchCourse(_ query: String, completion: @escaping (JSON) -> Void) -> Request {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        let allowedCharacters = CharacterSet.urlQueryAllowed
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: allowedCharacters)!
+        return Alamofire.request("\(baseURL)/search/courses/\(encodedQuery)/")
             .responseJSON { response in
                 switch response.result {
-                case .Success(let data):
+                case .success(let data):
                     if response.response?.statusCode == 200 {
                         completion(JSON(data))
                     } else {
                         print("Course not found: \(query)")
                         completion(nil)
                     }
-                case .Failure(let error):
+                case .failure(let error):
                     print("Request failed with error: \(error)")
                     completion(nil)
                 }
                 
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
     
@@ -103,18 +103,18 @@ struct APIService {
      - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
-    static func getBuildingByAbbr(abbr: String, completion: (JSON) -> Void) -> Request {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        return Alamofire.request(.GET, "\(baseURL)/buildings/\(abbr)")
+    static func getBuildingByAbbr(_ abbr: String, completion: @escaping (JSON) -> Void) -> Request {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        return Alamofire.request("\(baseURL)/buildings/\(abbr)")
             .responseJSON { response in
                 switch response.result {
-                case .Success(let data):
+                case .success(let data):
                     completion(JSON(data))
-                case .Failure(let error):
+                case .failure(let error):
                     print("Request failed with error: \(error)")
                 }
                 
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
     
@@ -125,26 +125,26 @@ struct APIService {
      - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
-    static func searchBuilding(query: String, completion: (JSON) -> Void) -> Request {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        let allowedCharacters = NSCharacterSet.URLQueryAllowedCharacterSet()
-        let encodedQuery = query.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)!
-        return Alamofire.request(.GET, "\(baseURL)/search/buildings/\(encodedQuery)/")
+    static func searchBuilding(_ query: String, completion: @escaping (JSON) -> Void) -> Request {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        let allowedCharacters = CharacterSet.urlQueryAllowed
+        let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: allowedCharacters)!
+        return Alamofire.request("\(baseURL)/search/buildings/\(encodedQuery)/")
             .responseJSON { response in
                 switch response.result {
-                case .Success(let data):
+                case .success(let data):
                     if response.response?.statusCode == 200 {
                         completion(JSON(data))
                     } else {
                         print("Building not found: \(query)")
                         completion(nil)
                     }
-                case .Failure(let error):
+                case .failure(let error):
                     print("Request failed with error: \(error)")
                     completion(nil)
                 }
                 
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
 }

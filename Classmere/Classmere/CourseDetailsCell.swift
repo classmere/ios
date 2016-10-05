@@ -15,9 +15,9 @@ class CourseDetailsCell: UITableViewCell {
     
     var didSetupConstraints = false
     
-    var titleLabel: UILabel = UILabel.newAutoLayoutView()
-    var creditsLabel: UILabel = UILabel.newAutoLayoutView()
-    var descriptionLabel: UILabel = UILabel.newAutoLayoutView()
+    var titleLabel: UILabel = UILabel.newAutoLayout()
+    var creditsLabel: UILabel = UILabel.newAutoLayout()
+    var descriptionLabel: UILabel = UILabel.newAutoLayout()
     
     // MARK: - Initialization
     
@@ -34,25 +34,25 @@ class CourseDetailsCell: UITableViewCell {
     // MARK: - Setup
     
     func setupViews() {
-        titleLabel.lineBreakMode = .ByTruncatingTail
+        titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.numberOfLines = 1
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.minimumScaleFactor = 0.1
-        titleLabel.textAlignment = .Left
-        titleLabel.textColor = .darkGrayColor()
+        titleLabel.textAlignment = .left
+        titleLabel.textColor = .darkGray
         titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
         
-        creditsLabel.lineBreakMode = .ByTruncatingTail
+        creditsLabel.lineBreakMode = .byTruncatingTail
         creditsLabel.numberOfLines = 1
-        creditsLabel.textAlignment = .Left
+        creditsLabel.textAlignment = .left
         creditsLabel.textColor = darkColor
         creditsLabel.font = UIFont(name: "HelveticaNeue", size: 13)
         
-        descriptionLabel.lineBreakMode = .ByTruncatingTail
+        descriptionLabel.lineBreakMode = .byTruncatingTail
         descriptionLabel.numberOfLines = 0
         descriptionLabel.adjustsFontSizeToFitWidth = true
         descriptionLabel.minimumScaleFactor = 0.1
-        descriptionLabel.textAlignment = .Left
+        descriptionLabel.textAlignment = .left
         descriptionLabel.textColor = darkColor
         descriptionLabel.font = UIFont(name: "HelveticaNeue", size: 13)
         
@@ -66,24 +66,24 @@ class CourseDetailsCell: UITableViewCell {
     override func updateConstraints() {
         if !didSetupConstraints {
             NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
-                self.titleLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.creditsLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.descriptionLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
+                self.titleLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.creditsLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.descriptionLabel.autoSetContentCompressionResistancePriority(for: .vertical)
             }
             
-            titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: 10)
-            titleLabel.autoPinEdgeToSuperviewEdge(.Leading, withInset: 10)
-            titleLabel.autoPinEdgeToSuperviewEdge(.Trailing, withInset: 10)
+            titleLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 10)
+            titleLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 10)
+            titleLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 10)
             
-            creditsLabel.autoPinEdge(.Leading, toEdge: .Leading, ofView: titleLabel)
-            creditsLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: titleLabel, withOffset: 20)
+            creditsLabel.autoPinEdge(.leading, to: .leading, of: titleLabel)
+            creditsLabel.autoAlignAxis(.horizontal, toSameAxisOf: titleLabel, withOffset: 20)
             
-            descriptionLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: creditsLabel, withOffset: 10)
-            descriptionLabel.autoPinEdgeToSuperviewEdge(.Leading, withInset: 10)
-            descriptionLabel.autoPinEdgeToSuperviewEdge(.Trailing, withInset: 10)
+            descriptionLabel.autoPinEdge(.top, to: .bottom, of: creditsLabel, withOffset: 10)
+            descriptionLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 10)
+            descriptionLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 10)
             
             // FIXME: Multiple constraints error here
-            descriptionLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10)
+            descriptionLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 10)
             
             didSetupConstraints = true
         }

@@ -20,9 +20,9 @@ class SectionViewController: UITableViewController {
         self.title = course.abbr
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerClass(MapCell.self, forCellReuseIdentifier: "MapCell")
-        tableView.registerClass(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
-        tableView.registerClass(SectionCell.self, forCellReuseIdentifier: "SectionCell")
+        tableView.register(MapCell.self, forCellReuseIdentifier: "MapCell")
+        tableView.register(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
+        tableView.register(SectionCell.self, forCellReuseIdentifier: "SectionCell")
         tableView.tableFooterView = UIView()
         self.view.setNeedsUpdateConstraints()
     }
@@ -41,25 +41,25 @@ class SectionViewController: UITableViewController {
     
     // MARK: UITableView Delegate and Datasource
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row < 2 {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath as NSIndexPath).row < 2 {
             return 150
         } else {
             return 350
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if (indexPath.row == 0) {
-            if let cell: MapCell = tableView.dequeueReusableCellWithIdentifier("MapCell") as? MapCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if ((indexPath as NSIndexPath).row == 0) {
+            if let cell: MapCell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? MapCell {
                 
                 if let buildingAbbr = section.buildingCode {
                     APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
@@ -72,8 +72,8 @@ class SectionViewController: UITableViewController {
                 cell.updateConstraintsIfNeeded()
                 return cell
             }
-        } else if (indexPath.row == 1) {
-            if let cell: CourseDetailsCell = tableView.dequeueReusableCellWithIdentifier("CourseDetailsCell") as? CourseDetailsCell {
+        } else if ((indexPath as NSIndexPath).row == 1) {
+            if let cell: CourseDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CourseDetailsCell") as? CourseDetailsCell {
                 if let title = course.title {
                     cell.titleLabel.text = DataFormatter.parseTitle(title)
                 } else {
@@ -92,14 +92,14 @@ class SectionViewController: UITableViewController {
                     cell.descriptionLabel.text = ""
                 }
                 
-                cell.selectionStyle = .None
+                cell.selectionStyle = .none
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
                 
                 return cell
             }
         } else {
-            if let cell: SectionCell = tableView.dequeueReusableCellWithIdentifier("SectionCell") as? SectionCell {
+            if let cell: SectionCell = tableView.dequeueReusableCell(withIdentifier: "SectionCell") as? SectionCell {
                 
                 if let term = section.term {
                     cell.termLabel.text = DataFormatter.parseTerm(term)
@@ -107,7 +107,7 @@ class SectionViewController: UITableViewController {
                     cell.termLabel.text = "TBA"
                 }
                 
-                if let days = section.days, startTime = section.startTime, endTime = section.endTime {
+                if let days = section.days, let startTime = section.startTime, let endTime = section.endTime {
                     cell.dayLabel.text = "\(days) \(DataFormatter.timeStringFromDate(startTime)) - \(DataFormatter.timeStringFromDate(endTime))"
                 } else {
                     cell.dayLabel.text = "TBA"
@@ -119,7 +119,7 @@ class SectionViewController: UITableViewController {
                     cell.instructorLabel.text = "TBA"
                 }
                 
-                if let buildingAbbr = section.buildingCode, roomNumber = section.roomNumber {
+                if let buildingAbbr = section.buildingCode, let roomNumber = section.roomNumber {
                     cell.locationLabel.text = "\(buildingAbbr) \(roomNumber)"
                 } else {
                     cell.locationLabel.text = "TBA"
@@ -131,13 +131,13 @@ class SectionViewController: UITableViewController {
                     cell.typeLabel.text = "TBA"
                 }
                 
-                if let currentlyEnrolled = section.enrollmentCurrent, enrollmentCapacity = section.enrollmentCapacity {
+                if let currentlyEnrolled = section.enrollmentCurrent, let enrollmentCapacity = section.enrollmentCapacity {
                     cell.enrolledLabel.text = "\(currentlyEnrolled) student(s) enrolled, \(enrollmentCapacity) spots available"
                 } else {
                     cell.enrolledLabel.text = "TBA"
                 }
                 
-                if let startDate = section.startDate, endDate = section.endDate {
+                if let startDate = section.startDate, let endDate = section.endDate {
                     cell.dateLabel.text = "\(startDate) - \(endDate)"
                 } else {
                     cell.dateLabel.text = "TBA"
@@ -149,7 +149,7 @@ class SectionViewController: UITableViewController {
                     cell.crnLabel.text = "TBA"
                 }
                 
-                cell.selectionStyle = .None
+                cell.selectionStyle = .none
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
                 

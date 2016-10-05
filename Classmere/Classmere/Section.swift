@@ -21,8 +21,8 @@ struct Section {
     let instructor: String?
     
     // Meeting times array keys
-    let startTime: NSDate?
-    let endTime: NSDate?
+    let startTime: Date?
+    let endTime: Date?
     let days: String?
     let buildingCode: String?
     let roomNumber: String?

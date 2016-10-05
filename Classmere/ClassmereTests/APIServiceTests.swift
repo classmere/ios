@@ -8,7 +8,7 @@
 
 import XCTest
 import SwiftyJSON
-@testable import Classmere
+@testable import Pods_Classmere
 
 class APIServiceTests: XCTestCase {
 

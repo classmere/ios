@@ -14,7 +14,7 @@ class MapCell: UITableViewCell {
     
     var didSetupConstraints = false
     
-    let mapView: MKMapView = MKMapView.newAutoLayoutView()
+    let mapView: MKMapView = MKMapView.newAutoLayout()
     let schoolZoomSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     let buildingZoomSpan = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
     let schoolCoordinates = CLLocationCoordinate2D(latitude: 44.563849, longitude: -123.279498)
@@ -47,12 +47,12 @@ class MapCell: UITableViewCell {
      
      - Parameter address: The address of the building.
      */
-    func navigateToAddress(address: String?) {
+    func navigateToAddress(_ address: String?) {
         if let address = address {
             let geoCoder = CLGeocoder()
             geoCoder.geocodeAddressString(address) { placemarks, error in
                 if placemarks != nil {
-                    if let placemark = placemarks![0] as? CLPlacemark, placemarkRegion = placemark.region as? CLCircularRegion {
+                    if let placemark = placemarks![0] as? CLPlacemark, let placemarkRegion = placemark.region as? CLCircularRegion {
                         let mapKitPlacemark = MKPlacemark(placemark: placemark)
                         var currentCoordinateRegion = self.mapView.region
                         currentCoordinateRegion.center = placemarkRegion.center
@@ -67,11 +67,11 @@ class MapCell: UITableViewCell {
     }
     
     // Open maps app with location.
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let pinLocation = pinLocation {
             let mapItem = MKMapItem(placemark: pinLocation)
             mapItem.name = "Course Location"
-            mapItem.openInMapsWithLaunchOptions(nil)
+            mapItem.openInMaps(launchOptions: nil)
         }
     }
     
@@ -80,7 +80,7 @@ class MapCell: UITableViewCell {
     override func updateConstraints() {
         if !didSetupConstraints {
             NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
-                self.mapView.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
+                self.mapView.autoSetContentCompressionResistancePriority(for: .vertical)
             }
             
             mapView.autoPinEdgesToSuperviewEdges()

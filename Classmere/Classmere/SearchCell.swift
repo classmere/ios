@@ -13,8 +13,8 @@ class SearchCell: UITableViewCell {
     
     var didSetupConstraints = false
     
-    var iconLabel: UILabel = UILabel.newAutoLayoutView()
-    var titleLabel: UILabel = UILabel.newAutoLayoutView()
+    var iconLabel: UILabel = UILabel.newAutoLayout()
+    var titleLabel: UILabel = UILabel.newAutoLayout()
 
     // MARK: - Initialization
     
@@ -31,19 +31,19 @@ class SearchCell: UITableViewCell {
     // MARK: - Setup
     
     func setupViews() {
-        self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        self.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
         
-        iconLabel.lineBreakMode = .ByTruncatingTail
+        iconLabel.lineBreakMode = .byTruncatingTail
         iconLabel.numberOfLines = 1
-        iconLabel.textAlignment = .Left
-        iconLabel.textColor = .darkGrayColor()
+        iconLabel.textAlignment = .left
+        iconLabel.textColor = .darkGray
         
-        titleLabel.lineBreakMode = .ByTruncatingTail
+        titleLabel.lineBreakMode = .byTruncatingTail
         titleLabel.numberOfLines = 1
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.minimumScaleFactor = 0.1
-        titleLabel.textAlignment = .Left
-        titleLabel.textColor = .blackColor()
+        titleLabel.textAlignment = .left
+        titleLabel.textColor = .black
         titleLabel.font = UIFont(name: "HelveticaNeue", size: 13)
         
         contentView.addSubview(iconLabel)
@@ -55,17 +55,17 @@ class SearchCell: UITableViewCell {
     override func updateConstraints() {
         if !didSetupConstraints {
             NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
-                self.titleLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
-                self.iconLabel.autoSetContentCompressionResistancePriorityForAxis(.Vertical)
+                self.titleLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+                self.iconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
             }
             
-            iconLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: 10)
-            iconLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: 10)
-            iconLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 10)
+            iconLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 10)
+            iconLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 10)
+            iconLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 10)
             
-            titleLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: iconLabel)
-            titleLabel.autoPinEdgeToSuperviewEdge(.Leading, withInset: 40)
-            titleLabel.autoPinEdgeToSuperviewEdge(.Trailing, withInset: 10)
+            titleLabel.autoAlignAxis(.horizontal, toSameAxisOf: iconLabel)
+            titleLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 40)
+            titleLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 10)
             
             didSetupConstraints = true
         }

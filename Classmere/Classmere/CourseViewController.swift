@@ -17,12 +17,12 @@ class CourseViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = course.abbr
-        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerClass(MapCell.self, forCellReuseIdentifier: "MapCell")
-        tableView.registerClass(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
-        tableView.registerClass(CourseCell.self, forCellReuseIdentifier: "CourseCell")
+        tableView.register(MapCell.self, forCellReuseIdentifier: "MapCell")
+        tableView.register(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
+        tableView.register(CourseCell.self, forCellReuseIdentifier: "CourseCell")
         tableView.tableFooterView = UIView()
         self.view.setNeedsUpdateConstraints()
     }
@@ -40,25 +40,25 @@ class CourseViewController: UITableViewController {
     
     // MARK: UITableView Delegate and Datasource
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return course.sections.count + 2
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row < 2 {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (indexPath as NSIndexPath).row < 2 {
             return 150
         } else {
             return 110
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if (indexPath.row == 0) {
-            if let cell: MapCell = tableView.dequeueReusableCellWithIdentifier("MapCell") as? MapCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if ((indexPath as NSIndexPath).row == 0) {
+            if let cell: MapCell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? MapCell {
                 for section in course.sections {
                     if let buildingAbbr = section.buildingCode {
                         APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
@@ -68,14 +68,14 @@ class CourseViewController: UITableViewController {
                     }
                 }
                 
-                cell.userInteractionEnabled = false
-                cell.selectionStyle = .None
+                cell.isUserInteractionEnabled = false
+                cell.selectionStyle = .none
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
                 return cell
             }
-        } else if (indexPath.row == 1) {
-            if let cell: CourseDetailsCell = tableView.dequeueReusableCellWithIdentifier("CourseDetailsCell") as? CourseDetailsCell {
+        } else if ((indexPath as NSIndexPath).row == 1) {
+            if let cell: CourseDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CourseDetailsCell") as? CourseDetailsCell {
                 if let title = course.title {
                     cell.titleLabel.text = DataFormatter.parseTitle(title)
                 } else {
@@ -94,16 +94,16 @@ class CourseViewController: UITableViewController {
                     cell.descriptionLabel.text = ""
                 }
                 
-                cell.userInteractionEnabled = false
-                cell.selectionStyle = .None
+                cell.isUserInteractionEnabled = false
+                cell.selectionStyle = .none
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
                 
                 return cell
             }
         } else {
-            if let cell: CourseCell = tableView.dequeueReusableCellWithIdentifier("CourseCell") as? CourseCell {
-                let cellSection = course.sections[indexPath.row-2]
+            if let cell: CourseCell = tableView.dequeueReusableCell(withIdentifier: "CourseCell") as? CourseCell {
+                let cellSection = course.sections[(indexPath as NSIndexPath).row-2]
                 
                 cell.termLabel.text = DataFormatter.parseTerm(cellSection.term)
                 cell.iconLabel.text = EmojiFactory.emojiFromSectionType(cellSection.type)
@@ -146,8 +146,8 @@ class CourseViewController: UITableViewController {
         return UITableViewCell()
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.navigationController?.pushViewController(SectionViewController(course: course, section: course.sections[indexPath.row-2]), animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.navigationController?.pushViewController(SectionViewController(course: course, section: course.sections[(indexPath as NSIndexPath).row-2]), animated: true)
     }
 }
