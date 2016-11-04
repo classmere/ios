@@ -1,4 +1,4 @@
-# Classmere for iOS [![Build Status](https://api.travis-ci.org/classmere/app.svg?branch=mvp)](https://travis-ci.org/classmere/ios)
+# Classmere for iOS
 
 Finding classes that interest you, help you graduate and fit your schedule can be a pain. Classmere's iPhone app helps Oregon State students search for cool classes and manage their courseload. 
 
