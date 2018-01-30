@@ -1,14 +1,8 @@
-//
-//  APIServiceTests.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/10/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import XCTest
+import Alamofire
+import PureLayout
 import SwiftyJSON
-@testable import Pods_Classmere
+@testable import Classmere
 
 class APIServiceTests: XCTestCase {
 
@@ -21,37 +15,37 @@ class APIServiceTests: XCTestCase {
     }
 
     func testGetAllCourses() {
-        APIService.getAllCourses({ response in
+        _ = APIService.getAllCourses({ response in
             XCTAssertNotNil(response)
         })
     }
     
     func testGetCourseBySubjectCode() {
-        APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
+        _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
             XCTAssertNotNil(response)
         })
     }
     
     func testSearchCourse() {
-        APIService.searchCourse("Computer Science", completion: { response in
+        _ = APIService.searchCourse("Computer Science", completion: { response in
             XCTAssertNotNil(response)
         })
     }
     
     func testGetBuildingByAbbr() {
-        APIService.getBuildingByAbbr("KEC", completion: { response in
+        _ = APIService.getBuildingByAbbr("KEC", completion: { response in
             XCTAssertNotNil(response)
         })
     }
     
     func testSearchBuilding() {
-        APIService.searchBuilding("Kelley", completion: { response in
+        _ = APIService.searchBuilding("Kelley", completion: { response in
             XCTAssertNotNil(response)
         })
     }
     
     func testCourseModel() {
-        APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
+        _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
             let course: Course = Course(courseJSON: response)
             XCTAssertNotNil(course.title)
             XCTAssertNotNil(course.subjectCode)
@@ -64,7 +58,7 @@ class APIServiceTests: XCTestCase {
     }
     
     func testSectionModel() {
-        APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
+        _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
             let course: Course = Course(courseJSON: response)
             let section: Section = course.sections[0]
             XCTAssertNotNil(section.term)
@@ -94,7 +88,7 @@ class APIServiceTests: XCTestCase {
     }
     
     func testBuildingModel() {
-        APIService.getBuildingByAbbr("KEC", completion: { response in
+        _ = APIService.getBuildingByAbbr("KEC", completion: { response in
             let building: Building = Building(buildingJSON: response)
             XCTAssertNotNil(building.abbr)
             XCTAssertNotNil(building.address)
