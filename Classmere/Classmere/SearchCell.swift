@@ -54,7 +54,7 @@ class SearchCell: UITableViewCell {
     
     override func updateConstraints() {
         if !didSetupConstraints {
-            NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
+            NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
                 self.titleLabel.autoSetContentCompressionResistancePriority(for: .vertical)
                 self.iconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
             }

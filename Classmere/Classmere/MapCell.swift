@@ -79,7 +79,7 @@ class MapCell: UITableViewCell {
     
     override func updateConstraints() {
         if !didSetupConstraints {
-            NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
+            NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
                 self.mapView.autoSetContentCompressionResistancePriority(for: .vertical)
             }
             

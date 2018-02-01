@@ -90,7 +90,7 @@ class CourseCell: UITableViewCell {
     
     override func updateConstraints() {
         if !didSetupConstraints {
-            NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
+            NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
                 self.termLabel.autoSetContentCompressionResistancePriority(for: .vertical)
                 self.iconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
                 self.timeLabel.autoSetContentCompressionResistancePriority(for: .vertical)

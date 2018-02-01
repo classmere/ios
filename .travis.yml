@@ -1,16 +1,5 @@
 language: objective-c
-
-osx_image: xcode8
-
-before_install:
-  - gem install cocoapods --pre
-
-install:
-  - pod install
-  - pod repo update
+osx_image: xcode9.2
 
 xcode_workspace: Classmere.xcworkspace
 xcode_scheme: Classmere
-
-script:
-  - xctool -workspace Classmere.xcworkspace -scheme Classmere -sdk iphonesimulator build test
