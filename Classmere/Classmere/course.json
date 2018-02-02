@@ -1,0 +1,2761 @@
+{
+    "_id": "5a0f92d88309aa0001cb2f23",
+    "title": "CS 161 INTRODUCTION TO COMPUTER SCIENCE I",
+    "subjectCode": "CS",
+    "courseNumber": 161,
+    "credits": "4",
+    "description": "Overview of fundamental concepts of computer science. Introduction to problem solving, software engineering, and object-oriented programming. Includes algorithm design and program development. Lec/lab/rec. MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+    "prereqs": [
+        {
+            "subjectCode": null,
+            "courseNumber": null
+        }
+    ],
+    "updated": "2017-11-18T01:54:32.418Z",
+    "sections": [
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 23599,
+            "credits": 4,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "MWF",
+                    "buildingCode": "GILB",
+                    "roomNumber": 124
+                },
+                {
+                    "startTime": "2017-11-18T09:30:00+00:00",
+                    "endTime": "2017-11-18T11:20:00+00:00",
+                    "days": "R",
+                    "buildingCode": "GILB",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Lecture",
+            "status": "Open",
+            "enrollmentCapacity": 180,
+            "enrollmentCurrent": 140,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 23600,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T17:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Waitlisted",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 30,
+            "waitlistCapacity": 10,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 23601,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T18:00:00+00:00",
+                    "endTime": "2017-11-18T19:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 25,
+            "waitlistCapacity": 10,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 23602,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 28,
+            "waitlistCapacity": 10,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 23603,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Waitlisted",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 30,
+            "waitlistCapacity": 10,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 23604,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T17:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "KEC",
+                    "roomNumber": 1005
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 28,
+            "waitlistCapacity": 10,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 24746,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": null,
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Cancelled",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 24747,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": null,
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Cancelled",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25728,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T13:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "BRC",
+                    "roomNumber": 136
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 14,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25730,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "GILK",
+                    "roomNumber": 100
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 14,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25731,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T10:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "STAG",
+                    "roomNumber": 112
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Closed",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 15,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25733,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T09:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 14,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25734,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "BRC",
+                    "roomNumber": 138
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 14,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25735,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T10:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "STAG",
+                    "roomNumber": 112
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 14,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25736,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "GILK",
+                    "roomNumber": 100
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 8,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25737,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "BRC",
+                    "roomNumber": 136
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Closed",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 15,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25738,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T13:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 275
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Closed",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25739,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 285
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 10,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25740,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T15:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 285
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 13,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25741,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": null,
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Inactive-Not Offered",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25742,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": null,
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Inactive-Not Offered",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 25759,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "BRC",
+                    "roomNumber": 136
+                }
+            ],
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 10,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "Textbooks",
+            "textbookUrl": "Textbooks"
+        },
+        {
+            "term": "F17",
+            "session": "Full Term",
+            "crn": 24826,
+            "credits": 4,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": null,
+            "startDate": "09/20/17",
+            "endDate": "12/01/17",
+            "campus": "Corv",
+            "type": "Examination for Credit",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36075,
+            "credits": 4,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T10:50:00+00:00",
+                    "days": "MWF",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 151
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Lecture",
+            "status": "Open",
+            "enrollmentCapacity": 200,
+            "enrollmentCurrent": 34,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36077,
+            "credits": 4,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "MWF",
+                    "buildingCode": "LINC",
+                    "roomNumber": 100
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Lecture",
+            "status": "Open",
+            "enrollmentCapacity": 250,
+            "enrollmentCurrent": 25,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 40046,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T17:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Closed",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 40045,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T18:00:00+00:00",
+                    "endTime": "2017-11-18T19:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Closed",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 38615,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T17:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 8,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36078,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T08:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 5,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36079,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T08:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 3,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36080,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 11,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36081,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 7,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36082,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 13,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36083,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T08:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 3,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36084,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36085,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T08:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36086,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36087,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T08:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36088,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36089,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 4,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36090,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 2,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 36091,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T17:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 7,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37964,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 6,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37965,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 7,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37966,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T10:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 7,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37968,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 3,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37969,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 4,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37971,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T13:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37973,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 2,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37974,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T15:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 4,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37975,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T16:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "GILK",
+                    "roomNumber": 100
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37976,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T17:00:00+00:00",
+                    "endTime": "2017-11-18T17:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "STAG",
+                    "roomNumber": 112
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37979,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37980,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 2,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37981,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T15:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 4,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37982,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T16:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37983,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T17:00:00+00:00",
+                    "endTime": "2017-11-18T17:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37984,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 285
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37985,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37986,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37987,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T15:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "GILK",
+                    "roomNumber": 100
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 2,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37988,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T15:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37990,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T16:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "GILK",
+                    "roomNumber": 100
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 2,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37992,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T17:00:00+00:00",
+                    "endTime": "2017-11-18T17:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "STAG",
+                    "roomNumber": 112
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37993,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T09:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 2,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37994,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 2,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37995,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "CASC",
+                    "roomNumber": 120
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37996,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T13:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 3,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37997,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 285
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37998,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T15:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 285
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 2,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 37999,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T16:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "STAG",
+                    "roomNumber": 112
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 38616,
+            "credits": null,
+            "instructor": "Parham Mocello, J.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T10:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "GILK",
+                    "roomNumber": 113
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 1,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 40168,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T09:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Closed",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 40169,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T16:50:00+00:00",
+                    "days": "M",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Closed",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 40170,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T10:00:00+00:00",
+                    "endTime": "2017-11-18T10:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "HOV",
+                    "roomNumber": 100
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Closed",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "W18",
+            "session": "Full Term",
+            "crn": 40171,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T09:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "WNGR",
+                    "roomNumber": 201
+                }
+            ],
+            "startDate": "01/08/18",
+            "endDate": "03/16/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Closed",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 55926,
+            "credits": 4,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T11:00:00+00:00",
+                    "endTime": "2017-11-18T11:50:00+00:00",
+                    "days": "MWF",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Lecture",
+            "status": "Open",
+            "enrollmentCapacity": 188,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 10,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061) Major/Minor/Option Restrictions: -297 (Computer Science Double Degree)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 55927,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T08:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 55931,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T08:00:00+00:00",
+                    "endTime": "2017-11-18T09:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 22,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 55928,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 55929,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 55930,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T18:00:00+00:00",
+                    "endTime": "2017-11-18T19:50:00+00:00",
+                    "days": "T",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56102,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "DEAR",
+                    "roomNumber": 222
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Laboratory",
+            "status": "Open",
+            "enrollmentCapacity": 30,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56879,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56883,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T13:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56885,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T15:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56892,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T16:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56890,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T16:50:00+00:00",
+                    "days": "R",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56891,
+            "credits": null,
+            "instructor": "Staff",
+            "meetingTimes": null,
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Inactive-Not Offered",
+            "enrollmentCapacity": 0,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56886,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T12:00:00+00:00",
+                    "endTime": "2017-11-18T12:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56887,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T13:00:00+00:00",
+                    "endTime": "2017-11-18T13:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56888,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56889,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T15:00:00+00:00",
+                    "endTime": "2017-11-18T15:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 7,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56893,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T16:00:00+00:00",
+                    "endTime": "2017-11-18T16:50:00+00:00",
+                    "days": "F",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Sp18",
+            "session": "Full Term",
+            "crn": 56884,
+            "credits": null,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "W",
+                    "buildingCode": "TBA",
+                    "roomNumber": null
+                }
+            ],
+            "startDate": "04/02/18",
+            "endDate": "06/08/18",
+            "campus": "Corv",
+            "type": "Recitation",
+            "status": "Open",
+            "enrollmentCapacity": 15,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 0,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061)",
+            "comments": "",
+            "textbookUrl": ""
+        },
+        {
+            "term": "Su18",
+            "session": "Summer 8 Week Session",
+            "crn": 70981,
+            "credits": 4,
+            "instructor": "Alcon, T.",
+            "meetingTimes": [
+                {
+                    "startTime": "2017-11-18T14:00:00+00:00",
+                    "endTime": "2017-11-18T14:50:00+00:00",
+                    "days": "MTWRF",
+                    "buildingCode": "KEAR",
+                    "roomNumber": 305
+                }
+            ],
+            "startDate": "06/25/18",
+            "endDate": "08/17/18",
+            "campus": "Corv",
+            "type": "Lecture",
+            "status": "Open",
+            "enrollmentCapacity": 45,
+            "enrollmentCurrent": 0,
+            "waitlistCapacity": 10,
+            "waitlistCurrent": 0,
+            "fees": "",
+            "restrictions": "Prereqs: MTH 112* [C] or Placement Test MPT(33) or Placement Test MPAL(061) and for CS Double Degree students: BA/BS and (MTH 111 or MPT>=24 or MPAL>=061) Major/Minor/Option Restrictions: -297 (Computer Science Double Degree)",
+            "comments": "Jun 25-Aug 17Session 3MTH 112 or equivalent.Class may be cancelled if enrollment is less than 15.",
+            "textbookUrl": "Jun 25-Aug 17Session 3MTH 112 or equivalent.Class may be cancelled if enrollment is less than 15."
+        }
+    ],
+    "_version": 1
+}
