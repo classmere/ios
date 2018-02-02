@@ -57,8 +57,9 @@ class HomeView: UIView {
         textFieldInsideSearchBar?.backgroundColor = darkColor
         textFieldInsideSearchBar?.textColor = .white
         
-        let cancelButtonAttributes: NSDictionary = [NSForegroundColorAttributeName: lightBlueColor]
-        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as? [String : AnyObject], for: UIControlState())
+        let cancelButtonAttributes: NSDictionary = [NSAttributedStringKey.foregroundColor: lightBlueColor]
+        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as? [NSAttributedStringKey : AnyObject],
+                                                            for: UIControlState())
 
         addSubview(searchBar)
     }
@@ -116,7 +117,7 @@ class HomeView: UIView {
     
     // MARK: - User Interaction
     
-    func searchClicked(_ sender: UIButton!) {
+    @objc func searchClicked(_ sender: UIButton!) {
         showSearchBar(searchBar)
     }
     

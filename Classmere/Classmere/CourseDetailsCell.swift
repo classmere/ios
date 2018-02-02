@@ -65,7 +65,7 @@ class CourseDetailsCell: UITableViewCell {
     
     override func updateConstraints() {
         if !didSetupConstraints {
-            NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
+            NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
                 self.titleLabel.autoSetContentCompressionResistancePriority(for: .vertical)
                 self.creditsLabel.autoSetContentCompressionResistancePriority(for: .vertical)
                 self.descriptionLabel.autoSetContentCompressionResistancePriority(for: .vertical)

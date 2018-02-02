@@ -105,10 +105,9 @@ struct DataFormatter {
      */
     static func parseTitle(_ title: String?) -> String {
         if let unparsedTitle = title {
-            let titleArray = Array(unparsedTitle.characters)
             var spaceIndexes = [Int]()
             
-            for (index, value) in titleArray.enumerated() {
+            for (index, value) in unparsedTitle.enumerated() {
                 if value == " " {
                     spaceIndexes.append(index + 1)
                 }

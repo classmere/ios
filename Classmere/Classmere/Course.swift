@@ -1,11 +1,3 @@
-//
-//  Course.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/10/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import Foundation
 import SwiftyJSON
 
@@ -14,23 +6,23 @@ import SwiftyJSON
  Reference Docs - https://github.com/classmere/api
  */
 struct Course {
+    let subjectCode: String
+    let courseNumber: Int
     let title: String?
-    let subjectCode: String?
-    let courseNumber: String?
     let credits: String?
     let description: String?
     let abbr: String?
-    
-    var sections = [Section]()
-    
+    var sections: [Section]
+
     init(courseJSON: JSON) {
-        title = courseJSON["title"].string as String?
-        subjectCode = courseJSON["subjectCode"].string as String?
-        courseNumber = courseJSON["courseNumber"].string as String?
-        credits = courseJSON["credits"].string as String?
-        description = courseJSON["description"].string as String?
-        abbr = (subjectCode ?? "") + " " + (courseNumber ?? "0")
-        
+        title = courseJSON["title"].string
+        subjectCode = courseJSON["subjectCode"].string!
+        courseNumber = courseJSON["courseNumber"].int!
+        credits = courseJSON["credits"].string
+        description = courseJSON["description"].string
+        abbr = subjectCode + " " + String(courseNumber)
+        sections = []
+
         // If sections exist, create array of sections
         if let sectionArray = courseJSON["sections"].array {
             for section in sectionArray {
@@ -38,5 +30,24 @@ struct Course {
                 sections.append(courseSection)
             }
         }
+    }
+    init(subjectCode: String, courseNumber: Int) {
+        self.subjectCode = subjectCode
+        self.courseNumber = courseNumber
+        self.title = nil
+        self.credits = nil
+        self.description = nil
+        self.abbr = nil
+        self.sections = []
+    }
+}
+
+extension Course: Hashable {
+    var hashValue: Int {
+        return subjectCode.hashValue ^ courseNumber.hashValue &* 16777619
+    }
+
+    static func == (lhs: Course, rhs: Course) -> Bool {
+        return lhs.hashValue == rhs.hashValue
     }
 }

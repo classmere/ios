@@ -1,0 +1,1646 @@
+[
+    {
+        "_id": "5a7274610af8450001d7a3c3",
+        "title": "ANTH 444 NUTRITIONAL ANTHROPOLOGY",
+        "subjectCode": "ANTH",
+        "courseNumber": 444,
+        "credits": "4",
+        "description": "Examines human nutrition and food systems from comparative, biocultural and evolutionary perspectives. Long-term evolutionary processes are examined within an ecological framework as significant factors affecting human biology and susceptibility to diet-related disease. An emphasis on anthropological methods in nutritional assessment including anthropometry, paleodietary assessment and nutritional participant-observation will provide students with the tools to evaluate human diet from skeletal and fossil collections through contemporary cross-cultural populations. CROSSLISTED as FCSJ 444. ANTH 240 [C] or ANTH 330 [C]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T01:58:57.839Z",
+        "sections": [],
+        "_version": 1,
+        "score": 0.625
+    },
+    {
+        "_id": "5a7279620af8450001d7a96c",
+        "title": "HORT 316 PLANT NUTRITION",
+        "subjectCode": "HORT",
+        "courseNumber": 316,
+        "credits": "4",
+        "description": "Basic concepts and principles of plant mineral nutrition that provide a basis for solving practical nutritional problems in horticultural crops. Areas covered include mineral nutrients, nutrient availability in the soil and plant uptake, nutrient deficiencies and toxicities and their causes and remedies, and plant and soil analysis. Lec/lab/rec. (CSS 205 [D-] or CSS 305 [D-] or SOIL 205 [D-] )",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:20:18.458Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 33124,
+                "credits": 4,
+                "instructor": "Kowalewski, A.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T13:00:00+00:00",
+                        "endTime": "2018-02-01T13:50:00+00:00",
+                        "days": "MWF",
+                        "buildingCode": "ALS",
+                        "roomNumber": 4000
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Closed",
+                "enrollmentCapacity": 45,
+                "enrollmentCurrent": 49,
+                "waitlistCapacity": 0,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (CSS 205 [D-] or CSS 305 [D-] or SOIL 205 [D-] )",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 35412,
+                "credits": null,
+                "instructor": "Kowalewski, A.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T13:00:00+00:00",
+                        "endTime": "2018-02-01T13:50:00+00:00",
+                        "days": "R",
+                        "buildingCode": "ALS",
+                        "roomNumber": 12
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Waitlisted",
+                "enrollmentCapacity": 15,
+                "enrollmentCurrent": 16,
+                "waitlistCapacity": 3,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (CSS 205 [D-] or CSS 305 [D-] or SOIL 205 [D-] )",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 35966,
+                "credits": null,
+                "instructor": "Kowalewski, A.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T14:00:00+00:00",
+                        "endTime": "2018-02-01T14:50:00+00:00",
+                        "days": "R",
+                        "buildingCode": "ALS",
+                        "roomNumber": 12
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Waitlisted",
+                "enrollmentCapacity": 15,
+                "enrollmentCurrent": 17,
+                "waitlistCapacity": 3,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (CSS 205 [D-] or CSS 305 [D-] or SOIL 205 [D-] )",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 35967,
+                "credits": null,
+                "instructor": "Kowalewski, A.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T15:00:00+00:00",
+                        "endTime": "2018-02-01T15:50:00+00:00",
+                        "days": "R",
+                        "buildingCode": "ALS",
+                        "roomNumber": 12
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Waitlisted",
+                "enrollmentCapacity": 15,
+                "enrollmentCurrent": 16,
+                "waitlistCapacity": 3,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (CSS 205 [D-] or CSS 305 [D-] or SOIL 205 [D-] )",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.625
+    },
+    {
+        "_id": "5a727a0f0af8450001d7aa36",
+        "title": "KIN 341 NUTRITION FOR EXERCISE",
+        "subjectCode": "KIN",
+        "courseNumber": 341,
+        "credits": "3",
+        "description": "Review of the interrelationship between nutrition and exercise, including macronutrient, micronutrient and fluid needs for active individuals. CROSSLISTED as NUTR 341. (KIN 324 [C-] or EXSS 324 [C-] ) and NUTR 240 [C-]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:23:11.312Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 36536,
+                "credits": 3,
+                "instructor": "Skoog, I.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T13:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "LINC",
+                        "roomNumber": 307
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 38,
+                "enrollmentCurrent": 37,
+                "waitlistCapacity": 2,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (KIN 324 [C-] or EXSS 324 [C-] ) and NUTR 240 [C-]",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.625
+    },
+    {
+        "_id": "5a727bbf0af8450001d7ac18",
+        "title": "NUTR 240 HUMAN NUTRITION",
+        "subjectCode": "NUTR",
+        "courseNumber": 240,
+        "credits": "3",
+        "description": "An introductory nutrition course for exercise science, nutrition, dietetics, food science, and health science majors who have taken general chemistry. Concepts of nutrient metabolism and utilization, nutrient deficiencies and toxicities and their relationship to disease prevention and treatment. (CH 121 [C-] or CH 224H [C-] or (CH 221 [C-] or CH 231 [C-] or CH 231H [C-] ) ) and may be taken concurrently with NUTR 241.",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:23.074Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 32935,
+                "credits": 3,
+                "instructor": "Horner, N.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T11:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "LINC",
+                        "roomNumber": 200
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 130,
+                "enrollmentCurrent": 127,
+                "waitlistCapacity": 10,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (CH 121 [C-] or CH 224H [C-] or (CH 221 [C-] or CH 231 [C-] or CH 231H [C-] ) ) and may be taken concurrently with NUTR 241. Major/Minor/Option Restrictions: +135, +426, +466, +652, +840 (Food Science and Technology, Nutrition, Nutrition, Pre-Dietetics, Kinesiology)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "Sp18",
+                "session": "Full Term",
+                "crn": 52895,
+                "credits": 3,
+                "instructor": "Takata, Y.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T11:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "04/02/18",
+                "endDate": "06/08/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 140,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 1,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (CH 121 [C-] or CH 224H [C-] or (CH 221 [C-] or CH 231 [C-] or CH 231H [C-] ) ) and may be taken concurrently with NUTR 241. Major/Minor/Option Restrictions: +135, +426, +466, +840 (Food Science and Technology, Nutrition, Nutrition, Kinesiology)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 13032,
+                "credits": 3,
+                "instructor": "Tomayko, E.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T10:50:00+00:00",
+                        "days": "MWF",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 135,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 15,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (CH 121 [C-] or CH 224H [C-] or (CH 221 [C-] or CH 231 [C-] or CH 231H [C-] ) ) and may be taken concurrently with NUTR 241. Major/Minor/Option Restrictions: +135, +426, +466, +840 (Food Science and Technology, Nutrition, Nutrition, Kinesiology)",
+                "comments": "",
+                "textbookUrl": ""
+            }
+        ],
+        "_version": 2,
+        "score": 0.625
+    },
+    {
+        "_id": "5a727bc50af8450001d7ac1f",
+        "title": "NUTR 341 NUTRITION FOR EXERCISE",
+        "subjectCode": "NUTR",
+        "courseNumber": 341,
+        "credits": "3",
+        "description": "Review the interrelationship between nutrition and exercise, including macronutrient, micronutrient and fluid needs for active individuals. CROSSLISTED as EXSS 341, KIN 341. (KIN 324 [C-] or EXSS 324 [C-] ) and NUTR 240 [C-]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:29.304Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 34208,
+                "credits": 3,
+                "instructor": "Skoog, I.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T13:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "LINC",
+                        "roomNumber": 307
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Waitlisted",
+                "enrollmentCapacity": 7,
+                "enrollmentCurrent": 7,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (KIN 324 [C-] or EXSS 324 [C-] ) and NUTR 240 [C-]",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.625
+    },
+    {
+        "_id": "5a727bce0af8450001d7ac29",
+        "title": "NUTR 423 COMMUNITY NUTRITION",
+        "subjectCode": "NUTR",
+        "courseNumber": 423,
+        "credits": "4",
+        "description": "Meeting nutritional needs in community settings; nutritional status of individuals and groups; programs of public and private agencies and industry; intervention techniques. Roles of community nutritionist. NUTR 325 [C-]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:38.059Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 35426,
+                "credits": 4,
+                "instructor": "Tomayko, E.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T14:00:00+00:00",
+                        "endTime": "2018-02-01T15:50:00+00:00",
+                        "days": "MW",
+                        "buildingCode": "LINC",
+                        "roomNumber": 314
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 49,
+                "enrollmentCurrent": 37,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 325 [C-] Major/Minor/Option Restrictions: +419, +426, +467 (Dietetics, Nutrition, Nutrition and Health Sciences) Class Limitations: -1, -2 (Freshman, Sophomore)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.625
+    },
+    {
+        "_id": "5a72741d0af8450001d7a373",
+        "title": "ANS 311 PRINCIPLES OF ANIMAL NUTRITION",
+        "subjectCode": "ANS",
+        "courseNumber": 311,
+        "credits": "3",
+        "description": "Classification, digestion, absorption, and metabolism of nutrients in animals; consequences of nutritional deficiencies and toxicities. ( (BI 211 [D-] or BI 211H [D-] ) and (BI 212 [D-] or BI 212H [D-] ) )",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T01:57:49.660Z",
+        "sections": [
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 10033,
+                "credits": 3,
+                "instructor": "Cherian, G.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T13:00:00+00:00",
+                        "endTime": "2018-02-01T13:50:00+00:00",
+                        "days": "MWF",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 81,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 0,
+                "waitlistCurrent": 0,
+                "fees": "$10.00 ANS6",
+                "restrictions": "Prereqs: ( (BI 211 [D-] or BI 211H [D-] ) and (BI 212 [D-] or BI 212H [D-] ) ) Class Limitations: -1, -2 (Freshman, Sophomore)",
+                "comments": "",
+                "textbookUrl": ""
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bbb0af8450001d7ac14",
+        "title": "NUTR 104 ORIENTATION TO THE NUTRITION MAJOR",
+        "subjectCode": "NUTR",
+        "courseNumber": 104,
+        "credits": "1",
+        "description": "Discuss and explore the academic and professional requirements for successful entry into professional careers in dietetics, foodservice systems management, and human nutrition sciences majors. Identify professional resources, career opportunities, markets and trends in these OSU Nutrition major options. Graded P/N.",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:19.821Z",
+        "sections": [
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 11256,
+                "credits": 1,
+                "instructor": "Staff",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T14:00:00+00:00",
+                        "endTime": "2018-02-01T14:50:00+00:00",
+                        "days": "R",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 118,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 15,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "",
+                "comments": "",
+                "textbookUrl": ""
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bbd0af8450001d7ac16",
+        "title": "NUTR 225 GENERAL HUMAN NUTRITION",
+        "subjectCode": "NUTR",
+        "courseNumber": 225,
+        "credits": "3",
+        "description": "The relationship of food, its nutrients and other components to the promotion of health and fitness with emphasis on the young adult. Current health concerns on a national and international level. This course is for non-majors; NES majors and those in the health sciences should take NUTR 240.",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:21.405Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 32995,
+                "credits": 3,
+                "instructor": "Jackson, J.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T13:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "LINC",
+                        "roomNumber": 228
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 140,
+                "enrollmentCurrent": 71,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Major/Minor/Option Restrictions: -466, -840 (Nutrition, Kinesiology)",
+                "comments": "For non-majors.Kinesiology and Health Science majors should takeNUTR 240 lecture and one of the NUTR 241 recitationsessions.Textbooks",
+                "textbookUrl": "For non-majors.Kinesiology and Health Science majors should takeNUTR 240 lecture and one of the NUTR 241 recitationsessions.Textbooks"
+            },
+            {
+                "term": "Sp18",
+                "session": "Full Term",
+                "crn": 50790,
+                "credits": 3,
+                "instructor": "Jackson, J.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T11:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "04/02/18",
+                "endDate": "06/08/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 150,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 20,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Major/Minor/Option Restrictions: -466, -840 (Nutrition, Kinesiology)",
+                "comments": "For non-majors. KIN and Health Sciences majors should takeNUTR lecture and one of the NUTR recitation sections.Textbooks",
+                "textbookUrl": "For non-majors. KIN and Health Sciences majors should takeNUTR lecture and one of the NUTR recitation sections.Textbooks"
+            },
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 10431,
+                "credits": 3,
+                "instructor": "Staff",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T13:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 120,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 20,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Major/Minor/Option Restrictions: -466, -840 (Nutrition, Kinesiology)",
+                "comments": "For non-majors. NUTR, KIN and Health Sciences majorsshould take NUTR 240 lecture.",
+                "textbookUrl": "For non-majors. NUTR, KIN and Health Sciences majorsshould take NUTR 240 lecture."
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bc00af8450001d7ac19",
+        "title": "NUTR 241 APPLICATIONS IN HUMAN NUTRITION",
+        "subjectCode": "NUTR",
+        "courseNumber": 241,
+        "credits": "1",
+        "description": "Application of nutrition theory from NUTR 240 using a dietary project and hands-on recitation activities. A key focus of the course will be on applying nutrition theory. Rec. NUTR 240* [C-]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:23.944Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 32936,
+                "credits": 1,
+                "instructor": "Spooner, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T14:00:00+00:00",
+                        "endTime": "2018-02-01T14:50:00+00:00",
+                        "days": "M",
+                        "buildingCode": "MLM",
+                        "roomNumber": 203
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Open",
+                "enrollmentCapacity": 18,
+                "enrollmentCurrent": 13,
+                "waitlistCapacity": 2,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 240* [C-] Major/Minor/Option Restrictions: +426, +466, +652, +840 (Nutrition, Nutrition, Pre-Dietetics, Kinesiology)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 32937,
+                "credits": 1,
+                "instructor": "Spooner, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T15:00:00+00:00",
+                        "endTime": "2018-02-01T15:50:00+00:00",
+                        "days": "M",
+                        "buildingCode": "MLM",
+                        "roomNumber": 203
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Open",
+                "enrollmentCapacity": 18,
+                "enrollmentCurrent": 13,
+                "waitlistCapacity": 2,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 240* [C-] Major/Minor/Option Restrictions: +426, +466, +652, +840 (Nutrition, Nutrition, Pre-Dietetics, Kinesiology)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "Sp18",
+                "session": "Full Term",
+                "crn": 52896,
+                "credits": 1,
+                "instructor": "Perera, H.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T12:50:00+00:00",
+                        "days": "M",
+                        "buildingCode": "MLM",
+                        "roomNumber": 203
+                    }
+                ],
+                "startDate": "04/02/18",
+                "endDate": "06/08/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Open",
+                "enrollmentCapacity": 15,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 240* [C-] Major/Minor/Option Restrictions: +426, +466, +840 (Nutrition, Nutrition, Kinesiology)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "Sp18",
+                "session": "Full Term",
+                "crn": 53639,
+                "credits": 1,
+                "instructor": "Perera, H.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T12:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "MLM",
+                        "roomNumber": 203
+                    }
+                ],
+                "startDate": "04/02/18",
+                "endDate": "06/08/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Open",
+                "enrollmentCapacity": 15,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 240* [C-] Major/Minor/Option Restrictions: +426, +466, +840 (Nutrition, Nutrition, Kinesiology)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 13033,
+                "credits": 1,
+                "instructor": "Staff",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T13:00:00+00:00",
+                        "endTime": "2018-02-01T13:50:00+00:00",
+                        "days": "R",
+                        "buildingCode": "MLM",
+                        "roomNumber": 203
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Open",
+                "enrollmentCapacity": 20,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 240* [C-] Major/Minor/Option Restrictions: +426, +466, +840 (Nutrition, Nutrition, Kinesiology)",
+                "comments": "",
+                "textbookUrl": ""
+            },
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 13638,
+                "credits": 1,
+                "instructor": "Staff",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T10:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "MLM",
+                        "roomNumber": 203
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Recitation",
+                "status": "Open",
+                "enrollmentCapacity": 20,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 240* [C-] Major/Minor/Option Restrictions: +426, +466, +840 (Nutrition, Nutrition, Kinesiology)",
+                "comments": "",
+                "textbookUrl": ""
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bc20af8450001d7ac1c",
+        "title": "NUTR 312 ISSUES IN NUTRITION AND HEALTH",
+        "subjectCode": "NUTR",
+        "courseNumber": 312,
+        "credits": "3",
+        "description": "Impact of nutrition as one component of complex environmental, behavioral, social, and genetic factors significant to health promotion. Apply scientific knowledge to current health issues of changing dietary patterns, technological development in food products and nutrition controversies. Recognize economic and public policy implications. Lec/rec. (Bacc Core Course) (NUTR 225 [C-] or NUTR 240 [C-] ) and completion of science requirement in baccalaureate core.",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:26.862Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 33217,
+                "credits": 3,
+                "instructor": "Traber, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T16:00:00+00:00",
+                        "endTime": "2018-02-01T17:20:00+00:00",
+                        "days": "MW",
+                        "buildingCode": "LINC",
+                        "roomNumber": 368
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 49,
+                "enrollmentCurrent": 43,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (NUTR 225 [C-] or NUTR 240 [C-] ) and completion of science requirement in baccalaureate core.",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "Sp18",
+                "session": "Full Term",
+                "crn": 52956,
+                "credits": 3,
+                "instructor": "Marchant, A.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T16:00:00+00:00",
+                        "endTime": "2018-02-01T17:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "GRP",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "04/02/18",
+                "endDate": "06/08/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 49,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (NUTR 225 [C-] or NUTR 240 [C-] ) and completion of science requirement in baccalaureate core.",
+                "comments": "Other Prereq: Completion of science requirementin bac core.Textbooks",
+                "textbookUrl": "Other Prereq: Completion of science requirementin bac core.Textbooks"
+            },
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 17192,
+                "credits": 3,
+                "instructor": "Staff",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T16:00:00+00:00",
+                        "endTime": "2018-02-01T17:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 45,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (NUTR 225 [C-] or NUTR 240 [C-] ) and completion of science requirement in baccalaureate core.",
+                "comments": "",
+                "textbookUrl": ""
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bc30af8450001d7ac1d",
+        "title": "NUTR 319 PROMOTING FOOD AND NUTRITION",
+        "subjectCode": "NUTR",
+        "courseNumber": 319,
+        "credits": "3",
+        "description": "Strategies in promoting products, services or ideas; negotiating, advertising, public policy, consumer service, social marketing, market research, trends and strategies. Lec/lab. (NUTR 240 [C-] and NUTR 241 [C-] )",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:27.739Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 34784,
+                "credits": 3,
+                "instructor": "Horner, N.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T14:00:00+00:00",
+                        "endTime": "2018-02-01T15:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "LINC",
+                        "roomNumber": 303
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 48,
+                "enrollmentCurrent": 33,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (NUTR 240 [C-] and NUTR 241 [C-] )",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bc40af8450001d7ac1e",
+        "title": "NUTR 325 NUTRITION THROUGH THE LIFE CYCLE",
+        "subjectCode": "NUTR",
+        "courseNumber": 325,
+        "credits": "3",
+        "description": "Nutritional needs and concerns in pregnancy and lactation, infancy, childhood, adolescence, adult and later years. ( (NUTR 240 [C-] or NUTR 225 [C-] ) and NUTR 241 [C-] ) and /or equivalent, junior standing recommended.",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:28.520Z",
+        "sections": [
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 13402,
+                "credits": 3,
+                "instructor": "Staff",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T13:20:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 40,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 20,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: ( (NUTR 240 [C-] or NUTR 225 [C-] ) and NUTR 241 [C-] ) and /or equivalent, junior standing recommended. Major/Minor/Option Restrictions: +426, +466, +840 (Nutrition, Nutrition, Kinesiology) Class Limitations: -1 (Freshman)",
+                "comments": "",
+                "textbookUrl": ""
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bcc0af8450001d7ac27",
+        "title": "NUTR 417 HUMAN NUTRITION SCIENCE",
+        "subjectCode": "NUTR",
+        "courseNumber": 417,
+        "credits": "4",
+        "description": "Application of biochemistry and physiology to nutrition of the individual. BB 350 [C-] and /or equivalent courses and one physiology course.",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:36.433Z",
+        "sections": [
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 13212,
+                "credits": 4,
+                "instructor": "Staff",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T13:50:00+00:00",
+                        "days": "MW",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 55,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 10,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: BB 350 [C-] and /or equivalent courses and one physiology course. Major/Minor/Option Restrictions: +426, +466 (Nutrition, Nutrition)",
+                "comments": "",
+                "textbookUrl": ""
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bcd0af8450001d7ac28",
+        "title": "NUTR 418 HUMAN NUTRITION SCIENCE",
+        "subjectCode": "NUTR",
+        "courseNumber": 418,
+        "credits": "4",
+        "description": "Application of biochemistry and physiology to nutrition of the individual. NUTR 417 [C-] and biochemistry, physiology.",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:37.228Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 33118,
+                "credits": 4,
+                "instructor": "Ho, E.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T11:50:00+00:00",
+                        "days": "MW",
+                        "buildingCode": "MLM",
+                        "roomNumber": 19
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 58,
+                "enrollmentCurrent": 41,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 417 [C-] and biochemistry, physiology. Major/Minor/Option Restrictions: -652 (Pre-Dietetics) Class Limitations: -1, -2, -3 (Freshman, Sophomore, Junior)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a727bce0af8450001d7ac2a",
+        "title": "NUTR 430 MEDICAL NUTRITION THERAPY I",
+        "subjectCode": "NUTR",
+        "courseNumber": 430,
+        "credits": "4",
+        "description": "Principles and practices related to implementation and documentation of the nutrition care process in dietetics. Diet-related conditions are addressed during the three-course sequence using lecture, case studies and assessment recitation sessions. Lec/lab/rec. (BB 350 [C-] or (BB 450 [C-] and BB 451 [C-] ) ) and ( (BI 233 [C-] and BI 243 [C-] ) or (Z 333 [C-] and Z 343 [C-] ) ) and NUTR 417* [C-] and NUTR 439 [C-]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:38.899Z",
+        "sections": [
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 15802,
+                "credits": 4,
+                "instructor": "Horner, N.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T14:00:00+00:00",
+                        "endTime": "2018-02-01T14:50:00+00:00",
+                        "days": "MWF",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 45,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 0,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (BB 350 [C-] or (BB 450 [C-] and BB 451 [C-] ) ) and ( (BI 233 [C-] and BI 243 [C-] ) or (Z 333 [C-] and Z 343 [C-] ) and NUTR 417* [C-] and NUTR 439 [C-] Major/Minor/Option Restrictions: -652 (Pre-Dietetics)",
+                "comments": "",
+                "textbookUrl": ""
+            },
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 15803,
+                "credits": null,
+                "instructor": "Horner, N.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T12:00:00+00:00",
+                        "endTime": "2018-02-01T13:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "LANG",
+                        "roomNumber": 130
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 20,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (BB 350 [C-] or (BB 450 [C-] and BB 451 [C-] ) ) and ( (BI 233 [C-] and BI 243 [C-] ) or (Z 333 [C-] and Z 343 [C-] ) and NUTR 417* [C-] and NUTR 439 [C-]",
+                "comments": "",
+                "textbookUrl": ""
+            },
+            {
+                "term": "F18",
+                "session": "Full Term",
+                "crn": 15804,
+                "credits": null,
+                "instructor": "Horner, N.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T14:00:00+00:00",
+                        "endTime": "2018-02-01T15:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "LANG",
+                        "roomNumber": 130
+                    }
+                ],
+                "startDate": "09/20/18",
+                "endDate": "11/30/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 20,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: (BB 350 [C-] or (BB 450 [C-] and BB 451 [C-] ) ) and ( (BI 233 [C-] and BI 243 [C-] ) or (Z 333 [C-] and Z 343 [C-] ) and NUTR 417* [C-] and NUTR 439 [C-]",
+                "comments": "",
+                "textbookUrl": ""
+            }
+        ],
+        "_version": 2,
+        "score": 0.6
+    },
+    {
+        "_id": "5a7274230af8450001d7a37a",
+        "title": "ANS 320 PRINCIPLES OF COMPANION ANIMAL NUTRITION",
+        "subjectCode": "ANS",
+        "courseNumber": 320,
+        "credits": "3",
+        "description": "Learn about nutrients, the digestive process, and the application of nutritional sciences to the health and welfare of companion animals. Introduction to the metabolic basis and practical preventative management for nutritional diseases in companion animals. (BI 211 [D-] or BI 211H [D-] ) and (BI 212 [D-] or BI 212H [D-] )",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T01:57:55.299Z",
+        "sections": [],
+        "_version": 1,
+        "score": 0.5833333333333334
+    },
+    {
+        "_id": "5a727bcf0af8450001d7ac2b",
+        "title": "NUTR 431 MEDICAL NUTRITION THERAPY 2",
+        "subjectCode": "NUTR",
+        "courseNumber": 431,
+        "credits": "4",
+        "description": "Principles and practices related to implementation and documentation of the nutrition care process in dietetics. Diet-related conditions are addressed during the three-course sequence using lecture, case studies and assessment recitation sessions. NUTR 430 [C-]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:39.757Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 36134,
+                "credits": 4,
+                "instructor": "Bump, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T13:00:00+00:00",
+                        "endTime": "2018-02-01T13:50:00+00:00",
+                        "days": "MWF",
+                        "buildingCode": "MLM",
+                        "roomNumber": 202
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 40,
+                "enrollmentCurrent": 33,
+                "waitlistCapacity": 0,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 430 [C-] Major/Minor/Option Restrictions: +419, +467 (Dietetics, Nutrition and Health Sciences)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 36135,
+                "credits": null,
+                "instructor": "Bump, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T08:00:00+00:00",
+                        "endTime": "2018-02-01T09:50:00+00:00",
+                        "days": "W",
+                        "buildingCode": "LANG",
+                        "roomNumber": 130
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 20,
+                "enrollmentCurrent": 14,
+                "waitlistCapacity": 0,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 430 [C-]",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 36139,
+                "credits": null,
+                "instructor": "Bump, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T08:00:00+00:00",
+                        "endTime": "2018-02-01T09:50:00+00:00",
+                        "days": "R",
+                        "buildingCode": "LANG",
+                        "roomNumber": 130
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 20,
+                "enrollmentCurrent": 19,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 430 [C-]",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.5833333333333334
+    },
+    {
+        "_id": "5a727bd00af8450001d7ac2c",
+        "title": "NUTR 432 MEDICAL NUTRITION THERAPY 3",
+        "subjectCode": "NUTR",
+        "courseNumber": 432,
+        "credits": "3",
+        "description": "Principles and practices related to implementation and documentation of the nutrition care process in dietetics. Diet-related conditions are addressed during the three-course sequence using lecture, case studies and assessment recitation sessions. NUTR 431 [C-]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:40.603Z",
+        "sections": [
+            {
+                "term": "Sp18",
+                "session": "Full Term",
+                "crn": 55851,
+                "credits": 3,
+                "instructor": "Horner, N.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T09:00:00+00:00",
+                        "endTime": "2018-02-01T09:50:00+00:00",
+                        "days": "MW",
+                        "buildingCode": "TBA",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "04/02/18",
+                "endDate": "06/08/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 30,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 0,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 431 [C-] Major/Minor/Option Restrictions: +419 (Dietetics)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "Sp18",
+                "session": "Full Term",
+                "crn": 55852,
+                "credits": null,
+                "instructor": "Horner, N.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T08:00:00+00:00",
+                        "endTime": "2018-02-01T09:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "GRP",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "04/02/18",
+                "endDate": "06/08/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 15,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 431 [C-] Major/Minor/Option Restrictions: +419 (Dietetics)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "Sp18",
+                "session": "Full Term",
+                "crn": 55853,
+                "credits": null,
+                "instructor": "Horner, N.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T11:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "GRP",
+                        "roomNumber": null
+                    }
+                ],
+                "startDate": "04/02/18",
+                "endDate": "06/08/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 15,
+                "enrollmentCurrent": 0,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 431 [C-] Major/Minor/Option Restrictions: +419 (Dietetics)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.5833333333333334
+    },
+    {
+        "_id": "5a727bd20af8450001d7ac2e",
+        "title": "NUTR 446 MANAGING FOOD AND NUTRITION SERVICES",
+        "subjectCode": "NUTR",
+        "courseNumber": 446,
+        "credits": "4",
+        "description": "Overview of organizational structure, functions of managers in food and nutrition service organizations: human and financial resources, regulatory influences, health care organizations, current issues in operations. Lec/rec. NUTR 311 [C-]",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T02:30:42.262Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 34209,
+                "credits": 4,
+                "instructor": "Cluskey, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T11:50:00+00:00",
+                        "days": "TR",
+                        "buildingCode": "LINC",
+                        "roomNumber": 368
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 49,
+                "enrollmentCurrent": 42,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: NUTR 311 [C-] Major/Minor/Option Restrictions: +261, +419, +467 (Nutrition and Foodservice Systems, Dietetics, Nutrition and Health Sciences)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.5833333333333334
+    },
+    {
+        "_id": "5a72741f0af8450001d7a375",
+        "title": "ANS 313 APPLIED ANIMAL NUTRITION FEEDS AND RATION FORMULATION",
+        "subjectCode": "ANS",
+        "courseNumber": 313,
+        "credits": "4",
+        "description": "Discusses topics relevant to feedstuff identification and nutrient analysis, feed processing and formulation of balanced animal diets based on nutrient requirements. Provides students hands-on experiences in identifying various feedstuffs and formulating rations based on the nutrient composition of those feedstuffs. MTH 111 [D] and junior standing",
+        "prereqs": [
+            {
+                "subjectCode": null,
+                "courseNumber": null
+            }
+        ],
+        "updated": "2018-02-01T01:57:51.296Z",
+        "sections": [
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 32356,
+                "credits": 4,
+                "instructor": "Kennedy, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T13:00:00+00:00",
+                        "endTime": "2018-02-01T13:50:00+00:00",
+                        "days": "MWF",
+                        "buildingCode": "WITH",
+                        "roomNumber": 109
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Lecture",
+                "status": "Open",
+                "enrollmentCapacity": 125,
+                "enrollmentCurrent": 72,
+                "waitlistCapacity": 0,
+                "waitlistCurrent": 0,
+                "fees": "$20.00 ANS6",
+                "restrictions": "Prereqs: MTH 111 [D] and junior standing Class Limitations: -1 (Freshman)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 32357,
+                "credits": null,
+                "instructor": "Kennedy, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T08:00:00+00:00",
+                        "endTime": "2018-02-01T09:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "OATF",
+                        "roomNumber": 109
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 30,
+                "enrollmentCurrent": 13,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: MTH 111 [D] and junior standing Class Limitations: -1 (Freshman)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 32358,
+                "credits": null,
+                "instructor": "Kennedy, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T10:00:00+00:00",
+                        "endTime": "2018-02-01T11:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "OATF",
+                        "roomNumber": 109
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 30,
+                "enrollmentCurrent": 22,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: MTH 111 [D] and junior standing Class Limitations: -1 (Freshman)",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 33028,
+                "credits": null,
+                "instructor": "Kennedy, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T13:00:00+00:00",
+                        "endTime": "2018-02-01T14:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "OATF",
+                        "roomNumber": 109
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 30,
+                "enrollmentCurrent": 10,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: MTH 111 [D] and junior standing",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            },
+            {
+                "term": "W18",
+                "session": "Full Term",
+                "crn": 33279,
+                "credits": null,
+                "instructor": "Kennedy, M.",
+                "meetingTimes": [
+                    {
+                        "startTime": "2018-02-01T15:00:00+00:00",
+                        "endTime": "2018-02-01T16:50:00+00:00",
+                        "days": "T",
+                        "buildingCode": "OATF",
+                        "roomNumber": 109
+                    }
+                ],
+                "startDate": "01/08/18",
+                "endDate": "03/16/18",
+                "campus": "Corv",
+                "type": "Laboratory",
+                "status": "Open",
+                "enrollmentCapacity": 30,
+                "enrollmentCurrent": 27,
+                "waitlistCapacity": 5,
+                "waitlistCurrent": 0,
+                "fees": "",
+                "restrictions": "Prereqs: MTH 111 [D] and junior standing",
+                "comments": "Textbooks",
+                "textbookUrl": "Textbooks"
+            }
+        ],
+        "_version": 2,
+        "score": 0.5625
+    }
+]

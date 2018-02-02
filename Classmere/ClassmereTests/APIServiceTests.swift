@@ -94,7 +94,8 @@ class APIServiceTests: XCTestCase {
             XCTAssertNotNil(building.address)
             XCTAssertNotNil(building.buildingNumber)
             XCTAssertNotNil(building.name)
-            XCTAssertNotNil(building.sqft)
+            XCTAssertNotNil(building.latitude)
+            XCTAssertNotNil(building.longitude)
         })
     }
 }

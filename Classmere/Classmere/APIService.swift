@@ -1,11 +1,3 @@
-//
-//  APIService.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/8/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 import SwiftyJSON
@@ -16,7 +8,7 @@ import SwiftyJSON
  */
 struct APIService {
     
-    static let baseURL = "http://138.68.48.26:5000"//"http://api.classmere.com"
+    static let baseURL = "https://api.classmere.com"
     
     // MARK: Course Requests
     

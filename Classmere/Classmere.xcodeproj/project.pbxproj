@@ -29,6 +29,16 @@
 		16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D94F1E1D73D22F00346D2B /* DataFormatter.swift */; };
 		16D95F031D643BF800C2E1F7 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D95F021D643BF800C2E1F7 /* SearchCell.swift */; };
 		A6D629B1A1239E2EBCFB000B /* Pods_ClassmereTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C3B333A7473EBFCDC7EF28 /* Pods_ClassmereTests.framework */; };
+		ACB0AE5520213AB0003B1E45 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5420213AB0003B1E45 /* API.swift */; };
+		ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5620213AC7003B1E45 /* Store.swift */; };
+		ACDC0A9C20227E69000A19D1 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9B20227E69000A19D1 /* APITests.swift */; };
+		ACDC0A9E20228563000A19D1 /* DummyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9D20228563000A19D1 /* DummyProvider.swift */; };
+		ACDC0AA020228577000A19D1 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */; };
+		ACDC0AA62022D907000A19D1 /* course.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA22022D907000A19D1 /* course.json */; };
+		ACDC0AA82022D907000A19D1 /* search_course.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA42022D907000A19D1 /* search_course.json */; };
+		ACDC0AAC202370FC000A19D1 /* BuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */; };
+		ACF260C22024FB5800A05B20 /* search_building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C02024FB5800A05B20 /* search_building.json */; };
+		ACF260C32024FB5800A05B20 /* building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C12024FB5800A05B20 /* building.json */; };
 		F9F4F659224332AD8247CE8A /* Pods_Classmere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C9D73E2FE4980DEB8B78F /* Pods_Classmere.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +90,16 @@
 		16D95F021D643BF800C2E1F7 /* SearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		3E7034761DB1245B355B0E66 /* Pods-ClassmereTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassmereTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ClassmereTests/Pods-ClassmereTests.release.xcconfig"; sourceTree = "<group>"; };
 		974759523F0F5369AFB9F6D7 /* Pods-Classmere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Classmere.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Classmere/Pods-Classmere.debug.xcconfig"; sourceTree = "<group>"; };
+		ACB0AE5420213AB0003B1E45 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		ACB0AE5620213AC7003B1E45 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		ACDC0A9B20227E69000A19D1 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		ACDC0A9D20228563000A19D1 /* DummyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyProvider.swift; sourceTree = "<group>"; };
+		ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
+		ACDC0AA22022D907000A19D1 /* course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course.json; sourceTree = "<group>"; };
+		ACDC0AA42022D907000A19D1 /* search_course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_course.json; sourceTree = "<group>"; };
+		ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingTests.swift; sourceTree = "<group>"; };
+		ACF260C02024FB5800A05B20 /* search_building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_building.json; sourceTree = "<group>"; };
+		ACF260C12024FB5800A05B20 /* building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = building.json; sourceTree = "<group>"; };
 		AD9C9D73E2FE4980DEB8B78F /* Pods_Classmere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Classmere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED457C659A3B5F1D0757C66 /* Pods-Classmere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Classmere.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Classmere/Pods-Classmere.release.xcconfig"; sourceTree = "<group>"; };
 		DEEF30CFAB38B378BBEF6B93 /* Pods-ClassmereTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassmereTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ClassmereTests/Pods-ClassmereTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,12 +193,17 @@
 		169AD5E81D59615700615CB7 /* Classmere */ = {
 			isa = PBXGroup;
 			children = (
+				ACB0AE5420213AB0003B1E45 /* API.swift */,
+				ACB0AE5620213AC7003B1E45 /* Store.swift */,
+				ACDC0A9D20228563000A19D1 /* DummyProvider.swift */,
+				ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */,
 				162935E91D5966C0003DF059 /* Models */,
 				162935EA1D5966C9003DF059 /* Views */,
 				162935EB1D5966D0003DF059 /* Controllers */,
 				169AD5E91D59615800615CB7 /* AppDelegate.swift */,
 				169AD5ED1D59615800615CB7 /* Main.storyboard */,
 				169AD5F01D59615800615CB7 /* Assets.xcassets */,
+				ACDC0AAA2022D925000A19D1 /* Stubbed Responses */,
 				169AD5F21D59615800615CB7 /* LaunchScreen.storyboard */,
 				169AD5F51D59615800615CB7 /* Info.plist */,
 			);
@@ -189,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				160D28551D5C1469009C0178 /* APIServiceTests.swift */,
+				ACDC0A9B20227E69000A19D1 /* APITests.swift */,
+				ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */,
 				169AD6001D59615800615CB7 /* Info.plist */,
 			);
 			path = ClassmereTests;
@@ -221,6 +248,17 @@
 				3E7034761DB1245B355B0E66 /* Pods-ClassmereTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		ACDC0AAA2022D925000A19D1 /* Stubbed Responses */ = {
+			isa = PBXGroup;
+			children = (
+				ACF260C12024FB5800A05B20 /* building.json */,
+				ACDC0AA22022D907000A19D1 /* course.json */,
+				ACF260C02024FB5800A05B20 /* search_building.json */,
+				ACDC0AA42022D907000A19D1 /* search_course.json */,
+			);
+			name = "Stubbed Responses";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,16 +339,16 @@
 					169AD5E51D59615700615CB7 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 6QBR52NJ4V;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0920;
 					};
 					169AD5F91D59615800615CB7 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0920;
 						TestTargetID = 169AD5E51D59615700615CB7;
 					};
 					169AD6041D59615800615CB7 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0920;
 						TestTargetID = 169AD5E51D59615700615CB7;
 					};
 				};
@@ -340,9 +378,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDC0AA62022D907000A19D1 /* course.json in Resources */,
+				ACF260C22024FB5800A05B20 /* search_building.json in Resources */,
 				169AD5F41D59615800615CB7 /* LaunchScreen.storyboard in Resources */,
 				169AD5F11D59615800615CB7 /* Assets.xcassets in Resources */,
 				169AD5EF1D59615800615CB7 /* Main.storyboard in Resources */,
+				ACF260C32024FB5800A05B20 /* building.json in Resources */,
+				ACDC0AA82022D907000A19D1 /* search_course.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,10 +561,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				16BA26B61D76723200CF8594 /* CourseDetailsCell.swift in Sources */,
+				ACDC0AA020228577000A19D1 /* URLSessionProvider.swift in Sources */,
 				163FAB501D7E90A700E8E271 /* SectionCell.swift in Sources */,
 				160D28521D5C0298009C0178 /* Section.swift in Sources */,
+				ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */,
 				16BA26B41D7663E100CF8594 /* EmojiFactory.swift in Sources */,
 				16D95F031D643BF800C2E1F7 /* SearchCell.swift in Sources */,
+				ACDC0A9E20228563000A19D1 /* DummyProvider.swift in Sources */,
 				160D28541D5C12DF009C0178 /* Building.swift in Sources */,
 				16D117611D6C07B000CCB807 /* CourseViewController.swift in Sources */,
 				163FAB4E1D7E891500E8E271 /* SectionViewController.swift in Sources */,
@@ -533,6 +578,7 @@
 				16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */,
 				160D28581D5C1B67009C0178 /* HomeViewController.swift in Sources */,
 				16A8EA4F1D7CE98C0047C10B /* MapCell.swift in Sources */,
+				ACB0AE5520213AB0003B1E45 /* API.swift in Sources */,
 				169AD5EA1D59615800615CB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -541,6 +587,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDC0AAC202370FC000A19D1 /* BuildingTests.swift in Sources */,
+				ACDC0A9C20227E69000A19D1 /* APITests.swift in Sources */,
 				160D28561D5C1469009C0178 /* APIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,7 +739,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rutgerfarry.Classmere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -708,7 +757,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rutgerfarry.Classmere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -721,7 +771,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BLeeConcepts.ClassmereTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Classmere.app/Classmere";
 			};
 			name = Debug;
@@ -735,7 +786,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BLeeConcepts.ClassmereTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Classmere.app/Classmere";
 			};
 			name = Release;
@@ -747,7 +799,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BLeeConcepts.ClassmereUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Classmere;
 			};
 			name = Debug;
@@ -759,7 +812,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BLeeConcepts.ClassmereUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Classmere;
 			};
 			name = Release;

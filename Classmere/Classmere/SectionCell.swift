@@ -155,7 +155,7 @@ class SectionCell: UITableViewCell {
     
     override func updateConstraints() {
         if !didSetupConstraints {
-            NSLayoutConstraint.autoSetPriority(UILayoutPriorityRequired) {
+            NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
                 self.dayIconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
                 self.instructorIconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
                 self.locationIconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
