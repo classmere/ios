@@ -10,14 +10,14 @@ build: $(NAME).xcworkspace
 		-workspace $(NAME).xcworkspace \
 		-scheme $(SCHEME) \
 		-sdk $(SDK) \
-		build
+		build | xcpretty
 
 build-for-testing: $(NAME).xcworkspace
 	set -o pipefail && xcodebuild \
 		-workspace $(NAME).xcworkspace \
 		-scheme $(SCHEME) \
 		-sdk $(SDK) \
-		build-for-testing
+		build-for-testing | xcpretty
 
 test: build-for-testing
 	set -o pipefail && xctool \
