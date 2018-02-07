@@ -1,3 +1,5 @@
+// swiftlint:disable force_try
+
 import XCTest
 @testable import Classmere
 
@@ -10,7 +12,7 @@ class BuildingTests: XCTestCase {
         let jsonURL = URL(fileURLWithPath: Bundle.main.path(forResource: "building", ofType: "json")!)
         json = try! Data(contentsOf: jsonURL)
     }
-    
+
     func testParseBuilding() {
         let decoder = JSONDecoder()
         let building = try! decoder.decode(Building.self, from: json)
@@ -20,7 +22,7 @@ class BuildingTests: XCTestCase {
         XCTAssertEqual(building.latitude, 44.567164)
         XCTAssertEqual(building.longitude, -123.278692)
     }
-    
+
     func testPerformanceExample() {
         let decoder = JSONDecoder()
 
@@ -30,5 +32,5 @@ class BuildingTests: XCTestCase {
             }
         }
     }
-    
+
 }

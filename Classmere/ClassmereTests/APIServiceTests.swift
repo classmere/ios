@@ -9,7 +9,7 @@ class APIServiceTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
@@ -19,31 +19,31 @@ class APIServiceTests: XCTestCase {
             XCTAssertNotNil(response)
         })
     }
-    
+
     func testGetCourseBySubjectCode() {
         _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
             XCTAssertNotNil(response)
         })
     }
-    
+
     func testSearchCourse() {
         _ = APIService.searchCourse("Computer Science", completion: { response in
             XCTAssertNotNil(response)
         })
     }
-    
+
     func testGetBuildingByAbbr() {
         _ = APIService.getBuildingByAbbr("KEC", completion: { response in
             XCTAssertNotNil(response)
         })
     }
-    
+
     func testSearchBuilding() {
         _ = APIService.searchBuilding("Kelley", completion: { response in
             XCTAssertNotNil(response)
         })
     }
-    
+
     func testCourseModel() {
         _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
             let course: Course = Course(courseJSON: response)
@@ -56,7 +56,7 @@ class APIServiceTests: XCTestCase {
             XCTAssertNotNil(course.sections)
         })
     }
-    
+
     func testSectionModel() {
         _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
             let course: Course = Course(courseJSON: response)
@@ -86,7 +86,7 @@ class APIServiceTests: XCTestCase {
             XCTAssertNotNil(section.textbookUrl)
         })
     }
-    
+
     func testBuildingModel() {
         _ = APIService.getBuildingByAbbr("KEC", completion: { response in
             let building: Building = Building(buildingJSON: response)

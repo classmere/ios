@@ -12,7 +12,7 @@ import Foundation
  A model representation of a date formatter.
  */
 struct DataFormatter {
-    
+
     /**
      Converts string returned in JSON to a NSDate.
      Offsets time by -7 hours since API returns GMT timezone
@@ -32,7 +32,7 @@ struct DataFormatter {
         }
         return nil
     }
-    
+
     /**
      Returns a properly formatted date string from an NSDate.
      
@@ -48,7 +48,7 @@ struct DataFormatter {
             return ""
         }
     }
-    
+
     /**
      Returns a properly formatted time string from an NSDate.
      
@@ -64,7 +64,7 @@ struct DataFormatter {
             return ""
         }
     }
-    
+
     /**
      Returns a user friendly formatted term string
      
@@ -76,7 +76,7 @@ struct DataFormatter {
             let season = unparsedTerm.substring(to: unparsedTerm.characters.index(unparsedTerm.startIndex, offsetBy: 2))
             let year = unparsedTerm.substring(from: unparsedTerm.characters.index(unparsedTerm.endIndex, offsetBy: -2))
             var parsedTerm: String = ""
-            
+
             if season.contains("F") {
                 parsedTerm += "Fall"
             } else if season.contains("W") {
@@ -86,17 +86,17 @@ struct DataFormatter {
             } else if season.contains("Su") {
                 parsedTerm += "Summer"
             }
-            
+
             if Int(year) != nil {
                 parsedTerm += " 20\(year)"
             }
-            
+
             return parsedTerm
         } else {
             return ""
         }
     }
-    
+
     /**
      Parses a title to remove the subject code and course number
      
@@ -106,7 +106,7 @@ struct DataFormatter {
     static func parseTitle(_ title: String?) -> String {
         if let unparsedTitle = title {
             var spaceIndexes = [Int]()
-            
+
             for (index, value) in unparsedTitle.enumerated() {
                 if value == " " {
                     spaceIndexes.append(index + 1)
@@ -118,7 +118,7 @@ struct DataFormatter {
                 return parsedString!
             }
         }
-        
+
         return ""
     }
 }
