@@ -28,7 +28,8 @@
 		16D117611D6C07B000CCB807 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D117601D6C07B000CCB807 /* CourseViewController.swift */; };
 		16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D94F1E1D73D22F00346D2B /* DataFormatter.swift */; };
 		16D95F031D643BF800C2E1F7 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D95F021D643BF800C2E1F7 /* SearchCell.swift */; };
-		A6D629B1A1239E2EBCFB000B /* Pods_ClassmereTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C3B333A7473EBFCDC7EF28 /* Pods_ClassmereTests.framework */; };
+		47EF37D0250C872C87DBB1F6 /* Pods_Classmere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C9D73E2FE4980DEB8B78F /* Pods_Classmere.framework */; };
+		91C86D7281E4FEC220E9FFD5 /* Pods_ClassmereTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C3B333A7473EBFCDC7EF28 /* Pods_ClassmereTests.framework */; };
 		ACB0AE5520213AB0003B1E45 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5420213AB0003B1E45 /* API.swift */; };
 		ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5620213AC7003B1E45 /* Store.swift */; };
 		ACDC0A9C20227E69000A19D1 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9B20227E69000A19D1 /* APITests.swift */; };
@@ -39,7 +40,6 @@
 		ACDC0AAC202370FC000A19D1 /* BuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */; };
 		ACF260C22024FB5800A05B20 /* search_building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C02024FB5800A05B20 /* search_building.json */; };
 		ACF260C32024FB5800A05B20 /* building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C12024FB5800A05B20 /* building.json */; };
-		F9F4F659224332AD8247CE8A /* Pods_Classmere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C9D73E2FE4980DEB8B78F /* Pods_Classmere.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9F4F659224332AD8247CE8A /* Pods_Classmere.framework in Frameworks */,
+				47EF37D0250C872C87DBB1F6 /* Pods_Classmere.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6D629B1A1239E2EBCFB000B /* Pods_ClassmereTests.framework in Frameworks */,
+				91C86D7281E4FEC220E9FFD5 /* Pods_ClassmereTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,15 +268,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 169AD60E1D59615800615CB7 /* Build configuration list for PBXNativeTarget "Classmere" */;
 			buildPhases = (
-				CEFB9C73B105686728F4FEB2 /* [CP] Check Pods Manifest.lock */,
-				1EFE36192E4E6FA4889F2FF5 /* Check Pods Manifest.lock */,
+				2AF5822C4E93014A5B9833BB /* [CP] Check Pods Manifest.lock */,
 				169AD5E21D59615700615CB7 /* Sources */,
 				169AD5E31D59615700615CB7 /* Frameworks */,
 				169AD5E41D59615700615CB7 /* Resources */,
-				FFFEF0C54416AEA427BE491A /* Embed Pods Frameworks */,
-				13A39C92A2367F01ABE9EE91 /* Copy Pods Resources */,
-				8D70B28C7095D9A1AF5BF893 /* [CP] Embed Pods Frameworks */,
-				19CCDCB9962BA3C70AD267DF /* [CP] Copy Pods Resources */,
+				20875526403285122830D4CB /* [CP] Embed Pods Frameworks */,
+				25BA1FE3DC457F547AD1FC9E /* [CP] Copy Pods Resources */,
 				AC9B0AC7202BA5AC00FB279B /* SwiftLint */,
 			);
 			buildRules = (
@@ -406,22 +403,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13A39C92A2367F01ABE9EE91 /* Copy Pods Resources */ = {
+		20875526403285122830D4CB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		19CCDCB9962BA3C70AD267DF /* [CP] Copy Pods Resources */ = {
+		25BA1FE3DC457F547AD1FC9E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,19 +440,22 @@
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1EFE36192E4E6FA4889F2FF5 /* Check Pods Manifest.lock */ = {
+		2AF5822C4E93014A5B9833BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Classmere-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		355D48055BEEA51AE295DD58 /* [CP] Embed Pods Frameworks */ = {
@@ -479,28 +486,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-ClassmereTests/Pods-ClassmereTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D70B28C7095D9A1AF5BF893 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9F2097AE823039D7FFBD69AD /* [CP] Check Pods Manifest.lock */ = {
@@ -534,39 +519,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
-		};
-		CEFB9C73B105686728F4FEB2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Classmere-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FFFEF0C54416AEA427BE491A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
