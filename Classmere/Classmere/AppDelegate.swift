@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/8/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -18,9 +10,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeViewController = HomeViewController(nibName: nil, bundle: nil)
         let navigationController = UINavigationController(rootViewController: homeViewController)
         navigationController.navigationBar.isTranslucent = false
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 

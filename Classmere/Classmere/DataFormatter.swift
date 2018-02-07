@@ -1,11 +1,3 @@
-//
-//  DataFormatter.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/28/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import Foundation
 
 /**
