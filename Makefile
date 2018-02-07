@@ -5,6 +5,11 @@ DEST = iPhone X
 
 all: build test
 
+# Fetch Pods before doing anything else
+.PHONY: $(NAME).xcworkspace
+$(NAME).xcworkspace:
+	pod install
+
 build: $(NAME).xcworkspace
 	set -o pipefail && xcodebuild \
 		-workspace $(NAME).xcworkspace \
@@ -24,7 +29,11 @@ test: build-for-testing
 		-workspace $(NAME).xcworkspace \
 		-scheme $(SCHEME) \
 		-sdk $(SDK) \
+		-destination 'name=$(DEST),OS=latest' \
 		run-tests
+
+lint: $(NAME).xcworkspace
+	Pods/Swiftlint/swiftlint
 
 clean:
 	set -o pipefail && xcodebuild \
