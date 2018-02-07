@@ -277,6 +277,7 @@
 				13A39C92A2367F01ABE9EE91 /* Copy Pods Resources */,
 				8D70B28C7095D9A1AF5BF893 /* [CP] Embed Pods Frameworks */,
 				19CCDCB9962BA3C70AD267DF /* [CP] Copy Pods Resources */,
+				AC9B0AC7202BA5AC00FB279B /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -519,6 +520,20 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AC9B0AC7202BA5AC00FB279B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		CEFB9C73B105686728F4FEB2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
