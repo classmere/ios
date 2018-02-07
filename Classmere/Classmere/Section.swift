@@ -1,11 +1,3 @@
-//
-//  Section.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/10/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import Foundation
 import SwiftyJSON
 
@@ -19,14 +11,14 @@ struct Section {
     let crn: String?
     let credits: String?
     let instructor: String?
-    
+
     // Meeting times array keys
     let startTime: Date?
     let endTime: Date?
     let days: String?
     let buildingCode: String?
     let roomNumber: String?
-    
+
     let startDate: String?
     let endDate: String?
     let campus: String?
@@ -40,16 +32,16 @@ struct Section {
     let restrictions: String?
     let comments: String?
     let textbookUrl: String?
-    
+
     var building: Building?
-    
+
     init(sectionJSON: JSON) {
         term = sectionJSON["term"].string as String?
         session = sectionJSON["session"].string as String?
         crn = sectionJSON["crn"].string as String?
         credits = sectionJSON["credits"].string as String?
         instructor = sectionJSON["instructor"].string as String?
-        
+
         if let meetingTimes = sectionJSON["meetingTimes"].array {
             startTime = DataFormatter.dateFromISO8601String(meetingTimes[0]["startTime"].string)
             endTime = DataFormatter.dateFromISO8601String(meetingTimes[0]["endTime"].string)
@@ -63,7 +55,7 @@ struct Section {
             buildingCode = nil
             roomNumber = nil
         }
-        
+
         startDate = sectionJSON["startDate"].string as String?
         endDate = sectionJSON["endDate"].string as String?
         campus = sectionJSON["campus"].string as String?

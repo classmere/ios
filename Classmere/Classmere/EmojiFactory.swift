@@ -1,10 +1,4 @@
-//
-//  EmojiFactory.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/30/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
+// swiftlint:disable cyclomatic_complexity function_body_length
 
 import Foundation
 
@@ -12,7 +6,7 @@ import Foundation
  A model representation of an emoji factory.
  */
 struct EmojiFactory {
-    
+
     /**
      Returns emoji for a course type
      - Parameter type: Type of a course
@@ -257,10 +251,10 @@ struct EmojiFactory {
                 return "🏫"
             }
         }
-        
+
         return "🏫"
     }
-    
+
     /**
      Returns emoji for a section type
      
@@ -280,10 +274,10 @@ struct EmojiFactory {
                 return "📓"
             }
         }
-        
+
         return "📓"
     }
-    
+
     static func emojiFromSectionProperty(_ property: String) -> String {
         switch property {
         case "Days":

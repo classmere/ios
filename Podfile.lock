@@ -1,18 +1,21 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.6.0)
   - PureLayout (3.0.2)
-  - SwiftyJSON (3.1.1)
+  - SwiftLint (0.24.2)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - PureLayout
+  - SwiftLint
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
+  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 9b2eb51c7c6dd4f9d03a80ae038549d9ae2bb2a6
+PODFILE CHECKSUM: 619e4cedc12da644628520a4ae46be54a7bc3f78
 
 COCOAPODS: 1.4.0

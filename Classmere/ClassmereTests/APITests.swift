@@ -2,7 +2,7 @@ import XCTest
 @testable import Classmere
 
 class APITests: XCTestCase {
-    
+
     func testUrl() {
         XCTAssertEqual(url(API.course("CS", 161)),
                        URL(string: "https://api.classmere.com/courses/Cs/161"))
@@ -13,5 +13,5 @@ class APITests: XCTestCase {
         XCTAssertEqual(url(API.searchCourse("film 220")),
                        URL(string: "https://api.classmere.com/search/courses/film%20220"))
     }
-    
+
 }

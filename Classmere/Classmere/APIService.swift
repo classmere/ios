@@ -7,11 +7,11 @@ import SwiftyJSON
  Reference Docs - https://github.com/classmere/api
  */
 struct APIService {
-    
+
     static let baseURL = "https://api.classmere.com"
-    
+
     // MARK: Course Requests
-    
+
     /**
      Fetches all courses at OSU in a single request.
      
@@ -28,11 +28,11 @@ struct APIService {
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                 }
-                
+
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
-    
+
     /**
      Fetches a specific course at OSU by its subject code.
      
@@ -41,7 +41,9 @@ struct APIService {
      - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
-    static func getCourseBySubjectCode(_ subjectCode: String, courseNumber: Int, completion: @escaping (JSON) -> Void) -> Request {
+    static func getCourseBySubjectCode(_ subjectCode: String,
+                                       courseNumber: Int,
+                                       completion: @escaping (JSON) -> Void) -> Request {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         return Alamofire.request("\(baseURL)/courses/\(subjectCode)/\(courseNumber)/")
             .responseJSON { response in
@@ -51,11 +53,11 @@ struct APIService {
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                 }
-                
+
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
-    
+
     /**
      Fetches a specific course at OSU by a user query.
      
@@ -81,13 +83,13 @@ struct APIService {
                     print("Request failed with error: \(error)")
                     completion(nil)
                 }
-                
+
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
-    
+
     // MARK: Building Requests
-    
+
     /**
      Fetches a specific location at OSU by course's abbreviation.
      
@@ -105,11 +107,11 @@ struct APIService {
                 case .failure(let error):
                     print("Request failed with error: \(error)")
                 }
-                
+
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
-    
+
     /**
      Fetches a specific building at OSU by a user query.
      
@@ -135,7 +137,7 @@ struct APIService {
                     print("Request failed with error: \(error)")
                     completion(nil)
                 }
-                
+
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
