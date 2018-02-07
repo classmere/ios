@@ -107,10 +107,8 @@ struct DataFormatter {
         if let unparsedTitle = title {
             var spaceIndexes = [Int]()
 
-            for (index, value) in unparsedTitle.enumerated() {
-                if value == " " {
-                    spaceIndexes.append(index + 1)
-                }
+            for (index, value) in unparsedTitle.enumerated() where value == " " {
+                spaceIndexes.append(index + 1)
             }
 
             let parsedString: String? = (unparsedTitle as NSString).substring(from: spaceIndexes[1])

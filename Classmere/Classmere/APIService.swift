@@ -41,7 +41,9 @@ struct APIService {
      - Parameter completion: A callback that accepts JSON.
      - Returns: Request.
      */
-    static func getCourseBySubjectCode(_ subjectCode: String, courseNumber: Int, completion: @escaping (JSON) -> Void) -> Request {
+    static func getCourseBySubjectCode(_ subjectCode: String,
+                                       courseNumber: Int,
+                                       completion: @escaping (JSON) -> Void) -> Request {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         return Alamofire.request("\(baseURL)/courses/\(subjectCode)/\(courseNumber)/")
             .responseJSON { response in

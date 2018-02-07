@@ -11,8 +11,8 @@ import PureLayout
 
 class HomeView: UIView {
 
-    let darkColor: UIColor = UIColor(red:0.13, green:0.13, blue:0.13, alpha:1.0)
-    let lightBlueColor: UIColor = UIColor(red:0.24, green:0.73, blue:0.94, alpha:1.0)
+    let darkColor: UIColor = UIColor(red: 0.13, green: 0.13, blue: 0.13, alpha: 1.0)
+    let lightBlueColor: UIColor = UIColor(red: 0.24, green: 0.73, blue: 0.94, alpha: 1.0)
 
     var didSetupConstraints = false
 
@@ -57,8 +57,9 @@ class HomeView: UIView {
         textFieldInsideSearchBar?.textColor = .white
 
         let cancelButtonAttributes: NSDictionary = [NSAttributedStringKey.foregroundColor: lightBlueColor]
-        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes as? [NSAttributedStringKey : AnyObject],
-                                                            for: UIControlState())
+        UIBarButtonItem.appearance()
+            .setTitleTextAttributes(cancelButtonAttributes as? [NSAttributedStringKey : AnyObject],
+                                    for: UIControlState())
 
         addSubview(searchBar)
     }
@@ -131,7 +132,7 @@ class HomeView: UIView {
         UIView.animate(withDuration: 0.3, animations: {
                                     searchBar.becomeFirstResponder()
                                     self.layoutIfNeeded()
-            }, completion: { finished in
+            }, completion: { _ in
                 UIView.animate(withDuration: 0.2,
                     animations: {
                         searchBar.alpha = 1
@@ -153,7 +154,7 @@ class HomeView: UIView {
                                     self.tableView.alpha = 0
                                     self.searchButton.alpha = 1
                                     self.searchButton.layer.cornerRadius = 20
-            }, completion: { finished in
+            }, completion: { _ in
                 self.setNeedsUpdateConstraints()
                 self.updateConstraintsIfNeeded()
                 UIView.animate(withDuration: 0.3,

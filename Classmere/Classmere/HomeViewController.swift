@@ -1,11 +1,3 @@
-//
-//  HomeViewController.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/10/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import UIKit
 import PureLayout
 import Alamofire
@@ -95,7 +87,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.navigationController?.pushViewController(CourseViewController(course: courses[(indexPath as NSIndexPath).row]), animated: true)
+        let courseViewController = CourseViewController(course: courses[indexPath.row])
+        self.navigationController?.pushViewController(courseViewController, animated: true)
     }
 
     // MARK: UISearchBarDelegate

@@ -101,7 +101,9 @@ class SectionViewController: UITableViewController {
                 }
 
                 if let days = section.days, let startTime = section.startTime, let endTime = section.endTime {
-                    cell.dayLabel.text = "\(days) \(DataFormatter.timeStringFromDate(startTime)) - \(DataFormatter.timeStringFromDate(endTime))"
+                    let startTime = DataFormatter.timeStringFromDate(startTime)
+                    let endTime = DataFormatter.timeStringFromDate(endTime)
+                    cell.dayLabel.text = "\(days) \(startTime) - \(endTime))"
                 } else {
                     cell.dayLabel.text = "TBA"
                 }

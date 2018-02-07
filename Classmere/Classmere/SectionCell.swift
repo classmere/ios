@@ -1,17 +1,9 @@
-//
-//  SectionCell.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 9/5/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import UIKit
 import PureLayout
 
 class SectionCell: UITableViewCell {
 
-    let darkColor: UIColor = UIColor(red:0.27, green:0.27, blue:0.27, alpha:1.0)
+    let darkColor: UIColor = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1.0)
 
     var didSetupConstraints = false
 
@@ -47,7 +39,6 @@ class SectionCell: UITableViewCell {
     // MARK: - Setup
 
     func setupViews() {
-
         dayIconLabel.lineBreakMode = .byTruncatingTail
         dayIconLabel.numberOfLines = 0
         dayIconLabel.textAlignment = .center

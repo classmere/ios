@@ -1,11 +1,3 @@
-//
-//  CourseViewController.swift
-//  Classmere
-//
-//  Created by Brandon Lee on 8/22/16.
-//  Copyright © 2016 Brandon Lee. All rights reserved.
-//
-
 import UIKit
 
 class CourseViewController: UITableViewController {
@@ -56,12 +48,13 @@ class CourseViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if ((indexPath as NSIndexPath).row == 0) {
-            if let cell: MapCell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? MapCell {
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath as NSIndexPath).row == 0 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? MapCell {
                 for section in course.sections {
                     if let buildingAbbr = section.buildingCode {
-                        APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
+                        _ = APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
                             let building = Building(buildingJSON: buildingJSON)
                             cell.navigateToAddress(building.address)
                         }
@@ -74,8 +67,8 @@ class CourseViewController: UITableViewController {
                 cell.updateConstraintsIfNeeded()
                 return cell
             }
-        } else if ((indexPath as NSIndexPath).row == 1) {
-            if let cell: CourseDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CourseDetailsCell") as? CourseDetailsCell {
+        } else if (indexPath as NSIndexPath).row == 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "CourseDetailsCell") as? CourseDetailsCell {
                 if let title = course.title {
                     cell.titleLabel.text = DataFormatter.parseTitle(title)
                 } else {
@@ -102,14 +95,16 @@ class CourseViewController: UITableViewController {
                 return cell
             }
         } else {
-            if let cell: CourseCell = tableView.dequeueReusableCell(withIdentifier: "CourseCell") as? CourseCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell") as? CourseCell {
                 let cellSection = course.sections[(indexPath as NSIndexPath).row-2]
 
                 cell.termLabel.text = DataFormatter.parseTerm(cellSection.term)
                 cell.iconLabel.text = EmojiFactory.emojiFromSectionType(cellSection.type)
 
                 if let days = cellSection.days {
-                    cell.timeLabel.text = "\(days) \(DataFormatter.timeStringFromDate(cellSection.startTime)) - \(DataFormatter.timeStringFromDate(cellSection.endTime))"
+                    let startTime = DataFormatter.timeStringFromDate(cellSection.startTime)
+                    let endTime = DataFormatter.timeStringFromDate(cellSection.endTime)
+                    cell.timeLabel.text = "\(days) \(startTime) - \(endTime))"
                 } else {
                     cell.timeLabel.text = "TBA"
                 }
@@ -148,6 +143,9 @@ class CourseViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.navigationController?.pushViewController(SectionViewController(course: course, section: course.sections[(indexPath as NSIndexPath).row-2]), animated: true)
+        let sectionViewController = SectionViewController(course: course,
+                                                          section: course.sections[(indexPath as NSIndexPath).row-2])
+        self.navigationController?.pushViewController(sectionViewController,
+                                                      animated: true)
     }
 }

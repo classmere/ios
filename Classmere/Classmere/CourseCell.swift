@@ -11,7 +11,7 @@ import PureLayout
 
 class CourseCell: UITableViewCell {
 
-    let darkColor: UIColor = UIColor(red:0.27, green:0.27, blue:0.27, alpha:1.0)
+    let darkColor: UIColor = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1.0)
     let separatorColor: UIColor = UIColor(red: 0.783922, green: 0.780392, blue: 0.8, alpha: 1.0)
 
     var didSetupConstraints = false
