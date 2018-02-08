@@ -5,14 +5,26 @@ import SwiftyJSON
  A model representation of a course at OSU.
  Reference Docs - https://github.com/classmere/api
  */
-struct Course {
+
+struct PlainCourse: Decodable {
     let subjectCode: String
     let courseNumber: Int
     let title: String?
     let credits: String?
     let description: String?
     let abbr: String?
+}
+struct Course: Decodable {
+    let subjectCode: String
+    let courseNumber: Int
+    let title: String?
+    let credits: String?
+    let description: String?
     var sections: [Section]
+
+    var abbr: String {
+        return subjectCode + " " + String(courseNumber)
+    }
 
     init(courseJSON: JSON) {
         title = courseJSON["title"].string
@@ -20,7 +32,6 @@ struct Course {
         courseNumber = courseJSON["courseNumber"].int!
         credits = courseJSON["credits"].string
         description = courseJSON["description"].string
-        abbr = subjectCode + " " + String(courseNumber)
         sections = []
 
         // If sections exist, create array of sections
@@ -31,13 +42,13 @@ struct Course {
             }
         }
     }
+
     init(subjectCode: String, courseNumber: Int) {
         self.subjectCode = subjectCode
         self.courseNumber = courseNumber
         self.title = nil
         self.credits = nil
         self.description = nil
-        self.abbr = nil
         self.sections = []
     }
 }

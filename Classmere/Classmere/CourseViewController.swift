@@ -53,12 +53,12 @@ class CourseViewController: UITableViewController {
         if (indexPath as NSIndexPath).row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? MapCell {
                 for section in course.sections {
-                    if let buildingAbbr = section.buildingCode {
-                        _ = APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
-                            let building = Building(buildingJSON: buildingJSON)
-                            cell.navigateToAddress(building.address)
-                        }
-                    }
+//                    if let buildingAbbr = section.buildingCode {
+//                        _ = APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
+//                            let building = Building(buildingJSON: buildingJSON)
+//                            cell.navigateToAddress(building.address)
+//                        }
+//                    }
                 }
 
                 cell.isUserInteractionEnabled = false
@@ -99,15 +99,15 @@ class CourseViewController: UITableViewController {
                 let cellSection = course.sections[(indexPath as NSIndexPath).row-2]
 
                 cell.termLabel.text = DataFormatter.parseTerm(cellSection.term)
-                cell.iconLabel.text = EmojiFactory.emojiFromSectionType(cellSection.type)
+//                cell.iconLabel.text = EmojiFactory.emojiFromSectionType(cellSection.type)
 
-                if let days = cellSection.days {
-                    let startTime = DataFormatter.timeStringFromDate(cellSection.startTime)
-                    let endTime = DataFormatter.timeStringFromDate(cellSection.endTime)
-                    cell.timeLabel.text = "\(days) \(startTime) - \(endTime))"
-                } else {
-                    cell.timeLabel.text = "TBA"
-                }
+//                if let days = cellSection.days {
+//                    let startTime = DataFormatter.timeStringFromDate(cellSection.startTime)
+//                    let endTime = DataFormatter.timeStringFromDate(cellSection.endTime)
+//                    cell.timeLabel.text = "\(days) \(startTime) - \(endTime))"
+//                } else {
+//                    cell.timeLabel.text = "TBA"
+//                }
 
                 if let instructor = cellSection.instructor {
                     if instructor != "" {
@@ -119,17 +119,17 @@ class CourseViewController: UITableViewController {
                     cell.instructorLabel.text = "TBA"
                 }
 
-                if let building = cellSection.buildingCode, let room = cellSection.roomNumber {
-                    cell.locationLabel.text = "\(building) \(room)"
-                } else {
-                    cell.locationLabel.text = "TBA"
-                }
+//                if let building = cellSection.buildingCode, let room = cellSection.roomNumber {
+//                    cell.locationLabel.text = "\(building) \(room)"
+//                } else {
+//                    cell.locationLabel.text = "TBA"
+//                }
 
-                if let type = cellSection.type {
-                    cell.typeLabel.text = type
-                } else {
-                    cell.typeLabel.text = "TBA"
-                }
+//                if let type = cellSection.type {
+//                    cell.typeLabel.text = type
+//                } else {
+//                    cell.typeLabel.text = "TBA"
+//                }
 
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()

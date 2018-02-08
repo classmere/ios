@@ -13,41 +13,41 @@ class Store {
 }
 
 extension Store: Provider {
-    func get(buildingAbbr: String, callback: @escaping Callback<Building>) throws {
+    func get(buildingAbbr: String, completion: @escaping Completion<Building>) {
         if let building = buildings[Building(abbr: buildingAbbr).hashValue] {
-            callback(building)
+            completion(.success(building))
         } else {
-            try externalFetcher.get(buildingAbbr: buildingAbbr) { building in
-                self.buildings[building.hashValue] = building
-                callback(building)
+            externalFetcher.get(buildingAbbr: buildingAbbr) { result in
+                switch result {
+                case .success(let building):
+                    self.buildings[building.hashValue] = building
+                    completion(.success(building))
+                case .failure(let error): completion(.failure(error))
+                }
             }
         }
     }
 
-    func get(subjectCode: String, courseNumber: Int, callback: @escaping Callback<Course>) throws {
+    func get(subjectCode: String, courseNumber: Int, completion: @escaping Completion<Course>) {
         if let course = courses[Course(subjectCode: subjectCode, courseNumber: courseNumber).hashValue] {
-            callback(course)
+            completion(.success(course))
         } else {
-            try externalFetcher.get(subjectCode: subjectCode, courseNumber: courseNumber) { course in
-                self.courses[course.hashValue] = course
-                callback(course)
+            externalFetcher.get(subjectCode: subjectCode, courseNumber: courseNumber) { result in
+                switch result {
+                case .success(let course):
+                    self.courses[course.hashValue] = course
+                    completion(.success(course))
+                case .failure(let error): completion(.failure(error))
+                }
             }
         }
     }
 
-    func search(building: String, callback: @escaping Callback<Building>) throws {
-        try externalFetcher.search(building: building, callback: callback)
+    func search(building: String, completion: @escaping Completion<[Building]>) {
+        externalFetcher.search(building: building, completion: completion)
     }
 
-    func search(course: String, callback: @escaping Callback<Course>) throws {
-        try externalFetcher.search(course: course, callback: callback)
+    func search(course: String, completion: @escaping Completion<[Course]>) {
+        externalFetcher.search(course: course, completion: completion)
     }
-}
-
-protocol Provider {
-    typealias Callback<T> = (T) -> Void
-    func get(buildingAbbr: String, callback: @escaping Callback<Building>) throws
-    func get(subjectCode: String, courseNumber: Int, callback: @escaping Callback<Course>) throws
-    func search(building: String, callback: @escaping Callback<Building>) throws
-    func search(course: String, callback: @escaping Callback<Course>) throws
 }

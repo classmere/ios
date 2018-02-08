@@ -57,35 +57,35 @@ class APIServiceTests: XCTestCase {
         })
     }
 
-    func testSectionModel() {
-        _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
-            let course: Course = Course(courseJSON: response)
-            let section: Section = course.sections[0]
-            XCTAssertNotNil(section.term)
-            XCTAssertNotNil(section.session)
-            XCTAssertNotNil(section.crn)
-            XCTAssertNotNil(section.credits)
-            XCTAssertNotNil(section.instructor)
-            XCTAssertNotNil(section.startTime)
-            XCTAssertNotNil(section.endTime)
-            XCTAssertNotNil(section.days)
-            XCTAssertNotNil(section.buildingCode)
-            XCTAssertNotNil(section.roomNumber)
-            XCTAssertNotNil(section.startDate)
-            XCTAssertNotNil(section.endDate)
-            XCTAssertNotNil(section.campus)
-            XCTAssertNotNil(section.type)
-            XCTAssertNotNil(section.status)
-            XCTAssertNotNil(section.enrollmentCapacity)
-            XCTAssertNotNil(section.enrollmentCurrent)
-            XCTAssertNotNil(section.waitlistCapacity)
-            XCTAssertNotNil(section.waitlistCurrent)
-            XCTAssertNotNil(section.fees)
-            XCTAssertNotNil(section.restrictions)
-            XCTAssertNotNil(section.comments)
-            XCTAssertNotNil(section.textbookUrl)
-        })
-    }
+//    func testSectionModel() {
+//        _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
+//            let course: Course = Course(courseJSON: response)
+//            let section: Section = course.sections[0]
+//            XCTAssertNotNil(section.term)
+//            XCTAssertNotNil(section.session)
+//            XCTAssertNotNil(section.crn)
+//            XCTAssertNotNil(section.credits)
+//            XCTAssertNotNil(section.instructor)
+//            XCTAssertNotNil(section.startTime)
+//            XCTAssertNotNil(section.endTime)
+//            XCTAssertNotNil(section.days)
+//            XCTAssertNotNil(section.buildingCode)
+//            XCTAssertNotNil(section.roomNumber)
+//            XCTAssertNotNil(section.startDate)
+//            XCTAssertNotNil(section.endDate)
+//            XCTAssertNotNil(section.campus)
+//            XCTAssertNotNil(section.type)
+//            XCTAssertNotNil(section.status)
+//            XCTAssertNotNil(section.enrollmentCapacity)
+//            XCTAssertNotNil(section.enrollmentCurrent)
+//            XCTAssertNotNil(section.waitlistCapacity)
+//            XCTAssertNotNil(section.waitlistCurrent)
+//            XCTAssertNotNil(section.fees)
+//            XCTAssertNotNil(section.restrictions)
+//            XCTAssertNotNil(section.comments)
+//            XCTAssertNotNil(section.textbookUrl)
+//        })
+//    }
 
     func testBuildingModel() {
         _ = APIService.getBuildingByAbbr("KEC", completion: { response in

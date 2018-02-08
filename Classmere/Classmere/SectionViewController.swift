@@ -54,12 +54,12 @@ class SectionViewController: UITableViewController {
         if (indexPath as NSIndexPath).row == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? MapCell {
 
-                if let buildingAbbr = section.buildingCode {
-                    _ = APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
-                        let building = Building(buildingJSON: buildingJSON)
-                        cell.navigateToAddress(building.address)
-                    }
-                }
+//                if let buildingAbbr = section.buildingCode {
+//                    _ = APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
+//                        let building = Building(buildingJSON: buildingJSON)
+//                        cell.navigateToAddress(building.address)
+//                    }
+//                }
 
                 cell.setNeedsUpdateConstraints()
                 cell.updateConstraintsIfNeeded()
@@ -100,13 +100,13 @@ class SectionViewController: UITableViewController {
                     cell.termLabel.text = "TBA"
                 }
 
-                if let days = section.days, let startTime = section.startTime, let endTime = section.endTime {
-                    let startTime = DataFormatter.timeStringFromDate(startTime)
-                    let endTime = DataFormatter.timeStringFromDate(endTime)
-                    cell.dayLabel.text = "\(days) \(startTime) - \(endTime))"
-                } else {
-                    cell.dayLabel.text = "TBA"
-                }
+//                if let days = section.days, let startTime = section.startTime, let endTime = section.endTime {
+//                    let startTime = DataFormatter.timeStringFromDate(startTime)
+//                    let endTime = DataFormatter.timeStringFromDate(endTime)
+//                    cell.dayLabel.text = "\(days) \(startTime) - \(endTime))"
+//                } else {
+//                    cell.dayLabel.text = "TBA"
+//                }
 
                 if let instructor = section.instructor {
                     cell.instructorLabel.text = instructor
@@ -114,29 +114,29 @@ class SectionViewController: UITableViewController {
                     cell.instructorLabel.text = "TBA"
                 }
 
-                if let buildingAbbr = section.buildingCode, let roomNumber = section.roomNumber {
-                    cell.locationLabel.text = "\(buildingAbbr) \(roomNumber)"
-                } else {
-                    cell.locationLabel.text = "TBA"
-                }
-
-                if let type = section.type {
-                    cell.typeLabel.text = type
-                } else {
-                    cell.typeLabel.text = "TBA"
-                }
-
-                if let currentlyEnrolled = section.enrollmentCurrent, let enrollmentCapacity = section.enrollmentCapacity {
-                    cell.enrolledLabel.text = "\(currentlyEnrolled) student(s) enrolled, \(enrollmentCapacity) spots available"
-                } else {
-                    cell.enrolledLabel.text = "TBA"
-                }
-
-                if let startDate = section.startDate, let endDate = section.endDate {
-                    cell.dateLabel.text = "\(startDate) - \(endDate)"
-                } else {
-                    cell.dateLabel.text = "TBA"
-                }
+//                if let buildingAbbr = section.buildingCode, let roomNumber = section.roomNumber {
+//                    cell.locationLabel.text = "\(buildingAbbr) \(roomNumber)"
+//                } else {
+//                    cell.locationLabel.text = "TBA"
+//                }
+//
+//                if let type = section.type {
+//                    cell.typeLabel.text = type
+//                } else {
+//                    cell.typeLabel.text = "TBA"
+//                }
+//
+//                if let currentlyEnrolled = section.enrollmentCurrent, let enrollmentCapacity = section.enrollmentCapacity {
+//                    cell.enrolledLabel.text = "\(currentlyEnrolled) student(s) enrolled, \(enrollmentCapacity) spots available"
+//                } else {
+//                    cell.enrolledLabel.text = "TBA"
+//                }
+//
+//                if let startDate = section.startDate, let endDate = section.endDate {
+//                    cell.dateLabel.text = "\(startDate) - \(endDate)"
+//                } else {
+//                    cell.dateLabel.text = "TBA"
+//                }
 
                 if let crn = section.crn {
                     cell.crnLabel.text = "CRN: \(crn)"

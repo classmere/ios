@@ -5,6 +5,7 @@ import XCTest
 
 class BuildingTests: XCTestCase {
 
+    let decoder = JSONDecoder()
     var json: Data!
 
     override func setUp() {
@@ -14,7 +15,6 @@ class BuildingTests: XCTestCase {
     }
 
     func testParseBuilding() {
-        let decoder = JSONDecoder()
         let building = try! decoder.decode(Building.self, from: json)
         XCTAssertEqual(building.abbr, "KEC")
         XCTAssertEqual(building.name, "Kelley Engineering Center")
@@ -24,10 +24,8 @@ class BuildingTests: XCTestCase {
     }
 
     func testPerformanceExample() {
-        let decoder = JSONDecoder()
-
         self.measure {
-            for _ in 0...100 {
+            for _ in 0...20 {
                 _ = try! decoder.decode(Building.self, from: json)
             }
         }
