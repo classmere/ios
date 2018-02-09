@@ -44,19 +44,6 @@ class APIServiceTests: XCTestCase {
         })
     }
 
-    func testCourseModel() {
-        _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
-            let course: Course = Course(courseJSON: response)
-            XCTAssertNotNil(course.title)
-            XCTAssertNotNil(course.subjectCode)
-            XCTAssertNotNil(course.courseNumber)
-            XCTAssertNotNil(course.credits)
-            XCTAssertNotNil(course.description)
-            XCTAssertNotNil(course.abbr)
-            XCTAssertNotNil(course.sections)
-        })
-    }
-
 //    func testSectionModel() {
 //        _ = APIService.getCourseBySubjectCode("CS", courseNumber: 161, completion: { response in
 //            let course: Course = Course(courseJSON: response)
