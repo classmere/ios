@@ -6,8 +6,8 @@ class Store {
 
     fileprivate let externalFetcher: Provider
 
-    var buildingSearchResults: [Building] = []
-    var courseSearchResults: [Course] = []
+    fileprivate(set) var buildingSearchResults: [Building] = []
+    fileprivate(set) var courseSearchResults: [Course] = []
 
     init(provider: Provider) {
         externalFetcher = provider

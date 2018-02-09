@@ -2,22 +2,7 @@ import UIKit
 
 class CourseViewController: UITableViewController {
 
-    var course: Course
-
-    // MARK: - View Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = course.abbr
-        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(MapCell.self, forCellReuseIdentifier: "MapCell")
-        tableView.register(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
-        tableView.register(CourseCell.self, forCellReuseIdentifier: "CourseCell")
-        tableView.tableFooterView = UIView()
-        self.view.setNeedsUpdateConstraints()
-    }
+    let course: Course
 
     // MARK: - Initialization
 
@@ -30,11 +15,26 @@ class CourseViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: UITableView Delegate and Datasource
+    // MARK: - View Lifecycle
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = course.abbr
+        navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "",
+                                                                style: .plain,
+                                                                target: nil,
+                                                                action: nil)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(MapCell.self, forCellReuseIdentifier: "MapCell")
+        tableView.register(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
+        tableView.register(CourseCell.self, forCellReuseIdentifier: "CourseCell")
+        tableView.tableFooterView = UIView()
+        self.view.setNeedsUpdateConstraints()
     }
+
+    // MARK: UITableView Delegate and Datasource
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return course.sections.count + 2

@@ -4,11 +4,22 @@ import PureLayout
 class HomeViewController: UIViewController {
 
     var homeView: HomeView!
-    let store = Store(provider: URLSessionProvider())
+    let store: Store
     var didSetupConstraints = false
 
     var tableView: UITableView!
     var tableViewDataSource: TableViewDataSource!
+
+    // MARK: - Initialization
+
+    init(store: Store) {
+        self.store = store
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - View Lifecycle
 
@@ -21,7 +32,7 @@ class HomeViewController: UIViewController {
                                                                 action: nil)
         homeView = HomeView.newAutoLayout()
         tableView = homeView.tableView
-        tableViewDataSource = TableViewDataSource(cellType: UITableViewCell.self, tableView: tableView)
+        tableViewDataSource = TableViewDataSource(cellTypes: [Course.self], tableView: tableView)
         tableView.delegate = self
         tableView.dataSource = tableViewDataSource
         homeView.searchBar.delegate = self
@@ -48,7 +59,8 @@ extension HomeViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let courseViewController = CourseViewController(course: store.courseSearchResults[indexPath.row])
+        let course = store.courseSearchResults[indexPath.row]
+        let courseViewController = CourseViewController(course: course)
         navigationController?.pushViewController(courseViewController, animated: true)
     }
 
