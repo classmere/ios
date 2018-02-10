@@ -1,6 +1,8 @@
 import UIKit
 
-extension Course: TableViewCellConvertable {
+extension TableViewCellConvertable where Cell: CourseCell, Self: CourseType { }
+
+extension TableViewCellConvertable where Cell: SearchCell, Self: CourseType {
     static var cellType: SearchCell.Type {
         return SearchCell.self
     }
@@ -12,4 +14,8 @@ extension Course: TableViewCellConvertable {
         cell.updateConstraintsIfNeeded()
         return cell
     }
+}
+
+extension Course: TableViewCellConvertable {
+    typealias Model = Course
 }
