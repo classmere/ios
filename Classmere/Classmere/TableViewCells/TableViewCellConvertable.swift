@@ -1,8 +1,8 @@
 import UIKit
 
 protocol TableViewCellConvertable {
-    static var cellType: UITableViewCell.Type { get }
-    func updateCell(_ cell: UITableViewCell) -> UITableViewCell
+    associatedtype Cell: UITableViewCell
+    func update(cell: Cell) -> Cell
 }
 
 extension TableViewCellConvertable {

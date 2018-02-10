@@ -209,12 +209,11 @@
 				ACB0AE5420213AB0003B1E45 /* API.swift */,
 				ACB0AE5620213AC7003B1E45 /* Store.swift */,
 				ACD9441C202D10BE00F4B35F /* TableViewDataSource.swift */,
-				ACD9441E202D1D3800F4B35F /* Course+TableViewCellConvertable.swift */,
-				ACD94420202D1D6900F4B35F /* TableViewCellConvertable.swift */,
 				AC778A07202BFB2C001A25C9 /* Result.swift */,
 				AC778A05202BFAF6001A25C9 /* Provider.swift */,
 				ACDC0A9D20228563000A19D1 /* DummyProvider.swift */,
 				ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */,
+				AC65DBDD202ED3A4006C990A /* TableViewCells */,
 				162935E91D5966C0003DF059 /* Models */,
 				162935EA1D5966C9003DF059 /* Views */,
 				162935EB1D5966D0003DF059 /* Controllers */,
@@ -266,6 +265,15 @@
 				3E7034761DB1245B355B0E66 /* Pods-ClassmereTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		AC65DBDD202ED3A4006C990A /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				ACD94420202D1D6900F4B35F /* TableViewCellConvertable.swift */,
+				ACD9441E202D1D3800F4B35F /* Course+TableViewCellConvertable.swift */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		ACDC0AAA2022D925000A19D1 /* Stubbed Responses */ = {

@@ -1,37 +1,67 @@
 import UIKit
 
-class TableViewDataSource: NSObject, UITableViewDataSource {
+protocol RowType {
+    var cellClass: AnyClass { get }
+    var cellIdentifier: String { get }
+    func update(cell: UITableViewCell)
+}
 
+struct Row<T>: RowType where T: TableViewCellConvertable {
+    let data: T
+
+    init(_ data: T) {
+        self.data = data
+    }
+
+    var cellClass: AnyClass {
+        return T.Cell.self
+    }
+
+    var cellIdentifier: String {
+        return T.cellIdentifier
+    }
+
+    func update(cell: UITableViewCell) {
+        if let cell = cell as? T.Cell {
+            _ = data.update(cell: cell)
+        }
+    }
+}
+
+final class TableViewDataSource: NSObject {
     fileprivate weak var tableView: UITableView!
+    fileprivate var rows = [RowType]()
 
-    fileprivate var data = [TableViewCellConvertable]()
-
-    init(cellTypes: [TableViewCellConvertable.Type], tableView: UITableView) {
+    init(rows: [RowType] = [], tableView: UITableView) {
+        super.init()
         self.tableView = tableView
-        for cellType in cellTypes {
-            self.tableView.register(cellType.cellType, forCellReuseIdentifier: cellType.cellIdentifier)
+        registerRows()
+    }
+
+    fileprivate func registerRows() {
+        for row in rows {
+            tableView.register(row.cellClass, forCellReuseIdentifier: row.cellIdentifier)
         }
     }
 
-    fileprivate func reuseID(_ cell: AnyClass) -> String {
-        return NSStringFromClass(cell.self)
-    }
-
-    func updateTableView(_ newData: [TableViewCellConvertable]) {
+    func updateTableView(_ newData: [RowType]) {
         DispatchQueue.main.async {
-            self.data = newData
+            self.rows = newData
+            self.registerRows()
             self.tableView.reloadData()
         }
     }
+}
 
+extension TableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return rows.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = data[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: item).cellIdentifier, for: indexPath)
-        return item.updateCell(cell)
+        let row = rows[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: row.cellIdentifier, for: indexPath)
+        row.update(cell: cell)
+        return cell
     }
-
 }

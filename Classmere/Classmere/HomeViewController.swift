@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
                                                                 action: nil)
         homeView = HomeView.newAutoLayout()
         tableView = homeView.tableView
-        tableViewDataSource = TableViewDataSource(cellTypes: [Course.self], tableView: tableView)
+        tableViewDataSource = TableViewDataSource(tableView: tableView)
         tableView.delegate = self
         tableView.dataSource = tableViewDataSource
         homeView.searchBar.delegate = self
@@ -86,7 +86,7 @@ extension HomeViewController: UISearchBarDelegate {
         store.search(course: searchText) { result in
             switch result {
             case .success(let courses):
-                self.tableViewDataSource.updateTableView(courses)
+                self.tableViewDataSource.updateTableView(courses.map { Row<Course>($0) })
             case .failure(let error):
                 self.tableViewDataSource.updateTableView([])
                 print(error)

@@ -9,9 +9,9 @@ class HomeView: UIView {
     var didSetupConstraints = false
 
     var searchBarTop = false
-    var searchBar: UISearchBar!
-    var searchButton: UIButton!
-    var tableView: UITableView!
+    let searchBar = UISearchBar.newAutoLayout()
+    let searchButton = UIButton(type: .custom)
+    let tableView = UITableView.newAutoLayout()
     var searchButtonWidthConstraint: NSLayoutConstraint?
     var searchButtonEdgeConstraint: NSLayoutConstraint?
 
@@ -37,7 +37,6 @@ class HomeView: UIView {
     }
 
     func setupSearchBar() {
-        searchBar = UISearchBar.newAutoLayout()
         searchBar.showsCancelButton = true
         searchBar.alpha = 0
         searchBar.backgroundColor = darkColor
@@ -56,7 +55,6 @@ class HomeView: UIView {
     }
 
     func setupSearchButton() {
-        searchButton = UIButton(type: .custom)
         searchButton.translatesAutoresizingMaskIntoConstraints = false
         searchButton.addTarget(self, action: #selector(HomeView.searchClicked(_:)), for: .touchUpInside)
         searchButton.setTitle("Search", for: UIControlState())
@@ -66,7 +64,6 @@ class HomeView: UIView {
     }
 
     func setupTableView() {
-        tableView = UITableView.newAutoLayout()
         tableView.alpha = 0
         addSubview(tableView)
     }
