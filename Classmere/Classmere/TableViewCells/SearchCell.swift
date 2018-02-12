@@ -1,6 +1,11 @@
 import UIKit
 import PureLayout
 
+struct SearchCellModel {
+    let emoji: String
+    let title: String
+}
+
 class SearchCell: UITableViewCell {
 
     var didSetupConstraints = false

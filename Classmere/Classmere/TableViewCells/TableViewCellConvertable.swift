@@ -2,8 +2,7 @@ import UIKit
 
 protocol TableViewCellConvertable {
     associatedtype Cell: UITableViewCell
-    associatedtype Model
-    func update(cell: Cell) -> Cell
+    func update(cell: Cell)
 }
 
 extension TableViewCellConvertable {

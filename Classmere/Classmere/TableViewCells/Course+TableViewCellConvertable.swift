@@ -7,12 +7,10 @@ extension TableViewCellConvertable where Cell: SearchCell, Self: CourseType {
         return SearchCell.self
     }
 
-    func update(cell: SearchCell) -> SearchCell {
+    func update(cell: SearchCell) {
         cell.iconLabel.text = EmojiFactory.emojiFromCourseType(subjectCode)
         cell.titleLabel.text = title
-        cell.setNeedsUpdateConstraints()
         cell.updateConstraintsIfNeeded()
-        return cell
     }
 }
 
