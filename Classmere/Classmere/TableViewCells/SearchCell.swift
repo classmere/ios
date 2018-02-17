@@ -1,9 +1,11 @@
 import UIKit
 import PureLayout
 
-struct SearchCellModel {
-    let emoji: String
-    let title: String
+extension UpdatableCell where Self: SearchCell, Model: CourseType {
+    func update(with model: CourseType) {
+        iconLabel.text = EmojiFactory.emojiFromCourseType(model.abbr)
+        titleLabel.text = model.title
+    }
 }
 
 class SearchCell: UITableViewCell {

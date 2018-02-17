@@ -6,15 +6,11 @@ protocol RowType {
     func update(cell: UITableViewCell)
 }
 
-struct Row<T>: RowType where T: TableViewCellConvertable {
-    let data: T
-
-    init(_ data: T) {
-        self.data = data
-    }
+struct Row<T>: RowType where T: UpdatableCell, T: UITableViewCell {
+    let data: T.Model
 
     var cellClass: AnyClass {
-        return T.Cell.self
+        return T.self
     }
 
     var cellIdentifier: String {
@@ -22,8 +18,8 @@ struct Row<T>: RowType where T: TableViewCellConvertable {
     }
 
     func update(cell: UITableViewCell) {
-        if let cell = cell as? T.Cell {
-            _ = data.update(cell: cell)
+        if let cell = cell as? T {
+            cell.update(with: data)
         }
     }
 }

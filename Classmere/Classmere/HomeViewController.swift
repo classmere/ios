@@ -86,7 +86,8 @@ extension HomeViewController: UISearchBarDelegate {
         store.search(course: searchText) { result in
             switch result {
             case .success(let courses):
-                self.tableViewDataSource.updateTableView(courses.map { Row<Course>($0) })
+                let rows = courses.map { Row<SearchCell>(data: $0) }
+                self.tableViewDataSource.updateTableView(rows)
             case .failure(let error):
                 self.tableViewDataSource.updateTableView([])
                 print(error)

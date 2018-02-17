@@ -5,7 +5,7 @@ import Foundation
  Reference Docs - https://github.com/classmere/api
  */
 
-protocol CourseType: Decodable {
+protocol CourseType {
     var subjectCode: String { get }
     var courseNumber: Int { get }
     var title: String? { get }
@@ -15,7 +15,7 @@ protocol CourseType: Decodable {
     var abbr: String { get }
 }
 
-struct Course: CourseType {
+struct Course: Decodable, CourseType {
     let subjectCode: String
     let courseNumber: Int
     let title: String?

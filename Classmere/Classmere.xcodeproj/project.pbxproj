@@ -37,8 +37,7 @@
 		ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5620213AC7003B1E45 /* Store.swift */; };
 		ACC6381E2032203600450A46 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6381D2032203600450A46 /* Emoji.swift */; };
 		ACD9441D202D10BE00F4B35F /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9441C202D10BE00F4B35F /* TableViewDataSource.swift */; };
-		ACD9441F202D1D3800F4B35F /* Course+TableViewCellConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD9441E202D1D3800F4B35F /* Course+TableViewCellConvertable.swift */; };
-		ACD94421202D1D6900F4B35F /* TableViewCellConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD94420202D1D6900F4B35F /* TableViewCellConvertable.swift */; };
+		ACD94421202D1D6900F4B35F /* UpdatableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD94420202D1D6900F4B35F /* UpdatableCell.swift */; };
 		ACDC0A9C20227E69000A19D1 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9B20227E69000A19D1 /* APITests.swift */; };
 		ACDC0A9E20228563000A19D1 /* DummyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9D20228563000A19D1 /* DummyProvider.swift */; };
 		ACDC0AA020228577000A19D1 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */; };
@@ -104,8 +103,7 @@
 		ACB0AE5620213AC7003B1E45 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		ACC6381D2032203600450A46 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		ACD9441C202D10BE00F4B35F /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		ACD9441E202D1D3800F4B35F /* Course+TableViewCellConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Course+TableViewCellConvertable.swift"; sourceTree = "<group>"; };
-		ACD94420202D1D6900F4B35F /* TableViewCellConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellConvertable.swift; sourceTree = "<group>"; };
+		ACD94420202D1D6900F4B35F /* UpdatableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatableCell.swift; sourceTree = "<group>"; };
 		ACDC0A9B20227E69000A19D1 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		ACDC0A9D20228563000A19D1 /* DummyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyProvider.swift; sourceTree = "<group>"; };
 		ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
@@ -268,8 +266,7 @@
 		AC65DBDD202ED3A4006C990A /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				ACD94420202D1D6900F4B35F /* TableViewCellConvertable.swift */,
-				ACD9441E202D1D3800F4B35F /* Course+TableViewCellConvertable.swift */,
+				ACD94420202D1D6900F4B35F /* UpdatableCell.swift */,
 				16BB2FA21D722EFA00484015 /* CourseCell.swift */,
 				16BA26B51D76723200CF8594 /* CourseDetailsCell.swift */,
 				16A8EA4E1D7CE98C0047C10B /* MapCell.swift */,
@@ -570,13 +567,12 @@
 				ACD9441D202D10BE00F4B35F /* TableViewDataSource.swift in Sources */,
 				16BB2FA31D722EFA00484015 /* CourseCell.swift in Sources */,
 				160D28501D5C0032009C0178 /* Course.swift in Sources */,
-				ACD94421202D1D6900F4B35F /* TableViewCellConvertable.swift in Sources */,
+				ACD94421202D1D6900F4B35F /* UpdatableCell.swift in Sources */,
 				162935ED1D596731003DF059 /* APIService.swift in Sources */,
 				160D285A1D5C1BDC009C0178 /* HomeView.swift in Sources */,
 				16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */,
 				AC778A06202BFAF6001A25C9 /* Provider.swift in Sources */,
 				160D28581D5C1B67009C0178 /* HomeViewController.swift in Sources */,
-				ACD9441F202D1D3800F4B35F /* Course+TableViewCellConvertable.swift in Sources */,
 				16A8EA4F1D7CE98C0047C10B /* MapCell.swift in Sources */,
 				ACB0AE5520213AB0003B1E45 /* API.swift in Sources */,
 				ACC6381E2032203600450A46 /* Emoji.swift in Sources */,
