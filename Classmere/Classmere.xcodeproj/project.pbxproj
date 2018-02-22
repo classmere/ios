@@ -10,10 +10,8 @@
 		160D28501D5C0032009C0178 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D284F1D5C0032009C0178 /* Course.swift */; };
 		160D28521D5C0298009C0178 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D28511D5C0298009C0178 /* Section.swift */; };
 		160D28541D5C12DF009C0178 /* Building.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D28531D5C12DF009C0178 /* Building.swift */; };
-		160D28561D5C1469009C0178 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D28551D5C1469009C0178 /* APIServiceTests.swift */; };
 		160D28581D5C1B67009C0178 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D28571D5C1B67009C0178 /* HomeViewController.swift */; };
 		160D285A1D5C1BDC009C0178 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D28591D5C1BDC009C0178 /* HomeView.swift */; };
-		162935ED1D596731003DF059 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162935EC1D596731003DF059 /* APIService.swift */; };
 		163FAB4E1D7E891500E8E271 /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FAB4D1D7E891500E8E271 /* SectionViewController.swift */; };
 		163FAB501D7E90A700E8E271 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163FAB4F1D7E90A700E8E271 /* SectionCell.swift */; };
 		169AD5EA1D59615800615CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AD5E91D59615800615CB7 /* AppDelegate.swift */; };
@@ -70,10 +68,8 @@
 		160D284F1D5C0032009C0178 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		160D28511D5C0298009C0178 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		160D28531D5C12DF009C0178 /* Building.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Building.swift; sourceTree = "<group>"; };
-		160D28551D5C1469009C0178 /* APIServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		160D28571D5C1B67009C0178 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		160D28591D5C1BDC009C0178 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		162935EC1D596731003DF059 /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		163FAB4D1D7E891500E8E271 /* SectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		163FAB4F1D7E90A700E8E271 /* SectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		169AD5E61D59615700615CB7 /* Classmere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Classmere.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +143,6 @@
 		162935E91D5966C0003DF059 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				162935EC1D596731003DF059 /* APIService.swift */,
 				160D28531D5C12DF009C0178 /* Building.swift */,
 				16D94F1E1D73D22F00346D2B /* DataFormatter.swift */,
 				16BA26B31D7663E100CF8594 /* EmojiFactory.swift */,
@@ -224,7 +219,6 @@
 		169AD5FD1D59615800615CB7 /* ClassmereTests */ = {
 			isa = PBXGroup;
 			children = (
-				160D28551D5C1469009C0178 /* APIServiceTests.swift */,
 				ACDC0A9B20227E69000A19D1 /* APITests.swift */,
 				ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */,
 				AC778A09202C14BE001A25C9 /* CourseTests.swift */,
@@ -435,15 +429,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -568,7 +558,6 @@
 				16BB2FA31D722EFA00484015 /* CourseCell.swift in Sources */,
 				160D28501D5C0032009C0178 /* Course.swift in Sources */,
 				ACD94421202D1D6900F4B35F /* UpdatableCell.swift in Sources */,
-				162935ED1D596731003DF059 /* APIService.swift in Sources */,
 				160D285A1D5C1BDC009C0178 /* HomeView.swift in Sources */,
 				16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */,
 				AC778A06202BFAF6001A25C9 /* Provider.swift in Sources */,
@@ -588,7 +577,6 @@
 				ACDC0AAC202370FC000A19D1 /* BuildingTests.swift in Sources */,
 				ACDC0A9C20227E69000A19D1 /* APITests.swift in Sources */,
 				AC778A0C202C14CE001A25C9 /* URLSessionProviderTests.swift in Sources */,
-				160D28561D5C1469009C0178 /* APIServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

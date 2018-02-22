@@ -4,6 +4,8 @@ class CourseViewController: UITableViewController {
 
     let course: Course
 
+    var tableViewDataSource: TableViewDataSource!
+
     // MARK: - Initialization
 
     init(course: Course) {
@@ -26,12 +28,12 @@ class CourseViewController: UITableViewController {
                                                                 target: nil,
                                                                 action: nil)
         tableView.delegate = self
-        tableView.dataSource = self
+        tableViewDataSource = TableViewDataSource(tableView: tableView)
         tableView.register(MapCell.self, forCellReuseIdentifier: "MapCell")
         tableView.register(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
         tableView.register(CourseCell.self, forCellReuseIdentifier: "CourseCell")
         tableView.tableFooterView = UIView()
-        self.view.setNeedsUpdateConstraints()
+        view.setNeedsUpdateConstraints()
     }
 
     // MARK: UITableView Delegate and Datasource
