@@ -1,12 +1,16 @@
 import UIKit
 import PureLayout
 
-extension UpdatableCell where Self: SearchCell, Model: CourseType {
+extension UpdatableCell where Self: SearchCell {
     func update(with model: CourseType) {
         iconLabel.text = EmojiFactory.emojiFromCourseType(model.abbr)
         titleLabel.text = model.title
+
+        print(iconLabel.frame)
     }
 }
+
+extension SearchCell: UpdatableCell {}
 
 class SearchCell: UITableViewCell {
 
