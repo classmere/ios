@@ -3,18 +3,15 @@ import PureLayout
 
 extension UpdatableCell where Self: SearchCell {
     func update(with model: CourseType) {
-        iconLabel.text = EmojiFactory.emojiFromCourseType(model.abbr)
+        iconLabel.text = EmojiFactory.emojiFromCourseType(model.subjectCode)
         titleLabel.text = model.title
-
-        print(iconLabel.frame)
+        updateConstraintsIfNeeded()
     }
 }
 
 extension SearchCell: UpdatableCell {}
 
 class SearchCell: UITableViewCell {
-
-    var didSetupConstraints = false
 
     var iconLabel: UILabel = UILabel.newAutoLayout()
     var titleLabel: UILabel = UILabel.newAutoLayout()
@@ -34,7 +31,7 @@ class SearchCell: UITableViewCell {
     // MARK: - Setup
 
     func setupViews() {
-        self.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        accessoryType = UITableViewCellAccessoryType.disclosureIndicator
 
         iconLabel.lineBreakMode = .byTruncatingTail
         iconLabel.numberOfLines = 1
@@ -56,22 +53,18 @@ class SearchCell: UITableViewCell {
     // MARK: - Layout
 
     override func updateConstraints() {
-        if !didSetupConstraints {
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
-                self.titleLabel.autoSetContentCompressionResistancePriority(for: .vertical)
-                self.iconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
-            }
-
-            iconLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 10)
-            iconLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 10)
-            iconLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 10)
-
-            titleLabel.autoAlignAxis(.horizontal, toSameAxisOf: iconLabel)
-            titleLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 40)
-            titleLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 10)
-
-            didSetupConstraints = true
+        NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
+            titleLabel.autoSetContentCompressionResistancePriority(for: .vertical)
+            iconLabel.autoSetContentCompressionResistancePriority(for: .vertical)
         }
+
+        iconLabel.autoPinEdge(toSuperviewEdge: .left, withInset: 10)
+        iconLabel.autoPinEdge(toSuperviewEdge: .top, withInset: 10)
+        iconLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 10)
+
+        titleLabel.autoAlignAxis(.horizontal, toSameAxisOf: iconLabel)
+        titleLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 40)
+        titleLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 10)
 
         super.updateConstraints()
     }
