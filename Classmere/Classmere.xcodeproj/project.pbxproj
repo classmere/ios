@@ -42,6 +42,7 @@
 		ACDC0AA62022D907000A19D1 /* course.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA22022D907000A19D1 /* course.json */; };
 		ACDC0AA82022D907000A19D1 /* search_course.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA42022D907000A19D1 /* search_course.json */; };
 		ACDC0AAC202370FC000A19D1 /* BuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */; };
+		ACE53E07203F69E90053A0CF /* MeetingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE53E06203F69E90053A0CF /* MeetingTime.swift */; };
 		ACF260C22024FB5800A05B20 /* search_building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C02024FB5800A05B20 /* search_building.json */; };
 		ACF260C32024FB5800A05B20 /* building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C12024FB5800A05B20 /* building.json */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		ACDC0AA22022D907000A19D1 /* course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course.json; sourceTree = "<group>"; };
 		ACDC0AA42022D907000A19D1 /* search_course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_course.json; sourceTree = "<group>"; };
 		ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingTests.swift; sourceTree = "<group>"; };
+		ACE53E06203F69E90053A0CF /* MeetingTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTime.swift; sourceTree = "<group>"; };
 		ACF260C02024FB5800A05B20 /* search_building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_building.json; sourceTree = "<group>"; };
 		ACF260C12024FB5800A05B20 /* building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = building.json; sourceTree = "<group>"; };
 		AD9C9D73E2FE4980DEB8B78F /* Pods_Classmere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Classmere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				16BA26B31D7663E100CF8594 /* EmojiFactory.swift */,
 				160D284F1D5C0032009C0178 /* Course.swift */,
 				160D28511D5C0298009C0178 /* Section.swift */,
+				ACE53E06203F69E90053A0CF /* MeetingTime.swift */,
 				ACC6381D2032203600450A46 /* Emoji.swift */,
 			);
 			name = Models;
@@ -557,6 +560,7 @@
 				ACD9441D202D10BE00F4B35F /* TableViewDataSource.swift in Sources */,
 				16BB2FA31D722EFA00484015 /* CourseCell.swift in Sources */,
 				160D28501D5C0032009C0178 /* Course.swift in Sources */,
+				ACE53E07203F69E90053A0CF /* MeetingTime.swift in Sources */,
 				ACD94421202D1D6900F4B35F /* UpdatableCell.swift in Sources */,
 				160D285A1D5C1BDC009C0178 /* HomeView.swift in Sources */,
 				16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */,

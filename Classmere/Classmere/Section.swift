@@ -10,14 +10,7 @@ struct Section: Decodable {
     let crn: Int?
     let credits: Int?
     let instructor: String?
-
-    // Meeting times array keys
-//    let startTime: Date?
-//    let endTime: Date?
-//    let days: String?
-//    let buildingCode: String?
-//    let roomNumber: String?
-//
+    let meetingTimes: [MeetingTime]?
     let startDate: String?
     let endDate: String?
     let campus: String?
@@ -27,10 +20,8 @@ struct Section: Decodable {
     let enrollmentCurrent: Int?
     let waitlistCapacity: Int?
     let waitlistCurrent: Int?
-//    let fees: String?
-//    let restrictions: String?
-//    let comments: String?
-//    let textbookUrl: String?
-//
-//    var building: Building?
+    let fees: String?
+    let restrictions: String?
+    let comments: String?
+    let textbookUrl: String?
 }

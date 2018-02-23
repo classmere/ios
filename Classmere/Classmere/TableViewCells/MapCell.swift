@@ -2,6 +2,18 @@ import UIKit
 import PureLayout
 import MapKit
 
+extension UpdatableCell where Self: MapCell {
+    func update(with model: Building) {
+        navigateToAddress(model.address)
+        
+        isUserInteractionEnabled = false
+        selectionStyle = .none
+        updateConstraintsIfNeeded()
+    }
+}
+
+extension MapCell: UpdatableCell {}
+
 class MapCell: UITableViewCell {
 
     var didSetupConstraints = false

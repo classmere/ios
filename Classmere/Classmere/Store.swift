@@ -1,10 +1,11 @@
 import Foundation
 
 class Store {
+    fileprivate let externalFetcher: Provider
     fileprivate var _buildings: [Int: Building] = [:]
     fileprivate var _courses: [Int: Course] = [:]
 
-    fileprivate let externalFetcher: Provider
+    var currentCourse: Course?
 
     fileprivate(set) var buildingSearchResults: [Building] = []
     fileprivate(set) var courseSearchResults: [Course] = []
