@@ -73,12 +73,12 @@ class MapCell: UITableViewCell {
 
     func navigateTo(latitude: Double, longitude: Double) {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let mapKitCoordinateRegion = MKCoordinateRegion(center: coordinate, span: mapView.region.span)
-        let mapKitPlacemark = MKPlacemark(coordinate: coordinate)
+        let mapKitCoordinateRegion = MKCoordinateRegion(center: coordinate, span: schoolZoomSpan)
+        let mapKitAnnotation = MKPointAnnotation()
+        mapKitAnnotation.coordinate = coordinate
 
         mapView.setRegion(mapKitCoordinateRegion, animated: true)
-        mapView.addAnnotation(mapKitPlacemark)
-        pinLocation = mapKitPlacemark
+        mapView.addAnnotation(mapKitAnnotation)
     }
 
     // Open maps app with location.
