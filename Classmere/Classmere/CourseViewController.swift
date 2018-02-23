@@ -38,9 +38,21 @@ class CourseViewController: UIViewController {
             tableViewDataSource = TableViewDataSource(tableView: tableView)
             tableViewDataSource.updateTableView([Row<CourseDetailsCell>(data: course)]
                                                 + course.sections.map { Row<CourseCell>(data: $0) })
-
             tableView.delegate = self
             tableView.dataSource = tableViewDataSource
+
+            // Asynchronously fetch course location
+            // TODO: Show all course locations on map instead of just first occurence
+            if let buildingAbbr = course.sections.first?.meetingTimes?.first?.buildingCode {
+                store.get(buildingAbbr: buildingAbbr) { result in
+                    switch result {
+                    case .success(let building):
+                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: building), at: 0)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }
         } else {
             navigationController?.popViewController(animated: true)
         }
@@ -49,10 +61,6 @@ class CourseViewController: UIViewController {
 }
 
 extension CourseViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return course!.sections.count + 2
-    }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath as NSIndexPath).row < 2 {

@@ -26,7 +26,14 @@ struct Row<T>: RowType where T: UpdatableCell, T: UITableViewCell {
 
 final class TableViewDataSource: NSObject {
     fileprivate weak var tableView: UITableView!
-    fileprivate var rows = [RowType]()
+    var rows = [RowType]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.registerRows()
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     init(rows: [RowType] = [], tableView: UITableView) {
         super.init()
