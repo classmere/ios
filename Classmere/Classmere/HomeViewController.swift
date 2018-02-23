@@ -79,7 +79,7 @@ extension HomeViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard searchText.count > 0 else {
-            tableViewDataSource.updateTableView([])
+            tableViewDataSource.rows = []
             return
         }
 
@@ -87,9 +87,9 @@ extension HomeViewController: UISearchBarDelegate {
             switch result {
             case .success(let courses):
                 let rows = courses.map { Row<SearchCell>(data: $0) }
-                self.tableViewDataSource.updateTableView(rows)
+                self.tableViewDataSource.rows = rows
             case .failure(let error):
-                self.tableViewDataSource.updateTableView([])
+                self.tableViewDataSource.rows = []
                 print(error)
             }
         }

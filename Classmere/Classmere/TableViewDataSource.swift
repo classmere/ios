@@ -26,10 +26,10 @@ struct Row<T>: RowType where T: UpdatableCell, T: UITableViewCell {
 
 final class TableViewDataSource: NSObject {
     fileprivate weak var tableView: UITableView!
+
     var rows = [RowType]() {
         didSet {
             DispatchQueue.main.async {
-                self.registerRows()
                 self.tableView.reloadData()
             }
         }
@@ -38,21 +38,7 @@ final class TableViewDataSource: NSObject {
     init(rows: [RowType] = [], tableView: UITableView) {
         super.init()
         self.tableView = tableView
-        registerRows()
-    }
-
-    fileprivate func registerRows() {
-        for row in rows {
-            tableView.register(row.cellClass, forCellReuseIdentifier: row.cellIdentifier)
-        }
-    }
-
-    func updateTableView(_ newData: [RowType]) {
-        DispatchQueue.main.async {
-            self.rows = newData
-            self.registerRows()
-            self.tableView.reloadData()
-        }
+        self.rows = rows
     }
 }
 
@@ -63,6 +49,7 @@ extension TableViewDataSource: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = rows[indexPath.row]
+        tableView.register(row.cellClass, forCellReuseIdentifier: row.cellIdentifier)
         let cell = tableView.dequeueReusableCell(withIdentifier: row.cellIdentifier, for: indexPath)
         row.update(cell: cell)
         return cell

@@ -36,8 +36,8 @@ class CourseViewController: UIViewController {
                                                                     action: nil)
 
             tableViewDataSource = TableViewDataSource(tableView: tableView)
-            tableViewDataSource.updateTableView([Row<CourseDetailsCell>(data: course)]
-                                                + course.sections.map { Row<CourseCell>(data: $0) })
+            tableViewDataSource.rows = [Row<CourseDetailsCell>(data: course)] +
+                course.sections.map { Row<CourseCell>(data: $0) }
             tableView.delegate = self
             tableView.dataSource = tableViewDataSource
 
