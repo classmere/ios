@@ -1,157 +1,76 @@
 import UIKit
 
-class SectionViewController: UITableViewController {
+final class SectionViewController: UIViewController {
 
-    var course: Course
-    var section: Section
+    let store: Store
+    var course: Course?
+    var section: Section?
 
-    // MARK: - View Lifecycle
+    let tableView = UITableView()
+    var tableViewDataSource: TableViewDataSource!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = course.abbr
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(MapCell.self, forCellReuseIdentifier: "MapCell")
-        tableView.register(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
-        tableView.register(SectionCell.self, forCellReuseIdentifier: "SectionCell")
-        tableView.tableFooterView = UIView()
-        self.view.setNeedsUpdateConstraints()
-    }
-
-    // MARK: - Initialization
-
-    init(course: Course, section: Section) {
-        self.course = course
-        self.section = section
+    init(store: Store) {
+        self.store = store
         super.init(nibName: nil, bundle: nil)
+        course = store.currentCourse
+        section = store.currentSection
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func loadView() {
+        tableView.frame = UIScreen.main.bounds
+        view = tableView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let course = course, let section = section {
+            title = course.abbr
+
+            tableViewDataSource = TableViewDataSource(tableView: tableView)
+            tableViewDataSource.rows = [Row<CourseDetailsCell>(data: course),
+                                        Row<SectionCell>(data: section)]
+            tableView.delegate = self
+            tableView.dataSource = tableViewDataSource
+
+            // Asynchronously fetch course location
+            if let buildingAbbr = course.sections.first?.meetingTimes?.first?.buildingCode {
+                store.get(buildingAbbr: buildingAbbr) { result in
+                    switch result {
+                    case .success(let building):
+                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: building), at: 0)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }
+        } else {
+            navigationController!.popViewController(animated: true)
+        }
+    }
+}
+
     // MARK: UITableView Delegate and Datasource
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+extension SectionViewController: UITableViewDelegate {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath as NSIndexPath).row < 2 {
             return 150
         } else {
             return 350
         }
-    }
-
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath as NSIndexPath).row == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? MapCell {
-
-//                if let buildingAbbr = section.buildingCode {
-//                    _ = APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
-//                        let building = Building(buildingJSON: buildingJSON)
-//                        cell.navigateToAddress(building.address)
-//                    }
-//                }
-
-                cell.setNeedsUpdateConstraints()
-                cell.updateConstraintsIfNeeded()
-                return cell
-            }
-        } else if (indexPath as NSIndexPath).row == 1 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "CourseDetailsCell") as? CourseDetailsCell {
-                if let title = course.title {
-                    cell.titleLabel.text = DataFormatter.parseTitle(title)
-                } else {
-                    cell.titleLabel.text = ""
-                }
-
-                if let credits = course.credits {
-                    cell.creditsLabel.text = "\(credits) Credit(s)"
-                } else {
-                    cell.creditsLabel.text = ""
-                }
-
-                if let description = course.description {
-                    cell.descriptionLabel.text = description
-                } else {
-                    cell.descriptionLabel.text = ""
-                }
-
-                cell.selectionStyle = .none
-                cell.setNeedsUpdateConstraints()
-                cell.updateConstraintsIfNeeded()
-
-                return cell
-            }
-        } else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "SectionCell") as? SectionCell {
-
-                if let term = section.term {
-                    cell.termLabel.text = DataFormatter.parseTerm(term)
-                } else {
-                    cell.termLabel.text = "TBA"
-                }
-
-//                if let days = section.days, let startTime = section.startTime, let endTime = section.endTime {
-//                    let startTime = DataFormatter.timeStringFromDate(startTime)
-//                    let endTime = DataFormatter.timeStringFromDate(endTime)
-//                    cell.dayLabel.text = "\(days) \(startTime) - \(endTime))"
-//                } else {
-//                    cell.dayLabel.text = "TBA"
-//                }
-
-                if let instructor = section.instructor {
-                    cell.instructorLabel.text = instructor
-                } else {
-                    cell.instructorLabel.text = "TBA"
-                }
-
-//                if let buildingAbbr = section.buildingCode, let roomNumber = section.roomNumber {
-//                    cell.locationLabel.text = "\(buildingAbbr) \(roomNumber)"
-//                } else {
-//                    cell.locationLabel.text = "TBA"
-//                }
-//
-//                if let type = section.type {
-//                    cell.typeLabel.text = type
-//                } else {
-//                    cell.typeLabel.text = "TBA"
-//                }
-//
-//                if let currentlyEnrolled = section.enrollmentCurrent, let enrollmentCapacity = section.enrollmentCapacity {
-//                    cell.enrolledLabel.text = "\(currentlyEnrolled) student(s) enrolled, \(enrollmentCapacity) spots available"
-//                } else {
-//                    cell.enrolledLabel.text = "TBA"
-//                }
-//
-//                if let startDate = section.startDate, let endDate = section.endDate {
-//                    cell.dateLabel.text = "\(startDate) - \(endDate)"
-//                } else {
-//                    cell.dateLabel.text = "TBA"
-//                }
-
-                if let crn = section.crn {
-                    cell.crnLabel.text = "CRN: \(crn)"
-                } else {
-                    cell.crnLabel.text = "TBA"
-                }
-
-                cell.selectionStyle = .none
-                cell.setNeedsUpdateConstraints()
-                cell.updateConstraintsIfNeeded()
-
-                return cell
-            }
-        }
-
-        return UITableViewCell()
     }
 }

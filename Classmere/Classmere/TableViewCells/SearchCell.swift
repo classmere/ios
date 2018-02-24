@@ -2,7 +2,7 @@ import UIKit
 import PureLayout
 
 extension UpdatableCell where Self: SearchCell {
-    func update(with model: CourseType) {
+    func update(with model: Course) {
         iconLabel.text = EmojiFactory.emojiFromCourseType(model.subjectCode)
         titleLabel.text = model.title
         updateConstraintsIfNeeded()

@@ -6,8 +6,7 @@ extension UpdatableCell where Self: CourseCell {
         termLabel.text = model.term
         iconLabel.text = EmojiFactory.emojiFromSectionType(model.type)
 
-        // TODO: Show all meeting times!
-        if let meetingTimes = model.meetingTimes, let meetingTime = meetingTimes.first {
+        if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting day specified"
             let startTime = meetingTime.startTime ?? "No start time specified"
             let endTime = meetingTime.endTime ?? "No end time specified"
@@ -20,6 +19,7 @@ extension UpdatableCell where Self: CourseCell {
         instructorLabel.text = model.instructor
         typeLabel.text = model.type
 
+        selectionStyle = .none
         updateConstraintsIfNeeded()
     }
 }

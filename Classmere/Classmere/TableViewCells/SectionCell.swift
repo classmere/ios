@@ -1,7 +1,42 @@
 import UIKit
 import PureLayout
 
-class SectionCell: UITableViewCell {
+extension UpdatableCell where Self: SectionCell {
+    func update(with model: Section) {
+        termLabel.text = model.term
+        if let meetingTime = model.meetingTimes?.first {
+            let days = meetingTime.days ?? "No meeting day specified"
+            let startTime = meetingTime.startTime ?? "No start time specified"
+            let endTime = meetingTime.endTime ?? "No end time specified"
+            let building = meetingTime.buildingCode ?? "No building specified"
+            let roomNumber = meetingTime.roomNumber == nil ? String(describing: meetingTime.roomNumber) : ""
+            dayLabel.text = "\(days) \(startTime) - \(endTime)"
+            locationLabel.text = "\(building) \(roomNumber)"
+        }
+
+        instructorLabel.text = model.instructor
+        typeLabel.text = model.type
+
+        if let currentlyEnrolled = model.enrollmentCurrent, let enrollmentCapacity = model.enrollmentCapacity {
+            enrolledLabel.text = "\(currentlyEnrolled) student(s) enrolled, \(enrollmentCapacity) spots available"
+        }
+
+        if let startDate = model.startDate, let endDate = model.endDate {
+            dateLabel.text = "\(startDate) - \(endDate)"
+        }
+
+        if let crn = model.crn {
+            crnLabel.text = "CRN: \(crn)"
+        }
+
+        selectionStyle = .none
+        updateConstraintsIfNeeded()
+    }
+}
+
+extension SectionCell: UpdatableCell {}
+
+final class SectionCell: UITableViewCell {
 
     let darkColor: UIColor = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1.0)
 

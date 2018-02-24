@@ -6,6 +6,7 @@ class Store {
     fileprivate var _courses: [Int: Course] = [:]
 
     var currentCourse: Course?
+    var currentSection: Section?
 
     fileprivate(set) var buildingSearchResults: [Building] = []
     fileprivate(set) var courseSearchResults: [Course] = []

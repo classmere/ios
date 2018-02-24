@@ -1,8 +1,6 @@
 import UIKit
-import PureLayout
 
-class CourseViewController: UIViewController {
-
+final class CourseViewController: UIViewController {
     let store: Store
     var course: Course?
     var buildings = [Building]()
@@ -13,7 +11,7 @@ class CourseViewController: UIViewController {
     init(store: Store) {
         self.store = store
         super.init(nibName: nil, bundle: nil)
-        self.course = store.currentCourse
+        course = store.currentCourse
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -42,7 +40,6 @@ class CourseViewController: UIViewController {
             tableView.dataSource = tableViewDataSource
 
             // Asynchronously fetch course location
-            // TODO: Show all course locations on map instead of just first occurence
             if let buildingAbbr = course.sections.first?.meetingTimes?.first?.buildingCode {
                 store.get(buildingAbbr: buildingAbbr) { result in
                     switch result {
@@ -54,14 +51,12 @@ class CourseViewController: UIViewController {
                 }
             }
         } else {
-            navigationController?.popViewController(animated: true)
+            navigationController!.popViewController(animated: true)
         }
     }
-
 }
 
 extension CourseViewController: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath as NSIndexPath).row < 2 {
             return 150
@@ -72,10 +67,9 @@ extension CourseViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let sectionViewController = SectionViewController(course: course!,
-                                                          section: course!.sections[(indexPath as NSIndexPath).row-2])
+        store.currentSection = course!.sections[indexPath.row - 2]
+        let sectionViewController = SectionViewController(store: store)
         self.navigationController?.pushViewController(sectionViewController,
                                                       animated: true)
     }
-
 }
