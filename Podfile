@@ -5,9 +5,7 @@ project 'Classmere/Classmere.xcodeproj'
 target 'Classmere' do
   use_frameworks!
 
-  pod 'Alamofire', '4.6'
   pod 'SwiftLint', '0.24'
-  pod 'SwiftyJSON'
   pod 'PureLayout'
 
   target 'ClassmereTests' do

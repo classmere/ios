@@ -1,6 +1,31 @@
 import UIKit
 import PureLayout
 
+extension UpdatableCell where Self: CourseCell {
+    func update(with model: Section) {
+        termLabel.text = model.term
+        iconLabel.text = EmojiFactory.emojiFromSectionType(model.type)
+
+        if let meetingTime = model.meetingTimes?.first {
+            let days = meetingTime.days ?? "No meeting day specified"
+            let startTime = meetingTime.startTime ?? "No start time specified"
+            let endTime = meetingTime.endTime ?? "No end time specified"
+            let building = meetingTime.buildingCode ?? "No building specified"
+            let roomNumber = meetingTime.roomNumber == nil ? String(describing: meetingTime.roomNumber) : ""
+            timeLabel.text = "\(days) \(startTime) - \(endTime)"
+            locationLabel.text = "\(building) \(roomNumber)"
+        }
+
+        instructorLabel.text = model.instructor
+        typeLabel.text = model.type
+
+        selectionStyle = .none
+        updateConstraintsIfNeeded()
+    }
+}
+
+extension CourseCell: UpdatableCell {}
+
 class CourseCell: UITableViewCell {
 
     let darkColor: UIColor = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1.0)

@@ -1,46 +1,63 @@
 import UIKit
 
-class CourseViewController: UITableViewController {
+final class CourseViewController: UIViewController {
+    let store: Store
+    var course: Course?
+    var buildings = [Building]()
 
-    var course: Course
+    let tableView = UITableView()
+    var tableViewDataSource: TableViewDataSource!
 
-    // MARK: - View Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title = course.abbr
-        self.navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "", style: .plain, target: nil, action: nil)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(MapCell.self, forCellReuseIdentifier: "MapCell")
-        tableView.register(CourseDetailsCell.self, forCellReuseIdentifier: "CourseDetailsCell")
-        tableView.register(CourseCell.self, forCellReuseIdentifier: "CourseCell")
-        tableView.tableFooterView = UIView()
-        self.view.setNeedsUpdateConstraints()
-    }
-
-    // MARK: - Initialization
-
-    init(course: Course) {
-        self.course = course
+    init(store: Store) {
+        self.store = store
         super.init(nibName: nil, bundle: nil)
+        course = store.currentCourse
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: UITableView Delegate and Datasource
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func loadView() {
+        tableView.frame = UIScreen.main.bounds
+        view = tableView
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return course.sections.count + 2
-    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let course = course {
+            title = course.abbr
+            navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "",
+                                                                    style: .plain,
+                                                                    target: nil,
+                                                                    action: nil)
+
+            tableViewDataSource = TableViewDataSource(tableView: tableView)
+            tableViewDataSource.rows = [Row<CourseDetailsCell>(data: course)] +
+                course.sections.map { Row<CourseCell>(data: $0) }
+            tableView.delegate = self
+            tableView.dataSource = tableViewDataSource
+
+            // Asynchronously fetch course location
+            if let buildingAbbr = course.sections.first?.meetingTimes?.first?.buildingCode {
+                store.get(buildingAbbr: buildingAbbr) { result in
+                    switch result {
+                    case .success(let building):
+                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: building), at: 0)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }
+        } else {
+            navigationController!.popViewController(animated: true)
+        }
+    }
+}
+
+extension CourseViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (indexPath as NSIndexPath).row < 2 {
             return 150
         } else {
@@ -48,103 +65,10 @@ class CourseViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView,
-                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath as NSIndexPath).row == 0 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "MapCell") as? MapCell {
-                for section in course.sections {
-                    if let buildingAbbr = section.buildingCode {
-                        _ = APIService.getBuildingByAbbr(buildingAbbr) { buildingJSON in
-                            let building = Building(buildingJSON: buildingJSON)
-                            cell.navigateToAddress(building.address)
-                        }
-                    }
-                }
-
-                cell.isUserInteractionEnabled = false
-                cell.selectionStyle = .none
-                cell.setNeedsUpdateConstraints()
-                cell.updateConstraintsIfNeeded()
-                return cell
-            }
-        } else if (indexPath as NSIndexPath).row == 1 {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "CourseDetailsCell") as? CourseDetailsCell {
-                if let title = course.title {
-                    cell.titleLabel.text = DataFormatter.parseTitle(title)
-                } else {
-                    cell.titleLabel.text = ""
-                }
-
-                if let credits = course.credits {
-                    cell.creditsLabel.text = "\(credits) Credit(s)"
-                } else {
-                    cell.creditsLabel.text = ""
-                }
-
-                if let description = course.description {
-                    cell.descriptionLabel.text = description
-                } else {
-                    cell.descriptionLabel.text = ""
-                }
-
-                cell.isUserInteractionEnabled = false
-                cell.selectionStyle = .none
-                cell.setNeedsUpdateConstraints()
-                cell.updateConstraintsIfNeeded()
-
-                return cell
-            }
-        } else {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell") as? CourseCell {
-                let cellSection = course.sections[(indexPath as NSIndexPath).row-2]
-
-                cell.termLabel.text = DataFormatter.parseTerm(cellSection.term)
-                cell.iconLabel.text = EmojiFactory.emojiFromSectionType(cellSection.type)
-
-                if let days = cellSection.days {
-                    let startTime = DataFormatter.timeStringFromDate(cellSection.startTime)
-                    let endTime = DataFormatter.timeStringFromDate(cellSection.endTime)
-                    cell.timeLabel.text = "\(days) \(startTime) - \(endTime))"
-                } else {
-                    cell.timeLabel.text = "TBA"
-                }
-
-                if let instructor = cellSection.instructor {
-                    if instructor != "" {
-                        cell.instructorLabel.text = instructor
-                    } else {
-                        cell.instructorLabel.text = "TBA"
-                    }
-                } else {
-                    cell.instructorLabel.text = "TBA"
-                }
-
-                if let building = cellSection.buildingCode, let room = cellSection.roomNumber {
-                    cell.locationLabel.text = "\(building) \(room)"
-                } else {
-                    cell.locationLabel.text = "TBA"
-                }
-
-                if let type = cellSection.type {
-                    cell.typeLabel.text = type
-                } else {
-                    cell.typeLabel.text = "TBA"
-                }
-
-                cell.setNeedsUpdateConstraints()
-                cell.updateConstraintsIfNeeded()
-
-                return cell
-            }
-        }
-
-        return UITableViewCell()
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let sectionViewController = SectionViewController(course: course,
-                                                          section: course.sections[(indexPath as NSIndexPath).row-2])
+        store.currentSection = course!.sections[indexPath.row - 2]
+        let sectionViewController = SectionViewController(store: store)
         self.navigationController?.pushViewController(sectionViewController,
                                                       animated: true)
     }

@@ -1,6 +1,20 @@
 import UIKit
 import PureLayout
 
+extension UpdatableCell where Self: CourseDetailsCell {
+    func update(with model: Course) {
+        titleLabel.text = model.title
+        creditsLabel.text = model.credits
+        descriptionLabel.text = model.description
+
+        isUserInteractionEnabled = false
+        selectionStyle = .none
+        updateConstraintsIfNeeded()
+    }
+}
+
+extension CourseDetailsCell: UpdatableCell {}
+
 class CourseDetailsCell: UITableViewCell {
 
     let darkColor: UIColor = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1.0)

@@ -2,6 +2,19 @@ import UIKit
 import PureLayout
 import MapKit
 
+extension UpdatableCell where Self: MapCell {
+    func update(with model: Building) {
+        if let latitude = model.latitude, let longitude = model.longitude {
+            navigateTo(latitude: Double(latitude), longitude: Double(longitude))
+            isUserInteractionEnabled = false
+            selectionStyle = .none
+            updateConstraintsIfNeeded()
+        }
+    }
+}
+
+extension MapCell: UpdatableCell {}
+
 class MapCell: UITableViewCell {
 
     var didSetupConstraints = false
@@ -58,6 +71,16 @@ class MapCell: UITableViewCell {
         }
     }
 
+    func navigateTo(latitude: Double, longitude: Double) {
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let mapKitCoordinateRegion = MKCoordinateRegion(center: coordinate, span: schoolZoomSpan)
+        let mapKitAnnotation = MKPointAnnotation()
+        mapKitAnnotation.coordinate = coordinate
+
+        mapView.setRegion(mapKitCoordinateRegion, animated: true)
+        mapView.addAnnotation(mapKitAnnotation)
+    }
+
     // Open maps app with location.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let pinLocation = pinLocation {
@@ -72,7 +95,7 @@ class MapCell: UITableViewCell {
     override func updateConstraints() {
         if !didSetupConstraints {
             NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
-                self.mapView.autoSetContentCompressionResistancePriority(for: .vertical)
+                mapView.autoSetContentCompressionResistancePriority(for: .vertical)
             }
 
             mapView.autoPinEdgesToSuperviewEdges()

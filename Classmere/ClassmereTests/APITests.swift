@@ -4,13 +4,13 @@ import XCTest
 class APITests: XCTestCase {
 
     func testUrl() {
-        XCTAssertEqual(url(API.course("CS", 161)),
-                       URL(string: "https://api.classmere.com/courses/Cs/161"))
-        XCTAssertEqual(url(API.building("KEC")),
+        XCTAssertEqual(API.course("CS", 161).path,
+                       URL(string: "https://api.classmere.com/courses/CS/161"))
+        XCTAssertEqual(API.building("KeC").path,
                        URL(string: "https://api.classmere.com/buildings/KEC"))
-        XCTAssertEqual(url(API.searchBuilding("austin entrepenuership")),
+        XCTAssertEqual(API.searchBuilding("austin entrepenuership").path,
                            URL(string: "https://api.classmere.com/search/buildings/austin%20entrepenuership"))
-        XCTAssertEqual(url(API.searchCourse("film 220")),
+        XCTAssertEqual(API.searchCourse("film 220").path,
                        URL(string: "https://api.classmere.com/search/courses/film%20220"))
     }
 

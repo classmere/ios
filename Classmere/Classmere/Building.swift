@@ -1,5 +1,4 @@
 import Foundation
-import SwiftyJSON
 
 /**
  A model representation of a building at OSU.
@@ -12,15 +11,6 @@ struct Building: Codable {
     let buildingNumber: Int?
     let latitude: Float?
     let longitude: Float?
-
-    init(buildingJSON: JSON) {
-        abbr = buildingJSON["abbr"].string!
-        name = buildingJSON["name"].string
-        address = buildingJSON["address"].string
-        buildingNumber = buildingJSON["buildingNumber"].int
-        latitude = buildingJSON["latitude"].float
-        longitude = buildingJSON["longitude"].float
-    }
 
     init(abbr: String) {
         self.abbr = abbr

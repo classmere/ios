@@ -3,16 +3,19 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? = UIWindow()
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let homeViewController = HomeViewController(nibName: nil, bundle: nil)
+        let store = Store(provider: URLSessionProvider())
+        let homeViewController = HomeViewController(store: store)
         let navigationController = UINavigationController(rootViewController: homeViewController)
-        navigationController.navigationBar.isTranslucent = false
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+
+        UINavigationBar.appearance().isTranslucent = false
+
+        window!.rootViewController = navigationController
+        window!.makeKeyAndVisible()
+
         return true
     }
 

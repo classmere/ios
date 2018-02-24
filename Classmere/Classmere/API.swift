@@ -9,25 +9,25 @@ enum API {
 
 protocol Path {
     var baseURL: URL { get }
-    var path: String { get }
+    var path: URL { get }
 }
 
 extension API: Path {
     var baseURL: URL { return URL(string: "https://api.classmere.com")! }
-    var path: String {
+    var path: URL {
         switch self {
         case .building(let buildingName):
-            return "/buildings/\(buildingName)"
+            return url("/buildings/\(buildingName.uppercased())")
         case .course(let subjectCode, let courseNumber):
-            return "/courses/\(subjectCode.capitalized)/\(courseNumber)"
+            return url("/courses/\(subjectCode.uppercased())/\(courseNumber)")
         case .searchBuilding(let searchString):
-            return "/search/buildings/\(searchString)"
+            return url("/search/buildings/\(searchString)")
         case .searchCourse(let searchString):
-            return "/search/courses/\(searchString)"
+            return url("/search/courses/\(searchString)")
         }
     }
-}
 
-func url(_ path: Path) -> URL {
-    return path.baseURL.appendingPathComponent(path.path)
+    private func url(_ path: String) -> URL {
+        return baseURL.appendingPathComponent(path, isDirectory: false)
+    }
 }
