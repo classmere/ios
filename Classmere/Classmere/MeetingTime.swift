@@ -6,8 +6,8 @@ import Foundation
  */
 
 struct MeetingTime: Decodable {
-    let startTime: String?
-    let endTime: String?
+    let startTime: Date?
+    let endTime: Date?
     let days: String?
     let buildingCode: String?
     let roomNumber: Int?

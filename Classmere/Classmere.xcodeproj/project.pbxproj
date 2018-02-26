@@ -31,6 +31,7 @@
 		AC778A08202BFB2C001A25C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A07202BFB2C001A25C9 /* Result.swift */; };
 		AC778A0A202C14BE001A25C9 /* CourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A09202C14BE001A25C9 /* CourseTests.swift */; };
 		AC778A0C202C14CE001A25C9 /* URLSessionProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A0B202C14CE001A25C9 /* URLSessionProviderTests.swift */; };
+		ACAC27402044B56B0067B3E3 /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */; };
 		ACB0AE5520213AB0003B1E45 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5420213AB0003B1E45 /* API.swift */; };
 		ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5620213AC7003B1E45 /* Store.swift */; };
 		ACC6381E2032203600450A46 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6381D2032203600450A46 /* Emoji.swift */; };
@@ -96,6 +97,7 @@
 		AC778A07202BFB2C001A25C9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AC778A09202C14BE001A25C9 /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
 		AC778A0B202C14CE001A25C9 /* URLSessionProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProviderTests.swift; sourceTree = "<group>"; };
+		ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		ACB0AE5420213AB0003B1E45 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACB0AE5620213AC7003B1E45 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		ACC6381D2032203600450A46 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				ACD9441C202D10BE00F4B35F /* TableViewDataSource.swift */,
 				AC778A07202BFB2C001A25C9 /* Result.swift */,
 				AC778A05202BFAF6001A25C9 /* Provider.swift */,
+				ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */,
 				ACDC0A9D20228563000A19D1 /* DummyProvider.swift */,
 				ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */,
 				AC65DBDD202ED3A4006C990A /* TableViewCells */,
@@ -547,6 +550,7 @@
 			files = (
 				16BA26B61D76723200CF8594 /* CourseDetailsCell.swift in Sources */,
 				ACDC0AA020228577000A19D1 /* URLSessionProvider.swift in Sources */,
+				ACAC27402044B56B0067B3E3 /* DateFormatter+.swift in Sources */,
 				163FAB501D7E90A700E8E271 /* SectionCell.swift in Sources */,
 				160D28521D5C0298009C0178 /* Section.swift in Sources */,
 				ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */,
@@ -664,7 +668,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -712,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -730,6 +734,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6QBR52NJ4V;
 				INFOPLIST_FILE = Classmere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rutgerfarry.classmere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -748,6 +753,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6QBR52NJ4V;
 				INFOPLIST_FILE = Classmere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rutgerfarry.classmere;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,6 +8,10 @@ struct URLSessionProvider: Provider {
     fileprivate let session = URLSession.shared
     fileprivate let decoder = JSONDecoder()
 
+    init() {
+        decoder.dateDecodingStrategy = .iso8601
+    }
+
     fileprivate func decode<T: Decodable>(_ type: T.Type, from: Data) -> Result<T> {
         do {
             let result = try self.decoder.decode(type, from: from)

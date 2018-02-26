@@ -6,7 +6,12 @@ enum DummyProviderError: Error {
 }
 
 struct DummyProvider: Provider {
+
     fileprivate let decoder = JSONDecoder()
+
+    init() {
+        decoder.dateDecodingStrategy = .iso8601
+    }
 
     fileprivate func decode<T: Decodable>(_ type: T.Type, from: Data) -> Result<T> {
         do {
