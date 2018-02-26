@@ -8,11 +8,22 @@ extension UpdatableCell where Self: CourseCell {
 
         if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting day specified"
-            let startTime = meetingTime.startTime ?? "No start time specified"
-            let endTime = meetingTime.endTime ?? "No end time specified"
             let building = meetingTime.buildingCode ?? "No building specified"
             let roomNumber = meetingTime.roomNumber == nil ? String(describing: meetingTime.roomNumber) : ""
-            timeLabel.text = "\(days) \(startTime) - \(endTime)"
+
+            if let startTime = meetingTime.startTime, let endTime = meetingTime.endTime {
+                let dateFormatter = DateFormatter()
+                dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+                dateFormatter.dateStyle = .none
+                dateFormatter.timeStyle = .short
+
+                let startTime = dateFormatter.string(from: startTime)
+                let endTime = dateFormatter.string(from: endTime)
+                timeLabel.text = "\(days) \(startTime) - \(endTime)"
+            } else {
+                timeLabel.text = days
+            }
+
             locationLabel.text = "\(building) \(roomNumber)"
         }
 

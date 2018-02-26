@@ -16,7 +16,7 @@ class Store {
     }
 }
 
-extension Store: Provider {
+extension Store {
     func get(buildingAbbr: String, completion: @escaping Completion<Building>) {
         if let building = _buildings[Building(abbr: buildingAbbr).hashValue] {
             completion(.success(building))

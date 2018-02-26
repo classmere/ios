@@ -4,9 +4,13 @@ enum URLSessionProviderError: Error {
     case noData
 }
 
-struct URLSessionProvider {
+struct URLSessionProvider: Provider {
     fileprivate let session = URLSession.shared
     fileprivate let decoder = JSONDecoder()
+
+    init() {
+        decoder.dateDecodingStrategy = .iso8601
+    }
 
     fileprivate func decode<T: Decodable>(_ type: T.Type, from: Data) -> Result<T> {
         do {
@@ -17,41 +21,13 @@ struct URLSessionProvider {
         }
     }
 
-    fileprivate func get<T: Decodable>(url: URL, responseType: T.Type, completion: @escaping Completion<T>) {
+    internal func get<T: Decodable>(url: URL, responseType: T.Type, completion: @escaping Completion<T>) {
         let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        session.dataTask(with: request) { data, _, error in
             if let error = error { completion(.failure(error)) }
             guard let data = data else { return completion(.failure(URLSessionProviderError.noData)) }
             completion(self.decode(responseType, from: data))
         }.resume()
-    }
-
-}
-
-extension URLSessionProvider: Provider {
-
-    func get(buildingAbbr: String, completion: @escaping Completion<Building>) {
-        return get(url: API.building(buildingAbbr).path,
-                   responseType: Building.self,
-                   completion: completion)
-    }
-
-    func get(subjectCode: String, courseNumber: Int, completion: @escaping Completion<Course>) {
-        return get(url: API.course(subjectCode, courseNumber).path,
-                   responseType: Course.self,
-                   completion: completion)
-    }
-
-    func search(building: String, completion: @escaping Completion<[Building]>) {
-        return get(url: API.searchBuilding(building).path,
-                   responseType: Array<Building>.self,
-                   completion: completion)
-    }
-
-    func search(course: String, completion: @escaping Completion<[Course]>) {
-        return get(url: API.searchCourse(course).path,
-                   responseType: Array<Course>.self,
-                   completion: completion)
     }
 
 }

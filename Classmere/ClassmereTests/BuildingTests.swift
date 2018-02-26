@@ -1,32 +1,33 @@
-// swiftlint:disable force_try
-
 import XCTest
 @testable import Classmere
 
 class BuildingTests: XCTestCase {
 
-    let decoder = JSONDecoder()
-    var json: Data!
-
-    override func setUp() {
-        super.setUp()
-        let jsonURL = URL(fileURLWithPath: Bundle.main.path(forResource: "building", ofType: "json")!)
-        json = try! Data(contentsOf: jsonURL)
-    }
+    let provider = DummyProvider()
 
     func testParseBuilding() {
-        let building = try! decoder.decode(Building.self, from: json)
-        XCTAssertEqual(building.abbr, "KEC")
-        XCTAssertEqual(building.name, "Kelley Engineering Center")
-        XCTAssertEqual(building.buildingNumber, 3)
-        XCTAssertEqual(building.latitude, 44.567164)
-        XCTAssertEqual(building.longitude, -123.278692)
+        let expectation = XCTestExpectation(description: "Parse sample building supplied from file by DummyProvider")
+        provider.get(buildingAbbr: "KEC") { result in
+            switch result {
+            case .success(let building):
+                XCTAssertEqual(building.abbr, "KEC")
+                XCTAssertEqual(building.name, "Kelley Engineering Center")
+                XCTAssertEqual(building.buildingNumber, 3)
+                XCTAssertEqual(building.latitude, 44.567164)
+                XCTAssertEqual(building.longitude, -123.278692)
+                expectation.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+
+        wait(for: [expectation], timeout: 1.0)
     }
 
     func testPerformanceExample() {
         self.measure {
-            for _ in 0...20 {
-                _ = try! decoder.decode(Building.self, from: json)
+            for _ in 0...5 {
+                provider.get(buildingAbbr: "KEC") { _ in }
             }
         }
     }

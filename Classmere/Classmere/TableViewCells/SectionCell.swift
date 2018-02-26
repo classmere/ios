@@ -6,11 +6,22 @@ extension UpdatableCell where Self: SectionCell {
         termLabel.text = model.term
         if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting day specified"
-            let startTime = meetingTime.startTime ?? "No start time specified"
-            let endTime = meetingTime.endTime ?? "No end time specified"
             let building = meetingTime.buildingCode ?? "No building specified"
             let roomNumber = meetingTime.roomNumber == nil ? String(describing: meetingTime.roomNumber) : ""
-            dayLabel.text = "\(days) \(startTime) - \(endTime)"
+
+            if let startTime = meetingTime.startTime, let endTime = meetingTime.endTime {
+                let dateFormatter = DateFormatter()
+                dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+                dateFormatter.dateStyle = .none
+                dateFormatter.timeStyle = .short
+
+                let startTime = dateFormatter.string(from: startTime)
+                let endTime = dateFormatter.string(from: endTime)
+                dayLabel.text = "\(days) \(startTime) - \(endTime)"
+            } else {
+                dayLabel.text = days
+            }
+
             locationLabel.text = "\(building) \(roomNumber)"
         }
 
@@ -18,7 +29,8 @@ extension UpdatableCell where Self: SectionCell {
         typeLabel.text = model.type
 
         if let currentlyEnrolled = model.enrollmentCurrent, let enrollmentCapacity = model.enrollmentCapacity {
-            enrolledLabel.text = "\(currentlyEnrolled) student(s) enrolled, \(enrollmentCapacity) spots available"
+            let spotsLeft = enrollmentCapacity - currentlyEnrolled
+            enrolledLabel.text = "\(currentlyEnrolled) student(s) enrolled, \(spotsLeft) spots left"
         }
 
         if let startDate = model.startDate, let endDate = model.endDate {

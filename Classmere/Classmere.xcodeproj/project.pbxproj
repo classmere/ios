@@ -31,6 +31,7 @@
 		AC778A08202BFB2C001A25C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A07202BFB2C001A25C9 /* Result.swift */; };
 		AC778A0A202C14BE001A25C9 /* CourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A09202C14BE001A25C9 /* CourseTests.swift */; };
 		AC778A0C202C14CE001A25C9 /* URLSessionProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A0B202C14CE001A25C9 /* URLSessionProviderTests.swift */; };
+		ACAC27402044B56B0067B3E3 /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */; };
 		ACB0AE5520213AB0003B1E45 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5420213AB0003B1E45 /* API.swift */; };
 		ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5620213AC7003B1E45 /* Store.swift */; };
 		ACC6381E2032203600450A46 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC6381D2032203600450A46 /* Emoji.swift */; };
@@ -39,12 +40,12 @@
 		ACDC0A9C20227E69000A19D1 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9B20227E69000A19D1 /* APITests.swift */; };
 		ACDC0A9E20228563000A19D1 /* DummyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9D20228563000A19D1 /* DummyProvider.swift */; };
 		ACDC0AA020228577000A19D1 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */; };
-		ACDC0AA62022D907000A19D1 /* course.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA22022D907000A19D1 /* course.json */; };
-		ACDC0AA82022D907000A19D1 /* search_course.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA42022D907000A19D1 /* search_course.json */; };
+		ACDC0AA62022D907000A19D1 /* courses-CS-161.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA22022D907000A19D1 /* courses-CS-161.json */; };
+		ACDC0AA82022D907000A19D1 /* search-courses-nutrition.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA42022D907000A19D1 /* search-courses-nutrition.json */; };
 		ACDC0AAC202370FC000A19D1 /* BuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */; };
 		ACE53E07203F69E90053A0CF /* MeetingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE53E06203F69E90053A0CF /* MeetingTime.swift */; };
-		ACF260C22024FB5800A05B20 /* search_building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C02024FB5800A05B20 /* search_building.json */; };
-		ACF260C32024FB5800A05B20 /* building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C12024FB5800A05B20 /* building.json */; };
+		ACF260C22024FB5800A05B20 /* search-buildings-KEC.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C02024FB5800A05B20 /* search-buildings-KEC.json */; };
+		ACF260C32024FB5800A05B20 /* buildings-KEC.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C12024FB5800A05B20 /* buildings-KEC.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		AC778A07202BFB2C001A25C9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AC778A09202C14BE001A25C9 /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
 		AC778A0B202C14CE001A25C9 /* URLSessionProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProviderTests.swift; sourceTree = "<group>"; };
+		ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		ACB0AE5420213AB0003B1E45 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACB0AE5620213AC7003B1E45 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		ACC6381D2032203600450A46 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
@@ -104,12 +106,12 @@
 		ACDC0A9B20227E69000A19D1 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		ACDC0A9D20228563000A19D1 /* DummyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyProvider.swift; sourceTree = "<group>"; };
 		ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
-		ACDC0AA22022D907000A19D1 /* course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course.json; sourceTree = "<group>"; };
-		ACDC0AA42022D907000A19D1 /* search_course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_course.json; sourceTree = "<group>"; };
+		ACDC0AA22022D907000A19D1 /* courses-CS-161.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "courses-CS-161.json"; sourceTree = "<group>"; };
+		ACDC0AA42022D907000A19D1 /* search-courses-nutrition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "search-courses-nutrition.json"; sourceTree = "<group>"; };
 		ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingTests.swift; sourceTree = "<group>"; };
 		ACE53E06203F69E90053A0CF /* MeetingTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTime.swift; sourceTree = "<group>"; };
-		ACF260C02024FB5800A05B20 /* search_building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_building.json; sourceTree = "<group>"; };
-		ACF260C12024FB5800A05B20 /* building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = building.json; sourceTree = "<group>"; };
+		ACF260C02024FB5800A05B20 /* search-buildings-KEC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "search-buildings-KEC.json"; sourceTree = "<group>"; };
+		ACF260C12024FB5800A05B20 /* buildings-KEC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "buildings-KEC.json"; sourceTree = "<group>"; };
 		AD9C9D73E2FE4980DEB8B78F /* Pods_Classmere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Classmere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED457C659A3B5F1D0757C66 /* Pods-Classmere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Classmere.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Classmere/Pods-Classmere.release.xcconfig"; sourceTree = "<group>"; };
 		DEEF30CFAB38B378BBEF6B93 /* Pods-ClassmereTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassmereTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ClassmereTests/Pods-ClassmereTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				ACD9441C202D10BE00F4B35F /* TableViewDataSource.swift */,
 				AC778A07202BFB2C001A25C9 /* Result.swift */,
 				AC778A05202BFAF6001A25C9 /* Provider.swift */,
+				ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */,
 				ACDC0A9D20228563000A19D1 /* DummyProvider.swift */,
 				ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */,
 				AC65DBDD202ED3A4006C990A /* TableViewCells */,
@@ -276,10 +279,10 @@
 		ACDC0AAA2022D925000A19D1 /* Stubbed Responses */ = {
 			isa = PBXGroup;
 			children = (
-				ACF260C12024FB5800A05B20 /* building.json */,
-				ACDC0AA22022D907000A19D1 /* course.json */,
-				ACF260C02024FB5800A05B20 /* search_building.json */,
-				ACDC0AA42022D907000A19D1 /* search_course.json */,
+				ACF260C12024FB5800A05B20 /* buildings-KEC.json */,
+				ACDC0AA22022D907000A19D1 /* courses-CS-161.json */,
+				ACF260C02024FB5800A05B20 /* search-buildings-KEC.json */,
+				ACDC0AA42022D907000A19D1 /* search-courses-nutrition.json */,
 			);
 			name = "Stubbed Responses";
 			sourceTree = "<group>";
@@ -399,12 +402,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACDC0AA62022D907000A19D1 /* course.json in Resources */,
-				ACF260C22024FB5800A05B20 /* search_building.json in Resources */,
+				ACDC0AA62022D907000A19D1 /* courses-CS-161.json in Resources */,
+				ACF260C22024FB5800A05B20 /* search-buildings-KEC.json in Resources */,
 				169AD5F41D59615800615CB7 /* LaunchScreen.storyboard in Resources */,
 				169AD5F11D59615800615CB7 /* Assets.xcassets in Resources */,
-				ACF260C32024FB5800A05B20 /* building.json in Resources */,
-				ACDC0AA82022D907000A19D1 /* search_course.json in Resources */,
+				ACF260C32024FB5800A05B20 /* buildings-KEC.json in Resources */,
+				ACDC0AA82022D907000A19D1 /* search-courses-nutrition.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +550,7 @@
 			files = (
 				16BA26B61D76723200CF8594 /* CourseDetailsCell.swift in Sources */,
 				ACDC0AA020228577000A19D1 /* URLSessionProvider.swift in Sources */,
+				ACAC27402044B56B0067B3E3 /* DateFormatter+.swift in Sources */,
 				163FAB501D7E90A700E8E271 /* SectionCell.swift in Sources */,
 				160D28521D5C0298009C0178 /* Section.swift in Sources */,
 				ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */,
@@ -664,7 +668,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -712,7 +716,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -730,6 +734,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6QBR52NJ4V;
 				INFOPLIST_FILE = Classmere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rutgerfarry.classmere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -748,6 +753,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6QBR52NJ4V;
 				INFOPLIST_FILE = Classmere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rutgerfarry.classmere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
