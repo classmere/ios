@@ -39,12 +39,12 @@
 		ACDC0A9C20227E69000A19D1 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9B20227E69000A19D1 /* APITests.swift */; };
 		ACDC0A9E20228563000A19D1 /* DummyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9D20228563000A19D1 /* DummyProvider.swift */; };
 		ACDC0AA020228577000A19D1 /* URLSessionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */; };
-		ACDC0AA62022D907000A19D1 /* course.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA22022D907000A19D1 /* course.json */; };
-		ACDC0AA82022D907000A19D1 /* search_course.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA42022D907000A19D1 /* search_course.json */; };
+		ACDC0AA62022D907000A19D1 /* courses-CS-161.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA22022D907000A19D1 /* courses-CS-161.json */; };
+		ACDC0AA82022D907000A19D1 /* search-courses-nutrition.json in Resources */ = {isa = PBXBuildFile; fileRef = ACDC0AA42022D907000A19D1 /* search-courses-nutrition.json */; };
 		ACDC0AAC202370FC000A19D1 /* BuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */; };
 		ACE53E07203F69E90053A0CF /* MeetingTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE53E06203F69E90053A0CF /* MeetingTime.swift */; };
-		ACF260C22024FB5800A05B20 /* search_building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C02024FB5800A05B20 /* search_building.json */; };
-		ACF260C32024FB5800A05B20 /* building.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C12024FB5800A05B20 /* building.json */; };
+		ACF260C22024FB5800A05B20 /* search-buildings-KEC.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C02024FB5800A05B20 /* search-buildings-KEC.json */; };
+		ACF260C32024FB5800A05B20 /* buildings-KEC.json in Resources */ = {isa = PBXBuildFile; fileRef = ACF260C12024FB5800A05B20 /* buildings-KEC.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,12 +104,12 @@
 		ACDC0A9B20227E69000A19D1 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
 		ACDC0A9D20228563000A19D1 /* DummyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyProvider.swift; sourceTree = "<group>"; };
 		ACDC0A9F20228577000A19D1 /* URLSessionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProvider.swift; sourceTree = "<group>"; };
-		ACDC0AA22022D907000A19D1 /* course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = course.json; sourceTree = "<group>"; };
-		ACDC0AA42022D907000A19D1 /* search_course.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_course.json; sourceTree = "<group>"; };
+		ACDC0AA22022D907000A19D1 /* courses-CS-161.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "courses-CS-161.json"; sourceTree = "<group>"; };
+		ACDC0AA42022D907000A19D1 /* search-courses-nutrition.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "search-courses-nutrition.json"; sourceTree = "<group>"; };
 		ACDC0AAB202370FC000A19D1 /* BuildingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingTests.swift; sourceTree = "<group>"; };
 		ACE53E06203F69E90053A0CF /* MeetingTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingTime.swift; sourceTree = "<group>"; };
-		ACF260C02024FB5800A05B20 /* search_building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_building.json; sourceTree = "<group>"; };
-		ACF260C12024FB5800A05B20 /* building.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = building.json; sourceTree = "<group>"; };
+		ACF260C02024FB5800A05B20 /* search-buildings-KEC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "search-buildings-KEC.json"; sourceTree = "<group>"; };
+		ACF260C12024FB5800A05B20 /* buildings-KEC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "buildings-KEC.json"; sourceTree = "<group>"; };
 		AD9C9D73E2FE4980DEB8B78F /* Pods_Classmere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Classmere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED457C659A3B5F1D0757C66 /* Pods-Classmere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Classmere.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Classmere/Pods-Classmere.release.xcconfig"; sourceTree = "<group>"; };
 		DEEF30CFAB38B378BBEF6B93 /* Pods-ClassmereTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassmereTests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-ClassmereTests/Pods-ClassmereTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -276,10 +276,10 @@
 		ACDC0AAA2022D925000A19D1 /* Stubbed Responses */ = {
 			isa = PBXGroup;
 			children = (
-				ACF260C12024FB5800A05B20 /* building.json */,
-				ACDC0AA22022D907000A19D1 /* course.json */,
-				ACF260C02024FB5800A05B20 /* search_building.json */,
-				ACDC0AA42022D907000A19D1 /* search_course.json */,
+				ACF260C12024FB5800A05B20 /* buildings-KEC.json */,
+				ACDC0AA22022D907000A19D1 /* courses-CS-161.json */,
+				ACF260C02024FB5800A05B20 /* search-buildings-KEC.json */,
+				ACDC0AA42022D907000A19D1 /* search-courses-nutrition.json */,
 			);
 			name = "Stubbed Responses";
 			sourceTree = "<group>";
@@ -399,12 +399,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACDC0AA62022D907000A19D1 /* course.json in Resources */,
-				ACF260C22024FB5800A05B20 /* search_building.json in Resources */,
+				ACDC0AA62022D907000A19D1 /* courses-CS-161.json in Resources */,
+				ACF260C22024FB5800A05B20 /* search-buildings-KEC.json in Resources */,
 				169AD5F41D59615800615CB7 /* LaunchScreen.storyboard in Resources */,
 				169AD5F11D59615800615CB7 /* Assets.xcassets in Resources */,
-				ACF260C32024FB5800A05B20 /* building.json in Resources */,
-				ACDC0AA82022D907000A19D1 /* search_course.json in Resources */,
+				ACF260C32024FB5800A05B20 /* buildings-KEC.json in Resources */,
+				ACDC0AA82022D907000A19D1 /* search-courses-nutrition.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

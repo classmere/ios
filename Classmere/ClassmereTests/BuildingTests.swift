@@ -10,7 +10,7 @@ class BuildingTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        let jsonURL = URL(fileURLWithPath: Bundle.main.path(forResource: "building", ofType: "json")!)
+        let jsonURL = URL(fileURLWithPath: Bundle.main.path(forResource: "buildings-KEC", ofType: "json")!)
         json = try! Data(contentsOf: jsonURL)
     }
 

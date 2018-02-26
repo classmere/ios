@@ -28,6 +28,6 @@ extension API: Path {
     }
 
     private func url(_ path: String) -> URL {
-        return baseURL.appendingPathComponent(path, isDirectory: false)
+        return URL(string: path, relativeTo: baseURL) ?? baseURL
     }
 }

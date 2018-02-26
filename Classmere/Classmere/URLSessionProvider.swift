@@ -19,7 +19,7 @@ struct URLSessionProvider {
 
     fileprivate func get<T: Decodable>(url: URL, responseType: T.Type, completion: @escaping Completion<T>) {
         let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        session.dataTask(with: request) { data, _, error in
             if let error = error { completion(.failure(error)) }
             guard let data = data else { return completion(.failure(URLSessionProviderError.noData)) }
             completion(self.decode(responseType, from: data))
