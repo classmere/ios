@@ -26,8 +26,8 @@ class CourseTests: XCTestCase {
 
     func testPerformanceExample() {
         self.measure {
-            for _ in 0...20 {
-                _ = provider.get(subjectCode: "CS", courseNumber: 161) { $0 }
+            for _ in 0...5 {
+                provider.get(subjectCode: "CS", courseNumber: 161) { _ in }
             }
         }
     }

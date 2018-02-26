@@ -8,12 +8,12 @@ enum API {
 }
 
 protocol Path {
-    var baseURL: URL { get }
+    static var baseURL: URL { get }
     var path: URL { get }
 }
 
 extension API: Path {
-    var baseURL: URL { return URL(string: "https://api.classmere.com")! }
+    static var baseURL: URL { return URL(string: "https://api.classmere.com")! }
     var path: URL {
         switch self {
         case .building(let buildingName):
@@ -28,6 +28,6 @@ extension API: Path {
     }
 
     private func url(_ path: String) -> URL {
-        return URL(string: path, relativeTo: baseURL) ?? baseURL
+        return API.baseURL.appendingPathComponent(path, isDirectory: false)
     }
 }

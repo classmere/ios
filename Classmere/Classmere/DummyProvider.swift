@@ -5,7 +5,7 @@ enum DummyProviderError: Error {
     case jsonParsing
 }
 
-struct DummyProvider {
+struct DummyProvider: Provider {
     fileprivate let decoder = JSONDecoder()
 
     fileprivate func decode<T: Decodable>(_ type: T.Type, from: Data) -> Result<T> {
@@ -17,8 +17,9 @@ struct DummyProvider {
         }
     }
 
-    fileprivate func get<T: Decodable>(url: URL, responseType: T.Type, completion: @escaping Completion<T>) {
-        let fileString = url.relativeString
+    internal func get<T: Decodable>(url: URL, responseType: T.Type, completion: @escaping Completion<T>) {
+        let fileString = url.absoluteString
+            .replacingOccurrences(of: API.baseURL.absoluteString, with: "")
             .dropFirst()
             .replacingOccurrences(of: "/", with: "-")
         guard let filePath = Bundle.main.path(forResource: fileString, ofType: "json") else {
@@ -30,34 +31,6 @@ struct DummyProvider {
         }
 
         completion(self.decode(responseType, from: json))
-    }
-
-}
-
-extension DummyProvider: Provider {
-
-    func get(buildingAbbr: String, completion: @escaping Completion<Building>) {
-        return get(url: API.building(buildingAbbr).path,
-                   responseType: Building.self,
-                   completion: completion)
-    }
-
-    func get(subjectCode: String, courseNumber: Int, completion: @escaping Completion<Course>) {
-        return get(url: API.course(subjectCode, courseNumber).path,
-                   responseType: Course.self,
-                   completion: completion)
-    }
-
-    func search(building: String, completion: @escaping Completion<[Building]>) {
-        return get(url: API.searchBuilding(building).path,
-                   responseType: Array<Building>.self,
-                   completion: completion)
-    }
-
-    func search(course: String, completion: @escaping Completion<[Course]>) {
-        return get(url: API.searchCourse(course).path,
-                   responseType: Array<Course>.self,
-                   completion: completion)
     }
 
 }
