@@ -3,13 +3,13 @@ import PureLayout
 
 extension UpdatableCell where Self: CourseCell {
     func update(with model: Section) {
-        termLabel.text = model.term
+        termLabel.text = DataFormatter.parseTerm(model.term)
         iconLabel.text = EmojiFactory.emojiFromSectionType(model.type)
 
         if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting day specified"
             let building = meetingTime.buildingCode ?? "No building specified"
-            let roomNumber = meetingTime.roomNumber == nil ? String(describing: meetingTime.roomNumber) : ""
+            let roomNumber = DataFormatter.stringOrEmptyString(forOptional: meetingTime.roomNumber)
 
             if let startTime = meetingTime.startTime, let endTime = meetingTime.endTime {
                 let dateFormatter = DateFormatter()
