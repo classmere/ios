@@ -9,8 +9,8 @@ struct Building: Codable {
     let name: String?
     let address: String?
     let buildingNumber: Int?
-    let latitude: Float?
-    let longitude: Float?
+    let latitude: Double?
+    let longitude: Double?
 
     init(abbr: String) {
         self.abbr = abbr
