@@ -38,6 +38,17 @@ struct DataFormatter {
     }
 
     /**
+     Returns the String representation of an optional or an empty String
+
+     - Parameter optional: Any Optional
+     - Returns: A String representation of the Object if not null, otherwise an empty String
+     */
+    static func stringOrEmptyString(forOptional optional: Any?) -> String {
+        if let unwrapped = optional { return String(describing: unwrapped) }
+        return ""
+    }
+
+    /**
      Parses a title to remove the subject code and course number
      
      - Parameter title: An unformatted title string
