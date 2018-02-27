@@ -3,7 +3,7 @@ import PureLayout
 
 extension UpdatableCell where Self: CourseCell {
     func update(with model: Section) {
-        termLabel.text = model.term
+        termLabel.text = DataFormatter.parseTerm(model.term)
         iconLabel.text = EmojiFactory.emojiFromSectionType(model.type)
 
         if let meetingTime = model.meetingTimes?.first {

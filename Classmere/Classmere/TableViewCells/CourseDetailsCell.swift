@@ -4,7 +4,7 @@ import PureLayout
 extension UpdatableCell where Self: CourseDetailsCell {
     func update(with model: Course) {
         titleLabel.text = model.title
-        creditsLabel.text = model.credits
+        creditsLabel.text = "\(model.credits ?? "unknown") credits"
         descriptionLabel.text = model.description
 
         isUserInteractionEnabled = false
