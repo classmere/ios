@@ -31,6 +31,7 @@
 		AC778A08202BFB2C001A25C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A07202BFB2C001A25C9 /* Result.swift */; };
 		AC778A0A202C14BE001A25C9 /* CourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A09202C14BE001A25C9 /* CourseTests.swift */; };
 		AC778A0C202C14CE001A25C9 /* URLSessionProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A0B202C14CE001A25C9 /* URLSessionProviderTests.swift */; };
+		AC906D71204551EF005EDDF0 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC906D70204551EF005EDDF0 /* Keys.plist */; };
 		ACAC27402044B56B0067B3E3 /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */; };
 		ACB0AE5520213AB0003B1E45 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5420213AB0003B1E45 /* API.swift */; };
 		ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5620213AC7003B1E45 /* Store.swift */; };
@@ -98,6 +99,7 @@
 		AC778A07202BFB2C001A25C9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AC778A09202C14BE001A25C9 /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
 		AC778A0B202C14CE001A25C9 /* URLSessionProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProviderTests.swift; sourceTree = "<group>"; };
+		AC906D70204551EF005EDDF0 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		ACB0AE5420213AB0003B1E45 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACB0AE5620213AC7003B1E45 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				ACDC0AAA2022D925000A19D1 /* Stubbed Responses */,
 				169AD5F21D59615800615CB7 /* LaunchScreen.storyboard */,
 				169AD5F51D59615800615CB7 /* Info.plist */,
+				AC906D70204551EF005EDDF0 /* Keys.plist */,
 			);
 			path = Classmere;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				ACF260C22024FB5800A05B20 /* search-buildings-KEC.json in Resources */,
 				169AD5F41D59615800615CB7 /* LaunchScreen.storyboard in Resources */,
 				169AD5F11D59615800615CB7 /* Assets.xcassets in Resources */,
+				AC906D71204551EF005EDDF0 /* Keys.plist in Resources */,
 				ACF260C32024FB5800A05B20 /* buildings-KEC.json in Resources */,
 				ACDC0AA82022D907000A19D1 /* search-courses-nutrition.json in Resources */,
 			);
@@ -455,9 +459,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
