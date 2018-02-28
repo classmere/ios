@@ -47,7 +47,7 @@ final class CourseViewController: UIViewController {
 
     /// Gets all buildings for all meetingTimes for all sections and updates tableView with locations
     func fetchBuildings(forCourse course: Course) {
-        var mapCellPoints = [MapCellPoint]()
+        var mapCellPoints = Set<MapCellPoint>()
         var inFlightRequests = 0
 
         for section in course.sections {
@@ -61,7 +61,7 @@ final class CourseViewController: UIViewController {
                     switch result {
                     case .success(let building):
                         guard let latitude = building.latitude, let longitude = building.longitude else { return }
-                        mapCellPoints.append(MapCellPoint(buildingName: building.name,
+                        mapCellPoints.insert(MapCellPoint(buildingName: building.name,
                                                           buildingCode: building.abbr,
                                                           roomNumber: meetingTime.roomNumber,
                                                           latitude: latitude,
@@ -71,7 +71,7 @@ final class CourseViewController: UIViewController {
                         print("fetchBuildings() error: \(error)")
                     }
                     if inFlightRequests == 0 {
-                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: mapCellPoints), at: 0)
+                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: Array(mapCellPoints)), at: 0)
                     }
                 }
             }

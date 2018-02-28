@@ -11,6 +11,18 @@ struct MapCellPoint {
     let type: String
 }
 
+extension MapCellPoint: Equatable {
+    static func == (lhs: MapCellPoint, rhs: MapCellPoint) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
+}
+
+extension MapCellPoint: Hashable {
+    var hashValue: Int {
+        return latitude.hashValue ^ longitude.hashValue
+    }
+}
+
 extension UpdatableCell where Self: MapCell {
     func update(with model: [MapCellPoint]) {
         for point in model {
