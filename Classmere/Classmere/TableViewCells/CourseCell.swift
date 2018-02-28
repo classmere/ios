@@ -9,7 +9,7 @@ extension UpdatableCell where Self: CourseCell {
         if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting day specified"
             let building = meetingTime.buildingCode ?? "No building specified"
-            let roomNumber = DataFormatter.stringOrEmptyString(forOptional: meetingTime.roomNumber)
+            let roomNumber = optionalDescriptionOrEmptyString(meetingTime.roomNumber)
 
             if let startTime = meetingTime.startTime, let endTime = meetingTime.endTime {
                 let dateFormatter = DateFormatter()
