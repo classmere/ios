@@ -40,8 +40,11 @@ final class CourseViewController: UIViewController {
             tableView.dataSource = tableViewDataSource
 
             // Asynchronously fetch course location
-            let buildingCodes = course.sections.flatMap { $0.meetingTimes }.flatMap { $0.flatMap { $0.buildingCode } }
-            for code in buildingCodes {
+            let sectionMeetingTuple: [(Section, [MeetingTime])] = course.sections.map { ($0, $0.meetingTimes.flatMap { $0 } ?? []) }
+            let meetingTimes = course.sections.flatMap { $0.meetingTimes }.flatMap { $0 }
+
+            for (section, meetingTimes) in sectionMeetingTuple {
+                for meetingTime in
                 store.get(buildingAbbr: code) { result in
                     switch result {
                     case .success(let building):
