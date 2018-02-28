@@ -14,7 +14,7 @@ struct Section: Decodable {
     let startDate: String?
     let endDate: String?
     let campus: String?
-    let type: String?
+    let type: String
     let status: String?
     let enrollmentCapacity: Int?
     let enrollmentCurrent: Int?

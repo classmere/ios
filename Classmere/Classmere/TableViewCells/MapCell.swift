@@ -2,28 +2,33 @@ import UIKit
 import PureLayout
 import GoogleMaps
 
-enum MapCellPointType {
-    case lecture
-    case lab
-    case recitation
-}
-
 struct MapCellPoint {
-    let buildingName: String
+    let buildingName: String?
     let buildingCode: String
     let roomNumber: Int?
     let latitude: Double
     let longitude: Double
-    let type: MapCellPointType
+    let type: String
 }
 
 extension UpdatableCell where Self: MapCell {
-    func update(with model: [Building?]) {
-        for building in model.flatMap({ $0 }) {
-            guard let latitude = building.latitude, let longitude = building.longitude else { return }
-            let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    func update(with model: [MapCellPoint]) {
+        for point in model {
+            let position = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
             let marker = GMSMarker(position: position)
-            marker.title = "\(building.abbr) \(DataFormatter.stringOrEmptyString(forOptional: building.buildingNumber))"
+
+            if let buildingName = point.buildingName, let roomNumber = point.roomNumber {
+                marker.title = "\(point.type): \(buildingName) \(roomNumber))"
+            } else {
+                marker.title = point.type
+            }
+
+            switch point.type.lowercased() {
+            case "laboratory", "lab": marker.icon = GMSMarker.markerImage(with: .green)
+            case "recitation": marker.icon = GMSMarker.markerImage(with: .blue)
+            default: marker.icon = GMSMarker.markerImage(with: .red)
+            }
+
             marker.map = mapView
         }
 

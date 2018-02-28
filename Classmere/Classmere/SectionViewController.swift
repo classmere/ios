@@ -42,7 +42,8 @@ final class SectionViewController: UIViewController {
                 store.get(buildingAbbr: buildingAbbr) { result in
                     switch result {
                     case .success(let building):
-                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: [nil]), at: 0)
+//                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: [nil]), at: 0)
+                        print("Got a building: \(building)")
                     case .failure(let error):
                         print(error)
                     }

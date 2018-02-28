@@ -3,7 +3,6 @@ import UIKit
 final class CourseViewController: UIViewController {
     let store: Store
     var course: Course?
-    var buildings = [Building?]()
 
     let tableView = UITableView()
     var tableViewDataSource: TableViewDataSource!
@@ -40,27 +39,43 @@ final class CourseViewController: UIViewController {
             tableView.dataSource = tableViewDataSource
 
             // Asynchronously fetch course location
-            let sectionMeetingTuple: [(Section, [MeetingTime])] = course.sections.map { ($0, $0.meetingTimes.flatMap { $0 } ?? []) }
-            let meetingTimes = course.sections.flatMap { $0.meetingTimes }.flatMap { $0 }
+            fetchBuildings(forCourse: course)
+        } else {
+            navigationController!.popViewController(animated: true)
+        }
+    }
 
-            for (section, meetingTimes) in sectionMeetingTuple {
-                for meetingTime in
+    /// Gets all buildings for all meetingTimes for all sections and updates tableView with locations
+    func fetchBuildings(forCourse course: Course) {
+        var mapCellPoints = [MapCellPoint]()
+        var inFlightRequests = 0
+
+        for section in course.sections {
+            let meetingTimes = section.meetingTimes?.filter { $0.buildingCode != nil } ?? []
+
+            for meetingTime in meetingTimes {
+                guard let code = meetingTime.buildingCode else { return }
+                inFlightRequests += 1
                 store.get(buildingAbbr: code) { result in
+                inFlightRequests -= 1
                     switch result {
                     case .success(let building):
-                        self.buildings.append(building)
+                        guard let latitude = building.latitude, let longitude = building.longitude else { return }
+                        mapCellPoints.append(MapCellPoint(buildingName: building.name,
+                                                          buildingCode: building.abbr,
+                                                          roomNumber: meetingTime.roomNumber,
+                                                          latitude: latitude,
+                                                          longitude: longitude,
+                                                          type: section.type))
                     case .failure(let error):
-                        self.buildings.append(nil)
-                        print(error)
+                        print("fetchBuildings() error: \(error)")
                     }
-                    if self.buildings.count == buildingCodes.count {
-                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: self.buildings), at: 0)
+                    if inFlightRequests == 0 {
+                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: mapCellPoints), at: 0)
                     }
                 }
             }
 
-        } else {
-            navigationController!.popViewController(animated: true)
         }
     }
 }
