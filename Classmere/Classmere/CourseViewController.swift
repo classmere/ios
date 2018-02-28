@@ -3,7 +3,7 @@ import UIKit
 final class CourseViewController: UIViewController {
     let store: Store
     var course: Course?
-    var buildings = [Building]()
+    var buildings = [Building?]()
 
     let tableView = UITableView()
     var tableViewDataSource: TableViewDataSource!
@@ -40,16 +40,22 @@ final class CourseViewController: UIViewController {
             tableView.dataSource = tableViewDataSource
 
             // Asynchronously fetch course location
-            if let buildingAbbr = course.sections.first?.meetingTimes?.first?.buildingCode {
-                store.get(buildingAbbr: buildingAbbr) { result in
+            let buildingCodes = course.sections.flatMap { $0.meetingTimes }.flatMap { $0.flatMap { $0.buildingCode } }
+            for code in buildingCodes {
+                store.get(buildingAbbr: code) { result in
                     switch result {
                     case .success(let building):
-                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: building), at: 0)
+                        self.buildings.append(building)
                     case .failure(let error):
+                        self.buildings.append(nil)
                         print(error)
+                    }
+                    if self.buildings.count == buildingCodes.count {
+                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: self.buildings), at: 0)
                     }
                 }
             }
+
         } else {
             navigationController!.popViewController(animated: true)
         }

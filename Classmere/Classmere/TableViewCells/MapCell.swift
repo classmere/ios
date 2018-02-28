@@ -2,14 +2,33 @@ import UIKit
 import PureLayout
 import GoogleMaps
 
+enum MapCellPointType {
+    case lecture
+    case lab
+    case recitation
+}
+
+struct MapCellPoint {
+    let buildingName: String
+    let buildingCode: String
+    let roomNumber: Int?
+    let latitude: Double
+    let longitude: Double
+    let type: MapCellPointType
+}
+
 extension UpdatableCell where Self: MapCell {
-    func update(with model: Building) {
-        if let latitude = model.latitude, let longitude = model.longitude {
-            navigateTo(latitude: Double(latitude), longitude: Double(longitude))
-            isUserInteractionEnabled = false
-            selectionStyle = .none
-            updateConstraintsIfNeeded()
+    func update(with model: [Building?]) {
+        for building in model.flatMap({ $0 }) {
+            guard let latitude = building.latitude, let longitude = building.longitude else { return }
+            let position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let marker = GMSMarker(position: position)
+            marker.title = "\(building.abbr) \(DataFormatter.stringOrEmptyString(forOptional: building.buildingNumber))"
+            marker.map = mapView
         }
+
+        selectionStyle = .none
+        updateConstraintsIfNeeded()
     }
 }
 
