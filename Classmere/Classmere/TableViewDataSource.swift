@@ -48,6 +48,7 @@ extension TableViewDataSource: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard rows.count > indexPath.row else { return UITableViewCell() }
         let row = rows[indexPath.row]
         tableView.register(row.cellClass, forCellReuseIdentifier: row.cellIdentifier)
         let cell = tableView.dequeueReusableCell(withIdentifier: row.cellIdentifier, for: indexPath)
