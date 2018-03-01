@@ -1,26 +1,22 @@
 PODS:
-  - GoogleMaps (2.6.0):
-    - GoogleMaps/Maps (= 2.6.0)
-  - GoogleMaps/Base (2.6.0)
-  - GoogleMaps/Maps (2.6.0):
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
-  - GooglePlaces (2.6.0):
-    - GoogleMaps/Base (= 2.6.0)
   - PureLayout (3.0.2)
   - SwiftLint (0.24.0)
 
 DEPENDENCIES:
-  - GoogleMaps
-  - GooglePlaces
+  - GoogleMaps (= 2.5.0)
   - PureLayout
   - SwiftLint (= 0.24)
 
 SPEC CHECKSUMS:
-  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
-  GooglePlaces: f6ddf33b75cef69e888907d9947c57198ed845f3
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
 
-PODFILE CHECKSUM: a58c0b8282c60e50c88fb39849b86890b4dcd8a5
+PODFILE CHECKSUM: 49ebba84409ba04544418f7e601f1e9de115337d
 
 COCOAPODS: 1.4.0

@@ -5,8 +5,7 @@ project 'Classmere/Classmere.xcodeproj'
 target 'Classmere' do
   use_frameworks!
 
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
+  pod 'GoogleMaps', '2.5.0'
   pod 'PureLayout'
   pod 'SwiftLint', '0.24'
 
