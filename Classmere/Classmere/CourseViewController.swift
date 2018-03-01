@@ -33,7 +33,8 @@ final class CourseViewController: UIViewController {
                                                                     action: nil)
 
             tableViewDataSource = TableViewDataSource(tableView: tableView)
-            tableViewDataSource.rows = [Row<CourseDetailsCell>(data: course)] +
+            tableViewDataSource.rows = [Row<MapCell>(data: [])] +
+                [Row<CourseDetailsCell>(data: course)] +
                 course.sections.map { Row<CourseCell>(data: $0) }
             tableView.delegate = self
             tableView.dataSource = tableViewDataSource
@@ -71,7 +72,9 @@ final class CourseViewController: UIViewController {
                         print("fetchBuildings() error: \(error)")
                     }
                     if inFlightRequests == 0 {
-                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: Array(mapCellPoints)), at: 0)
+                        self.tableViewDataSource.rows = [Row<MapCell>(data: Array(mapCellPoints))] +
+                            [Row<CourseDetailsCell>(data: course)] +
+                            course.sections.map { Row<CourseCell>(data: $0) }
                     }
                 }
             }

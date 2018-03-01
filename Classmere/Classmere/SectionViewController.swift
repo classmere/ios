@@ -32,30 +32,54 @@ final class SectionViewController: UIViewController {
             title = course.abbr
 
             tableViewDataSource = TableViewDataSource(tableView: tableView)
-            tableViewDataSource.rows = [Row<CourseDetailsCell>(data: course),
-                                        Row<SectionCell>(data: section)]
+            tableViewDataSource.rows = [Row<MapCell>(data: [])] +
+                [Row<CourseDetailsCell>(data: course)] +
+                course.sections.map { Row<CourseCell>(data: $0) }
             tableView.delegate = self
             tableView.dataSource = tableViewDataSource
 
-            // Asynchronously fetch course location
-            if let buildingAbbr = course.sections.first?.meetingTimes?.first?.buildingCode {
-                store.get(buildingAbbr: buildingAbbr) { result in
-                    switch result {
-                    case .success(let building):
-//                        self.tableViewDataSource.rows.insert(Row<MapCell>(data: [nil]), at: 0)
-                        print("Got a building: \(building)")
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
-            }
+            fetchBuildings(forCourse: course)
         } else {
             navigationController!.popViewController(animated: true)
         }
     }
-}
 
-    // MARK: UITableView Delegate and Datasource
+    /// Gets all buildings for all meetingTimes for all sections and updates tableView with locations
+    func fetchBuildings(forCourse course: Course) {
+        var mapCellPoints = Set<MapCellPoint>()
+        var inFlightRequests = 0
+
+        for section in course.sections {
+            let meetingTimes = section.meetingTimes?.filter { $0.buildingCode != nil } ?? []
+
+            for meetingTime in meetingTimes {
+                guard let code = meetingTime.buildingCode else { return }
+                inFlightRequests += 1
+                store.get(buildingAbbr: code) { result in
+                    inFlightRequests -= 1
+                    switch result {
+                    case .success(let building):
+                        guard let latitude = building.latitude, let longitude = building.longitude else { return }
+                        mapCellPoints.insert(MapCellPoint(buildingName: building.name,
+                                                          buildingCode: building.abbr,
+                                                          roomNumber: meetingTime.roomNumber,
+                                                          latitude: latitude,
+                                                          longitude: longitude,
+                                                          type: section.type))
+                    case .failure(let error):
+                        print("fetchBuildings() error: \(error)")
+                    }
+                    if inFlightRequests == 0 {
+                        self.tableViewDataSource.rows = [Row<MapCell>(data: Array(mapCellPoints))] +
+                            [Row<CourseDetailsCell>(data: course)] +
+                            course.sections.map { Row<CourseCell>(data: $0) }
+                    }
+                }
+            }
+
+        }
+    }
+}
 
 extension SectionViewController: UITableViewDelegate {
 
