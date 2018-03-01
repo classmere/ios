@@ -34,9 +34,10 @@ extension UpdatableCell where Self: MapCell {
             let northEastBound = CLLocationCoordinate2D(latitude: north, longitude: east)
             let southWestBound = CLLocationCoordinate2D(latitude: south, longitude: west)
             let bounds = GMSCoordinateBounds(coordinate: northEastBound, coordinate: southWestBound)
-            if let camera = mapView.camera(for: bounds, insets: UIEdgeInsets()) {
+            let insets = UIEdgeInsets(top: 50, left: 10, bottom: 10, right: 10)
+            if let camera = mapView.camera(for: bounds, insets: insets) {
                 mapView.camera = camera
-            }
+            } else { print("MapCell error: invalid bounds \(bounds)") }
         }
 
         for point in model {

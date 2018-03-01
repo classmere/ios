@@ -28,7 +28,7 @@ final class SectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let course = course, let section = section {
+        if let course = course {
             title = course.abbr
 
             tableViewDataSource = TableViewDataSource(tableView: tableView)
