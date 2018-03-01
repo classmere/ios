@@ -25,12 +25,26 @@ extension MapCellPoint: Hashable {
 
 extension UpdatableCell where Self: MapCell {
     func update(with model: [MapCellPoint]) {
+        let northmostPoint = model.map { $0.latitude }.max()
+        let southmostPoint = model.map { $0.latitude }.min()
+        let eastmostPoint = model.map { $0.longitude }.max()
+        let westmostPoint = model.map { $0.longitude }.min()
+
+        if let north = northmostPoint, let south = southmostPoint, let east = eastmostPoint, let west = westmostPoint {
+            let northEastBound = CLLocationCoordinate2D(latitude: north, longitude: east)
+            let southWestBound = CLLocationCoordinate2D(latitude: south, longitude: west)
+            let bounds = GMSCoordinateBounds(coordinate: northEastBound, coordinate: southWestBound)
+            if let camera = mapView.camera(for: bounds, insets: UIEdgeInsets()) {
+                mapView.camera = camera
+            }
+        }
+
         for point in model {
             let position = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
             let marker = GMSMarker(position: position)
 
             if let buildingName = point.buildingName, let roomNumber = point.roomNumber {
-                marker.title = "\(point.type): \(buildingName) \(roomNumber))"
+                marker.title = "\(point.type): \(buildingName) \(roomNumber)"
             } else {
                 marker.title = point.type
             }
@@ -53,22 +67,15 @@ extension MapCell: UpdatableCell {}
 
 class MapCell: UITableViewCell {
 
-    var didSetupConstraints = false
-
     let mapView = GMSMapView()
-//    let schoolZoomSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-//    let buildingZoomSpan = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
     let schoolCoordinates = (44.563849, -123.279498)
-
-    var pinLocations = [(Double, Double)]()
-
-    // MARK: - Initialization
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         let camera = GMSCameraPosition.camera(withLatitude: schoolCoordinates.0,
                                               longitude: schoolCoordinates.1,
                                               zoom: 13)
+        mapView.setMinZoom(3, maxZoom: 16)
         mapView.frame = contentView.frame
         mapView.camera = camera
         contentView.addSubview(mapView)
@@ -78,35 +85,17 @@ class MapCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
 
-    func navigateTo(latitude: Double, longitude: Double) {
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        marker.title = "Class"
-        marker.snippet = "Your class is here"
-        marker.map = mapView
-    }
-
     // Open maps app with location.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        if let pinLocation = pinLocation {
-//            let mapItem = MKMapItem(placemark: pinLocation)
-//            mapItem.name = "Course Location"
-//            mapItem.openInMaps(launchOptions: nil)
-//        }
     }
 
     // MARK: - Layout
 
     override func updateConstraints() {
-        if !didSetupConstraints {
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
-                mapView.autoSetContentCompressionResistancePriority(for: .vertical)
-            }
-
-            mapView.autoPinEdgesToSuperviewEdges()
-
-            didSetupConstraints = true
+        NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
+            mapView.autoSetContentCompressionResistancePriority(for: .vertical)
         }
+        mapView.autoPinEdgesToSuperviewEdges()
 
         super.updateConstraints()
     }
