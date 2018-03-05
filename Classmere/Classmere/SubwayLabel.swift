@@ -12,33 +12,32 @@ class SubwayLabel: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUp(color: .clear)
+        setUp(color: .blue, size: frame.size)
     }
 
-    convenience init(text: String, color: UIColor) {
+    convenience init(text: String, color: Theme.Color) {
         self.init(frame: .zero)
         textLabel.text = text
-        backgroundColor = color
-        setUp(color: color)
+        backgroundColor = color.uicolor
+        setUp(color: color, size: frame.size)
     }
 
-    private func setUp(color: UIColor) {
+    private func setUp(color: Theme.Color, size: CGSize) {
         addSubview(textLabel)
-        let fontSize: CGFloat = 100.0
         textLabel.baselineAdjustment = .alignCenters
-        textLabel.textColor = ContrastColorOf(color, returnFlat: true)
         textLabel.textColor = .white
-        textLabel.font = UIFont.boldSystemFont(ofSize: fontSize)
+        textLabel.minimumScaleFactor = 1 / CGFloat.greatestFiniteMagnitude
         textLabel.numberOfLines = 1
-        textLabel.minimumScaleFactor = 1 / fontSize
         textLabel.adjustsFontSizeToFitWidth = true
     }
 
     override func layoutSubviews() {
-        let insetSize = frame.width * 0.1
-        textLabel.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: insetSize,
+        let insetSize = frame.width * 0.25
+        textLabel.font = UIFont.boldSystemFont(ofSize: frame.width)
+        textLabel.font = UIFont.systemFont(ofSize: frame.width, weight: .heavy)
+        textLabel.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0,
                                                                   left: insetSize,
-                                                                  bottom: insetSize,
+                                                                  bottom: 0,
                                                                   right: insetSize))
         layer.cornerRadius = frame.width / 2.0
     }
