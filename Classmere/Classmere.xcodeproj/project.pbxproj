@@ -33,6 +33,7 @@
 		AC778A0A202C14BE001A25C9 /* CourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A09202C14BE001A25C9 /* CourseTests.swift */; };
 		AC778A0C202C14CE001A25C9 /* URLSessionProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A0B202C14CE001A25C9 /* URLSessionProviderTests.swift */; };
 		AC906D71204551EF005EDDF0 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC906D70204551EF005EDDF0 /* Keys.plist */; };
+		AC90BB7A2049DAFC0044E535 /* SubwayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC90BB792049DAFC0044E535 /* SubwayLabel.swift */; };
 		ACAC27402044B56B0067B3E3 /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */; };
 		ACB0AE5520213AB0003B1E45 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5420213AB0003B1E45 /* API.swift */; };
 		ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0AE5620213AC7003B1E45 /* Store.swift */; };
@@ -102,6 +103,7 @@
 		AC778A09202C14BE001A25C9 /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
 		AC778A0B202C14CE001A25C9 /* URLSessionProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProviderTests.swift; sourceTree = "<group>"; };
 		AC906D70204551EF005EDDF0 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		AC90BB792049DAFC0044E535 /* SubwayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubwayLabel.swift; sourceTree = "<group>"; };
 		ACAC273F2044B56B0067B3E3 /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		ACB0AE5420213AB0003B1E45 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACB0AE5620213AC7003B1E45 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				160D28591D5C1BDC009C0178 /* HomeView.swift */,
+				AC90BB792049DAFC0044E535 /* SubwayLabel.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -445,10 +448,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,6 +577,7 @@
 				16D95F031D643BF800C2E1F7 /* SearchCell.swift in Sources */,
 				ACDC0A9E20228563000A19D1 /* DummyProvider.swift in Sources */,
 				160D28541D5C12DF009C0178 /* Building.swift in Sources */,
+				AC90BB7A2049DAFC0044E535 /* SubwayLabel.swift in Sources */,
 				16D117611D6C07B000CCB807 /* CourseViewController.swift in Sources */,
 				AC778A08202BFB2C001A25C9 /* Result.swift in Sources */,
 				163FAB4E1D7E891500E8E271 /* SectionViewController.swift in Sources */,
