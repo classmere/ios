@@ -51,9 +51,10 @@ extension UpdatableCell where Self: MapCell {
             }
 
             switch point.type.lowercased() {
-            case "laboratory", "lab": marker.icon = GMSMarker.markerImage(with: .green)
-            case "recitation": marker.icon = GMSMarker.markerImage(with: .blue)
-            default: marker.icon = GMSMarker.markerImage(with: .red)
+            case "laboratory", "lab": marker.icon = GMSMarker.markerImage(with: Theme.Color.green.uicolor)
+            case "recitation": marker.icon = GMSMarker.markerImage(with: Theme.Color.blue.uicolor)
+            case "studio": marker.icon = GMSMarker.markerImage(with: Theme.Color.brown.uicolor)
+            default: marker.icon = GMSMarker.markerImage(with: Theme.Color.red.uicolor)
             }
 
             marker.map = mapView

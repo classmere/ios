@@ -4,7 +4,24 @@ import PureLayout
 extension UpdatableCell where Self: CourseCell {
     func update(with model: Section) {
         termLabel.text = DataFormatter.parseTerm(model.term)
-        iconLabel.text = EmojiFactory.emojiFromSectionType(model.type)
+
+        switch model.type.lowercased() {
+        case "lecture":
+            iconLabel.text = "Lec"
+            iconLabel.color = .red
+        case "laboratory":
+            iconLabel.text = "Lab"
+            iconLabel.color = .green
+        case "recitation":
+            iconLabel.text = "Rec"
+            iconLabel.color = .blue
+        case "studio":
+            iconLabel.text = "Stu"
+            iconLabel.color = .brown
+        default:
+            iconLabel.text = "TBA"
+            iconLabel.color = .yellow
+        }
 
         if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting day specified"
@@ -45,7 +62,7 @@ class CourseCell: UITableViewCell {
     var didSetupConstraints = false
 
     var termLabel: UILabel = UILabel.newAutoLayout()
-    var iconLabel: UILabel = UILabel.newAutoLayout()
+    var iconLabel: SubwayLabel = SubwayLabel.newAutoLayout()
     var timeLabel: UILabel = UILabel.newAutoLayout()
     var instructorLabel: UILabel = UILabel.newAutoLayout()
     var locationLabel: UILabel = UILabel.newAutoLayout()
@@ -74,10 +91,6 @@ class CourseCell: UITableViewCell {
         termLabel.textAlignment = .left
         termLabel.textColor = .darkGray
         termLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
-
-        iconLabel.lineBreakMode = .byTruncatingTail
-        iconLabel.numberOfLines = 0
-        iconLabel.textAlignment = .center
 
         timeLabel.lineBreakMode = .byTruncatingTail
         timeLabel.numberOfLines = 1
@@ -132,7 +145,8 @@ class CourseCell: UITableViewCell {
             termLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 10)
 
             iconLabel.autoPinEdge(.leading, to: .leading, of: termLabel)
-            iconLabel.autoAlignAxis(.horizontal, toSameAxisOf: termLabel, withOffset: 45)
+            iconLabel.autoSetDimensions(to: CGSize(width: 32, height: 32))
+            iconLabel.autoAlignAxis(.horizontal, toSameAxisOf: termLabel, withOffset: 40)
 
             timeLabel.autoPinEdge(.top, to: .bottom, of: termLabel, withOffset: 10)
             timeLabel.autoPinEdge(.leading, to: .trailing, of: iconLabel, withOffset: 10)

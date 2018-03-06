@@ -88,7 +88,7 @@ extension CourseViewController: UITableViewDelegate {
         if (indexPath as NSIndexPath).row < 2 {
             return 150
         } else {
-            return 110
+            return 98
         }
     }
 
