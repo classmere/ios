@@ -1,4 +1,5 @@
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -10,6 +11,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let store = Store(provider: URLSessionProvider())
         let homeViewController = HomeViewController(store: store)
         let navigationController = UINavigationController(rootViewController: homeViewController)
+
+        if let path = Bundle.main.path(forResource: "Keys", ofType: "plist"),
+            let keys = NSDictionary(contentsOfFile: path) as? [String: String],
+            let googleMapsAPIKey = keys["Google Maps API"] {
+            GMSServices.provideAPIKey(googleMapsAPIKey)
+        }
 
         UINavigationBar.appearance().isTranslucent = false
 

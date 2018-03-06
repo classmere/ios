@@ -24,7 +24,11 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Classmere"
+
+        let attributedLabel = UILabel()
+        attributedLabel.attributedText = Theme.classmereLogo(withSize: 17)
+        navigationItem.titleView = attributedLabel
+
         navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "",
                                                                 style: .plain,
                                                                 target: nil,

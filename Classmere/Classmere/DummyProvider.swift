@@ -6,7 +6,6 @@ enum DummyProviderError: Error {
 }
 
 struct DummyProvider: Provider {
-
     fileprivate let decoder = JSONDecoder()
 
     init() {

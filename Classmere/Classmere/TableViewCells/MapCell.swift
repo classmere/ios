@@ -1,15 +1,67 @@
 import UIKit
 import PureLayout
-import MapKit
+import GoogleMaps
+
+struct MapCellPoint {
+    let buildingName: String?
+    let buildingCode: String
+    let roomNumber: Int?
+    let latitude: Double
+    let longitude: Double
+    let type: String
+}
+
+extension MapCellPoint: Equatable {
+    static func == (lhs: MapCellPoint, rhs: MapCellPoint) -> Bool {
+        return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
+}
+
+extension MapCellPoint: Hashable {
+    var hashValue: Int {
+        return latitude.hashValue ^ longitude.hashValue
+    }
+}
 
 extension UpdatableCell where Self: MapCell {
-    func update(with model: Building) {
-        if let latitude = model.latitude, let longitude = model.longitude {
-            navigateTo(latitude: Double(latitude), longitude: Double(longitude))
-            isUserInteractionEnabled = false
-            selectionStyle = .none
-            updateConstraintsIfNeeded()
+    func update(with model: [MapCellPoint]) {
+        let northmostPoint = model.map { $0.latitude }.max()
+        let southmostPoint = model.map { $0.latitude }.min()
+        let eastmostPoint = model.map { $0.longitude }.max()
+        let westmostPoint = model.map { $0.longitude }.min()
+
+        if let north = northmostPoint, let south = southmostPoint, let east = eastmostPoint, let west = westmostPoint {
+            let northEastBound = CLLocationCoordinate2D(latitude: north, longitude: east)
+            let southWestBound = CLLocationCoordinate2D(latitude: south, longitude: west)
+            let bounds = GMSCoordinateBounds(coordinate: northEastBound, coordinate: southWestBound)
+            let insets = UIEdgeInsets(top: 50, left: 10, bottom: 10, right: 10)
+            if let camera = mapView.camera(for: bounds, insets: insets) {
+                mapView.camera = camera
+            } else { print("MapCell error: invalid bounds \(bounds)") }
         }
+
+        for point in model {
+            let position = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+            let marker = GMSMarker(position: position)
+
+            if let buildingName = point.buildingName, let roomNumber = point.roomNumber {
+                marker.title = "\(point.type): \(buildingName) \(roomNumber)"
+            } else {
+                marker.title = point.type
+            }
+
+            switch point.type.lowercased() {
+            case "laboratory", "lab": marker.icon = GMSMarker.markerImage(with: Theme.Color.green.uicolor)
+            case "recitation": marker.icon = GMSMarker.markerImage(with: Theme.Color.blue.uicolor)
+            case "studio": marker.icon = GMSMarker.markerImage(with: Theme.Color.brown.uicolor)
+            default: marker.icon = GMSMarker.markerImage(with: Theme.Color.red.uicolor)
+            }
+
+            marker.map = mapView
+        }
+
+        selectionStyle = .none
+        updateConstraintsIfNeeded()
     }
 }
 
@@ -17,91 +69,35 @@ extension MapCell: UpdatableCell {}
 
 class MapCell: UITableViewCell {
 
-    var didSetupConstraints = false
-
-    let mapView: MKMapView = MKMapView.newAutoLayout()
-    let schoolZoomSpan = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-    let buildingZoomSpan = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-    let schoolCoordinates = CLLocationCoordinate2D(latitude: 44.563849, longitude: -123.279498)
-
-    var pinLocation: MKPlacemark?
-
-    // MARK: - Initialization
+    let mapView = GMSMapView()
+    let schoolCoordinates = (44.563849, -123.279498)
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupViews()
+        let camera = GMSCameraPosition.camera(withLatitude: schoolCoordinates.0,
+                                              longitude: schoolCoordinates.1,
+                                              zoom: 13)
+        mapView.setMinZoom(3, maxZoom: 16)
+        mapView.frame = contentView.frame
+        mapView.camera = camera
+        contentView.addSubview(mapView)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupViews()
-    }
-
-    // MARK: - Setup
-
-    func setupViews() {
-        let schoolCoordinateRegion = MKCoordinateRegion(center: schoolCoordinates, span: schoolZoomSpan)
-        mapView.setRegion(schoolCoordinateRegion, animated: false)
-
-        contentView.addSubview(mapView)
-    }
-
-    /**
-     Set up map region and pin.
-     
-     - Parameter address: The address of the building.
-     */
-    func navigateToAddress(_ address: String?) {
-        if let address = address {
-            let geoCoder = CLGeocoder()
-            geoCoder.geocodeAddressString(address) { placemarks, _ in
-                if placemarks != nil {
-                    if let placemark = placemarks?.first, let placemarkRegion = placemark.region as? CLCircularRegion {
-                        let mapKitPlacemark = MKPlacemark(placemark: placemark)
-                        var currentCoordinateRegion = self.mapView.region
-                        currentCoordinateRegion.center = placemarkRegion.center
-                        currentCoordinateRegion.span = self.buildingZoomSpan
-                        self.mapView.setRegion(currentCoordinateRegion, animated: true)
-                        self.mapView.addAnnotation(mapKitPlacemark)
-                        self.pinLocation = mapKitPlacemark
-                    }
-                }
-            }
-        }
-    }
-
-    func navigateTo(latitude: Double, longitude: Double) {
-        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let mapKitCoordinateRegion = MKCoordinateRegion(center: coordinate, span: schoolZoomSpan)
-        let mapKitAnnotation = MKPointAnnotation()
-        mapKitAnnotation.coordinate = coordinate
-
-        mapView.setRegion(mapKitCoordinateRegion, animated: true)
-        mapView.addAnnotation(mapKitAnnotation)
     }
 
     // Open maps app with location.
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let pinLocation = pinLocation {
-            let mapItem = MKMapItem(placemark: pinLocation)
-            mapItem.name = "Course Location"
-            mapItem.openInMaps(launchOptions: nil)
-        }
     }
 
     // MARK: - Layout
 
     override func updateConstraints() {
-        if !didSetupConstraints {
-            NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
-                mapView.autoSetContentCompressionResistancePriority(for: .vertical)
-            }
-
-            mapView.autoPinEdgesToSuperviewEdges()
-
-            didSetupConstraints = true
+        NSLayoutConstraint.autoSetPriority(UILayoutPriority.required) {
+            mapView.autoSetContentCompressionResistancePriority(for: .vertical)
         }
+        mapView.autoPinEdgesToSuperviewEdges()
 
         super.updateConstraints()
     }
