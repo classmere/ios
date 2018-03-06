@@ -1,0 +1,29 @@
+default_platform(:ios)
+
+platform :ios do
+
+  before_each do
+    cocoapods
+  end
+
+  desc "Generate new screenshots"
+  lane :screenshots do
+    capture_screenshots(
+      scheme: "Classmere",
+      clear_previous_screenshots: true,
+      languages: ["en-US"],
+      devices: [
+        "iPhone 5s",
+        "iPhone 8",
+        "iPhone 8 Plus",
+        "iPhone X"
+      ]
+    )
+  end
+
+  desc "Test the app"
+  lane :test do
+    run_tests scheme: "Classmere"
+  end
+
+end

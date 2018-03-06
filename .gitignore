@@ -1,7 +1,6 @@
 #####=== Swift ===#####
 
 # Xcode
-#
 build/
 *.pbxuser
 !default.pbxuser
@@ -22,13 +21,19 @@ DerivedData
 # CocoaPods
 Pods/
 
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
 #####=== OSX ===#####
 .DS_Store
 .AppleDouble
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
@@ -44,5 +49,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+#####=== Other ===#####
 # API Keys
 Keys.plist

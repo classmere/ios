@@ -2,18 +2,26 @@ import XCTest
 
 class ClassmereUITests: XCTestCase {
 
+    let app = XCUIApplication()
+
     override func setUp() {
-        super.setUp()
+        setupSnapshot(app)
+        app.launch()
     }
 
-    override func tearDown() {
-        super.tearDown()
-    }
+    func testGatherScreenshots() {
+        snapshot("0home")
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssertTrue(true)
-    }
+        app.buttons["Search"].tap()
+        app.searchFields.element.typeText("CS 161")
+        _ = app.tables.cells.staticTexts["CS 161 INTRODUCTION TO COMPUTER SCIENCE I"].waitForExistence(timeout: 5)
+        snapshot("1search")
 
+        app.tables.cells.staticTexts["CS 161 INTRODUCTION TO COMPUTER SCIENCE I"].tap()
+        snapshot("2course")
+
+        _ = app.tables.cells.staticTexts["Lecture"].waitForExistence(timeout: 5)
+        app.tables.cells.staticTexts["Lecture"].firstMatch.tap()
+        snapshot("3section")
+    }
 }
