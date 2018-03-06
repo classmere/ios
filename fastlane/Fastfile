@@ -26,4 +26,28 @@ platform :ios do
     run_tests scheme: "Classmere"
   end
 
+  desc "Generate API Keys plist"
+  lane :keys do
+    plist_path = "./Classmere/Classmere/Keys.plist"
+    plist_base = <<-EOS
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+</dict>
+</plist>
+EOS
+
+    File.open("../Classmere/Classmere/Keys.plist", 'w') { |file| file.puts plist_base }
+    google_api_key = prompt(
+      text: "Enter your Google Maps API Key: ",
+      ci_input: " "
+    )
+    set_info_plist_value(
+      path: plist_path,
+      key: "Google Maps API",
+      value: google_api_key
+    )
+  end
+
 end

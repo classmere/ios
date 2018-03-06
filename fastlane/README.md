@@ -26,6 +26,11 @@ Generate new screenshots
 fastlane ios test
 ```
 Test the app
+### ios keys
+```
+fastlane ios keys
+```
+Generate API Keys plist
 
 ----
 
