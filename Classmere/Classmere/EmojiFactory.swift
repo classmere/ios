@@ -255,29 +255,6 @@ struct EmojiFactory {
         return "🏫"
     }
 
-    /**
-     Returns emoji for a section type
-     
-     - Parameter type: Type of a section
-     - Returns: An emoji string
-     */
-    static func emojiFromSectionType(_ type: String?) -> String {
-        if let sectionType = type {
-            switch sectionType {
-            case "Lecture":
-                return "🗣"
-            case "Laboratory":
-                return "🔬"
-            case "Recitation":
-                return "✏️"
-            default:
-                return "📓"
-            }
-        }
-
-        return "📓"
-    }
-
     static func emojiFromSectionProperty(_ property: String) -> String {
         switch property {
         case "Days":

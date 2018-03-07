@@ -87,8 +87,6 @@ class CourseDetailsCell: UITableViewCell {
             descriptionLabel.autoPinEdge(.top, to: .bottom, of: creditsLabel, withOffset: 10)
             descriptionLabel.autoPinEdge(toSuperviewEdge: .leading, withInset: 10)
             descriptionLabel.autoPinEdge(toSuperviewEdge: .trailing, withInset: 10)
-
-            // FIXME: Multiple constraints error here
             descriptionLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: 10)
 
             didSetupConstraints = true

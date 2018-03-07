@@ -2,10 +2,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var homeView: HomeView!
     let store: Store
-    var didSetupConstraints = false
 
+    var homeView: HomeView!
     var tableView: UITableView!
     var tableViewDataSource: TableViewDataSource!
 
@@ -22,6 +21,12 @@ class HomeViewController: UIViewController {
 
     // MARK: - View Lifecycle
 
+    override func loadView() {
+        homeView = HomeView()
+        view = homeView
+        tableView = homeView.tableView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,27 +38,11 @@ class HomeViewController: UIViewController {
                                                                 style: .plain,
                                                                 target: nil,
                                                                 action: nil)
-        homeView = HomeView.newAutoLayout()
-        tableView = homeView.tableView
         tableViewDataSource = TableViewDataSource(tableView: tableView)
         tableView.delegate = self
         tableView.dataSource = tableViewDataSource
         homeView.searchBar.delegate = self
-        view.addSubview(homeView)
         view.setNeedsUpdateConstraints()
-    }
-
-    // MARK: - Layout
-
-    override func updateViewConstraints() {
-        if !didSetupConstraints {
-            homeView.autoPin(toTopLayoutGuideOf: self, withInset: 0)
-            homeView.autoPin(toBottomLayoutGuideOf: self, withInset: 0)
-            homeView.autoPinEdge(toSuperviewEdge: .leading)
-            homeView.autoPinEdge(toSuperviewEdge: .trailing)
-            didSetupConstraints = true
-        }
-        super.updateViewConstraints()
     }
 
 }
@@ -78,7 +67,7 @@ extension HomeViewController: UISearchBarDelegate {
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
-        homeView.dismissSearchBar(searchBar)
+        homeView.dismissSearchBar()
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
