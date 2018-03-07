@@ -4,7 +4,7 @@ class HomeViewController: UIViewController {
 
     let store: Store
 
-    let homeView = HomeView.newAutoLayout()
+    var homeView: HomeView!
     var tableView: UITableView!
     var tableViewDataSource: TableViewDataSource!
 
@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     // MARK: - View Lifecycle
 
     override func loadView() {
+        homeView = HomeView()
         view = homeView
         tableView = homeView.tableView
     }
@@ -42,16 +43,6 @@ class HomeViewController: UIViewController {
         tableView.dataSource = tableViewDataSource
         homeView.searchBar.delegate = self
         view.setNeedsUpdateConstraints()
-    }
-
-    // MARK: - Layout
-
-    override func updateViewConstraints() {
-        homeView.autoPin(toTopLayoutGuideOf: self, withInset: 0)
-        homeView.autoPin(toBottomLayoutGuideOf: self, withInset: 0)
-        homeView.autoPinEdge(toSuperviewEdge: .leading)
-        homeView.autoPinEdge(toSuperviewEdge: .trailing)
-        super.updateViewConstraints()
     }
 
 }

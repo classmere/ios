@@ -12,6 +12,8 @@ final class HomeView: UIView {
     var searchButtonWidthConstraint: NSLayoutConstraint?
     var searchButtonEdgeConstraint: NSLayoutConstraint?
 
+    var didSetupConstraints = false
+
     // MARK: - Initialization
 
     override init(frame: CGRect) {
@@ -35,12 +37,19 @@ final class HomeView: UIView {
 
     private func setupSearchBar() {
         searchBar.showsCancelButton = true
+        searchBar.isTranslucent = false
         searchBar.alpha = 0
         searchBar.backgroundColor = darkColor
         searchBar.barTintColor = darkColor
+        searchBar.tintColor = Theme.Color.blue.uicolor
 
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.backgroundColor = darkColor
+
+        let cancelButtonAttributes: NSDictionary = [NSAttributedStringKey.foregroundColor: Theme.Color.blue.uicolor]
+        UIBarButtonItem.appearance()
+            .setTitleTextAttributes(cancelButtonAttributes as? [NSAttributedStringKey : AnyObject],
+                                    for: UIControlState())
 
         addSubview(searchBar)
     }
@@ -51,6 +60,7 @@ final class HomeView: UIView {
         searchButton.setTitle("Search", for: UIControlState())
         searchButton.setTitleColor(.black, for: .normal)
         searchButton.backgroundColor = darkColor
+//        searchButton.layer.cornerRadius = 4
         addSubview(searchButton)
     }
 
@@ -62,19 +72,21 @@ final class HomeView: UIView {
     // MARK: - Layout
 
     override func updateConstraints() {
-        searchBar.autoAlignAxis(toSuperviewAxis: .vertical)
-        searchBar.autoSetDimension(.height, toSize: 50)
-        searchBar.autoMatch(.width, to: .width, of: self)
-        searchBar.autoPinEdge(toSuperviewEdge: .top)
+        if !didSetupConstraints {
+            searchBar.autoAlignAxis(toSuperviewAxis: .vertical)
+            searchBar.autoSetDimension(.height, toSize: 50)
+            searchBar.autoMatch(.width, to: .width, of: self)
+            searchBar.autoPinEdge(toSuperviewEdge: .top)
 
-        searchButton.autoSetDimension(.height, toSize: 60)
-        searchButton.autoAlignAxis(toSuperviewAxis: .vertical)
+            searchButton.autoSetDimension(.height, toSize: 60)
+            searchButton.autoAlignAxis(toSuperviewAxis: .vertical)
 
-        tableView.autoAlignAxis(toSuperviewAxis: .vertical)
-        tableView.autoPinEdge(toSuperviewEdge: .leading)
-        tableView.autoPinEdge(toSuperviewEdge: .trailing)
-        tableView.autoPinEdge(toSuperviewEdge: .bottom)
-        tableView.autoPinEdge(.top, to: .bottom, of: searchBar)
+            tableView.autoAlignAxis(toSuperviewAxis: .vertical)
+            tableView.autoPinEdge(toSuperviewEdge: .leading)
+            tableView.autoPinEdge(toSuperviewEdge: .trailing)
+            tableView.autoPinEdge(toSuperviewEdge: .bottom)
+            tableView.autoPinEdge(.top, to: .bottom, of: searchBar)
+        }
 
         searchButtonWidthConstraint?.autoRemove()
         searchButtonEdgeConstraint?.autoRemove()
