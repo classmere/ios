@@ -1,12 +1,9 @@
 import UIKit
 import PureLayout
 
-class HomeView: UIView {
+final class HomeView: UIView {
 
     let darkColor: UIColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-    let lightBlueColor: UIColor = UIColor(red: 0.24, green: 0.73, blue: 0.94, alpha: 1.0)
-
-    var didSetupConstraints = false
 
     var searchBarTop = false
     let searchBar = UISearchBar.newAutoLayout()
@@ -29,32 +26,26 @@ class HomeView: UIView {
 
     // MARK: - Setup
 
-    func setupViews() {
+    private func setupViews() {
         self.backgroundColor = .white
         setupSearchBar()
         setupSearchButton()
         setupTableView()
     }
 
-    func setupSearchBar() {
+    private func setupSearchBar() {
         searchBar.showsCancelButton = true
         searchBar.alpha = 0
         searchBar.backgroundColor = darkColor
         searchBar.barTintColor = darkColor
-        searchBar.tintColor = lightBlueColor
 
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.backgroundColor = darkColor
 
-        let cancelButtonAttributes: NSDictionary = [NSAttributedStringKey.foregroundColor: lightBlueColor]
-        UIBarButtonItem.appearance()
-            .setTitleTextAttributes(cancelButtonAttributes as? [NSAttributedStringKey : AnyObject],
-                                    for: UIControlState())
-
         addSubview(searchBar)
     }
 
-    func setupSearchButton() {
+    private func setupSearchButton() {
         searchButton.translatesAutoresizingMaskIntoConstraints = false
         searchButton.addTarget(self, action: #selector(HomeView.searchClicked(_:)), for: .touchUpInside)
         searchButton.setTitle("Search", for: UIControlState())
@@ -63,7 +54,7 @@ class HomeView: UIView {
         addSubview(searchButton)
     }
 
-    func setupTableView() {
+    private func setupTableView() {
         tableView.alpha = 0
         addSubview(tableView)
     }
@@ -71,23 +62,19 @@ class HomeView: UIView {
     // MARK: - Layout
 
     override func updateConstraints() {
-        if !didSetupConstraints {
-            searchBar.autoAlignAxis(toSuperviewAxis: .vertical)
-            searchBar.autoSetDimension(.height, toSize: 50)
-            searchBar.autoMatch(.width, to: .width, of: self)
-            searchBar.autoPinEdge(toSuperviewEdge: .top)
+        searchBar.autoAlignAxis(toSuperviewAxis: .vertical)
+        searchBar.autoSetDimension(.height, toSize: 50)
+        searchBar.autoMatch(.width, to: .width, of: self)
+        searchBar.autoPinEdge(toSuperviewEdge: .top)
 
-            searchButton.autoSetDimension(.height, toSize: 60)
-            searchButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        searchButton.autoSetDimension(.height, toSize: 60)
+        searchButton.autoAlignAxis(toSuperviewAxis: .vertical)
 
-            tableView.autoAlignAxis(toSuperviewAxis: .vertical)
-            tableView.autoPinEdge(toSuperviewEdge: .leading)
-            tableView.autoPinEdge(toSuperviewEdge: .trailing)
-            tableView.autoPinEdge(toSuperviewEdge: .bottom)
-            tableView.autoPinEdge(.top, to: .bottom, of: searchBar)
-
-            didSetupConstraints = true
-        }
+        tableView.autoAlignAxis(toSuperviewAxis: .vertical)
+        tableView.autoPinEdge(toSuperviewEdge: .leading)
+        tableView.autoPinEdge(toSuperviewEdge: .trailing)
+        tableView.autoPinEdge(toSuperviewEdge: .bottom)
+        tableView.autoPinEdge(.top, to: .bottom, of: searchBar)
 
         searchButtonWidthConstraint?.autoRemove()
         searchButtonEdgeConstraint?.autoRemove()
