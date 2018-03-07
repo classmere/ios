@@ -21,12 +21,14 @@ xcode-select --install
 ```
 
 The following commands will set up and launch Classmere, assuming `bundler`
-and Xcode are installed.
+and Xcode are installed. You will be prompted for a Google Maps API key. If
+you don't have one, just type something in and the app will run, but the maps
+won't show any features.
 
 ```bash
 git clone https://github.com/classmere/ios.git
 cd ios
 bundle install
-bundle exec pod install
+bundle exec fastlane keys
 open Classmere.xcworkspace
 ```

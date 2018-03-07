@@ -1,0 +1,53 @@
+default_platform(:ios)
+
+platform :ios do
+
+  before_each do
+    cocoapods
+  end
+
+  desc "Generate new screenshots"
+  lane :screenshots do
+    capture_screenshots(
+      scheme: "Classmere",
+      clear_previous_screenshots: true,
+      languages: ["en-US"],
+      devices: [
+        "iPhone 5s",
+        "iPhone 8",
+        "iPhone 8 Plus",
+        "iPhone X"
+      ]
+    )
+  end
+
+  desc "Test the app"
+  lane :test do
+    run_tests scheme: "Classmere"
+  end
+
+  desc "Generate API Keys plist"
+  lane :keys do
+    plist_path = "./Classmere/Classmere/Keys.plist"
+    plist_base = <<-EOS
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+</dict>
+</plist>
+EOS
+
+    File.open("../Classmere/Classmere/Keys.plist", 'w') { |file| file.puts plist_base }
+    google_api_key = prompt(
+      text: "Enter your Google Maps API Key: ",
+      ci_input: " "
+    )
+    set_info_plist_value(
+      path: plist_path,
+      key: "Google Maps API",
+      value: google_api_key
+    )
+  end
+
+end
