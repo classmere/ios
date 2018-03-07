@@ -67,7 +67,7 @@ extension HomeViewController: UISearchBarDelegate {
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
-        homeView.dismissSearchBar(searchBar)
+        homeView.dismissSearchBar()
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

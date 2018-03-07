@@ -105,24 +105,24 @@ final class HomeView: UIView {
     // MARK: - User Interaction
 
     @objc func searchClicked(_ sender: UIButton!) {
-        showSearchBar(searchBar)
+        showSearchBar()
     }
 
     // MARK: - Animation
 
-    func showSearchBar(_ searchBar: UISearchBar) {
+    func showSearchBar() {
         searchBarTop = true
 
         setNeedsUpdateConstraints()
         updateConstraintsIfNeeded()
 
         UIView.animate(withDuration: 0.3, animations: {
-                                    searchBar.becomeFirstResponder()
+                                    self.searchBar.becomeFirstResponder()
                                     self.layoutIfNeeded()
             }, completion: { _ in
                 UIView.animate(withDuration: 0.2,
                     animations: {
-                        searchBar.alpha = 1
+                        self.searchBar.alpha = 1
                         self.tableView.alpha = 1
                         self.searchButton.alpha = 0
                     }
@@ -131,12 +131,12 @@ final class HomeView: UIView {
         )
     }
 
-    func dismissSearchBar(_ searchBar: UISearchBar) {
+    func dismissSearchBar() {
         searchBarTop = false
 
         UIView.animate(withDuration: 0.2,
                                    animations: {
-                                    searchBar.alpha = 0
+                                    self.searchBar.alpha = 0
                                     self.tableView.alpha = 0
                                     self.searchButton.alpha = 1
             }, completion: { _ in
@@ -144,7 +144,7 @@ final class HomeView: UIView {
                 self.updateConstraintsIfNeeded()
                 UIView.animate(withDuration: 0.3,
                     animations: {
-                        searchBar.resignFirstResponder()
+                        self.searchBar.resignFirstResponder()
                         self.layoutIfNeeded()
                     }
                 )
