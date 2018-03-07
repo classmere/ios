@@ -2,4 +2,5 @@ language: objective-c
 osx_image: xcode9.2
 install:
   - bundle install
+before_script: bundle exec fastlane keys
 script: bundle exec fastlane test
