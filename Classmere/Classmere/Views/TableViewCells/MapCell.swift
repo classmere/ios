@@ -1,6 +1,7 @@
 import UIKit
 import PureLayout
 import GoogleMaps
+import MapKit
 
 struct MapCellPoint {
     let buildingName: String?
@@ -45,7 +46,9 @@ extension UpdatableCell where Self: MapCell {
             let marker = GMSMarker(position: position)
 
             if let roomNumber = point.roomNumber {
-                marker.title = "\(point.buildingCode) \(roomNumber)"
+                marker.title = "\(point.type): \(point.buildingCode) \(roomNumber)"
+            } else {
+                marker.title = "\(point.type): \(point.buildingCode)"
             }
             marker.snippet = "Tap for navigation"
 
@@ -113,6 +116,25 @@ extension MapCell: GMSMapViewDelegate {
     }
 
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        
+        let lat = marker.position.latitude
+        let long = marker.position.longitude
+        let zoom = Int(mapView.camera.zoom)
+        guard let googleMapsURL = URL(string: "comgooglemaps://?q=\(lat),\(long)&center=\(lat),\(long)&zoom=\(zoom)") else {
+            return openInAppleMaps(coordinate: marker.position)
+        }
+
+        print("Google maps url: \(googleMapsURL)")
+        UIApplication.shared.open(googleMapsURL, options: [:]) { success in
+            if !success {
+                self.openInAppleMaps(coordinate: marker.position)
+            }
+        }
     }
+
+    private func openInAppleMaps(coordinate: CLLocationCoordinate2D, name: String? = "Course Location") {
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
+        mapItem.name = name
+        mapItem.openInMaps()
+    }
+
 }
