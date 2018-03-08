@@ -44,11 +44,10 @@ extension UpdatableCell where Self: MapCell {
             let position = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
             let marker = GMSMarker(position: position)
 
-            if let buildingName = point.buildingName, let roomNumber = point.roomNumber {
-                marker.title = "\(point.type): \(buildingName) \(roomNumber)"
-            } else {
-                marker.title = point.type
+            if let roomNumber = point.roomNumber {
+                marker.title = "\(point.buildingCode) \(roomNumber)"
             }
+            marker.snippet = "Tap for navigation"
 
             switch point.type.lowercased() {
             case "laboratory", "lab": marker.icon = GMSMarker.markerImage(with: Theme.Color.green.uicolor)
@@ -67,7 +66,7 @@ extension UpdatableCell where Self: MapCell {
 
 extension MapCell: UpdatableCell {}
 
-class MapCell: UITableViewCell {
+final class MapCell: UITableViewCell {
 
     let mapView = GMSMapView()
     let schoolCoordinates = (44.563849, -123.279498)
@@ -80,15 +79,12 @@ class MapCell: UITableViewCell {
         mapView.setMinZoom(3, maxZoom: 16)
         mapView.frame = contentView.frame
         mapView.camera = camera
+        mapView.delegate = self
         contentView.addSubview(mapView)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-
-    // Open maps app with location.
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     }
 
     // MARK: - Layout
@@ -100,5 +96,21 @@ class MapCell: UITableViewCell {
         mapView.autoPinEdgesToSuperviewEdges()
 
         super.updateConstraints()
+    }
+}
+
+extension MapCell: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        mapView.selectedMarker = marker
+        var animationTargetPoint = mapView.projection.point(for: marker.position)
+        animationTargetPoint.y -= 50
+        let animationTargetCoordinate = mapView.projection.coordinate(for: animationTargetPoint)
+        let cameraUpdate = GMSCameraUpdate.setTarget(animationTargetCoordinate)
+        mapView.animate(with: cameraUpdate)
+        return true
+    }
+
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+
     }
 }
