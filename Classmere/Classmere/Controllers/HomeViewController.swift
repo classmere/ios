@@ -4,6 +4,8 @@ class HomeViewController: UIViewController {
 
     let store: Store
 
+    var reachability: Reachability?
+
     var homeView: HomeView!
     var tableView: UITableView!
     var tableViewDataSource: TableViewDataSource!
@@ -43,6 +45,9 @@ class HomeViewController: UIViewController {
         tableView.dataSource = tableViewDataSource
         homeView.searchBar.delegate = self
         view.setNeedsUpdateConstraints()
+
+        reachability = Reachability()
+        reachability?.onConnectionChange = { print("CONNECTION CHANGED: \($0)") }
     }
 
 }
