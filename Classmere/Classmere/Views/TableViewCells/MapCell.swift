@@ -1,6 +1,7 @@
 import UIKit
 import PureLayout
 import GoogleMaps
+import MapKit
 
 struct MapCellPoint {
     let buildingName: String?
@@ -44,11 +45,12 @@ extension UpdatableCell where Self: MapCell {
             let position = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
             let marker = GMSMarker(position: position)
 
-            if let buildingName = point.buildingName, let roomNumber = point.roomNumber {
-                marker.title = "\(point.type): \(buildingName) \(roomNumber)"
+            if let roomNumber = point.roomNumber {
+                marker.title = "\(point.type): \(point.buildingCode) \(roomNumber)"
             } else {
-                marker.title = point.type
+                marker.title = "\(point.type): \(point.buildingCode)"
             }
+            marker.snippet = "Tap for navigation"
 
             switch point.type.lowercased() {
             case "laboratory", "lab": marker.icon = GMSMarker.markerImage(with: Theme.Color.green.uicolor)
@@ -67,7 +69,7 @@ extension UpdatableCell where Self: MapCell {
 
 extension MapCell: UpdatableCell {}
 
-class MapCell: UITableViewCell {
+final class MapCell: UITableViewCell {
 
     let mapView = GMSMapView()
     let schoolCoordinates = (44.563849, -123.279498)
@@ -79,16 +81,15 @@ class MapCell: UITableViewCell {
                                               zoom: 13)
         mapView.setMinZoom(3, maxZoom: 16)
         mapView.frame = contentView.frame
+        mapView.settings.rotateGestures = false
+        mapView.settings.tiltGestures = false
         mapView.camera = camera
+        mapView.delegate = self
         contentView.addSubview(mapView)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    }
-
-    // Open maps app with location.
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     }
 
     // MARK: - Layout
@@ -101,4 +102,39 @@ class MapCell: UITableViewCell {
 
         super.updateConstraints()
     }
+}
+
+extension MapCell: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        mapView.selectedMarker = marker
+        var animationTargetPoint = mapView.projection.point(for: marker.position)
+        animationTargetPoint.y -= 50
+        let animationTargetCoordinate = mapView.projection.coordinate(for: animationTargetPoint)
+        let cameraUpdate = GMSCameraUpdate.setTarget(animationTargetCoordinate)
+        mapView.animate(with: cameraUpdate)
+        return true
+    }
+
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        let lat = marker.position.latitude
+        let long = marker.position.longitude
+        let zoom = Int(mapView.camera.zoom)
+        guard let googleMapsURL = URL(string: "comgooglemaps://?q=\(lat),\(long)&center=\(lat),\(long)&zoom=\(zoom)") else {
+            return openInAppleMaps(coordinate: marker.position)
+        }
+
+        print("Google maps url: \(googleMapsURL)")
+        UIApplication.shared.open(googleMapsURL, options: [:]) { success in
+            if !success {
+                self.openInAppleMaps(coordinate: marker.position)
+            }
+        }
+    }
+
+    private func openInAppleMaps(coordinate: CLLocationCoordinate2D, name: String? = "Course Location") {
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate))
+        mapItem.name = name
+        mapItem.openInMaps()
+    }
+
 }
