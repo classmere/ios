@@ -78,6 +78,8 @@ final class MapCell: UITableViewCell {
                                               zoom: 13)
         mapView.setMinZoom(3, maxZoom: 16)
         mapView.frame = contentView.frame
+        mapView.settings.rotateGestures = false
+        mapView.settings.tiltGestures = false
         mapView.camera = camera
         mapView.delegate = self
         contentView.addSubview(mapView)
@@ -111,6 +113,6 @@ extension MapCell: GMSMapViewDelegate {
     }
 
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-
+        
     }
 }
