@@ -119,12 +119,11 @@ extension MapCell: GMSMapViewDelegate {
         let lat = marker.position.latitude
         let long = marker.position.longitude
         let zoom = Int(mapView.camera.zoom)
-        guard let googleMapsURL = URL(string: "comgooglemaps://?q=\(lat),\(long)&center=\(lat),\(long)&zoom=\(zoom)") else {
+        guard let url = URL(string: "comgooglemaps://?q=\(lat),\(long)&center=\(lat),\(long)&zoom=\(zoom)") else {
             return openInAppleMaps(coordinate: marker.position)
         }
 
-        print("Google maps url: \(googleMapsURL)")
-        UIApplication.shared.open(googleMapsURL, options: [:]) { success in
+        UIApplication.shared.open(url, options: [:]) { success in
             if !success {
                 self.openInAppleMaps(coordinate: marker.position)
             }
