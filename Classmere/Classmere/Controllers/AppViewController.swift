@@ -26,14 +26,12 @@ final class AppViewController: UIViewController {
     override func viewDidLoad() {
         reachability?.onConnectionChange = { connection in
             if connection == .none {
-                DispatchQueue.main.async {
-                    self.showSnackbar(withMessage: "Disconnected from Internet", duration: 5)
-                }
+                self.showSnackbar(withMessage: "No Internet connection, results may be outdated")
             }
         }
     }
 
-    func showSnackbar(withMessage message: String, duration: TimeInterval) {
+    func showSnackbar(withMessage message: String) {
         MDCSnackbarManager.show(MDCSnackbarMessage(text: message))
     }
 }

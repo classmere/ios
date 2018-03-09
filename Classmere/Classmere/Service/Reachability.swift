@@ -63,7 +63,6 @@ final class Reachability {
                                                    release: nil,
                                                    copyDescription: nil)
         context.info = UnsafeMutableRawPointer(Unmanaged<Reachability>.passUnretained(self).toOpaque())
-        print("started notifying")
         if !SCNetworkReachabilitySetCallback(reachabilityRef, callback, &context) {
             stopNotifying()
         }
@@ -78,7 +77,6 @@ final class Reachability {
         }}
 
     private func stopNotifying() {
-        print("stopped notifying")
         SCNetworkReachabilitySetCallback(reachabilityRef, nil, nil)
         SCNetworkReachabilitySetDispatchQueue(reachabilityRef, nil)
     }
