@@ -7,6 +7,7 @@ target 'Classmere' do
 
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
   pod 'GoogleMaps', '2.5.0'
+  pod 'MaterialComponents/Snackbar'
   pod 'PureLayout'
   pod 'SwiftLint', '0.24'
 

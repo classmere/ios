@@ -7,12 +7,46 @@ PODS:
   - GoogleMaps/Base (2.5.0)
   - GoogleMaps/Maps (2.5.0):
     - GoogleMaps/Base
+  - MaterialComponents/AnimationTiming (46.1.0)
+  - MaterialComponents/Buttons (46.1.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (46.1.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (46.1.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (46.1.0)
+  - MaterialComponents/private/KeyboardWatcher (46.1.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (46.1.0)
+  - MaterialComponents/private/Overlay (46.1.0)
+  - MaterialComponents/ShadowElevations (46.1.0)
+  - MaterialComponents/ShadowLayer (46.1.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Snackbar (46.1.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Typography (46.1.0):
+    - MaterialComponents/private/Application
+  - MDFInternationalization (1.0.4)
+  - MDFTextAccessibility (1.2.0)
   - PureLayout (3.0.2)
   - SwiftLint (0.24.0)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - GoogleMaps (= 2.5.0)
+  - MaterialComponents/Snackbar
   - PureLayout
   - SwiftLint (= 0.24)
 
@@ -28,9 +62,12 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  MaterialComponents: f14582653f35407ff1aef50e705a15c1b0d0b70c
+  MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
+  MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
 
-PODFILE CHECKSUM: bc6cce8cba670a0272764cec13a1bd71297089f4
+PODFILE CHECKSUM: 2f515eaa77bf41962d18f8312029cc45179cd892
 
 COCOAPODS: 1.4.0
