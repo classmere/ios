@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
         tableView.dataSource = tableViewDataSource
         homeView.searchBar.delegate = self
         view.setNeedsUpdateConstraints()
+
     }
 
 }

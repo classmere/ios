@@ -28,7 +28,9 @@
 		47EF37D0250C872C87DBB1F6 /* Pods_Classmere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C9D73E2FE4980DEB8B78F /* Pods_Classmere.framework */; };
 		91C86D7281E4FEC220E9FFD5 /* Pods_ClassmereTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C3B333A7473EBFCDC7EF28 /* Pods_ClassmereTests.framework */; };
 		AC0FD195204E23440044A42B /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0FD194204E23440044A42B /* SnapshotHelper.swift */; };
+		AC2A16F52051FE1B00EC81C7 /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2A16F42051FE1B00EC81C7 /* AppViewController.swift */; };
 		AC36E08E2048C5EB00E136FF /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC36E08D2048C5EB00E136FF /* Theme.swift */; };
+		AC635DA32051C4BD00EC538F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC635DA22051C4BD00EC538F /* Reachability.swift */; };
 		AC778A06202BFAF6001A25C9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A05202BFAF6001A25C9 /* Provider.swift */; };
 		AC778A08202BFB2C001A25C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A07202BFB2C001A25C9 /* Result.swift */; };
 		AC778A0A202C14BE001A25C9 /* CourseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC778A09202C14BE001A25C9 /* CourseTests.swift */; };
@@ -99,7 +101,9 @@
 		3E7034761DB1245B355B0E66 /* Pods-ClassmereTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClassmereTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ClassmereTests/Pods-ClassmereTests.release.xcconfig"; sourceTree = "<group>"; };
 		974759523F0F5369AFB9F6D7 /* Pods-Classmere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Classmere.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Classmere/Pods-Classmere.debug.xcconfig"; sourceTree = "<group>"; };
 		AC0FD194204E23440044A42B /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		AC2A16F42051FE1B00EC81C7 /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		AC36E08D2048C5EB00E136FF /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		AC635DA22051C4BD00EC538F /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		AC778A05202BFAF6001A25C9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		AC778A07202BFB2C001A25C9 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		AC778A09202C14BE001A25C9 /* CourseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTests.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 		162935EB1D5966D0003DF059 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AC2A16F42051FE1B00EC81C7 /* AppViewController.swift */,
 				16D117601D6C07B000CCB807 /* CourseViewController.swift */,
 				160D28571D5C1B67009C0178 /* HomeViewController.swift */,
 				163FAB4D1D7E891500E8E271 /* SectionViewController.swift */,
@@ -298,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB0AE5420213AB0003B1E45 /* API.swift */,
+				AC635DA22051C4BD00EC538F /* Reachability.swift */,
 				ACB0AE5620213AC7003B1E45 /* Store.swift */,
 				AC778A07202BFB2C001A25C9 /* Result.swift */,
 				AC778A05202BFAF6001A25C9 /* Provider.swift */,
@@ -468,11 +474,17 @@
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-Classmere/Pods-Classmere-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +604,7 @@
 				163FAB501D7E90A700E8E271 /* SectionCell.swift in Sources */,
 				160D28521D5C0298009C0178 /* Section.swift in Sources */,
 				ACB0AE5720213AC7003B1E45 /* Store.swift in Sources */,
+				AC635DA32051C4BD00EC538F /* Reachability.swift in Sources */,
 				16BA26B41D7663E100CF8594 /* EmojiFactory.swift in Sources */,
 				16D95F031D643BF800C2E1F7 /* SearchCell.swift in Sources */,
 				ACDC0A9E20228563000A19D1 /* DummyProvider.swift in Sources */,
@@ -606,6 +619,7 @@
 				ACE53E07203F69E90053A0CF /* MeetingTime.swift in Sources */,
 				ACD94421202D1D6900F4B35F /* UpdatableCell.swift in Sources */,
 				160D285A1D5C1BDC009C0178 /* HomeView.swift in Sources */,
+				AC2A16F52051FE1B00EC81C7 /* AppViewController.swift in Sources */,
 				16D94F1F1D73D22F00346D2B /* DataFormatter.swift in Sources */,
 				AC778A06202BFAF6001A25C9 /* Provider.swift in Sources */,
 				160D28581D5C1B67009C0178 /* HomeViewController.swift in Sources */,
