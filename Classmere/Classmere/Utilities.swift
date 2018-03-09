@@ -1,24 +1,13 @@
 import Foundation
 
 /**
- Returns the String representation of an optional or an empty String
-
- - Parameter optional: Any Optional
- - Returns: A String representation of the Object if not null, otherwise an empty String
- */
-func optionalDescriptionOrEmptyString(_ optional: Any?) -> String {
-    if let unwrapped = optional { return String(describing: unwrapped) }
-    return ""
-}
-
-/**
  A model representation of a date formatter.
  */
-struct DataFormatter {
+struct Utilities {
 
     /**
      Returns a user friendly formatted term string
-     
+
      - Parameter term: An unformatted term string (eg. F16)
      - Returns: A formatted term string (eg. Fall 2016)
      */
@@ -50,7 +39,7 @@ struct DataFormatter {
 
     /**
      Parses a title to remove the subject code and course number
-     
+
      - Parameter title: An unformatted title string
      - Returns: Formatted title string
      */
@@ -69,5 +58,26 @@ struct DataFormatter {
         }
 
         return ""
+    }
+
+    /**
+     Returns the String representation of an optional or an empty String
+
+     - Parameter optional: Any Optional
+     - Returns: A String representation of the Object if not null, otherwise an empty String
+     */
+    static func optionalDescriptionOrEmptyString(_ optional: Any?) -> String {
+        if let unwrapped = optional { return String(describing: unwrapped) }
+        return ""
+    }
+
+    /**
+     Sorts an array of strings containing term information, e.g. "W18"
+    */
+    func sortTerms(current: String, next: String) throws -> Bool {
+//        let term1 = current[..<current.endIndex]
+//        let year1 current[current.startIndex...]
+//        let term2 = next[..<next.endIndex]
+        return false
     }
 }
