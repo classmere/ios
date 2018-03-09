@@ -27,8 +27,7 @@ extension Connection: CustomStringConvertible {
 
 final class Reachability {
 
-    let reachabilityRef: SCNetworkReachability
-    var flags: SCNetworkReachabilityFlags?
+    private(set) var flags: SCNetworkReachabilityFlags?
     var connection: Connection {
         guard let flags = flags else { return .none }
         if flags.contains(.reachable) && flags.contains(.isWWAN) {
@@ -40,7 +39,8 @@ final class Reachability {
         }
     }
 
-    fileprivate let reachabilitySerialQueue = DispatchQueue(label: "reachability")
+    private let reachabilityRef: SCNetworkReachability
+    private let reachabilitySerialQueue = DispatchQueue(label: "reachability")
 
     var onConnectionChange: ((Connection) -> Void)? {
         didSet {
