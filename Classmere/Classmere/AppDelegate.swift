@@ -11,6 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let store = Store(provider: URLSessionProvider())
         let homeViewController = HomeViewController(store: store)
         let navigationController = UINavigationController(rootViewController: homeViewController)
+        let appViewController = AppViewController(rootViewController: navigationController)
 
         if let path = Bundle.main.path(forResource: "Keys", ofType: "plist"),
             let keys = NSDictionary(contentsOfFile: path) as? [String: String],
@@ -20,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         UINavigationBar.appearance().isTranslucent = false
 
-        window!.rootViewController = navigationController
+        window!.rootViewController = appViewController
         window!.makeKeyAndVisible()
 
         return true
