@@ -3,7 +3,7 @@ import PureLayout
 
 extension UpdatableCell where Self: SectionCell {
     func update(with model: Section) {
-        termLabel.text = DataFormatter.parseTerm(model.term)
+        termLabel.text = Utilities.parseTerm(model.term)
         if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting day specified"
             let building = meetingTime.buildingCode ?? "No building specified"

@@ -6,6 +6,7 @@ final class CourseViewController: UIViewController {
 
     let tableView = UITableView()
     var tableViewDataSource: TableViewDataSource!
+    var mapCellPoints = [MapCellPoint]()
 
     init(store: Store) {
         self.store = store
@@ -27,13 +28,18 @@ final class CourseViewController: UIViewController {
 
         if let course = course {
             title = course.abbr
-            navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "",
-                                                                    style: .plain,
-                                                                    target: nil,
-                                                                    action: nil)
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                               style: .plain,
+                                                               target: nil,
+                                                            action: nil)
+
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Filter",
+                                                                style: .plain,
+                                                                target: self,
+                                                                action: #selector(filterButtonPressed))
 
             tableViewDataSource = TableViewDataSource(tableView: tableView)
-            tableViewDataSource.rows = [Row<MapCell>(data: [])] +
+            tableViewDataSource.rows = [Row<MapCell>(data: mapCellPoints)] +
                 [Row<CourseDetailsCell>(data: course)] +
                 course.sections.map { Row<CourseCell>(data: $0) }
             tableView.delegate = self
@@ -72,7 +78,8 @@ final class CourseViewController: UIViewController {
                         print("fetchBuildings() error: \(error)")
                     }
                     if inFlightRequests == 0 {
-                        self.tableViewDataSource.rows = [Row<MapCell>(data: Array(mapCellPoints))] +
+                        self.mapCellPoints = Array(mapCellPoints)
+                        self.tableViewDataSource.rows = [Row<MapCell>(data: self.mapCellPoints)] +
                             [Row<CourseDetailsCell>(data: course)] +
                             course.sections.map { Row<CourseCell>(data: $0) }
                     }
@@ -80,6 +87,54 @@ final class CourseViewController: UIViewController {
             }
 
         }
+    }
+
+    @objc func filterButtonPressed(sender: UIBarButtonItem) {
+        guard let course = course else { return }
+        guard let sectionTerms: [String] = {
+            let terms = course.sections.flatMap { $0.term }
+            let uniqueTerms = Set(terms)
+            let sectionTerms = try? Array(uniqueTerms).sorted(by: Utilities.sortTerms)
+            return sectionTerms
+        }() else { return }
+
+        let alert = UIAlertController(title: "Filter term", message: nil, preferredStyle: .actionSheet)
+        defer {
+            let showAllTermsAction = UIAlertAction(
+                title: "All terms",
+                style: .default,
+                handler: { _ in self.filterTableView(term: nil) }
+            )
+            alert.addAction(showAllTermsAction)
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true)
+        }
+
+        guard sectionTerms.count > 1 else { return }
+        let filterCurrentTermAction = UIAlertAction(
+            title: "Current term (\(sectionTerms[0]))",
+            style: .default,
+            handler: { _ in self.filterTableView(term: sectionTerms[0]) }
+        )
+        alert.addAction(filterCurrentTermAction)
+
+        guard sectionTerms.count > 2 else { return }
+        let filterNextTermAction = UIAlertAction(
+            title: "Next term (\(sectionTerms[1]))",
+            style: .default,
+            handler: { _ in self.filterTableView(term: sectionTerms[1]) }
+        )
+        alert.addAction(filterNextTermAction)
+    }
+
+    func filterTableView(term: String?) {
+        guard let course = course else { return }
+        let sections = term == nil ? course.sections : course.sections.filter { $0.term == term }
+        tableViewDataSource.rows = [Row<MapCell>(data: mapCellPoints)] +
+            [Row<CourseDetailsCell>(data: course)] +
+            sections.map { Row<CourseCell>(data: $0) }
     }
 }
 

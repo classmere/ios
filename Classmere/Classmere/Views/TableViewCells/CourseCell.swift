@@ -3,7 +3,7 @@ import PureLayout
 
 extension UpdatableCell where Self: CourseCell {
     func update(with model: Section) {
-        termLabel.text = DataFormatter.parseTerm(model.term)
+        termLabel.text = Utilities.parseTerm(model.term)
 
         switch model.type.lowercased() {
         case "lecture":
@@ -26,7 +26,7 @@ extension UpdatableCell where Self: CourseCell {
         if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting day specified"
             let building = meetingTime.buildingCode ?? "No building specified"
-            let roomNumber = optionalDescriptionOrEmptyString(meetingTime.roomNumber)
+            let roomNumber = Utilities.optionalDescriptionOrEmptyString(meetingTime.roomNumber)
 
             if let startTime = meetingTime.startTime, let endTime = meetingTime.endTime {
                 let dateFormatter = DateFormatter()
