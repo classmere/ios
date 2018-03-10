@@ -91,27 +91,12 @@ final class CourseViewController: UIViewController {
 
     @objc func filterButtonPressed(sender: UIBarButtonItem) {
         guard let course = course else { return }
-        let terms = course.sections.flatMap { $0.term }
-        let uniqueTerms = Set(terms)
-        let sectionTerms = Array(uniqueTerms).sorted(by: { t1, t2 in
-            let t1Term = String(t1[..<t1.index(t1.endIndex, offsetBy: -2)])
-            let t2Term = String(t2[..<t2.index(t2.endIndex, offsetBy: -2)])
-            let t1Year = Int(t1[t1.index(t1.endIndex, offsetBy: -2)...])!
-            let t2Year = Int(t2[t2.index(t2.endIndex, offsetBy: -2)...])!
-
-            if t1Year > t2Year { return false }
-            if t1Year < t2Year { return true }
-
-            let termRawValues = [
-                "W": 0,
-                "Sp": 1,
-                "Su": 2,
-                "F": 3,
-                "T": 4
-            ]
-
-            return termRawValues[t1Term]! < termRawValues[t2Term]!
-        })
+        guard let sectionTerms: [String] = {
+            let terms = course.sections.flatMap { $0.term }
+            let uniqueTerms = Set(terms)
+            let sectionTerms = try? Array(uniqueTerms).sorted(by: Utilities.sortTerms)
+            return sectionTerms
+        }() else { return }
 
         let alert = UIAlertController(title: "Filter term", message: nil, preferredStyle: .actionSheet)
         defer {

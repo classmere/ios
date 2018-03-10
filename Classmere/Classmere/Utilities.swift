@@ -1,5 +1,9 @@
 import Foundation
 
+enum UtilitiesError: Error {
+    case sortTerms(String)
+}
+
 /**
  A model representation of a date formatter.
  */
@@ -73,11 +77,34 @@ struct Utilities {
 
     /**
      Sorts an array of strings containing term information, e.g. "W18"
-    */
-    func sortTerms(current: String, next: String) throws -> Bool {
-//        let term1 = current[..<current.endIndex]
-//        let year1 current[current.startIndex...]
-//        let term2 = next[..<next.endIndex]
-        return false
+     */
+    static func sortTerms(el1: String, el2: String) throws -> Bool {
+        guard el1.count > 2 && el2.count > 2 else {
+            throw  UtilitiesError.sortTerms("Array contains < 3 elements")
+        }
+        guard let el1Year = Int(el1[el1.index(el1.endIndex, offsetBy: -2)...]) else {
+            throw UtilitiesError.sortTerms("Could not parse year from string: \(el1)")
+        }
+        guard let el2Year = Int(el2[el2.index(el2.endIndex, offsetBy: -2)...]) else {
+            throw UtilitiesError.sortTerms("Could not parse year from string: \(el2)")
+        }
+        let el1Term = String(el1[..<el1.index(el1.endIndex, offsetBy: -2)])
+        let el2Term = String(el2[..<el2.index(el2.endIndex, offsetBy: -2)])
+
+        if el1Year > el2Year { return false }
+        if el1Year < el2Year { return true }
+
+        let termRawValues = [
+            "W": 0,
+            "Sp": 1,
+            "Su": 2,
+            "F": 3,
+            "T": 4
+        ]
+
+        if let el1RawValue = termRawValues[el1Term], let el2RawValue = termRawValues[el2Term] {
+            return el1RawValue < el2RawValue
+        }
+        throw UtilitiesError.sortTerms("Array contains invalid terms: \(el1Term), \(el2Term)")
     }
 }
