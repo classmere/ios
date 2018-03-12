@@ -24,7 +24,7 @@ extension UpdatableCell where Self: CourseCell {
         }
 
         if let meetingTime = model.meetingTimes?.first {
-            let days = meetingTime.days ?? "No meeting day specified"
+            let days = meetingTime.days ?? "No meeting times specified"
             let building = meetingTime.buildingCode ?? "No building specified"
             let roomNumber = Utilities.optionalDescriptionOrEmptyString(meetingTime.roomNumber)
 
@@ -56,7 +56,6 @@ extension CourseCell: UpdatableCell {}
 
 class CourseCell: UITableViewCell {
 
-    let darkColor: UIColor = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1.0)
     let separatorColor: UIColor = UIColor(red: 0.783922, green: 0.780392, blue: 0.8, alpha: 1.0)
 
     var didSetupConstraints = false
@@ -95,13 +94,13 @@ class CourseCell: UITableViewCell {
         timeLabel.lineBreakMode = .byTruncatingTail
         timeLabel.numberOfLines = 1
         timeLabel.textAlignment = .left
-        timeLabel.textColor = darkColor
+        timeLabel.textColor = Theme.Color.dark.uicolor
         timeLabel.font = UIFont(name: "HelveticaNeue", size: 13)
 
         instructorLabel.lineBreakMode = .byTruncatingTail
         instructorLabel.numberOfLines = 1
         instructorLabel.textAlignment = .left
-        instructorLabel.textColor = darkColor
+        instructorLabel.textColor = Theme.Color.dark.uicolor
         instructorLabel.font = UIFont(name: "HelveticaNeue", size: 13)
 
         verticalSeparator.backgroundColor = separatorColor
@@ -109,13 +108,13 @@ class CourseCell: UITableViewCell {
         locationLabel.lineBreakMode = .byTruncatingTail
         locationLabel.numberOfLines = 1
         locationLabel.textAlignment = .left
-        locationLabel.textColor = darkColor
+        locationLabel.textColor = Theme.Color.dark.uicolor
         locationLabel.font = UIFont(name: "HelveticaNeue", size: 13)
 
         typeLabel.lineBreakMode = .byClipping
         typeLabel.numberOfLines = 1
         typeLabel.textAlignment = .left
-        typeLabel.textColor = darkColor
+        typeLabel.textColor = Theme.Color.dark.uicolor
         typeLabel.font = UIFont(name: "HelveticaNeue", size: 13)
 
         contentView.addSubview(termLabel)

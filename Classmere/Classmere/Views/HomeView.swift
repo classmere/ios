@@ -3,8 +3,6 @@ import PureLayout
 
 final class HomeView: UIView {
 
-    let darkColor: UIColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
-
     var searchBarTop = false
     let searchBar = UISearchBar.newAutoLayout()
     let searchButton = UIButton(type: .custom)
@@ -39,17 +37,15 @@ final class HomeView: UIView {
         searchBar.showsCancelButton = true
         searchBar.isTranslucent = false
         searchBar.alpha = 0
-        searchBar.backgroundColor = darkColor
-        searchBar.barTintColor = darkColor
-        searchBar.tintColor = Theme.Color.blue.uicolor
+        searchBar.backgroundColor = Theme.Color.searchBar.uicolor
+        searchBar.barTintColor = Theme.Color.searchBar.uicolor
 
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.backgroundColor = darkColor
+        textFieldInsideSearchBar?.backgroundColor = Theme.Color.searchBar.uicolor
 
-        let cancelButtonAttributes: NSDictionary = [NSAttributedStringKey.foregroundColor: Theme.Color.blue.uicolor]
-        UIBarButtonItem.appearance()
-            .setTitleTextAttributes(cancelButtonAttributes as? [NSAttributedStringKey : AnyObject],
-                                    for: UIControlState())
+        let cancelButtonAttributes: [NSAttributedStringKey: AnyObject] = [
+            NSAttributedStringKey.foregroundColor: Theme.Color.appleDefaultBlue.uicolor]
+        UIBarButtonItem.appearance().setTitleTextAttributes(cancelButtonAttributes, for: UIControlState())
 
         addSubview(searchBar)
     }
@@ -59,7 +55,7 @@ final class HomeView: UIView {
         searchButton.addTarget(self, action: #selector(HomeView.searchClicked(_:)), for: .touchUpInside)
         searchButton.setTitle("Search", for: UIControlState())
         searchButton.setTitleColor(.black, for: .normal)
-        searchButton.backgroundColor = darkColor
+        searchButton.backgroundColor = Theme.Color.searchBar.uicolor
 //        searchButton.layer.cornerRadius = 4
         addSubview(searchButton)
     }

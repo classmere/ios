@@ -17,8 +17,6 @@ extension CourseDetailsCell: UpdatableCell {}
 
 class CourseDetailsCell: UITableViewCell {
 
-    let darkColor: UIColor = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1.0)
-
     var didSetupConstraints = false
 
     var titleLabel: UILabel = UILabel.newAutoLayout()
@@ -51,7 +49,7 @@ class CourseDetailsCell: UITableViewCell {
         creditsLabel.lineBreakMode = .byTruncatingTail
         creditsLabel.numberOfLines = 1
         creditsLabel.textAlignment = .left
-        creditsLabel.textColor = darkColor
+        creditsLabel.textColor = Theme.Color.dark.uicolor
         creditsLabel.font = UIFont(name: "HelveticaNeue", size: 13)
 
         descriptionLabel.lineBreakMode = .byTruncatingTail
@@ -59,7 +57,7 @@ class CourseDetailsCell: UITableViewCell {
         descriptionLabel.adjustsFontSizeToFitWidth = true
         descriptionLabel.minimumScaleFactor = 0.1
         descriptionLabel.textAlignment = .left
-        descriptionLabel.textColor = darkColor
+        descriptionLabel.textColor = Theme.Color.dark.uicolor
         descriptionLabel.font = UIFont(name: "HelveticaNeue", size: 13)
 
         contentView.addSubview(titleLabel)
