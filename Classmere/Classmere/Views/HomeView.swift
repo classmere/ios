@@ -53,10 +53,10 @@ final class HomeView: UIView {
     private func setupSearchButton() {
         searchButton.translatesAutoresizingMaskIntoConstraints = false
         searchButton.addTarget(self, action: #selector(HomeView.searchClicked(_:)), for: .touchUpInside)
-        searchButton.setTitle("Search", for: UIControlState())
+        searchButton.setTitle("Search for classes...", for: UIControlState())
         searchButton.setTitleColor(.black, for: .normal)
         searchButton.backgroundColor = Theme.Color.searchBar.uicolor
-//        searchButton.layer.cornerRadius = 4
+        searchButton.layer.cornerRadius = 4
         addSubview(searchButton)
     }
 
@@ -91,7 +91,7 @@ final class HomeView: UIView {
             searchButtonWidthConstraint = searchButton.autoMatch(.width, to: .width, of: self)
             searchButtonEdgeConstraint = searchButton.autoPinEdge(toSuperviewEdge: .top)
         } else {
-            searchButtonWidthConstraint = searchButton.autoSetDimension(.width, toSize: 200)
+            searchButtonWidthConstraint = searchButton.autoSetDimension(.width, toSize: 240)
             searchButtonEdgeConstraint = searchButton.autoAlignAxis(toSuperviewAxis: .horizontal)
         }
 

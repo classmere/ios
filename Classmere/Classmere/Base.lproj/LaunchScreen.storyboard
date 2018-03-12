@@ -24,10 +24,10 @@
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VY-ne-tSL" userLabel="SearchButtonPlaceholder">
-                                        <rect key="frame" x="71.5" y="271.5" width="200" height="60"/>
+                                        <rect key="frame" x="51.5" y="271.5" width="240" height="60"/>
                                         <color key="backgroundColor" red="0.8860219282013323" green="0.89669689119170981" blue="0.89669689119170981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="4xo-fX-QM1"/>
+                                            <constraint firstAttribute="width" constant="240" id="4xo-fX-QM1"/>
                                             <constraint firstAttribute="height" constant="60" id="I1s-8n-UUc"/>
                                         </constraints>
                                     </view>
