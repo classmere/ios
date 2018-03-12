@@ -12,7 +12,7 @@ class ClassmereUITests: XCTestCase {
     func testGatherScreenshots() {
         snapshot("0home")
 
-        app.buttons["Search"].tap()
+        app.buttons["Search for classes..."].tap()
         app.searchFields.element.typeText("CS 161")
         _ = app.tables.cells.staticTexts["CS 161 INTRODUCTION TO COMPUTER SCIENCE I"].waitForExistence(timeout: 5)
         snapshot("1search")
