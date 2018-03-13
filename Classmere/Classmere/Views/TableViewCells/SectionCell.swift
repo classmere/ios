@@ -7,7 +7,7 @@ extension UpdatableCell where Self: SectionCell {
         if let meetingTime = model.meetingTimes?.first {
             let days = meetingTime.days ?? "No meeting times specified"
             let building = meetingTime.buildingCode ?? "No location specified"
-            let roomNumber = meetingTime.roomNumber == nil ? String(describing: meetingTime.roomNumber) : ""
+            let roomNumber = Utilities.optionalDescriptionOrEmptyString(meetingTime.roomNumber)
 
             if let startTime = meetingTime.startTime, let endTime = meetingTime.endTime {
                 let dateFormatter = DateFormatter()
