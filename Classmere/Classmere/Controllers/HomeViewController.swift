@@ -34,16 +34,25 @@ class HomeViewController: UIViewController {
         attributedLabel.attributedText = Theme.classmereLogo(withSize: 17)
         navigationItem.titleView = attributedLabel
 
-        navigationItem.backBarButtonItem = UIBarButtonItem.init(title: "",
-                                                                style: .plain,
-                                                                target: nil,
-                                                                action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "",
+                                                           style: .plain,
+                                                           target: nil,
+                                                           action: nil)
+
+        let settingsButton = UIButton(type: .infoLight)
+        settingsButton.addTarget(self, action: #selector(pushSettingsViewController), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingsButton)
+
         tableViewDataSource = TableViewDataSource(tableView: tableView)
         tableView.delegate = self
         tableView.dataSource = tableViewDataSource
         homeView.searchBar.delegate = self
         view.setNeedsUpdateConstraints()
 
+    }
+
+    @objc func pushSettingsViewController() {
+        navigationController?.pushViewController(SettingsViewController(), animated: true)
     }
 
 }

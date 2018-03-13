@@ -13,6 +13,9 @@ enum Theme {
         case green = "00933c"
         case purple = "b933ad"
         case grey = "808183"
+        case dark = "444444"
+        case searchBar = "e6e6e6"
+        case appleDefaultBlue = "007aff"
 
         var uicolor: UIColor {
             return UIColor(hexString: self.rawValue)!

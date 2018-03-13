@@ -5,8 +5,8 @@ extension UpdatableCell where Self: SectionCell {
     func update(with model: Section) {
         termLabel.text = Utilities.parseTerm(model.term)
         if let meetingTime = model.meetingTimes?.first {
-            let days = meetingTime.days ?? "No meeting day specified"
-            let building = meetingTime.buildingCode ?? "No building specified"
+            let days = meetingTime.days ?? "No meeting times specified"
+            let building = meetingTime.buildingCode ?? "No location specified"
             let roomNumber = meetingTime.roomNumber == nil ? String(describing: meetingTime.roomNumber) : ""
 
             if let startTime = meetingTime.startTime, let endTime = meetingTime.endTime {
@@ -23,6 +23,9 @@ extension UpdatableCell where Self: SectionCell {
             }
 
             locationLabel.text = "\(building) \(roomNumber)"
+        } else {
+            dayLabel.text = "No meeting times specified"
+            locationLabel.text = "No location specified"
         }
 
         instructorLabel.text = model.instructor
@@ -49,8 +52,6 @@ extension UpdatableCell where Self: SectionCell {
 extension SectionCell: UpdatableCell {}
 
 final class SectionCell: UITableViewCell {
-
-    let darkColor: UIColor = UIColor(red: 0.27, green: 0.27, blue: 0.27, alpha: 1.0)
 
     var didSetupConstraints = false
 
@@ -86,40 +87,52 @@ final class SectionCell: UITableViewCell {
     // MARK: - Setup
 
     func setupViews() {
-        dayIconLabel.lineBreakMode = .byTruncatingTail
-        dayIconLabel.numberOfLines = 0
-        dayIconLabel.textAlignment = .center
-        dayIconLabel.text = EmojiFactory.emojiFromSectionProperty("Days")
+        let iconLabels = [
+            dayIconLabel,
+            instructorIconLabel,
+            locationIconLabel,
+            typeIconLabel,
+            enrolledIconLabel,
+            dateIconLabel,
+            crnIconLabel
+        ]
 
-        instructorIconLabel.lineBreakMode = .byTruncatingTail
-        instructorIconLabel.numberOfLines = 0
-        instructorIconLabel.textAlignment = .center
-        instructorIconLabel.text = EmojiFactory.emojiFromSectionProperty("Instructor")
+        let infoLabels = [
+            dayLabel,
+            instructorLabel,
+            locationLabel,
+            typeLabel,
+            enrolledLabel,
+            dateLabel,
+            crnLabel
+        ]
 
-        locationIconLabel.lineBreakMode = .byTruncatingTail
-        locationIconLabel.numberOfLines = 0
-        locationIconLabel.textAlignment = .center
-        locationIconLabel.text = EmojiFactory.emojiFromSectionProperty("Location")
+        let labelTitles = [
+            "Days",
+            "Instructor",
+            "Location",
+            "Type",
+            "Enrolled",
+            "Dates",
+            "CRN"
+        ]
 
-        typeIconLabel.lineBreakMode = .byTruncatingTail
-        typeIconLabel.numberOfLines = 0
-        typeIconLabel.textAlignment = .center
-        typeIconLabel.text = EmojiFactory.emojiFromSectionProperty("Type")
+        for iconLabel in zip(iconLabels, labelTitles) {
+            iconLabel.0.lineBreakMode = .byTruncatingTail
+            iconLabel.0.numberOfLines = 0
+            iconLabel.0.textAlignment = .center
+            iconLabel.0.text = EmojiFactory.emojiFromSectionProperty(iconLabel.1)
+            contentView.addSubview(iconLabel.0)
+        }
 
-        enrolledIconLabel.lineBreakMode = .byTruncatingTail
-        enrolledIconLabel.numberOfLines = 0
-        enrolledIconLabel.textAlignment = .center
-        enrolledIconLabel.text = EmojiFactory.emojiFromSectionProperty("Enrolled")
-
-        dateIconLabel.lineBreakMode = .byTruncatingTail
-        dateIconLabel.numberOfLines = 0
-        dateIconLabel.textAlignment = .center
-        dateIconLabel.text = EmojiFactory.emojiFromSectionProperty("Dates")
-
-        crnIconLabel.lineBreakMode = .byTruncatingTail
-        crnIconLabel.numberOfLines = 0
-        crnIconLabel.textAlignment = .center
-        crnIconLabel.text = EmojiFactory.emojiFromSectionProperty("CRN")
+        for infoLabel in infoLabels {
+            infoLabel.lineBreakMode = .byTruncatingTail
+            infoLabel.numberOfLines = 1
+            infoLabel.textAlignment = .left
+            infoLabel.textColor = Theme.Color.dark.uicolor
+            infoLabel.font = UIFont(name: "HelveticaNeue", size: 13)
+            contentView.addSubview(infoLabel)
+        }
 
         termLabel.lineBreakMode = .byTruncatingTail
         termLabel.numberOfLines = 1
@@ -128,65 +141,7 @@ final class SectionCell: UITableViewCell {
         termLabel.textAlignment = .left
         termLabel.textColor = .darkGray
         termLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
-
-        dayLabel.lineBreakMode = .byTruncatingTail
-        dayLabel.numberOfLines = 1
-        dayLabel.textAlignment = .left
-        dayLabel.textColor = darkColor
-        dayLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-
-        instructorLabel.lineBreakMode = .byTruncatingTail
-        instructorLabel.numberOfLines = 1
-        instructorLabel.textAlignment = .left
-        instructorLabel.textColor = darkColor
-        instructorLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-
-        locationLabel.lineBreakMode = .byTruncatingTail
-        locationLabel.numberOfLines = 1
-        locationLabel.textAlignment = .left
-        locationLabel.textColor = darkColor
-        locationLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-
-        typeLabel.lineBreakMode = .byTruncatingTail
-        typeLabel.numberOfLines = 1
-        typeLabel.textAlignment = .left
-        typeLabel.textColor = darkColor
-        typeLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-
-        enrolledLabel.lineBreakMode = .byTruncatingTail
-        enrolledLabel.numberOfLines = 1
-        enrolledLabel.textAlignment = .left
-        enrolledLabel.textColor = darkColor
-        enrolledLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-
-        dateLabel.lineBreakMode = .byTruncatingTail
-        dateLabel.numberOfLines = 1
-        dateLabel.textAlignment = .left
-        dateLabel.textColor = darkColor
-        dateLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-
-        crnLabel.lineBreakMode = .byTruncatingTail
-        crnLabel.numberOfLines = 1
-        crnLabel.textAlignment = .left
-        crnLabel.textColor = darkColor
-        crnLabel.font = UIFont(name: "HelveticaNeue", size: 13)
-
-        contentView.addSubview(dayIconLabel)
-        contentView.addSubview(instructorIconLabel)
-        contentView.addSubview(locationIconLabel)
-        contentView.addSubview(typeIconLabel)
-        contentView.addSubview(enrolledIconLabel)
-        contentView.addSubview(dateIconLabel)
-        contentView.addSubview(crnIconLabel)
-
         contentView.addSubview(termLabel)
-        contentView.addSubview(dayLabel)
-        contentView.addSubview(instructorLabel)
-        contentView.addSubview(locationLabel)
-        contentView.addSubview(typeLabel)
-        contentView.addSubview(enrolledLabel)
-        contentView.addSubview(dateLabel)
-        contentView.addSubview(crnLabel)
     }
 
     // MARK: - Layout
