@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,42 +17,42 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClassmereIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4R2-uj-RIB">
-                    <rect key="frame" x="157.5" y="84" width="60" height="60"/>
+                    <rect key="frame" x="130" y="84" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Jjd-x4-ACW"/>
                         <constraint firstAttribute="width" constant="60" id="Tgm-0Z-HXr"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classmere" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esJ-vE-ziL">
-                    <rect key="frame" x="148.5" y="160" width="78" height="21"/>
+                    <rect key="frame" x="121" y="160" width="78" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classmere is a course catologue app for Oregon State University students. " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8V-cd-hJK">
-                    <rect key="frame" x="16" y="197" width="343" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A course catalog app for Oregon State University students." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8V-cd-hJK">
+                    <rect key="frame" x="16" y="197" width="288" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Produced by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-tB-Xn8">
-                    <rect key="frame" x="133" y="241.5" width="109" height="21"/>
+                    <rect key="frame" x="105.5" y="262" width="109" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rutger Farry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4XL-LS-GFv">
-                    <rect key="frame" x="16" y="278.5" width="95" height="21"/>
+                    <rect key="frame" x="16" y="291" width="95" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfT-i4-VSk">
-                    <rect key="frame" x="260" y="272" width="99" height="33"/>
+                    <rect key="frame" x="205" y="284.5" width="99" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="@rutgerfarry"/>
                     <connections>
@@ -60,22 +60,31 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brandon Lee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fko-R1-I7k">
-                    <rect key="frame" x="16" y="323.5" width="97" height="21"/>
+                    <rect key="frame" x="16" y="336" width="97" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnA-qJ-zLx">
-                    <rect key="frame" x="226" y="317.5" width="133" height="33"/>
+                    <rect key="frame" x="171" y="330" width="133" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="@brandonlee503"/>
                     <connections>
                         <action selector="brandonlee503ButtonPressed:" destination="-1" eventType="touchUpInside" id="URs-GR-QSf"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpN-tE-pIw">
+                    <rect key="frame" x="18" y="389" width="284" height="33"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="Found a bug? File an issue on GitHub"/>
+                    <connections>
+                        <action selector="fileGithubIssueButtonPressed:" destination="-1" eventType="touchUpInside" id="II1-wW-Qb5"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vpN-tE-pIw" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="2X0-4m-qjo"/>
                 <constraint firstItem="b8V-cd-hJK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="3tq-Bt-EoZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qfT-i4-VSk" secondAttribute="trailing" constant="16" id="91U-OU-Yv6"/>
                 <constraint firstItem="esJ-vE-ziL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Div-AD-2dw"/>
@@ -86,8 +95,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mnA-qJ-zLx" secondAttribute="trailing" constant="16" id="cEP-V0-bkz"/>
                 <constraint firstItem="qfT-i4-VSk" firstAttribute="centerY" secondItem="4XL-LS-GFv" secondAttribute="centerY" id="fpM-bz-A5t"/>
                 <constraint firstItem="4R2-uj-RIB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="64" id="gw3-os-toC"/>
-                <constraint firstItem="4XL-LS-GFv" firstAttribute="top" secondItem="6EG-tB-Xn8" secondAttribute="bottom" constant="16" id="kT9-Vl-OEG"/>
+                <constraint firstItem="4XL-LS-GFv" firstAttribute="top" secondItem="6EG-tB-Xn8" secondAttribute="bottom" constant="8" id="kT9-Vl-OEG"/>
                 <constraint firstItem="4R2-uj-RIB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kem-2C-Xye"/>
+                <constraint firstItem="vpN-tE-pIw" firstAttribute="top" secondItem="Fko-R1-I7k" secondAttribute="bottom" constant="32" id="sWt-zQ-Dq8"/>
                 <constraint firstItem="b8V-cd-hJK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="sr9-r7-Isf"/>
                 <constraint firstItem="mnA-qJ-zLx" firstAttribute="centerY" secondItem="Fko-R1-I7k" secondAttribute="centerY" id="t4B-Q6-Rna"/>
                 <constraint firstItem="esJ-vE-ziL" firstAttribute="top" secondItem="4R2-uj-RIB" secondAttribute="bottom" constant="16" id="whg-0v-ds0"/>

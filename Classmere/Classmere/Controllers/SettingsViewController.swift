@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
 
     @IBOutlet weak var classmereLabel: UILabel!
 
@@ -16,6 +16,11 @@ class SettingsViewController: UIViewController {
 
     @IBAction func brandonlee503ButtonPressed(_ sender: Any) {
         let url = URL(string: "https://github.com/brandonlee503")!
+        UIApplication.shared.open(url, options: [:])
+    }
+
+    @IBAction func fileGithubIssueButtonPressed(_ sender: Any) {
+        let url = URL(string: "https://github.com/classmere/ios/issues/new")!
         UIApplication.shared.open(url, options: [:])
     }
 
