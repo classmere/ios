@@ -2,10 +2,10 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - GoogleMaps (2.5.0):
-    - GoogleMaps/Maps (= 2.5.0)
-  - GoogleMaps/Base (2.5.0)
-  - GoogleMaps/Maps (2.5.0):
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
     - GoogleMaps/Base
   - MaterialComponents/AnimationTiming (46.1.0)
   - MaterialComponents/Buttons (46.1.0):
@@ -45,7 +45,7 @@ PODS:
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
-  - GoogleMaps (= 2.5.0)
+  - GoogleMaps (= 2.6.0)
   - MaterialComponents/Snackbar
   - PureLayout
   - SwiftLint (= 0.24)
@@ -61,13 +61,13 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
   MaterialComponents: f14582653f35407ff1aef50e705a15c1b0d0b70c
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
 
-PODFILE CHECKSUM: 2f515eaa77bf41962d18f8312029cc45179cd892
+PODFILE CHECKSUM: 8e4a261ae4704b9d1c12e7257e2894f612c6eacb
 
 COCOAPODS: 1.4.0
