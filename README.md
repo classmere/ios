@@ -6,7 +6,7 @@ cool classes and manage their courseload.
 ![app screenshots](./design/gh-banner.png)
 
 ### Meta
-- **State:** pre-production
+- **State:** production ([App Store](https://itunes.apple.com/us/app/classmere/id1358531614?mt=8))
 - **Point People:** [@rutgerfarry](https://github.com/rutgerfarry), [@brandonlee503](https://github.com/brandonlee503)
 - **CI:** [![Build Status](https://travis-ci.org/classmere/ios.svg?branch=master)](https://travis-ci.org/classmere/ios)
 
